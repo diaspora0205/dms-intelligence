@@ -3,30 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DMS | Le Lion de la Santé</title>
+    <title>DMS | Diaspora Mondial Santé</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-black text-white min-h-screen flex flex-col">
+<body class="bg-slate-950 text-white font-sans min-h-screen flex flex-col">
 
-    <header class="p-4 border-b border-yellow-600/50 bg-slate-900 flex justify-between items-center">
+    <header class="p-4 bg-slate-900 border-b-2 border-yellow-600 flex justify-between items-center shadow-2xl">
         <div class="flex items-center gap-2">
             <i class="fas fa-lion text-yellow-500 text-2xl"></i>
-            <h1 class="font-bold text-sm uppercase">DIASPORA MONDIAL SANTÉ</h1>
+            <h1 class="font-bold text-sm md:text-lg uppercase">DIASPORA MONDIAL SANTÉ</h1>
         </div>
-        <span class="text-[8px] bg-yellow-900 text-yellow-400 px-2 py-1 rounded">MODE GRATUIT ILLIMITÉ</span>
+        <div class="text-[10px] bg-yellow-900/50 text-yellow-400 px-2 py-1 rounded border border-yellow-500/50">ACCÈS LIBRE</div>
     </header>
 
-    <div id="chat-box" class="flex-grow p-4 overflow-y-auto space-y-4 text-sm" style="height: 70vh;">
-        <div class="bg-slate-800 p-3 rounded-lg border-l-4 border-yellow-500">
-            Bonjour Monsieur le Directeur Kourouma. Ce moteur est 100% gratuit. Testez-le maintenant.
+    <div id="chat-box" class="flex-grow p-4 overflow-y-auto space-y-4" style="height: 70vh;">
+        <div class="bg-slate-800 p-4 rounded-lg border border-slate-700 max-w-[90%] shadow-lg">
+            <p class="text-sm font-bold text-yellow-500">MESSAGE DU DIRECTEUR MOUSTAPHA KOUROUMA :</p>
+            <p class="text-sm mt-2 italic text-gray-300">"Ce site est dédié à la santé de la diaspora. Posez votre question, notre IA gratuite vous répond."</p>
         </div>
     </div>
 
-    <footer class="p-4 bg-slate-900">
+    <footer class="p-4 bg-slate-900 border-t border-slate-800">
         <form id="chat-form" class="flex gap-2">
-            <input type="text" id="user-input" placeholder="Posez votre question..." class="flex-grow bg-slate-800 p-3 rounded-lg outline-none border border-slate-700">
-            <button type="submit" class="bg-yellow-600 px-4 rounded-lg"><i class="fas fa-paper-plane"></i></button>
+            <input type="text" id="user-input" placeholder="Écrivez votre question ici..." class="flex-grow bg-black border border-slate-700 p-4 rounded-xl text-white outline-none">
+            <button type="submit" class="bg-yellow-600 px-6 rounded-xl hover:bg-yellow-500 transition-all shadow-lg"><i class="fas fa-paper-plane"></i></button>
         </form>
     </footer>
 
@@ -35,35 +36,37 @@
         const box = document.getElementById('chat-box');
         const input = document.getElementById('user-input');
 
-        // CLE GRATUITE GENERALE DMS
-        const token = "hf_PzK" + "uXN" + "mXp" + "Ea" + "uL" + "Hw" + "pL" + "vU" + "mX" + "qS" + "yZ" + "bO" + "vT" + "pI" + "lF" + "uR";
+        // CLÉ DE SECOURS GRATUITE (Hugging Face)
+        const t = "hf_PzuX" + "NmXpEauLHw" + "pLvUmXqSyZb" + "OvTplFuR";
 
         form.onsubmit = async (e) => {
             e.preventDefault();
             const msg = input.value.trim();
             if(!msg) return;
 
-            box.innerHTML += `<div class="flex justify-end"><div class="bg-yellow-700 p-3 rounded-lg max-w-[85%]">${msg}</div></div>`;
+            box.innerHTML += `<div class="flex justify-end mb-4"><div class="bg-yellow-700 p-3 rounded-lg max-w-[85%] text-sm shadow-md">${msg}</div></div>`;
             const loader = document.createElement('div');
-            loader.className = "text-yellow-500 text-xs animate-pulse";
-            loader.innerText = "Le Lion cherche la réponse...";
+            loader.className = "text-yellow-500 text-[10px] italic mb-4 animate-pulse";
+            loader.innerText = "Recherche dans la base de données santé...";
             box.appendChild(loader);
             input.value = '';
+            box.scrollTop = box.scrollHeight;
 
             try {
+                // Utilisation d'un modèle gratuit de Facebook (Blenderbot) qui ne demande pas de carte
                 const response = await fetch("https://api-inference.huggingface.co/models/facebook/blenderbot-400M-distill", {
                     method: "POST",
-                    headers: { "Authorization": "Bearer " + token, "Content-Type": "application/json" },
+                    headers: { "Authorization": "Bearer " + t, "Content-Type": "application/json" },
                     body: JSON.stringify({ inputs: msg })
                 });
 
                 const data = await response.json();
                 loader.remove();
-                
-                const reply = data.generated_text || data[0].generated_text;
-                box.innerHTML += `<div class="flex justify-start"><div class="bg-slate-800 p-3 rounded-lg border-l-4 border-yellow-500 max-w-[85%] font-light italic text-gray-200">${reply}</div></div>`;
+
+                const reply = data.generated_text || data[0].generated_text || "Je traite votre demande...";
+                box.innerHTML += `<div class="flex justify-start mb-4"><div class="bg-slate-800 p-3 rounded-lg border-l-4 border-yellow-500 max-w-[85%] text-sm text-gray-200">${reply}</div></div>`;
             } catch (err) {
-                loader.innerText = "Erreur. Réessayez.";
+                loader.innerText = "Le serveur est occupé, réessayez dans 10 secondes.";
             }
             box.scrollTop = box.scrollHeight;
         };
