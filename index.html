@@ -3,92 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diaspora Mondial Santé - IA</title>
+    <title>Diaspora Mondial Santé</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-slate-900 text-white min-h-screen flex flex-col">
-    <header class="bg-blue-900 p-4 shadow-2xl border-b border-blue-400">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-xl md:text-2xl font-bold flex items-center gap-2">
-                <i class="fas fa-lion text-yellow-400"></i> Diaspora Mondial Santé
-            </h1>
-            <span class="bg-green-500 px-3 py-1 rounded-full text-xs font-bold text-black uppercase">Expert Actif</span>
-        </div>
+<body class="bg-slate-900 text-white min-h-screen">
+    <header class="bg-blue-900 p-4 shadow-xl border-b border-blue-400">
+        <h1 class="text-xl font-bold text-center">Diaspora Mondial Santé</h1>
     </header>
 
-    <main id="chat-container" class="flex-grow container mx-auto p-4 overflow-y-auto space-y-4" style="max-height: 80vh;">
-        <div class="flex justify-start">
-            <div class="bg-gray-800 p-4 rounded-lg border-l-4 border-yellow-400 max-w-[85%] shadow-lg">
-                <p class="font-bold text-yellow-400 mb-1">Diaspora Mondial Santé :</p>
-                Bonjour Monsieur le Directeur Moustapha Kourouma. Je suis votre IA experte. Comment puis-je vous servir ?
-            </div>
+    <div id="chat-container" class="p-4 space-y-4 overflow-y-auto" style="height: 70vh;">
+        <div class="bg-gray-800 p-3 rounded-lg border-l-4 border-yellow-400">
+            Bonjour Directeur Kourouma. Je suis prêt. Posez votre question.
         </div>
-    </main>
+    </div>
 
-    <footer class="p-4 bg-gray-900 border-t border-gray-700">
-        <form id="chat-form" class="container mx-auto flex gap-2">
-            <input type="text" id="message-input" placeholder="Posez votre question à l'expert..." class="flex-grow bg-gray-800 border border-gray-600 p-4 rounded-xl text-white focus:outline-none focus:border-blue-500">
-            <button type="submit" class="bg-blue-600 hover:bg-blue-500 px-6 py-4 rounded-xl font-bold transition-all shadow-lg">
-                <i class="fas fa-paper-plane"></i>
-            </button>
-        </form>
-        <p class="text-center text-[10px] text-gray-500 mt-2 italic">Propriété exclusive de Diaspora Mondial Santé © 2026</p>
-    </footer>
+    <form id="chat-form" class="fixed bottom-0 w-full p-4 bg-gray-900 flex gap-2">
+        <input type="text" id="msg-input" placeholder="Votre question..." class="flex-grow p-3 rounded bg-gray-800 border border-gray-600">
+        <button type="submit" class="bg-blue-600 p-3 rounded font-bold">OK</button>
+    </form>
 
     <script>
-    const chatForm = document.getElementById('chat-form');
-    const chatContainer = document.getElementById('chat-container');
-    const messageInput = document.getElementById('message-input');
-
-    // Clé hachée pour éviter le blocage GitHub
+    const f = document.getElementById('chat-form');
+    const c = document.getElementById('chat-container');
+    const i = document.getElementById('msg-input');
     const p1 = "sk-or-v1-8848480396495589c379a041f02";
     const p2 = "1e90956f6f9660c238b1b0179d63c4e365022";
 
-    chatForm.addEventListener('submit', async (e) => {
+    f.onsubmit = async (e) => {
         e.preventDefault();
-        const msg = messageInput.value.trim();
-        if (!msg) return;
+        const text = i.value.trim();
+        if(!text) return;
 
-        const uDiv = document.createElement('div');
-        uDiv.className = 'flex justify-end mb-4';
-        uDiv.innerHTML = `<div class="bg-blue-600 p-3 rounded-lg max-w-[80%] shadow-md">${msg}</div>`;
-        chatContainer.appendChild(uDiv);
-        messageInput.value = '';
-
-        const lDiv = document.createElement('div');
-        lDiv.className = 'flex justify-start mb-4';
-        lDiv.innerHTML = `<div class="bg-gray-800 text-blue-200 p-3 rounded-lg animate-pulse">Analyse Diaspora Mondial Santé...</div>`;
-        chatContainer.appendChild(lDiv);
-        chatContainer.scrollTop = chatContainer.scrollHeight;
+        // Afficher message
+        c.innerHTML += `<div class="text-right"><span class="bg-blue-600 p-2 rounded inline-block">${text}</span></div>`;
+        const loader = document.createElement('div');
+        loader.innerHTML = "Analyse en cours...";
+        c.appendChild(loader);
+        i.value = '';
 
         try {
-            const r = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+            const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
                 method: 'POST',
-                headers: { 
-                    'Authorization': 'Bearer ' + p1 + p2, 
-                    'Content-Type': 'application/json' 
-                },
-                body: JSON.stringify({ 
-                    model: 'google/gemini-2.0-flash-001', 
-                    messages: [
-                        {role:'system', content:'Tu es Diaspora Mondial Santé, l\'IA experte créée par Moustapha Kourouma. Tu es spécialiste en médecine moderne et pharmacopée traditionnelle.'},
-                        {role:'user', content:msg}
-                    ]
+                headers: { 'Authorization': 'Bearer ' + p1 + p2, 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    model: 'google/gemini-2.0-flash-001',
+                    messages: [{role:'system', content:'Tu es Diaspora Mondial Santé, expert de Moustapha Kourouma.'},{role:'user', content:text}]
                 })
             });
-            const d = await r.json();
-            lDiv.remove();
-
-            const aDiv = document.createElement('div');
-            aDiv.className = 'flex justify-start mb-4';
-            aDiv.innerHTML = `<div class="bg-gray-800 text-gray-100 p-3 rounded-lg border-l-4 border-blue-500 shadow-xl">${d.choices[0].message.content}</div>`;
-            chatContainer.appendChild(aDiv);
-        } catch (err) { 
-            lDiv.innerHTML = `<div class="bg-red-900 p-3 rounded-lg text-white">Erreur de connexion. Réessayez.</div>`; 
+            const data = await res.json();
+            loader.remove();
+            c.innerHTML += `<div class="bg-gray-800 p-3 rounded border-l-4 border-blue-500">${data.choices[0].message.content}</div>`;
+        } catch (err) {
+            loader.innerHTML = "Erreur. Verifiez votre connexion.";
         }
-        chatContainer.scrollTop = chatContainer.scrollHeight;
-    });
+        c.scrollTop = c.scrollHeight;
+    };
     </script>
 </body>
-</html>
+
