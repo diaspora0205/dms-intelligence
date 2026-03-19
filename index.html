@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DMS | Système Expert Pharmacopée</title>
+    <title>DMS | Moteur Super Puissant V.Expert</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
-        .animate-scroll { display: inline-block; white-space: nowrap; animation: scroll 25s linear infinite; }
-        .chat-gradient { background: linear-gradient(135deg, #0f172a 0%, #000000 100%); }
+        .animate-scroll { display: inline-block; white-space: nowrap; animation: scroll 22s linear infinite; }
+        .glass-effect { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(10px); }
+        .chat-bg { background-color: #000000; background-image: radial-gradient(#1e293b 0.5px, transparent 0.5px); background-size: 24px 24px; }
     </style>
 </head>
 <body class="bg-black text-white font-sans min-h-screen flex flex-col">
@@ -17,84 +18,61 @@
     <header class="p-4 bg-slate-900 border-b-2 border-yellow-600 shadow-2xl sticky top-0 z-50">
         <div class="flex justify-between items-center mb-2">
             <div class="flex items-center gap-3">
-                <i class="fas fa-lion text-yellow-500 text-4xl shadow-lg"></i>
+                <i class="fas fa-lion text-yellow-500 text-4xl drop-shadow-[0_0_10px_rgba(234,179,8,0.5)]"></i>
                 <div>
                     <h1 class="font-black text-xl uppercase tracking-tighter text-yellow-500 italic">DIASPORA MONDIAL SANTÉ</h1>
-                    <p class="text-[9px] text-gray-300 font-bold uppercase tracking-widest underline decoration-yellow-600 italic">Médecine Traditionnelle & IA</p>
+                    <p class="text-[9px] text-gray-400 font-bold uppercase tracking-[0.2em] underline decoration-yellow-600">Moteur Expert Pharmacopée</p>
                 </div>
             </div>
             <div class="text-right">
                 <div id="live-clock" class="text-xs text-yellow-500 font-mono font-bold">--:--:--</div>
-                <button onclick="toggleContact()" class="text-[10px] bg-green-700 text-white px-3 py-1 rounded-full uppercase font-black mt-1 animate-pulse">CONTACT</button>
+                <button onclick="window.open('https://wa.me/2207814179')" class="text-[10px] bg-green-700 hover:bg-green-600 text-white px-4 py-1.5 rounded-full uppercase font-black mt-1 shadow-lg shadow-green-900/40 transition-all">WhatsApp</button>
             </div>
         </div>
         
-        <div class="bg-black border-y border-yellow-900 py-1 overflow-hidden">
+        <div class="bg-black border-y border-yellow-900 py-1.5 overflow-hidden">
             <div class="animate-scroll text-[10px] font-bold text-yellow-500 uppercase italic">
-                🌿 PHARMACOPÉE AFRICAINE • 15 PILIERS DE SANTÉ • GAMBIA WHATSAPP : +220 781 41 79 • FORMATION AVEC LE DIRECTEUR KOUROUMA 🌿
+                 🦁 DMS : 15 PILIERS DE SANTÉ • MOTEUR ULTRA-PUISSANT • GAMBIA : +220 781 41 79 • DIRECTEUR MOUSTAPHA KOUROUMA 🦁
             </div>
         </div>
 
-        <div class="mt-2 bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-700 p-2 rounded shadow-inner text-center">
+        <div class="mt-2 bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-700 p-2.5 rounded shadow-xl text-center border border-yellow-400">
             <p class="text-[10px] text-black font-black uppercase tracking-tighter italic">DIRECTEUR FONDATEUR : <span class="text-sm">Moustapha KOUROUMA</span></p>
         </div>
     </header>
 
-    <div id="contact-panel" class="hidden bg-slate-900 border-b border-yellow-600 p-4 animate-fade-in shadow-2xl">
-        <div class="grid grid-cols-1 gap-3">
-            <a href="https://wa.me/2207814179?text=Bonjour%20Directeur%20Kourouma" target="_blank" class="bg-green-600 p-4 rounded-2xl flex items-center justify-center gap-4 shadow-lg active:scale-95 transition-all">
-                <i class="fab fa-whatsapp text-3xl"></i>
-                <div class="text-left leading-none">
-                    <p class="text-[10px] uppercase font-bold opacity-80">WhatsApp Gambie</p>
-                    <p class="text-xl font-black">+220 781 41 79</p>
-                </div>
-            </a>
-            <div class="bg-slate-800 p-3 rounded-xl border border-slate-700 text-[10px] italic text-gray-300 text-center uppercase tracking-widest font-bold">
-                <i class="fas fa-handshake text-yellow-500 mr-2"></i> Partenaire Officiel : Pharmacopée Africaine Intégrée
-            </div>
-        </div>
-    </div>
-
-    <div id="chat-box" class="flex-grow p-4 overflow-y-auto space-y-6 chat-gradient" style="height: 55vh;">
-        <div class="bg-slate-800 p-5 rounded-3xl rounded-tl-none border border-slate-700 max-w-[92%] shadow-2xl relative">
-            <p class="text-[10px] font-black text-yellow-500 mb-2 uppercase italic tracking-widest tracking-tighter underline">🦁 EXPERT DMS :</p>
-            <p class="text-sm text-gray-100 font-light italic leading-relaxed">
-                Bonjour Monsieur le Directeur. Mon moteur est prêt. Posez-moi une question sur les **15 Piliers** ou demandez-moi la **Date**.
+    <div id="chat-box" class="flex-grow p-4 overflow-y-auto space-y-6 chat-bg" style="height: 60vh;">
+        <div class="bg-slate-900/90 p-5 rounded-3xl rounded-tl-none border border-slate-700 max-w-[94%] shadow-2xl">
+            <p class="text-[10px] font-black text-yellow-500 mb-2 uppercase italic underline tracking-widest">🦁 MOTEUR DMS ACTIF :</p>
+            <p class="text-sm text-gray-200 font-light italic leading-relaxed">
+                Monsieur le Directeur, le moteur super puissant est installé. <br><br>
+                Je traite tous les angles : **Hémorroïdes (Emeric), Diabète, Puissance, Vision, Tension, Prostate, etc.**
             </p>
         </div>
     </div>
 
     <footer class="p-4 bg-slate-900 border-t border-yellow-600/30 sticky bottom-0">
         <form id="chat-form" class="flex gap-3">
-            <input type="text" id="user-input" placeholder="Tension, Diabète, Emeric, Vision..." class="flex-grow bg-black border-2 border-slate-800 p-4 rounded-2xl text-white outline-none focus:border-yellow-500 transition-all text-sm font-medium">
-            <button type="submit" class="bg-yellow-600 w-16 h-16 rounded-2xl flex items-center justify-center hover:bg-yellow-500 active:scale-90 transition-all shadow-xl shadow-yellow-900/40">
+            <input type="text" id="user-input" autocomplete="off" placeholder="Posez votre question de santé..." class="flex-grow bg-black border-2 border-slate-800 p-4 rounded-2xl text-white outline-none focus:border-yellow-500 transition-all text-sm shadow-inner">
+            <button type="submit" class="bg-yellow-600 w-16 h-16 rounded-2xl flex items-center justify-center hover:bg-yellow-500 active:scale-90 transition-all shadow-xl shadow-yellow-900/50">
                 <i class="fas fa-paper-plane text-2xl text-black"></i>
             </button>
         </form>
     </footer>
 
     <script>
-        function toggleContact() { document.getElementById('contact-panel').classList.toggle('hidden'); }
         function updateClock() { document.getElementById('live-clock').innerText = new Date().toLocaleTimeString('fr-FR'); }
         setInterval(updateClock, 1000); updateClock();
 
-        // MOTEUR DE CONNAISSANCE DMS (15 PILIERS)
-        const dmsBrain = [
-            { id: "puissance", keywords: ["puiss", "sex", "homm", "faibl", "power", "erect"], resp: "🦁 DMS : La puissance masculine est liée à la circulation. Utilisez Petit Cola, Gingembre et Miel pur. Évitez le sucre industriel." },
-            { id: "tension", keywords: ["tens", "hyper", "coeur", "blood"], resp: "🦁 DMS : Le Bissap (Hibiscus) rouge sans sucre régule la tension. Marchez 30 min et évitez le sel de cuisine." },
-            { id: "hemorroides", keywords: ["hemo", "emo", "koko", "aymerie", "emeric", "anus", "fesse"], resp: "🦁 DMS : Pour les hémorroïdes (Kôkô), l'infusion de Tamarin est souveraine. Maintenez une bonne hydratation." },
-            { id: "diabete", keywords: ["diab", "sucr"], resp: "🦁 DMS : Le Moringa et les graines de Fenugrec stabilisent la glycémie. Privilégiez les fibres." },
-            { id: "estomac", keywords: ["estom", "ulcer", "gaz", "ventre"], resp: "🦁 DMS : Jus de pomme de terre crue ou Aloe Vera pour calmer l'estomac. Évitez les boissons gazeuses." },
-            { id: "prostate", keywords: ["prostat", "urin"], resp: "🦁 DMS : Graines de courge et tomates cuites protègent la prostate. Ne retenez pas l'envie d'uriner." },
-            { id: "vision", keywords: ["visio", "vue", "yeux"], resp: "🦁 DMS : Carotte et Myrtille renforcent la vue. Évitez l'exposition prolongée aux écrans." },
-            { id: "sommeil", keywords: ["somm", "nuit", "insom"], resp: "🦁 DMS : Infusion de Citronnelle ou Verveine. Éteignez les lumières 1h avant de dormir." },
-            { id: "poids", keywords: ["poid", "gros", "ventre", "fat"], resp: "🦁 DMS : Eau tiède avec citron et gingembre le matin à jeun. Supprimez les dîners tardifs." },
-            { id: "fertilité", keywords: ["fert", "enf", "gross"], resp: "🦁 DMS : Racine de Maca ou Ginseng africain. Équilibrez votre alimentation." },
-            { id: "nerfs", keywords: ["nerf", "stres", "paniqu"], resp: "🦁 DMS : Le Cacao pur (sans sucre) est riche en magnésium. Respirez profondément." },
-            { id: "memoire", keywords: ["memo", "cerve", "oublie"], resp: "🦁 DMS : Le Ginkgo Biloba ou les noix stimulent les fonctions cognitives." },
-            { id: "malaria", keywords: ["palu", "malaria", "fiev"], resp: "🦁 DMS : L'Artemisia Annua est notre plante phare contre le paludisme. À prendre en infusion." },
-            { id: "asthme", keywords: ["asthm", "respira", "toux"], resp: "🦁 DMS : Miel pur mélangé à l'oignon rouge pour dégager les bronches." },
-            { id: "peau", keywords: ["peau", "bout", "grat", "teint"], resp: "🦁 DMS : Beurre de Karité et huile de Neem pour protéger et soigner l'épiderme." }
+        const dmsLibrary = [
+            { id: "hemo", keys: ["hem", "emo", "koko", "emer", "aymer", "anus", "fesse"], resp: "🦁 DMS : Pour les hémorroïdes (Emeric/Kôkô), l'infusion de Tamarin est souveraine. Évitez le piment et l'alcool." },
+            { id: "diab", keys: ["diab", "sucr", "glyc"], resp: "🦁 DMS : Le Moringa et les graines de Fenugrec stabilisent la glycémie. Supprimez les boissons sucrées." },
+            { id: "puis", keys: ["puiss", "sex", "homm", "erect", "power"], resp: "🦁 DMS : La puissance masculine dépend de la circulation. Utilisez Petit Cola, Gingembre et Miel pur." },
+            { id: "tens", keys: ["tens", "hyper", "coeur", "sel"], resp: "🦁 DMS : Le Bissap (Hibiscus) rouge sans sucre régule la tension. Réduisez le sel de cuisine." },
+            { id: "prostat", keys: ["prostat", "urin"], resp: "🦁 DMS : Les graines de courge et la tomate cuite protègent la prostate. Ne retenez pas vos urines." },
+            { id: "yeux", keys: ["visio", "vue", "yeux", "oeil", "regard"], resp: "🦁 DMS : Carotte et Myrtille renforcent la rétine. Limitez l'exposition aux écrans." },
+            { id: "estomac", keys: ["estom", "ulcer", "gaz", "ventre"], resp: "🦁 DMS : Jus de pomme de terre crue ou Aloe Vera pour calmer l'estomac. Mangez à des heures régulières." },
+            { id: "malaria", keys: ["palu", "malaria", "fiev"], resp: "🦁 DMS : L'Artemisia Annua en infusion est le remède phare contre le paludisme." }
         ];
 
         const form = document.getElementById('chat-form');
@@ -103,34 +81,34 @@
 
         form.onsubmit = (e) => {
             e.preventDefault();
-            const raw = input.value.trim();
-            const msg = raw.toLowerCase();
-            if(!msg) return;
+            let raw = input.value.trim();
+            if(!raw) return;
 
-            // Message utilisateur
-            box.innerHTML += `<div class="flex justify-end mb-6"><div class="bg-yellow-700 p-4 rounded-3xl rounded-tr-none max-w-[85%] text-sm text-black font-bold shadow-lg">${raw}</div></div>`;
+            // NETTOYAGE PROFOND (Suppression accents, majuscules, etc.)
+            let cleanMsg = raw.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+            box.innerHTML += `<div class="flex justify-end mb-6 animate-fade-in"><div class="bg-yellow-700 p-4 rounded-3xl rounded-tr-none max-w-[85%] text-sm text-black font-bold shadow-lg">${raw}</div></div>`;
             
             setTimeout(() => {
-                let response = "L'expert DMS analyse... Soyez précis (Ex: Tension, Diabète, Emeric, Vision).";
+                let response = "L'expert DMS a analysé votre demande. Soyez plus précis sur le pilier (Ex: Tension, Diabète, Emeric, Vision).";
                 
-                // Logique de recherche profonde
-                if(msg.includes("date")) response = "Nous sommes le " + new Date().toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-                else if(msg.includes("bonjour") || msg.includes("hello")) response = "Bonjour Monsieur le Directeur Kourouma ! Prêt pour le travail.";
+                if(cleanMsg.includes("date")) response = "Nous sommes le " + new Date().toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+                else if(cleanMsg.includes("bonjour") || cleanMsg.includes("hello")) response = "Bonjour Monsieur le Directeur ! Mon moteur est prêt à servir la santé africaine.";
                 else {
-                    const match = dmsBrain.find(item => item.keywords.some(k => msg.includes(k)));
-                    if(match) response = match.resp;
+                    // RECHERCHE PAR FRAGMENT (L'Angle Puissant)
+                    const found = dmsLibrary.find(item => item.keys.some(k => cleanMsg.includes(k)));
+                    if(found) response = found.resp;
                 }
 
-                // Réponse IA
                 box.innerHTML += `
-                    <div class="flex justify-start mb-6">
+                    <div class="flex justify-start mb-6 animate-fade-in">
                         <div class="bg-slate-900 p-5 rounded-3xl rounded-tl-none border-l-4 border-yellow-500 max-w-[88%] shadow-2xl border border-slate-800">
-                            <p class="text-[10px] text-yellow-500 font-black mb-1 uppercase tracking-widest italic">RÉPONSE DMS</p>
-                            <p class="text-sm text-gray-200">${response}</p>
+                            <p class="text-[10px] text-yellow-500 font-black mb-1 uppercase italic tracking-widest underline decoration-yellow-900">RÉPONSE DMS OFFICIELLE</p>
+                            <p class="text-sm text-gray-200 leading-relaxed font-medium">${response}</p>
                         </div>
                     </div>`;
                 box.scrollTop = box.scrollHeight;
-            }, 600);
+            }, 500);
             input.value = '';
         };
     </script>
