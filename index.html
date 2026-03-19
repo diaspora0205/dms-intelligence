@@ -19,7 +19,7 @@
         </div>
         <div class="flex flex-col items-end text-[8px] font-bold text-green-500 uppercase">
             <span class="animate-pulse">● Système Actif</span>
-            <span class="text-gray-500 italic">Dir. M. Kourouma</span>
+            <span class="text-gray-500 italic text-[7px]">Dir. M. Kourouma</span>
         </div>
     </header>
 
@@ -27,14 +27,14 @@
         <div class="bg-slate-800 p-4 rounded-2xl rounded-tl-none border border-slate-700 max-w-[90%] shadow-xl">
             <p class="text-[10px] font-black text-yellow-500 mb-2 uppercase tracking-widest italic">🦁 EXPERTISE DMS :</p>
             <p class="text-sm text-gray-100 leading-relaxed font-light">
-                Bonjour Monsieur le Directeur. Le Lion est prêt. J'ai intégré les conseils sur la **Puissance Sexuelle** et les **Hémorroïdes** (Emeric). Posez votre question.
+                Bonjour Monsieur le Directeur. Le système est mis à jour. Je suis prêt pour votre question pertinente sur la vitalité et les soins naturels.
             </p>
         </div>
     </div>
 
     <footer class="p-4 bg-slate-900 border-t border-yellow-600/30 sticky bottom-0">
         <form id="chat-form" class="flex gap-2">
-            <input type="text" id="user-input" placeholder="Maladie, Plante, Vitalité..." class="flex-grow bg-slate-950 border border-slate-800 p-4 rounded-xl text-white outline-none focus:border-yellow-500 text-sm">
+            <input type="text" id="user-input" placeholder="Posez votre question ici..." class="flex-grow bg-slate-950 border border-slate-800 p-4 rounded-xl text-white outline-none focus:border-yellow-500 text-sm">
             <button type="submit" class="bg-yellow-600 w-14 h-14 rounded-xl flex items-center justify-center hover:bg-yellow-500 active:scale-95 transition-all">
                 <i class="fas fa-paper-plane text-xl text-black"></i>
             </button>
@@ -46,22 +46,18 @@
         const box = document.getElementById('chat-box');
         const input = document.getElementById('user-input');
 
+        // LE CERVEAU INTELLIGENT DMS
         const dmsKnowledge = {
-            "bonsoir": "Bonsoir ! DMS vous souhaite une excellente soirée. Votre santé est notre priorité.",
-            "bonjour": "Bonjour ! Je suis le Lion de la santé. Quelle est votre préoccupation aujourd'hui ?",
-            "sexuelle": "La puissance sexuelle dépend souvent de la circulation sanguine et du stress. Le Petit Cola (Garcinia Kola), le gingembre et le clou de girofle sont excellents en pharmacopée. Évitez l'alcool et le tabac.",
-            "puissance": "Pour la vitalité masculine, une bonne alimentation est clé. Le souchet (Tiger Nut) et le miel pur sont des alliés naturels. DMS recommande aussi le sport régulier.",
-            "emeric": "Les hémorroïdes (Emeric/Kôkô) sont liées à la digestion. Consommez beaucoup de fibres (fruits, légumes) et d'eau. Les bains de siège tièdes soulagent. Évitez les piments forts.",
-            "hémorroïdes": "Contre les hémorroïdes, évitez la constipation. Le 'Kôkô' se traite bien avec des plantes régulatrices du transit comme le tamarin. Consultez pour les cas sévères.",
-            "paludisme": "Contre le paludisme, l'Artemisia est une référence en infusion. Surveillez la fièvre et contactez un centre DMS si nécessaire.",
-            "tension": "Pour la tension, réduisez le sel. Le bissap rouge (hibiscus) sans sucre aide à réguler la pression artérielle.",
-            "diabète": "Pour le diabète, privilégiez les aliments amers. Le Neem et le Moringa sont très utiles pour stabiliser le sucre.",
-            "moringa": "Le Moringa est l'arbre de vie. Il contient plus de vitamines que l'orange et plus de fer que les épinards. Un trésor DMS.",
-            "fatigue": "La fatigue chronique peut être traitée par une cure de Moringa ou de jus de Baobab. Reposez-vous suffisamment.",
-            "estomac": "Pour les douleurs d'estomac, le gel d'Aloe Vera est miraculeux pour tapisser les parois digestives.",
-            "dms": "Diaspora Mondial Santé est la vision panafricaine du Directeur Kourouma pour une santé accessible à tous.",
-            "plantes": "Moringa, Petit Cola, Neem, Gingembre, Artemisia... laquelle souhaitez-vous découvrir ?",
-            "toux": "Un mélange de miel pur et de citron reste le meilleur remède naturel contre la toux."
+            "sexuelle": "La puissance sexuelle dépend de la circulation sanguine. Le Petit Cola (Garcinia Kola), le gingembre et le clou de girofle sont d'excellents stimulants naturels. Évitez l'alcool, le tabac et le stress qui sont des ennemis de la virilité.",
+            "puissance": "Pour la vitalité masculine, le souchet (Tiger Nut) et le miel pur de forêt sont des alliés indispensables. Une alimentation riche en zinc et une activité physique régulière sont recommandées par DMS.",
+            "emeric": "Les hémorroïdes (Emeric/Kôkô) sont souvent causées par la constipation. Consommez beaucoup d'eau et des fibres (fruits, légumes). Le tamarin et les bains de siège tièdes sont des remèdes efficaces pour soulager.",
+            "hémorroïdes": "Contre les hémorroïdes, privilégiez le transit fluide. Évitez les piments et les positions assises prolongées. Le 'Kôkô' se traite bien avec une hygiène de vie rigoureuse.",
+            "paludisme": "Contre le paludisme, l'infusion d'Artemisia est une référence mondiale en phytothérapie. Surveillez toujours la fièvre.",
+            "tension": "Pour réguler la tension, réduisez le sel. Le jus de bissap rouge (hibiscus) sans sucre est un puissant hypotenseur naturel.",
+            "diabète": "Pour stabiliser le sucre, utilisez les feuilles de Neem ou le Moringa. Évitez les sucres blancs et privilégiez les céréales complètes.",
+            "moringa": "Le Moringa est le pilier nutritionnel de DMS. Riche en fer et vitamines, il combat l'anémie et renforce l'immunité.",
+            "bonjour": "Bonjour ! Le Lion de la santé est à votre écoute. De quoi souhaitez-vous discuter aujourd'hui ?",
+            "bonsoir": "Bonsoir ! Diaspora Mondial Santé vous souhaite une excellente soirée sous la protection du Lion."
         };
 
         form.onsubmit = (e) => {
@@ -70,28 +66,40 @@
             const msg = rawMsg.toLowerCase();
             if(!msg) return;
 
-            box.innerHTML += `<div class="flex justify-end mb-4"><div class="bg-yellow-700 p-4 rounded-2xl rounded-tr-none max-w-[85%] text-sm shadow-md text-black font-medium">${rawMsg}</div></div>`;
+            // Affichage Patient
+            box.innerHTML += `<div class="flex justify-end mb-4"><div class="bg-yellow-700 p-4 rounded-2xl rounded-tr-none max-w-[85%] text-sm text-black font-medium">${rawMsg}</div></div>`;
+            
             const loader = document.createElement('div');
             loader.className = "text-yellow-500 text-[10px] italic mb-4 animate-pulse uppercase font-black tracking-widest";
-            loader.innerHTML = '<i class="fas fa-spinner animate-spin mr-2"></i>Analyse DMS...';
+            loader.innerHTML = '<i class="fas fa-spinner animate-spin mr-2"></i>Le Lion analyse...';
             box.appendChild(loader);
             input.value = '';
             box.scrollTop = box.scrollHeight;
 
             setTimeout(() => {
                 loader.remove();
-                let response = "L'expert DMS a bien reçu votre message. Précisez votre recherche (ex: Tension, Puissance, Emeric) pour un conseil immédiat.";
-                for(let key in dmsKnowledge) { if(msg.includes(key)) { response = dmsKnowledge[key]; break; } }
+                let response = "L'expert DMS a bien reçu votre demande. Pour un conseil précis, mentionnez un mot-clé comme : Puissance, Emeric, Tension ou Diabète.";
+                
+                // PRIORITÉ AUX MOTS-CLÉS DANS LES LONGUES PHRASES
+                if(msg.includes("puissance") || msg.includes("sexuelle")) { 
+                    response = dmsKnowledge["puissance"] + " " + dmsKnowledge["sexuelle"];
+                } else if(msg.includes("emeric") || msg.includes("hémorroïdes")) {
+                    response = dmsKnowledge["emeric"];
+                } else {
+                    for(let key in dmsKnowledge) {
+                        if(msg.includes(key)) { response = dmsKnowledge[key]; break; }
+                    }
+                }
 
                 box.innerHTML += `
                     <div class="flex justify-start mb-4">
                         <div class="bg-slate-900 p-4 rounded-2xl rounded-tl-none border-l-4 border-yellow-500 max-w-[85%] shadow-2xl border border-slate-800">
-                            <p class="text-[10px] text-yellow-500 font-black mb-1 tracking-widest uppercase italic">RÉPONSE OFFICIELLE DMS</p>
+                            <p class="text-[10px] text-yellow-500 font-black mb-1 uppercase italic tracking-tighter">RÉPONSE OFFICIELLE DMS</p>
                             <p class="text-sm text-gray-200 leading-relaxed font-light">${response}</p>
                         </div>
                     </div>`;
                 box.scrollTop = box.scrollHeight;
-            }, 1000);
+            }, 800);
         };
     </script>
 </body>
