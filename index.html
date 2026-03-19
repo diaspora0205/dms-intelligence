@@ -9,55 +9,71 @@
 </head>
 <body class="bg-slate-950 text-white font-sans min-h-screen flex flex-col">
 
-    <header class="p-4 bg-slate-900 border-b-2 border-yellow-600 flex justify-between items-center shadow-2xl sticky top-0 z-50">
-        <div class="flex items-center gap-2">
-            <i class="fas fa-lion text-yellow-500 text-3xl"></i>
-            <div>
-                <h1 class="font-bold text-lg uppercase tracking-tighter text-yellow-500">DIASPORA MONDIAL SANTÉ</h1>
-                <p class="text-[9px] text-gray-400 font-bold uppercase tracking-widest">Expertise Africaine & IA</p>
+    <header class="p-4 bg-slate-900 border-b-2 border-yellow-600 shadow-2xl sticky top-0 z-50">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-lion text-yellow-500 text-3xl"></i>
+                <div>
+                    <h1 class="font-bold text-lg uppercase tracking-tighter text-yellow-500">DIASPORA MONDIAL SANTÉ</h1>
+                    <p class="text-[9px] text-gray-400 font-bold uppercase tracking-widest italic">Expertise Bilingue & Calendrier</p>
+                </div>
+            </div>
+            <div class="text-right">
+                <div class="text-[9px] text-green-500 font-bold animate-pulse uppercase">● Système Actif</div>
+                <div id="live-clock" class="text-[10px] text-yellow-500 font-mono font-bold">--:--:--</div>
             </div>
         </div>
-        <div class="flex flex-col items-end text-[8px] font-bold text-green-500 uppercase">
-            <span class="animate-pulse">● Système Actif</span>
-            <span class="text-gray-500 italic text-[7px]">Dir. M. Kourouma</span>
+        
+        <div class="mt-2 bg-yellow-600 p-2 rounded text-center shadow-inner">
+            <p class="text-[10px] text-black font-black uppercase tracking-wider">Fondateur & Directeur : <span class="text-xs font-bold">Moustapha KOURouma</span></p>
         </div>
     </header>
 
-    <div id="chat-box" class="flex-grow p-4 overflow-y-auto space-y-4 bg-black" style="height: 75vh; background-image: radial-gradient(#1e293b 0.5px, transparent 0.5px); background-size: 20px 20px;">
+    <div id="chat-box" class="flex-grow p-4 overflow-y-auto space-y-4 bg-black" style="height: 70vh; background-image: radial-gradient(#1e293b 0.5px, transparent 0.5px); background-size: 20px 20px;">
         <div class="bg-slate-800 p-4 rounded-2xl rounded-tl-none border border-slate-700 max-w-[90%] shadow-xl">
-            <p class="text-[10px] font-black text-yellow-500 mb-2 uppercase tracking-widest italic">🦁 EXPERTISE DMS :</p>
-            <p class="text-sm text-gray-100 leading-relaxed font-light">
-                Bonjour Monsieur le Directeur. Le système est mis à jour. Je suis prêt pour votre question pertinente sur la vitalité et les soins naturels.
+            <p class="text-[10px] font-black text-yellow-500 mb-2 uppercase tracking-widest italic">🦁 DMS EXPERT :</p>
+            <p class="text-sm text-gray-100leading-relaxed font-light italic">
+                (FR) Bonjour ! Je suis le Lion de Diaspora Mondial Santé. Je parle Anglais/Français et je connais la date et l'heure.<br>
+                (EN) Hello! I am the Health Lion. I speak English/French, and I know the date and time.
             </p>
         </div>
     </div>
 
     <footer class="p-4 bg-slate-900 border-t border-yellow-600/30 sticky bottom-0">
         <form id="chat-form" class="flex gap-2">
-            <input type="text" id="user-input" placeholder="Posez votre question ici..." class="flex-grow bg-slate-950 border border-slate-800 p-4 rounded-xl text-white outline-none focus:border-yellow-500 text-sm">
-            <button type="submit" class="bg-yellow-600 w-14 h-14 rounded-xl flex items-center justify-center hover:bg-yellow-500 active:scale-95 transition-all">
+            <input type="text" id="user-input" placeholder="Vitalité, Emeric, Date / Power, Time..." class="flex-grow bg-slate-950 border border-slate-800 p-4 rounded-xl text-white outline-none focus:border-yellow-500 text-sm shadow-inner">
+            <button type="submit" class="bg-yellow-600 w-14 h-14 rounded-xl flex items-center justify-center hover:bg-yellow-500 active:scale-95 transition-all shadow-lg shadow-yellow-900/40">
                 <i class="fas fa-paper-plane text-xl text-black"></i>
             </button>
         </form>
     </footer>
 
     <script>
+        // HORLOGE TEMPS RÉEL
+        function updateClock() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('fr-FR');
+            document.getElementById('live-clock').innerText = timeString;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
         const form = document.getElementById('chat-form');
         const box = document.getElementById('chat-box');
         const input = document.getElementById('user-input');
 
-        // LE CERVEAU INTELLIGENT DMS
         const dmsKnowledge = {
-            "sexuelle": "La puissance sexuelle dépend de la circulation sanguine. Le Petit Cola (Garcinia Kola), le gingembre et le clou de girofle sont d'excellents stimulants naturels. Évitez l'alcool, le tabac et le stress qui sont des ennemis de la virilité.",
-            "puissance": "Pour la vitalité masculine, le souchet (Tiger Nut) et le miel pur de forêt sont des alliés indispensables. Une alimentation riche en zinc et une activité physique régulière sont recommandées par DMS.",
-            "emeric": "Les hémorroïdes (Emeric/Kôkô) sont souvent causées par la constipation. Consommez beaucoup d'eau et des fibres (fruits, légumes). Le tamarin et les bains de siège tièdes sont des remèdes efficaces pour soulager.",
-            "hémorroïdes": "Contre les hémorroïdes, privilégiez le transit fluide. Évitez les piments et les positions assises prolongées. Le 'Kôkô' se traite bien avec une hygiène de vie rigoureuse.",
-            "paludisme": "Contre le paludisme, l'infusion d'Artemisia est une référence mondiale en phytothérapie. Surveillez toujours la fièvre.",
-            "tension": "Pour réguler la tension, réduisez le sel. Le jus de bissap rouge (hibiscus) sans sucre est un puissant hypotenseur naturel.",
-            "diabète": "Pour stabiliser le sucre, utilisez les feuilles de Neem ou le Moringa. Évitez les sucres blancs et privilégiez les céréales complètes.",
-            "moringa": "Le Moringa est le pilier nutritionnel de DMS. Riche en fer et vitamines, il combat l'anémie et renforce l'immunité.",
-            "bonjour": "Bonjour ! Le Lion de la santé est à votre écoute. De quoi souhaitez-vous discuter aujourd'hui ?",
-            "bonsoir": "Bonsoir ! Diaspora Mondial Santé vous souhaite une excellente soirée sous la protection du Lion."
+            "sexuelle": "La puissance sexuelle dépend de la circulation sanguine. Petit Cola, gingembre et clou de girofle sont recommandés.",
+            "puissance": "Pour la vitalité masculine : souchet, miel pur et sport régulier.",
+            "emeric": "Les hémorroïdes (Emeric/Kôkô) : Fibres, eau et tamarin. Évitez le piment.",
+            "tension": "Tension : Moins de sel, plus de bissap rouge sans sucre.",
+            "power": "For male vitality (power): Tiger nuts, pure honey, and regular exercise are your best allies.",
+            "sexual": "Sexual health depends on blood flow. Ginger, Garcinia Kola, and cloves are natural stimulants.",
+            "hemorrhoids": "For hemorrhoids: Eat more fiber, drink water, and use tamarind. Avoid spicy food.",
+            "blood pressure": "For blood pressure: Reduce salt intake and drink unsweetened hibiscus tea.",
+            "malaria": "For malaria: Artemisia tea is a proven natural remedy. Watch your fever closely.",
+            "hello": "Hello! The Health Lion is ready to assist you. Ask me about your health.",
+            "bonjour": "Bonjour ! Le Lion de la santé est à votre écoute."
         };
 
         form.onsubmit = (e) => {
@@ -66,26 +82,26 @@
             const msg = rawMsg.toLowerCase();
             if(!msg) return;
 
-            // Affichage Patient
             box.innerHTML += `<div class="flex justify-end mb-4"><div class="bg-yellow-700 p-4 rounded-2xl rounded-tr-none max-w-[85%] text-sm text-black font-medium">${rawMsg}</div></div>`;
-            
             const loader = document.createElement('div');
             loader.className = "text-yellow-500 text-[10px] italic mb-4 animate-pulse uppercase font-black tracking-widest";
-            loader.innerHTML = '<i class="fas fa-spinner animate-spin mr-2"></i>Le Lion analyse...';
+            loader.innerHTML = '<i class="fas fa-spinner animate-spin mr-2"></i>Analyzing / Analyse...';
             box.appendChild(loader);
             input.value = '';
             box.scrollTop = box.scrollHeight;
 
             setTimeout(() => {
                 loader.remove();
-                let response = "L'expert DMS a bien reçu votre demande. Pour un conseil précis, mentionnez un mot-clé comme : Puissance, Emeric, Tension ou Diabète.";
+                let response = "DMS Expert a reçu votre message. Précisez votre question (Tension, Puissance, Emeric, etc.). / Mention a keyword like Power, Malaria, or Time.";
                 
-                // PRIORITÉ AUX MOTS-CLÉS DANS LES LONGUES PHRASES
-                if(msg.includes("puissance") || msg.includes("sexuelle")) { 
-                    response = dmsKnowledge["puissance"] + " " + dmsKnowledge["sexuelle"];
-                } else if(msg.includes("emeric") || msg.includes("hémorroïdes")) {
-                    response = dmsKnowledge["emeric"];
-                } else {
+                if(msg.includes("heure") || msg.includes("temps") || msg.includes("time")) {
+                    response = "Il est actuellement " + new Date().toLocaleTimeString('fr-FR') + ". / The time is " + new Date().toLocaleTimeString('en-US') + ".";
+                } 
+                else if(msg.includes("date") || msg.includes("jour") || msg.includes("today") || msg.includes("aujourd'hui")) {
+                    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                    response = "Aujourd'hui nous sommes le " + new Date().toLocaleDateString('fr-FR', options) + ".";
+                }
+                else {
                     for(let key in dmsKnowledge) {
                         if(msg.includes(key)) { response = dmsKnowledge[key]; break; }
                     }
@@ -94,8 +110,8 @@
                 box.innerHTML += `
                     <div class="flex justify-start mb-4">
                         <div class="bg-slate-900 p-4 rounded-2xl rounded-tl-none border-l-4 border-yellow-500 max-w-[85%] shadow-2xl border border-slate-800">
-                            <p class="text-[10px] text-yellow-500 font-black mb-1 uppercase italic tracking-tighter">RÉPONSE OFFICIELLE DMS</p>
-                            <p class="text-sm text-gray-200 leading-relaxed font-light">${response}</p>
+                            <p class="text-[10px] text-yellow-500 font-black mb-1 uppercase tracking-tighter">OFFICIAL RESPONSE / RÉPONSE</p>
+                            <p class="text-sm text-gray-200">${response}</p>
                         </div>
                     </div>`;
                 box.scrollTop = box.scrollHeight;
