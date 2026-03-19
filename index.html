@@ -3,67 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DMS | Expertise Profonde 15 Piliers</title>
+    <title>DMS | Système Expert Pharmacopée</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
-        .animate-scroll { display: inline-block; white-space: nowrap; animation: scroll 20s linear infinite; }
-        @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
-        .animate-fade-in { animation: fade-in 0.5s ease-out; }
+        .animate-scroll { display: inline-block; white-space: nowrap; animation: scroll 25s linear infinite; }
+        .chat-gradient { background: linear-gradient(135deg, #0f172a 0%, #000000 100%); }
     </style>
 </head>
-<body class="bg-slate-950 text-white font-sans min-h-screen flex flex-col">
+<body class="bg-black text-white font-sans min-h-screen flex flex-col">
 
     <header class="p-4 bg-slate-900 border-b-2 border-yellow-600 shadow-2xl sticky top-0 z-50">
-        <div class="flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <i class="fas fa-lion text-yellow-500 text-3xl shadow-lg"></i>
+        <div class="flex justify-between items-center mb-2">
+            <div class="flex items-center gap-3">
+                <i class="fas fa-lion text-yellow-500 text-4xl shadow-lg"></i>
                 <div>
-                    <h1 class="font-bold text-lg uppercase tracking-tighter text-yellow-500 italic text-yellow-500">DIASPORA MONDIAL SANTÉ</h1>
-                    <p class="text-[9px] text-gray-300 font-bold uppercase tracking-widest underline decoration-yellow-600">Expertise Profonde & Pharmacopée</p>
+                    <h1 class="font-black text-xl uppercase tracking-tighter text-yellow-500 italic">DIASPORA MONDIAL SANTÉ</h1>
+                    <p class="text-[9px] text-gray-300 font-bold uppercase tracking-widest underline decoration-yellow-600 italic">Médecine Traditionnelle & IA</p>
                 </div>
             </div>
             <div class="text-right">
-                <div id="live-clock" class="text-[10px] text-yellow-500 font-mono font-bold">--:--:--</div>
-                <button onclick="toggleContact()" class="mt-1 text-[8px] bg-green-700 text-white px-2 py-1 rounded uppercase font-black">WhatsApp Gambie</button>
+                <div id="live-clock" class="text-xs text-yellow-500 font-mono font-bold">--:--:--</div>
+                <button onclick="toggleContact()" class="text-[10px] bg-green-700 text-white px-3 py-1 rounded-full uppercase font-black mt-1 animate-pulse">CONTACT</button>
             </div>
         </div>
         
-        <div class="mt-2 bg-black border-y border-yellow-900 overflow-hidden py-1">
-            <div class="animate-scroll text-[10px] font-bold text-yellow-500 uppercase tracking-widest italic">
-                🦁 DMS : ANALYSE DES 15 PILIERS • MÉDECINE TRADITIONNELLE • CONTACT DIRECTEUR MOUSTAPHA KOUROUMA : +220 781 41 79 • 🦁
+        <div class="bg-black border-y border-yellow-900 py-1 overflow-hidden">
+            <div class="animate-scroll text-[10px] font-bold text-yellow-500 uppercase italic">
+                🌿 PHARMACOPÉE AFRICAINE • 15 PILIERS DE SANTÉ • GAMBIA WHATSAPP : +220 781 41 79 • FORMATION AVEC LE DIRECTEUR KOUROUMA 🌿
             </div>
         </div>
 
-        <div class="mt-2 bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-700 p-2 rounded text-center border border-yellow-400">
-            <p class="text-[10px] text-black font-black uppercase tracking-tighter italic">Fondateur & Directeur : <span class="text-xs">Moustapha KOUROUMA</span></p>
+        <div class="mt-2 bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-700 p-2 rounded shadow-inner text-center">
+            <p class="text-[10px] text-black font-black uppercase tracking-tighter italic">DIRECTEUR FONDATEUR : <span class="text-sm">Moustapha KOUROUMA</span></p>
         </div>
     </header>
 
-    <div id="contact-panel" class="hidden bg-slate-900 border-b border-yellow-600 p-4 shadow-2xl animate-fade-in text-center">
-        <a href="https://wa.me/2207814179?text=Bonjour%20Directeur%20Kourouma,%20je%20viens%20de%20votre%20site%20DMS%20pour%20une%20formation." target="_blank" class="inline-flex items-center bg-green-600 p-3 rounded-xl gap-3 shadow-xl active:scale-95 transition-all">
-            <i class="fab fa-whatsapp text-2xl"></i>
-            <div class="text-left"><p class="text-[9px] uppercase opacity-80 leading-none">WhatsApp Gambie</p><p class="text-lg font-bold leading-tight">+220 781 41 79</p></div>
-        </a>
+    <div id="contact-panel" class="hidden bg-slate-900 border-b border-yellow-600 p-4 animate-fade-in shadow-2xl">
+        <div class="grid grid-cols-1 gap-3">
+            <a href="https://wa.me/2207814179?text=Bonjour%20Directeur%20Kourouma" target="_blank" class="bg-green-600 p-4 rounded-2xl flex items-center justify-center gap-4 shadow-lg active:scale-95 transition-all">
+                <i class="fab fa-whatsapp text-3xl"></i>
+                <div class="text-left leading-none">
+                    <p class="text-[10px] uppercase font-bold opacity-80">WhatsApp Gambie</p>
+                    <p class="text-xl font-black">+220 781 41 79</p>
+                </div>
+            </a>
+            <div class="bg-slate-800 p-3 rounded-xl border border-slate-700 text-[10px] italic text-gray-300 text-center uppercase tracking-widest font-bold">
+                <i class="fas fa-handshake text-yellow-500 mr-2"></i> Partenaire Officiel : Pharmacopée Africaine Intégrée
+            </div>
+        </div>
     </div>
 
-    <div id="chat-box" class="flex-grow p-4 overflow-y-auto space-y-4 bg-black" style="height: 60vh; background-image: radial-gradient(#1e293b 0.5px, transparent 0.5px); background-size: 20px 20px;">
-        <div class="bg-slate-800 p-4 rounded-2xl rounded-tl-none border border-slate-700 max-w-[90%] shadow-xl">
-            <p class="text-[10px] font-black text-yellow-500 mb-2 uppercase italic tracking-widest">🦁 DMS EXPERT :</p>
+    <div id="chat-box" class="flex-grow p-4 overflow-y-auto space-y-6 chat-gradient" style="height: 55vh;">
+        <div class="bg-slate-800 p-5 rounded-3xl rounded-tl-none border border-slate-700 max-w-[92%] shadow-2xl relative">
+            <p class="text-[10px] font-black text-yellow-500 mb-2 uppercase italic tracking-widest tracking-tighter underline">🦁 EXPERT DMS :</p>
             <p class="text-sm text-gray-100 font-light italic leading-relaxed">
-                Bonjour Monsieur le Directeur Kourouma. Je suis prêt à analyser tous les angles. <br><br>
-                <span class="text-[10px] text-yellow-600 uppercase font-bold">Posez votre question sur :</span><br>
-                Puissance, Tension, Hémorroïdes, Diabète, Estomac, Vision, Prostate, Malaria, etc.
+                Bonjour Monsieur le Directeur. Mon moteur est prêt. Posez-moi une question sur les **15 Piliers** ou demandez-moi la **Date**.
             </p>
         </div>
     </div>
 
     <footer class="p-4 bg-slate-900 border-t border-yellow-600/30 sticky bottom-0">
-        <form id="chat-form" class="flex gap-2">
-            <input type="text" id="user-input" placeholder="Posez votre question ici..." class="flex-grow bg-slate-950 border border-slate-800 p-4 rounded-xl text-white outline-none focus:border-yellow-500 text-sm">
-            <button type="submit" class="bg-yellow-600 w-14 h-14 rounded-xl flex items-center justify-center hover:bg-yellow-500 shadow-lg">
-                <i class="fas fa-paper-plane text-xl text-black"></i>
+        <form id="chat-form" class="flex gap-3">
+            <input type="text" id="user-input" placeholder="Tension, Diabète, Emeric, Vision..." class="flex-grow bg-black border-2 border-slate-800 p-4 rounded-2xl text-white outline-none focus:border-yellow-500 transition-all text-sm font-medium">
+            <button type="submit" class="bg-yellow-600 w-16 h-16 rounded-2xl flex items-center justify-center hover:bg-yellow-500 active:scale-90 transition-all shadow-xl shadow-yellow-900/40">
+                <i class="fas fa-paper-plane text-2xl text-black"></i>
             </button>
         </form>
     </footer>
@@ -73,22 +78,23 @@
         function updateClock() { document.getElementById('live-clock').innerText = new Date().toLocaleTimeString('fr-FR'); }
         setInterval(updateClock, 1000); updateClock();
 
-        const dmsKnowledge = [
-            { keys: ["puissance", "sexe", "sexuelle", "faiblesse"], resp: "🦁 DMS EXPERT : Pour la vitalité masculine, le Petit Cola, le Gingembre et le Miel pur sont vos alliés. Évitez le stress et dormez bien." },
-            { keys: ["tension", "hypertension", "coeur"], resp: "🦁 DMS EXPERT : Le Bissap (Hibiscus) est le régulateur naturel. Réduisez le sel et marchez 30 min par jour." },
-            { keys: ["hémorroïdes", "emeric", "koko", "anus"], resp: "🦁 DMS EXPERT : Pour les hémorroïdes, utilisez le Tamarin et évitez les aliments trop pimentés." },
-            { keys: ["diabète", "sucre", "glycémie"], resp: "🦁 DMS EXPERT : Les feuilles de Moringa et les graines de Fenugrec aident à réguler le sucre." },
-            { keys: ["estomac", "ulcère", "gaz"], resp: "🦁 DMS EXPERT : Le jus de pomme de terre crue ou l'Aloe Vera apaisent les parois de l'estomac." },
-            { keys: ["vision", "yeux", "vue"], resp: "🦁 DMS EXPERT : Consommez beaucoup de Vitamine A (Carottes) et protégez vos yeux du soleil intense." },
-            { keys: ["prostate", "urine"], resp: "🦁 DMS EXPERT : Les graines de courge et la tomate cuite protègent la prostate après 40 ans." },
-            { keys: ["malaria", "palu", "fièvre"], resp: "🦁 DMS EXPERT : L'Artemisia Annua en infusion est le remède traditionnel de référence chez DMS." },
-            { keys: ["sommeil", "insomnie"], resp: "🦁 DMS EXPERT : Une infusion de Citronnelle ou de Verveine avant 21h calme le système nerveux." },
-            { keys: ["poids", "gros", "ventre"], resp: "🦁 DMS EXPERT : Eau tiède avec citron et gingembre le matin à jeun pour brûler les graisses." },
-            { keys: ["fertilité", "enfant"], resp: "🦁 DMS EXPERT : Le Ginseng africain et une alimentation riche en zinc sont recommandés." },
-            { keys: ["nerfs", "stress"], resp: "🦁 DMS EXPERT : Le Cacao pur (sans sucre) est riche en magnésium pour calmer les nerfs." },
-            { keys: ["mémoire", "cerveau"], resp: "🦁 DMS EXPERT : Le Ginkgo Biloba ou les noix sont excellents pour la concentration." },
-            { keys: ["asthme", "respiration"], resp: "🦁 DMS EXPERT : Le mélange miel pur et oignon rouge aide à dégager les bronches." },
-            { keys: ["peau", "bouton", "démangeaison"], resp: "🦁 DMS EXPERT : Le beurre de Karité pur et l'huile de Neem nettoient la peau en profondeur." }
+        // MOTEUR DE CONNAISSANCE DMS (15 PILIERS)
+        const dmsBrain = [
+            { id: "puissance", keywords: ["puiss", "sex", "homm", "faibl", "power", "erect"], resp: "🦁 DMS : La puissance masculine est liée à la circulation. Utilisez Petit Cola, Gingembre et Miel pur. Évitez le sucre industriel." },
+            { id: "tension", keywords: ["tens", "hyper", "coeur", "blood"], resp: "🦁 DMS : Le Bissap (Hibiscus) rouge sans sucre régule la tension. Marchez 30 min et évitez le sel de cuisine." },
+            { id: "hemorroides", keywords: ["hemo", "emo", "koko", "aymerie", "emeric", "anus", "fesse"], resp: "🦁 DMS : Pour les hémorroïdes (Kôkô), l'infusion de Tamarin est souveraine. Maintenez une bonne hydratation." },
+            { id: "diabete", keywords: ["diab", "sucr"], resp: "🦁 DMS : Le Moringa et les graines de Fenugrec stabilisent la glycémie. Privilégiez les fibres." },
+            { id: "estomac", keywords: ["estom", "ulcer", "gaz", "ventre"], resp: "🦁 DMS : Jus de pomme de terre crue ou Aloe Vera pour calmer l'estomac. Évitez les boissons gazeuses." },
+            { id: "prostate", keywords: ["prostat", "urin"], resp: "🦁 DMS : Graines de courge et tomates cuites protègent la prostate. Ne retenez pas l'envie d'uriner." },
+            { id: "vision", keywords: ["visio", "vue", "yeux"], resp: "🦁 DMS : Carotte et Myrtille renforcent la vue. Évitez l'exposition prolongée aux écrans." },
+            { id: "sommeil", keywords: ["somm", "nuit", "insom"], resp: "🦁 DMS : Infusion de Citronnelle ou Verveine. Éteignez les lumières 1h avant de dormir." },
+            { id: "poids", keywords: ["poid", "gros", "ventre", "fat"], resp: "🦁 DMS : Eau tiède avec citron et gingembre le matin à jeun. Supprimez les dîners tardifs." },
+            { id: "fertilité", keywords: ["fert", "enf", "gross"], resp: "🦁 DMS : Racine de Maca ou Ginseng africain. Équilibrez votre alimentation." },
+            { id: "nerfs", keywords: ["nerf", "stres", "paniqu"], resp: "🦁 DMS : Le Cacao pur (sans sucre) est riche en magnésium. Respirez profondément." },
+            { id: "memoire", keywords: ["memo", "cerve", "oublie"], resp: "🦁 DMS : Le Ginkgo Biloba ou les noix stimulent les fonctions cognitives." },
+            { id: "malaria", keywords: ["palu", "malaria", "fiev"], resp: "🦁 DMS : L'Artemisia Annua est notre plante phare contre le paludisme. À prendre en infusion." },
+            { id: "asthme", keywords: ["asthm", "respira", "toux"], resp: "🦁 DMS : Miel pur mélangé à l'oignon rouge pour dégager les bronches." },
+            { id: "peau", keywords: ["peau", "bout", "grat", "teint"], resp: "🦁 DMS : Beurre de Karité et huile de Neem pour protéger et soigner l'épiderme." }
         ];
 
         const form = document.getElementById('chat-form');
@@ -97,28 +103,29 @@
 
         form.onsubmit = (e) => {
             e.preventDefault();
-            const rawMsg = input.value.trim();
-            const msg = rawMsg.toLowerCase();
+            const raw = input.value.trim();
+            const msg = raw.toLowerCase();
             if(!msg) return;
 
-            box.innerHTML += `<div class="flex justify-end mb-4 animate-fade-in"><div class="bg-yellow-700 p-4 rounded-2xl rounded-tr-none max-w-[85%] text-sm text-black font-medium">${rawMsg}</div></div>`;
+            // Message utilisateur
+            box.innerHTML += `<div class="flex justify-end mb-6"><div class="bg-yellow-700 p-4 rounded-3xl rounded-tr-none max-w-[85%] text-sm text-black font-bold shadow-lg">${raw}</div></div>`;
             
             setTimeout(() => {
-                let response = "L'expert DMS analyse... Soyez précis (Ex: Diabète, Hémorroïdes, Vision, Tension).";
+                let response = "L'expert DMS analyse... Soyez précis (Ex: Tension, Diabète, Emeric, Vision).";
                 
-                if(msg.includes("date")) response = "Nous sommes le " + new Date().toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) + ".";
-                else if(msg.includes("heure")) response = "Il est " + new Date().toLocaleTimeString('fr-FR') + ".";
-                else if(msg.includes("bonjour") || msg.includes("hello")) response = "Bonjour Monsieur le Directeur ! Je suis prêt pour la formation.";
+                // Logique de recherche profonde
+                if(msg.includes("date")) response = "Nous sommes le " + new Date().toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+                else if(msg.includes("bonjour") || msg.includes("hello")) response = "Bonjour Monsieur le Directeur Kourouma ! Prêt pour le travail.";
                 else {
-                    for(let item of dmsKnowledge) {
-                        if(item.keys.some(k => msg.includes(k))) { response = item.resp; break; }
-                    }
+                    const match = dmsBrain.find(item => item.keywords.some(k => msg.includes(k)));
+                    if(match) response = match.resp;
                 }
 
+                // Réponse IA
                 box.innerHTML += `
-                    <div class="flex justify-start mb-4 animate-fade-in">
-                        <div class="bg-slate-900 p-4 rounded-2xl rounded-tl-none border-l-4 border-yellow-500 max-w-[85%] shadow-2xl border border-slate-800">
-                            <p class="text-[10px] text-yellow-500 font-black mb-1 uppercase italic">DMS RÉPONSE OFFICIELLE</p>
+                    <div class="flex justify-start mb-6">
+                        <div class="bg-slate-900 p-5 rounded-3xl rounded-tl-none border-l-4 border-yellow-500 max-w-[88%] shadow-2xl border border-slate-800">
+                            <p class="text-[10px] text-yellow-500 font-black mb-1 uppercase tracking-widest italic">RÉPONSE DMS</p>
                             <p class="text-sm text-gray-200">${response}</p>
                         </div>
                     </div>`;
