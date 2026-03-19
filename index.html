@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIASPORA MONDIAL SANTÉ | Pharmacopée Africaine</title>
+    <title>DIASPORA MONDIAL SANTÉ | WhatsApp Gambie</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
         .animate-scroll { display: inline-block; white-space: nowrap; animation: scroll 20s linear infinite; }
+        @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+        .animate-fade-in { animation: fade-in 0.5s ease-out; }
     </style>
 </head>
 <body class="bg-slate-950 text-white font-sans min-h-screen flex flex-col">
@@ -19,54 +21,53 @@
                 <i class="fas fa-lion text-yellow-500 text-3xl shadow-lg"></i>
                 <div>
                     <h1 class="font-bold text-lg uppercase tracking-tighter text-yellow-500 italic">DIASPORA MONDIAL SANTÉ</h1>
-                    <p class="text-[9px] text-gray-300 font-bold uppercase tracking-widest underline decoration-yellow-600">Médecine Traditionnelle Africaine</p>
+                    <p class="text-[9px] text-gray-300 font-bold uppercase tracking-widest underline decoration-yellow-600">MÉDECINE TRADITIONNELLE AFRICAINE</p>
                 </div>
             </div>
             <div class="text-right">
                 <div id="live-clock" class="text-[10px] text-yellow-500 font-mono font-bold">--:--:--</div>
-                <button onclick="toggleContact()" class="mt-1 text-[8px] bg-green-700 text-white px-2 py-1 rounded uppercase font-black">Contact & Partenaires</button>
+                <button onclick="toggleContact()" class="mt-1 text-[8px] bg-green-700 text-white px-2 py-1 rounded uppercase font-black animate-pulse shadow-lg">Contact & WhatsApp</button>
             </div>
         </div>
         
         <div class="mt-2 bg-black border-y border-yellow-900 overflow-hidden py-1">
             <div class="animate-scroll text-[10px] font-bold text-yellow-500 uppercase tracking-widest">
-                🌿 PHARMACOPÉE AFRICAINE • MÉDECINE TRADITIONNELLE INTÉGRÉE • EXPERTISE DMS • FORMATION VITALITÉ • BIENVENUE MONSIEUR LE DIRECTEUR MOUSTAPHA KOUROUMA 🌿
+                🌿 PHARMACOPÉE AFRICAINE • MÉDECINE TRADITIONNELLE • GAMBIA WHATSAPP : +220 781 41 79 • DIRECTEUR MOUSTAPHA KOUROUMA 🌿
             </div>
         </div>
 
         <div class="mt-2 bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-700 p-2 rounded text-center shadow-lg border border-yellow-400">
-            <p class="text-[10px] text-black font-black uppercase italic tracking-tighter">Directeur Fondateur : <span class="text-xs">Moustapha KOUROUMA</span></p>
+            <p class="text-[10px] text-black font-black uppercase italic tracking-tighter">Directeur Fondateur : <span class="text-xs uppercase">Moustapha KOUROUMA</span></p>
         </div>
     </header>
 
-    <div id="contact-panel" class="hidden bg-slate-900 border-b border-yellow-600 p-4 shadow-2xl">
-        <h3 class="text-yellow-500 font-bold text-xs uppercase mb-3"><i class="fas fa-handshake mr-2"></i>Partenaires & Contact</h3>
-        <div class="grid grid-cols-2 gap-4 text-[10px] text-gray-300">
-            <div class="bg-slate-800 p-2 rounded border border-slate-700">
-                <p class="font-bold text-white uppercase mb-1 underline">Pharmacopée :</p>
-                - Plantes Médicinales<br>- Remèdes Ancestraux<br>- Phytothérapie IA
-            </div>
-            <div class="bg-slate-800 p-2 rounded border border-slate-700">
-                <p class="font-bold text-white uppercase mb-1 underline">Direction :</p>
-                <i class="fab fa-whatsapp text-green-500"></i> WhatsApp DMS<br>
-                <i class="fas fa-map-marker-alt"></i> Diaspora Mondiale
-            </div>
+    <div id="contact-panel" class="hidden bg-slate-900 border-b border-yellow-600 p-4 shadow-2xl animate-fade-in text-center">
+        <h3 class="text-yellow-500 font-bold text-xs uppercase mb-3"><i class="fas fa-handshake mr-2"></i>PRENDRE CONTACT</h3>
+        <div class="flex justify-center">
+            <a href="https://wa.me/2207814179?text=Bonjour%20Directeur%20Kourouma,%20je%20viens%20de%20votre%20site%20DMS%20et%20j'aimerais%20une%20formation." target="_blank" class="bg-green-600 hover:bg-green-500 text-white font-bold py-3 px-6 rounded-xl flex items-center gap-3 shadow-xl transition-all active:scale-95">
+                <i class="fab fa-whatsapp text-2xl"></i>
+                <div class="text-left">
+                    <p class="text-[10px] uppercase opacity-80 leading-none">WhatsApp Gambie</p>
+                    <p class="text-lg leading-tight">+220 781 41 79</p>
+                </div>
+            </a>
         </div>
+        <p class="text-[9px] text-gray-500 mt-3 italic text-yellow-600 underline decoration-yellow-900">Directeur Général DMS : Moustapha Kourouma</p>
     </div>
 
     <div id="chat-box" class="flex-grow p-4 overflow-y-auto space-y-4 bg-black" style="height: 60vh; background-image: radial-gradient(#1e293b 0.5px, transparent 0.5px); background-size: 20px 20px;">
         <div class="bg-slate-800 p-4 rounded-2xl rounded-tl-none border border-slate-700 max-w-[90%] shadow-xl">
             <p class="text-[10px] font-black text-yellow-500 mb-2 uppercase italic tracking-widest">🦁 DMS EXPERT :</p>
             <p class="text-sm text-gray-100 leading-relaxed font-light italic">
-                Bonjour Monsieur le Directeur. Le Lion est prêt pour la formation en **Pharmacopée Africaine**. Demandez-moi la date ou un conseil santé.
+                Bonjour Monsieur le Directeur. Le système est corrigé avec l'indicatif **Gambie (+220)**. Le Lion est prêt.
             </p>
         </div>
     </div>
 
     <footer class="p-4 bg-slate-900 border-t border-yellow-600/30 sticky bottom-0">
         <form id="chat-form" class="flex gap-2">
-            <input type="text" id="user-input" placeholder="Tension, Puissance, Date..." class="flex-grow bg-slate-950 border border-slate-800 p-4 rounded-xl text-white outline-none focus:border-yellow-500 text-sm">
-            <button type="submit" class="bg-yellow-600 w-14 h-14 rounded-xl flex items-center justify-center hover:bg-yellow-500 shadow-lg">
+            <input type="text" id="user-input" placeholder="Tension, Puissance, Hello..." class="flex-grow bg-slate-950 border border-slate-800 p-4 rounded-xl text-white outline-none focus:border-yellow-500 text-sm">
+            <button type="submit" class="bg-yellow-600 w-14 h-14 rounded-xl flex items-center justify-center hover:bg-yellow-500 active:scale-95 transition-all shadow-lg">
                 <i class="fas fa-paper-plane text-xl text-black"></i>
             </button>
         </form>
@@ -84,12 +85,15 @@
         updateClock();
 
         const dmsKnowledge = {
-            "sexuelle": "CONSEIL PHARMACOPÉE : La vitalité dépend de la circulation. Utilisez le Petit Cola et le Gingembre.",
-            "puissance": "FORMATION TRADITIONNELLE : Le souchet et le miel pur renforcent l'énergie masculine.",
-            "emeric": "MÉDECINE AFRICAINE : Contre les hémorroïdes (Emeric), le tamarin est souverain.",
-            "tension": "PRÉVENTION DMS : Le Bissap rouge est le régulateur naturel de la tension.",
-            "hello": "Hello! I am the DMS Health Lion. Ask me about African medicine.",
-            "bonjour": "Bonjour ! Le Lion de la santé est à votre service."
+            "bonjour": "Bonjour ! Le Lion de DMS est à votre service pour la Médecine Traditionnelle.",
+            "hello": "Hello! I am the DMS Lion. Ready for your training.",
+            "good morning": "Good morning! Welcome to Diaspora Mondial Santé training.",
+            "sexuelle": "CONSEIL PHARMACOPÉE : La vitalité masculine dépend de la circulation. Utilisez le Petit Cola et le Gingembre.",
+            "puissance": "FORMATION TRADITIONNELLE : Le souchet et le miel pur renforcent l'énergie ancestrale.",
+            "emeric": "MÉDECINE AFRICAINE : Pour les hémorroïdes (Emeric), le tamarin est le remède phare.",
+            "tension": "PRÉVENTION DMS : Le Bissap rouge sans sucre régule la tension artérielle.",
+            "power": "AFRICAN PHARMACOPOEIA: Tiger Nuts and pure honey for male vitality.",
+            "date": "Aujourd'hui nous sommes le " + new Date().toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) + "."
         };
 
         const form = document.getElementById('chat-form');
@@ -102,28 +106,19 @@
             const msg = rawMsg.toLowerCase();
             if(!msg) return;
 
-            box.innerHTML += `<div class="flex justify-end mb-4"><div class="bg-yellow-700 p-4 rounded-2xl rounded-tl-none max-w-[85%] text-sm text-black font-medium">${rawMsg}</div></div>`;
+            box.innerHTML += `<div class="flex justify-end mb-4 animate-fade-in"><div class="relative bg-yellow-700 p-4 rounded-2xl rounded-tl-none max-w-[85%] text-sm text-black font-medium">${rawMsg}</div></div>`;
             
             setTimeout(() => {
-                let response = "Analyse en cours... Précisez : Tension, Puissance, Pharmacopée ou Date.";
-                
-                if(msg.includes("date") || msg.includes("aujourd'hui") || msg.includes("today")) {
-                    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                    response = "Aujourd'hui nous sommes le " + new Date().toLocaleDateString('fr-FR', options) + ".";
+                let response = "L'expert DMS analyse... Mentionnez un mot-clé (Tension, Puissance, Date).";
+                for(let key in dmsKnowledge) {
+                    if(msg.includes(key)) { response = dmsKnowledge[key]; break; }
                 }
-                else if(msg.includes("heure") || msg.includes("time")) {
-                    response = "Il est actuellement " + new Date().toLocaleTimeString('fr-FR') + ".";
-                }
-                else {
-                    for(let key in dmsKnowledge) {
-                        if(msg.includes(key)) { response = dmsKnowledge[key]; break; }
-                    }
-                }
+                if(msg.includes("heure") || msg.includes("time")) response = "Il est actuellement " + new Date().toLocaleTimeString('fr-FR') + ".";
 
                 box.innerHTML += `
-                    <div class="flex justify-start mb-4">
-                        <div class="bg-slate-900 p-4 rounded-2xl rounded-tl-none border-l-4 border-yellow-500 max-w-[85%] shadow-2xl border border-slate-800">
-                            <p class="text-[10px] text-yellow-500 font-black mb-1 uppercase italic">DMS RÉPONSE</p>
+                    <div class="flex justify-start mb-4 animate-fade-in">
+                        <div class="relative bg-slate-900 p-4 rounded-2xl rounded-tl-none border-l-4 border-yellow-500 max-w-[85%] shadow-2xl border border-slate-800">
+                            <p class="text-[10px] text-yellow-500 font-black mb-1 uppercase italic underline decoration-yellow-900">DMS RÉPONSE</p>
                             <p class="text-sm text-gray-200">${response}</p>
                         </div>
                     </div>`;
@@ -133,4 +128,4 @@
         };
     </script>
 </body>
-    </html>
+</html>
