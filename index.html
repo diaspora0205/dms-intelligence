@@ -3,38 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIASPORA MONDIAL SANTÉ</title>
+    <title>DIASPORA MONDIAL SANTÉ | Expert IA</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body class="bg-slate-950 text-white font-sans min-h-screen flex flex-col">
 
-    <header class="p-4 bg-slate-900 border-b-2 border-yellow-600 flex justify-between items-center shadow-2xl">
+    <header class="p-4 bg-slate-900 border-b-2 border-yellow-600 flex justify-between items-center shadow-2xl sticky top-0 z-50">
         <div class="flex items-center gap-2">
             <i class="fas fa-lion text-yellow-500 text-3xl"></i>
             <div>
                 <h1 class="font-bold text-lg uppercase tracking-tighter text-yellow-500">DIASPORA MONDIAL SANTÉ</h1>
-                <p class="text-[9px] text-gray-400 font-bold uppercase">Expertise & Pharmacopée Africaine</p>
+                <p class="text-[9px] text-gray-400 font-bold uppercase tracking-widest">Expertise Africaine & IA</p>
             </div>
         </div>
-        <div class="bg-green-600 text-white px-2 py-1 rounded text-[10px] font-bold animate-pulse">SANTÉ LIVE</div>
+        <div class="flex flex-col items-end text-[8px] font-bold text-green-500 uppercase">
+            <span class="animate-pulse">● Système Actif</span>
+            <span class="text-gray-500 italic">Dir. M. Kourouma</span>
+        </div>
     </header>
 
-    <div id="chat-box" class="flex-grow p-4 overflow-y-auto space-y-4" style="height: 75vh; background: url('https://www.transparenttextures.com/patterns/dark-matter.png');">
+    <div id="chat-box" class="flex-grow p-4 overflow-y-auto space-y-4 bg-black" style="height: 75vh; background-image: radial-gradient(#1e293b 0.5px, transparent 0.5px); background-size: 20px 20px;">
         <div class="bg-slate-800 p-4 rounded-2xl rounded-tl-none border border-slate-700 max-w-[90%] shadow-xl">
-            <p class="text-sm font-bold text-yellow-500 mb-1">🦁 EXPERT DMS :</p>
-            <p class="text-sm text-gray-200 leading-relaxed">
-                Bonjour Monsieur le Directeur **Moustapha Kourouma**. Votre système est opérationnel. 
-                Je suis l'IA de Diaspora Mondial Santé. Posez votre question sur une plante ou un traitement, je vous répondrai immédiatement.
+            <p class="text-[10px] font-black text-yellow-500 mb-2 uppercase tracking-widest italic">🦁 EXPERTISE DMS :</p>
+            <p class="text-sm text-gray-100 leading-relaxed font-light">
+                Bonjour Monsieur le Directeur. Le Lion est prêt. J'ai intégré les conseils sur la **Puissance Sexuelle** et les **Hémorroïdes** (Emeric). Posez votre question.
             </p>
         </div>
     </div>
 
-    <footer class="p-4 bg-slate-900 border-t border-yellow-600/30">
+    <footer class="p-4 bg-slate-900 border-t border-yellow-600/30 sticky bottom-0">
         <form id="chat-form" class="flex gap-2">
-            <input type="text" id="user-input" placeholder="Demandez un conseil de santé..." class="flex-grow bg-black border border-slate-700 p-4 rounded-xl text-white outline-none focus:border-yellow-500">
-            <button type="submit" class="bg-yellow-600 w-14 h-14 rounded-xl flex items-center justify-center hover:bg-yellow-500 transition-all">
-                <i class="fas fa-paper-plane text-xl"></i>
+            <input type="text" id="user-input" placeholder="Maladie, Plante, Vitalité..." class="flex-grow bg-slate-950 border border-slate-800 p-4 rounded-xl text-white outline-none focus:border-yellow-500 text-sm">
+            <button type="submit" class="bg-yellow-600 w-14 h-14 rounded-xl flex items-center justify-center hover:bg-yellow-500 active:scale-95 transition-all">
+                <i class="fas fa-paper-plane text-xl text-black"></i>
             </button>
         </form>
     </footer>
@@ -44,49 +46,52 @@
         const box = document.getElementById('chat-box');
         const input = document.getElementById('user-input');
 
-        // L'IA QUI RÉPOND SANS INTERNET (100% GRATUIT)
-        const reponses = {
-            "bonsoir": "Bonsoir cher membre de la Diaspora. Comment puis-je vous aider pour votre santé aujourd'hui ?",
-            "bonjour": "Bonjour. Diaspora Mondial Santé est à votre écoute. Que souhaitez-vous savoir ?",
-            "paludisme": "Le paludisme demande une prise en charge rapide. La pharmacopée africaine propose l'Artemisia, mais consultez toujours un centre agréé DMS.",
-            "plantes": "Nous répertorions plus de 500 plantes médicinales. Quelle plante vous intéresse ?",
-            "dms": "Diaspora Mondial Santé est la vision du Directeur Kourouma pour unir la technologie et la médecine traditionnelle.",
-            "aide": "Je peux vous conseiller sur les plantes, l'hygiène de vie et l'orientation médicale."
+        const dmsKnowledge = {
+            "bonsoir": "Bonsoir ! DMS vous souhaite une excellente soirée. Votre santé est notre priorité.",
+            "bonjour": "Bonjour ! Je suis le Lion de la santé. Quelle est votre préoccupation aujourd'hui ?",
+            "sexuelle": "La puissance sexuelle dépend souvent de la circulation sanguine et du stress. Le Petit Cola (Garcinia Kola), le gingembre et le clou de girofle sont excellents en pharmacopée. Évitez l'alcool et le tabac.",
+            "puissance": "Pour la vitalité masculine, une bonne alimentation est clé. Le souchet (Tiger Nut) et le miel pur sont des alliés naturels. DMS recommande aussi le sport régulier.",
+            "emeric": "Les hémorroïdes (Emeric/Kôkô) sont liées à la digestion. Consommez beaucoup de fibres (fruits, légumes) et d'eau. Les bains de siège tièdes soulagent. Évitez les piments forts.",
+            "hémorroïdes": "Contre les hémorroïdes, évitez la constipation. Le 'Kôkô' se traite bien avec des plantes régulatrices du transit comme le tamarin. Consultez pour les cas sévères.",
+            "paludisme": "Contre le paludisme, l'Artemisia est une référence en infusion. Surveillez la fièvre et contactez un centre DMS si nécessaire.",
+            "tension": "Pour la tension, réduisez le sel. Le bissap rouge (hibiscus) sans sucre aide à réguler la pression artérielle.",
+            "diabète": "Pour le diabète, privilégiez les aliments amers. Le Neem et le Moringa sont très utiles pour stabiliser le sucre.",
+            "moringa": "Le Moringa est l'arbre de vie. Il contient plus de vitamines que l'orange et plus de fer que les épinards. Un trésor DMS.",
+            "fatigue": "La fatigue chronique peut être traitée par une cure de Moringa ou de jus de Baobab. Reposez-vous suffisamment.",
+            "estomac": "Pour les douleurs d'estomac, le gel d'Aloe Vera est miraculeux pour tapisser les parois digestives.",
+            "dms": "Diaspora Mondial Santé est la vision panafricaine du Directeur Kourouma pour une santé accessible à tous.",
+            "plantes": "Moringa, Petit Cola, Neem, Gingembre, Artemisia... laquelle souhaitez-vous découvrir ?",
+            "toux": "Un mélange de miel pur et de citron reste le meilleur remède naturel contre la toux."
         };
 
         form.onsubmit = (e) => {
             e.preventDefault();
-            const msg = input.value.trim().toLowerCase();
+            const rawMsg = input.value.trim();
+            const msg = rawMsg.toLowerCase();
             if(!msg) return;
 
-            // Message Utilisateur
-            box.innerHTML += `<div class="flex justify-end mb-4"><div class="bg-yellow-700 p-4 rounded-2xl rounded-tr-none max-w-[85%] text-sm shadow-md font-medium">${input.value}</div></div>`;
-            
+            box.innerHTML += `<div class="flex justify-end mb-4"><div class="bg-yellow-700 p-4 rounded-2xl rounded-tr-none max-w-[85%] text-sm shadow-md text-black font-medium">${rawMsg}</div></div>`;
             const loader = document.createElement('div');
-            loader.className = "text-yellow-500 text-[10px] italic mb-4 animate-pulse uppercase font-bold";
-            loader.innerText = "Le Lion analyse votre demande...";
+            loader.className = "text-yellow-500 text-[10px] italic mb-4 animate-pulse uppercase font-black tracking-widest";
+            loader.innerHTML = '<i class="fas fa-spinner animate-spin mr-2"></i>Analyse DMS...';
             box.appendChild(loader);
             input.value = '';
             box.scrollTop = box.scrollHeight;
 
             setTimeout(() => {
                 loader.remove();
-                let r = "Votre demande a été enregistrée par l'expert DMS. Nous analysons la meilleure plante pour votre situation. Continuez à poser vos questions.";
-                
-                // Chercher si on a une réponse précise
-                for(let cle in reponses) {
-                    if(msg.includes(cle)) { r = reponses[cle]; break; }
-                }
+                let response = "L'expert DMS a bien reçu votre message. Précisez votre recherche (ex: Tension, Puissance, Emeric) pour un conseil immédiat.";
+                for(let key in dmsKnowledge) { if(msg.includes(key)) { response = dmsKnowledge[key]; break; } }
 
                 box.innerHTML += `
                     <div class="flex justify-start mb-4">
-                        <div class="bg-slate-800 p-4 rounded-2xl rounded-tl-none border-l-4 border-yellow-500 max-w-[85%] shadow-xl">
-                            <p class="text-[10px] text-yellow-500 font-black mb-1 tracking-widest uppercase italic">Réponse Expert DMS</p>
-                            <p class="text-sm text-gray-200 leading-relaxed font-light">${r}</p>
+                        <div class="bg-slate-900 p-4 rounded-2xl rounded-tl-none border-l-4 border-yellow-500 max-w-[85%] shadow-2xl border border-slate-800">
+                            <p class="text-[10px] text-yellow-500 font-black mb-1 tracking-widest uppercase italic">RÉPONSE OFFICIELLE DMS</p>
+                            <p class="text-sm text-gray-200 leading-relaxed font-light">${response}</p>
                         </div>
                     </div>`;
                 box.scrollTop = box.scrollHeight;
-            }, 1500);
+            }, 1000);
         };
     </script>
 </body>
