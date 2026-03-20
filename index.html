@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DMS | Médecine Traditionnelle Intégrée AI</title>
+    <title>DMS | Médecine Traditionnelle Intégrée</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
         .animate-scroll { display: inline-block; white-space: nowrap; animation: scroll 20s linear infinite; }
-        .site-bg { background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%); }
-        .message-ai { background: #ffffff; color: #000000; border-left: 6px solid #eab308; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+        .site-bg { background: #0f172a; }
+        .message-ai { background: #ffffff; color: #000000; border-left: 8px solid #eab308; box-shadow: 0 10px 20px rgba(0,0,0,0.4); width: 95%; margin-bottom: 20px; }
     </style>
 </head>
 <body class="site-bg text-white font-sans min-h-screen flex flex-col">
@@ -18,47 +18,42 @@
     <header class="p-4 bg-slate-900 border-b-4 border-yellow-600 shadow-2xl sticky top-0 z-50">
         <div class="flex justify-between items-center mb-2">
             <div class="flex items-center gap-3">
-                <i class="fas fa-lion text-yellow-500 text-4xl shadow-lg"></i>
+                <i class="fas fa-lion text-yellow-500 text-4xl"></i>
                 <div>
                     <h1 class="font-black text-xl uppercase tracking-tighter text-yellow-500 italic">DIASPORA MONDIAL SANTÉ</h1>
                     <p class="text-[10px] text-yellow-100 font-bold uppercase tracking-widest">MÉDECINE TRADITIONNELLE INTÉGRÉE IA</p>
                 </div>
             </div>
-            <div class="text-right">
-                <div id="live-clock" class="text-xs text-yellow-400 font-mono font-bold">--:--:--</div>
-            </div>
+            <div id="live-clock" class="text-xs text-yellow-400 font-mono font-bold">--:--:--</div>
         </div>
-        
-        <div class="bg-yellow-600 py-1 overflow-hidden rounded-lg">
+        <div class="bg-yellow-600 py-1 overflow-hidden rounded-lg text-center">
             <div class="animate-scroll text-[11px] font-black text-black uppercase">
-                 🦁 15 PILIERS DE SANTÉ ACTIVÉS • GAMBIA : +220 781 41 79 • DIRECTEUR MOUSTAPHA KOUROUMA • DMS IA V3 🦁
+                 🦁 15 PILIERS DE SANTÉ ACTIVÉS • GAMBIA : +220 781 41 79 • DIRECTEUR MOUSTAPHA KOUROUMA • DMS IA 🦁
             </div>
         </div>
-
         <div class="mt-2 bg-white p-2 rounded shadow-xl text-center border-2 border-yellow-500">
-            <p class="text-[11px] text-black font-black uppercase tracking-tighter italic">DIRECTEUR FONDATEUR : <span class="text-sm">Moustapha KOUROUMA</span></p>
+            <p class="text-[11px] text-black font-black uppercase tracking-tighter italic">DIRECTEUR FONDATEUR : <span class="text-sm italic">Moustapha KOUROUMA</span></p>
         </div>
     </header>
 
-    <div id="chat-box" class="flex-grow p-4 overflow-y-auto space-y-6" style="height: 55vh;">
-        <div class="bg-slate-800 p-5 rounded-2xl border border-yellow-600/50 max-w-[95%]">
-            <p class="text-[11px] font-black text-yellow-500 mb-2 uppercase italic tracking-widest underline italic">🦁 EXPERT DMS TITANE :</p>
+    <div id="chat-box" class="flex-grow p-4 overflow-y-auto space-y-6" style="height: 58vh;">
+        <div class="bg-slate-800 p-5 rounded-2xl border border-yellow-600/50">
+            <p class="text-[10px] font-black text-yellow-500 mb-2 uppercase underline italic tracking-widest">🦁 EXPERT DMS TITANE :</p>
             <p class="text-sm text-gray-100 font-bold leading-relaxed">
-                Bonjour Monsieur le Directeur Kourouma. Le moteur 15 piliers est prêt. <br><br>
-                Je traite : **Hémorroïdes (Maurice), Paludisme, Impuissance, Diabète, Tension, Vision, Estomac, Prostate, Sommeil, Poids, Fertilité, Nerfs, Mémoire, Asthme, Peau.**
+                Bonjour Monsieur le Directeur. Posez votre question sur nos 15 spécialités (Hémorroïdes, Diabète, Paludisme, Tension, Puissance, etc).
             </p>
         </div>
     </div>
 
     <footer class="p-4 bg-slate-900 border-t-2 border-yellow-600 sticky bottom-0">
         <form id="chat-form" class="flex gap-3 mb-3">
-            <input type="text" id="user-input" autocomplete="off" placeholder="Écrivez le nom de la maladie..." class="flex-grow bg-white border-2 border-yellow-500 p-4 rounded-2xl text-black font-black text-sm outline-none">
+            <input type="text" id="user-input" autocomplete="off" placeholder="Écrivez ici (Ex: Diabète)..." class="flex-grow bg-white border-2 border-yellow-500 p-4 rounded-2xl text-black font-black text-sm outline-none">
             <button type="submit" class="bg-yellow-500 w-16 h-16 rounded-2xl flex items-center justify-center hover:bg-yellow-400 active:scale-90 shadow-xl transition-all">
                 <i class="fas fa-paper-plane text-2xl text-black"></i>
             </button>
         </form>
-        <button onclick="window.open('https://wa.me/2207814179')" class="w-full bg-green-600 text-white font-black py-4 rounded-2xl uppercase flex items-center justify-center gap-2 shadow-lg animate-pulse">
-            <i class="fab fa-whatsapp text-2xl"></i> WHATSAPP DU DIRECTEUR (+220)
+        <button onclick="window.open('https://wa.me/2207814179')" class="w-full bg-green-600 text-white font-black py-4 rounded-2xl uppercase flex items-center justify-center gap-2 shadow-lg">
+            <i class="fab fa-whatsapp text-2xl"></i> CONTACTER LE DIRECTEUR SUR WHATSAPP
         </button>
     </footer>
 
@@ -67,23 +62,21 @@
         setInterval(updateClock, 1000); updateClock();
 
         const dmsBrain = [
-            { keys: ["hem", "emo", "moru", "maurice", "koko", "emer"], resp: "🦁 **HÉMORROÏDES (KÔKÔ) :** Faire bouillir 500g de Tamarin mûr dans 2L d'eau. Boire 1 verre matin et soir. Purifie le ventre." },
-            { keys: ["palu", "malaria", "fiev"], resp: "🦁 **PALUDISME :** Infusion de feuilles d'Artemisia Annua. 3 tasses par jour pendant 7 jours. Radical contre la fièvre." },
-            { keys: ["impui", "puiss", "sex", "erect"], resp: "🦁 **IMPUISSANCE/VIGUEUR :** Mélange de Petit Cola, Gingembre et Ail pilés avec du Miel pur. 1 cuillère chaque matin." },
-            { keys: ["diab", "sucr"], resp: "🦁 **DIABÈTE :** Poudre de Moringa et graines de Fenugrec. 1 cuillère à café dans l'eau tiède avant les repas." },
-            { keys: ["tens", "hyper"], resp: "🦁 **TENSION :** Infusion de Bissap rouge (sans sucre). Boire frais tout au long de la journée. Supprimer le sel industriel." },
-            { keys: ["prostat", "urin"], resp: "🦁 **PROSTATE :** Consommer 1 poignée de graines de courge par jour et des tomates cuites." },
-            { keys: ["yeux", "visio", "vue"], resp: "🦁 **VISION :** Jus de Carotte frais tous les matins et consommer de la Myrtille. Reposer les yeux." },
-            { keys: ["estom", "ulcer", "gaz"], resp: "🦁 **ESTOMAC :** Jus de pomme de terre crue à jeun ou gel d'Aloe Vera pur." },
-            { keys: ["somm", "nuit"], resp: "🦁 **SOMMEIL :** Infusion de Citronnelle ou de Verveine à 20h. Calme l'esprit." },
-            { keys: ["poid", "ventr", "gros"], resp: "🦁 **POIDS :** Eau tiède + Citron + Gingembre le matin à jeun. Pas de repas après 19h." },
-            { keys: ["fert", "enf"], resp: "🦁 **FERTILITÉ :** Cure de Ginseng africain (Moundombal) et racines de Maca pour homme et femme." },
-            { keys: ["nerf", "stres"], resp: "🦁 **NERFS :** Magnésium naturel : Cacao pur (chocolat noir sans sucre) et infusions de Camomille." },
-            { keys: ["memo", "cerve"], resp: "🦁 **MÉMOIRE :** Infusion de feuilles de Ginkgo Biloba ou de Bacopa. Manger des noix." },
-            { keys: ["asthm", "resp"], resp: "🦁 **ASTHME :** Sirop maison : Jus d'oignon rouge + Miel pur. 1 cuillère matin et soir." },
-            { keys: ["peau", "bouton"], resp: "🦁 **PEAU :** Application de Beurre de Karité pur mélangé à l'huile de Neem." },
-            { keys: ["hello"], resp: "Hello Director Moustapha Kourouma! I am ready to help you with the 15 Health Pillars." },
-            { keys: ["morning"], resp: "Good Morning Director! The Lion is awake." }
+            { keys: ["hem", "emo", "koko", "emer", "maurice", "moru"], resp: "🦁 SOLUTION HÉMORROÏDES (KÔKÔ) : Faire bouillir 500g de Tamarin mûr dans 2L d'eau. Boire 1 verre matin et soir. Cela purifie le ventre et calme la douleur." },
+            { keys: ["palu", "malaria", "fiev"], resp: "🦁 SOLUTION PALUDISME : Infusion de feuilles d'Artemisia Annua. Buvez 3 tasses par jour pendant 7 jours. Très efficace contre la fièvre." },
+            { keys: ["diab", "sucr"], resp: "🦁 SOLUTION DIABÈTE : Mélangez la poudre de Moringa avec des graines de Fenugrec broyées. Prenez 1 cuillère à café dans de l'eau tiède avant chaque repas." },
+            { keys: ["impui", "puiss", "sex", "erect"], resp: "🦁 SOLUTION PUISSANCE MASCULINE : Écrasez du Petit Cola, du Gingembre et de l'Ail. Mélangez avec du Miel pur. Prenez 1 cuillère à soupe chaque matin." },
+            { keys: ["tens", "hyper"], resp: "🦁 SOLUTION TENSION : Buvez de l'infusion de Bissap rouge sans sucre tout au long de la journée. Réduisez le sel et les cubes de cuisine." },
+            { keys: ["prostat", "urin"], resp: "🦁 SOLUTION PROSTATE : Mangez une poignée de graines de courge chaque jour et consommez des tomates cuites pour protéger la prostate." },
+            { keys: ["yeux", "visio", "vue"], resp: "🦁 SOLUTION VISION : Prenez du jus de Carotte frais tous les matins et consommez régulièrement des Myrtilles pour renforcer la rétine." },
+            { keys: ["estom", "ulcer", "gaz"], resp: "🦁 SOLUTION ESTOMAC : Prenez du jus de pomme de terre crue à jeun le matin ou du gel d'Aloe Vera pur pour calmer l'acidité." },
+            { keys: ["somm", "nuit"], resp: "🦁 SOLUTION SOMMEIL : Préparez une infusion de Citronnelle ou de Verveine à boire 1 heure avant de dormir pour un repos profond." },
+            { keys: ["poid", "ventr", "gros"], resp: "🦁 SOLUTION POIDS : Buvez de l'eau tiède mélangée avec du Citron et du Gingembre chaque matin à jeun. Évitez de manger après 19h." },
+            { keys: ["fert", "enf"], resp: "🦁 SOLUTION FERTILITÉ : Utilisez une cure de Ginseng africain et de racines de Maca pour renforcer le système reproducteur." },
+            { keys: ["nerf", "stres"], resp: "🦁 SOLUTION NERFS ET STRESS : Consommez du Cacao pur sans sucre et buvez des infusions de Camomille pour détendre le système nerveux." },
+            { keys: ["memo", "cerve"], resp: "🦁 SOLUTION MÉMOIRE : Utilisez des infusions de feuilles de Ginkgo Biloba ou de Bacopa pour renforcer la concentration et la mémoire." },
+            { keys: ["asthm", "resp"], resp: "🦁 SOLUTION ASTHME : Préparez un sirop naturel avec du jus d'oignon rouge et du Miel pur. Prenez 1 cuillère matin et soir." },
+            { keys: ["peau", "bouton"], resp: "🦁 SOLUTION PEAU : Appliquez du Beurre de Karité pur mélangé à quelques gouttes d'huile de Neem sur les zones concernées." }
         ];
 
         const form = document.getElementById('chat-form');
@@ -95,16 +88,17 @@
             let raw = input.value.trim();
             if(!raw) return;
             let clean = raw.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            
             box.innerHTML += `<div class="flex justify-end mb-4"><div class="bg-yellow-500 p-3 rounded-2xl rounded-tr-none text-sm text-black font-black">${raw}</div></div>`;
             
             setTimeout(() => {
-                let response = "L'Expert DMS analyse... Posez une question sur l'une des 15 maladies.";
+                let response = "L'Expert DMS analyse votre demande. Précisez votre problème (Ex: Tension, Diabète, Puissance).";
                 const match = dmsBrain.find(item => item.keys.some(k => clean.includes(k)));
                 if(match) response = match.resp;
                 
                 box.innerHTML += `
                     <div class="flex justify-start mb-4">
-                        <div class="message-ai p-4 rounded-2xl rounded-tl-none max-w-[90%] shadow-xl">
+                        <div class="message-ai p-5 rounded-2xl rounded-tl-none">
                             <p class="text-[10px] text-yellow-600 font-black mb-1 uppercase tracking-widest italic">RÉPONSE DMS OFFICIELLE :</p>
                             <p class="text-sm leading-relaxed font-bold">${response}</p>
                         </div>
