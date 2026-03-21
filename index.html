@@ -3,110 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DMS | Médecine Traditionnelle Intégrée</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>DMS INTELLIGENCE - 30 SPÉCIALITÉS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
-        .animate-scroll { display: inline-block; white-space: nowrap; animation: scroll 20s linear infinite; }
-        .site-bg { background: #0f172a; }
-        .message-ai { background: #ffffff; color: #000000; border-left: 8px solid #eab308; box-shadow: 0 10px 20px rgba(0,0,0,0.4); width: 95%; margin-bottom: 20px; }
+        :root { --primary: #1b5e20; --gold: #ffd700; --accent: #d32f2f; }
+        body { font-family: 'Arial', sans-serif; margin: 0; background: #f0f2f1; color: #333; }
+        .lang-bar { background: #222; padding: 12px; text-align: center; border-bottom: 2px solid var(--gold); }
+        .btn-lang { background: var(--gold); border: none; padding: 10px 22px; font-weight: bold; border-radius: 8px; cursor: pointer; margin: 0 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.3); }
+        .header { background: var(--primary); color: white; padding: 30px; text-align: center; border-bottom: 5px solid var(--gold); }
+        .container { max-width: 750px; margin: 30px auto; padding: 25px; background: white; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        input { width: 100%; padding: 20px; border: 3px solid var(--primary); border-radius: 50px; font-size: 22px; outline: none; box-sizing: border-box; text-align: center; }
+        #result-box { margin-top: 30px; padding: 25px; background: #f9f9f9; border-left: 10px solid var(--gold); border-radius: 12px; display: none; font-size: 20px; line-height: 1.7; box-shadow: inset 0 2px 10px rgba(0,0,0,0.05); }
+        .wa-footer { text-align: center; margin: 40px 0; }
+        .wa-link { background: #25d366; color: white; padding: 18px 40px; text-decoration: none; border-radius: 60px; font-weight: bold; font-size: 20px; display: inline-block; transition: 0.3s; }
+        .wa-link:hover { transform: translateY(-5px); background: #128c7e; }
+        .badge { background: var(--accent); color: white; padding: 5px 15px; border-radius: 20px; font-size: 16px; }
     </style>
 </head>
-<body class="site-bg text-white font-sans min-h-screen flex flex-col">
+<body>
 
-    <header class="p-4 bg-slate-900 border-b-4 border-yellow-600 shadow-2xl sticky top-0 z-50">
-        <div class="flex justify-between items-center mb-2">
-            <div class="flex items-center gap-3">
-                <i class="fas fa-lion text-yellow-500 text-4xl"></i>
-                <div>
-                    <h1 class="font-black text-xl uppercase tracking-tighter text-yellow-500 italic">DIASPORA MONDIAL SANTÉ</h1>
-                    <p class="text-[10px] text-yellow-100 font-bold uppercase tracking-widest">MÉDECINE TRADITIONNELLE INTÉGRÉE IA</p>
-                </div>
-            </div>
-            <div id="live-clock" class="text-xs text-yellow-400 font-mono font-bold">--:--:--</div>
-        </div>
-        <div class="bg-yellow-600 py-1 overflow-hidden rounded-lg text-center">
-            <div class="animate-scroll text-[11px] font-black text-black uppercase">
-                 🦁 15 PILIERS DE SANTÉ ACTIVÉS • GAMBIA : +220 781 41 79 • DIRECTEUR MOUSTAPHA KOUROUMA • DMS IA 🦁
-            </div>
-        </div>
-        <div class="mt-2 bg-white p-2 rounded shadow-xl text-center border-2 border-yellow-500">
-            <p class="text-[11px] text-black font-black uppercase tracking-tighter italic">DIRECTEUR FONDATEUR : <span class="text-sm italic">Moustapha KOUROUMA</span></p>
-        </div>
-    </header>
+<div class="lang-bar">
+    <button class="btn-lang" onclick="changeLang('fr')">FRANÇAIS 🇫🇷</button>
+    <button class="btn-lang" onclick="changeLang('en')">ENGLISH 🇬🇧</button>
+</div>
 
-    <div id="chat-box" class="flex-grow p-4 overflow-y-auto space-y-6" style="height: 58vh;">
-        <div class="bg-slate-800 p-5 rounded-2xl border border-yellow-600/50">
-            <p class="text-[10px] font-black text-yellow-500 mb-2 uppercase underline italic tracking-widest">🦁 EXPERT DMS TITANE :</p>
-            <p class="text-sm text-gray-100 font-bold leading-relaxed">
-                Bonjour Monsieur le Directeur. Posez votre question sur nos 15 spécialités (Hémorroïdes, Diabète, Paludisme, Tension, Puissance, etc).
-            </p>
-        </div>
-    </div>
+<div class="header">
+    <h1>🦁 DMS INTELLIGENCE <span class="badge">PRO 30</span></h1>
+    <p id="sub-title">Expertise en Pharmacopée Africaine</p>
+</div>
 
-    <footer class="p-4 bg-slate-900 border-t-2 border-yellow-600 sticky bottom-0">
-        <form id="chat-form" class="flex gap-3 mb-3">
-            <input type="text" id="user-input" autocomplete="off" placeholder="Écrivez ici (Ex: Diabète)..." class="flex-grow bg-white border-2 border-yellow-500 p-4 rounded-2xl text-black font-black text-sm outline-none">
-            <button type="submit" class="bg-yellow-500 w-16 h-16 rounded-2xl flex items-center justify-center hover:bg-yellow-400 active:scale-90 shadow-xl transition-all">
-                <i class="fas fa-paper-plane text-2xl text-black"></i>
-            </button>
-        </form>
-        <button onclick="window.open('https://wa.me/2207814179')" class="w-full bg-green-600 text-white font-black py-4 rounded-2xl uppercase flex items-center justify-center gap-2 shadow-lg">
-            <i class="fab fa-whatsapp text-2xl"></i> CONTACTER LE DIRECTEUR SUR WHATSAPP
-        </button>
-    </footer>
+<div class="container">
+    <h2 id="ask-text" style="text-align: center;">Quelle est votre maladie ?</h2>
+    <input type="text" id="searchInput" placeholder="..." onkeyup="analyser()">
+    <div id="result-box"></div>
+</div>
 
-    <script>
-        function updateClock() { document.getElementById('live-clock').innerText = new Date().toLocaleTimeString('fr-FR'); }
-        setInterval(updateClock, 1000); updateClock();
+<div class="wa-footer">
+    <a href="https://wa.me/220XXXXXXXX" id="wa-text" class="wa-link">
+        <i class="fab fa-whatsapp"></i> CONTACTER LE DIRECTEUR
+    </a>
+</div>
 
-        const dmsBrain = [
-            { keys: ["hem", "emo", "koko", "emer", "maurice", "moru"], resp: "🦁 SOLUTION HÉMORROÏDES (KÔKÔ) : Faire bouillir 500g de Tamarin mûr dans 2L d'eau. Boire 1 verre matin et soir. Cela purifie le ventre et calme la douleur." },
-            { keys: ["palu", "malaria", "fiev"], resp: "🦁 SOLUTION PALUDISME : Infusion de feuilles d'Artemisia Annua. Buvez 3 tasses par jour pendant 7 jours. Très efficace contre la fièvre." },
-            { keys: ["diab", "sucr"], resp: "🦁 SOLUTION DIABÈTE : Mélangez la poudre de Moringa avec des graines de Fenugrec broyées. Prenez 1 cuillère à café dans de l'eau tiède avant chaque repas." },
-            { keys: ["impui", "puiss", "sex", "erect"], resp: "🦁 SOLUTION PUISSANCE MASCULINE : Écrasez du Petit Cola, du Gingembre et de l'Ail. Mélangez avec du Miel pur. Prenez 1 cuillère à soupe chaque matin." },
-            { keys: ["tens", "hyper"], resp: "🦁 SOLUTION TENSION : Buvez de l'infusion de Bissap rouge sans sucre tout au long de la journée. Réduisez le sel et les cubes de cuisine." },
-            { keys: ["prostat", "urin"], resp: "🦁 SOLUTION PROSTATE : Mangez une poignée de graines de courge chaque jour et consommez des tomates cuites pour protéger la prostate." },
-            { keys: ["yeux", "visio", "vue"], resp: "🦁 SOLUTION VISION : Prenez du jus de Carotte frais tous les matins et consommez régulièrement des Myrtilles pour renforcer la rétine." },
-            { keys: ["estom", "ulcer", "gaz"], resp: "🦁 SOLUTION ESTOMAC : Prenez du jus de pomme de terre crue à jeun le matin ou du gel d'Aloe Vera pur pour calmer l'acidité." },
-            { keys: ["somm", "nuit"], resp: "🦁 SOLUTION SOMMEIL : Préparez une infusion de Citronnelle ou de Verveine à boire 1 heure avant de dormir pour un repos profond." },
-            { keys: ["poid", "ventr", "gros"], resp: "🦁 SOLUTION POIDS : Buvez de l'eau tiède mélangée avec du Citron et du Gingembre chaque matin à jeun. Évitez de manger après 19h." },
-            { keys: ["fert", "enf"], resp: "🦁 SOLUTION FERTILITÉ : Utilisez une cure de Ginseng africain et de racines de Maca pour renforcer le système reproducteur." },
-            { keys: ["nerf", "stres"], resp: "🦁 SOLUTION NERFS ET STRESS : Consommez du Cacao pur sans sucre et buvez des infusions de Camomille pour détendre le système nerveux." },
-            { keys: ["memo", "cerve"], resp: "🦁 SOLUTION MÉMOIRE : Utilisez des infusions de feuilles de Ginkgo Biloba ou de Bacopa pour renforcer la concentration et la mémoire." },
-            { keys: ["asthm", "resp"], resp: "🦁 SOLUTION ASTHME : Préparez un sirop naturel avec du jus d'oignon rouge et du Miel pur. Prenez 1 cuillère matin et soir." },
-            { keys: ["peau", "bouton"], resp: "🦁 SOLUTION PEAU : Appliquez du Beurre de Karité pur mélangé à quelques gouttes d'huile de Neem sur les zones concernées." }
-        ];
+<script>
+let lang = 'fr';
+const db = {
+    "avc": { fr: "Traitement : Rééducation avec massage aux huiles stimulantes et infusion circulatoire.", en: "Treatment: Rehab with stimulating oil massage and circulatory infusion." },
+    "prostate": { fr: "Soin : Racines de papayer mâle et graines de courge. Réduit l'inflammation.", en: "Care: Male papaya roots and pumpkin seeds. Reduces inflammation." },
+    "toux": { fr: "Remède : Sirop maison (Miel, Citron, Gingembre frais). 3 fois/jour.", en: "Remedy: Homemade syrup (Honey, Lemon, Fresh Ginger). 3 times/day." },
+    "sinusite": { fr: "Inhalation : Vapeur de feuilles d'eucalyptus et ail frais écrasé.", en: "Inhalation: Eucalyptus leaves steam and crushed fresh garlic." },
+    "maudiante": { fr: "Secret : Purification du sang avec écorces amères et racines DMS.", en: "Secret: Blood purification with bitter barks and DMS roots." },
+    "diabete": { fr: "Gestion : Infusion de feuilles de Neem et de graines de Moringa.", en: "Management: Neem leaves and Moringa seeds infusion." },
+    "tension": { fr: "Aide : Ail frais le matin et tisane de feuilles d'olivier.", en: "Help: Fresh garlic in the morning and olive leaf tea." },
+    "estomac": { fr: "Remède : Argile verte et jus d'aloe vera pur. Éviter l'acide.", en: "Remedy: Green clay and pure aloe vera juice. Avoid acid." },
+    "asthme": { fr: "Soin : Mélange miel, oignon rouge et ail. Éviter le froid.", en: "Care: Mixture of honey, red onion, and garlic. Avoid cold." },
+    "dent": { fr: "Soulagement : Mâcher un clou de girofle sur la zone douloureuse.", en: "Relief: Chew a clove on the painful area." },
+    "fertilite": { fr: "Boost : Mélange de racines toniques DMS (Homme et Femme).", en: "Boost: DMS tonic roots mix (Men & Women)." },
+    "faiblesse": { fr: "Énergie : Petit cola, gingembre et racines fortifiantes.", en: "Energy: Bitter kola, ginger, and strengthening roots." },
+    "hemorroide": { fr: "Soin : Bain de siège tiède et racines laxatives douces.", en: "Care: Warm sitz bath and gentle laxative roots." },
+    "kyste": { fr: "Traitement : Écorces drainantes et équilibre hormonal DMS.", en: "Treatment: Draining barks and DMS hormonal balance." },
+    "sciatique": { fr: "Massage : Huiles chaudes de plantes et repos sur surface plane.", en: "Massage: Warm plant oils and rest on a flat surface." },
+    "insomnie": { fr: "Calme : Infusion de citronnelle ou fleurs de camomille.", en: "Calm: Lemongrass or chamomile flowers infusion." },
+    "constipation": { fr: "Remède : Fibres végétales et infusion de Senna léger.", en: "Remedy: Vegetable fibers and light Senna infusion." },
+    "anemie": { fr: "Force : Jus de bissap rouge et mélasse riche en fer.", en: "Force: Red hibiscus juice and iron-rich molasses." },
+    "fibrome": { fr: "Soin : Décoction de racines spécifiques pour réduire les masses.", en: "Care: Specific root decoction to reduce masses." },
+    "hepatite": { fr: "Soutien : Plantes amères pour drainer le foie et repos.", en: "Support: Bitter plants to drain the liver and rest." },
+    "ulcere": { fr: "Soin : Jus de pomme de terre crue ou aloe vera le matin.", en: "Care: Raw potato juice or aloe vera in the morning." },
+    "typhoide": { fr: "Traitement : Écorces antibiotiques naturelles et beaucoup d'eau.", en: "Treatment: Natural antibiotic barks and plenty of water." },
+    "paludisme": { fr: "Remède : Artemisia ou feuilles de papayer en décoction.", en: "Remedy: Artemisia or papaya leaves in decoction." },
+    "peau": { fr: "Soin : Beurre de karité pur mélangé à l'huile de Neem.", en: "Care: Pure shea butter mixed with Neem oil." },
+    "memoire": { fr: "Boost : Noix de cajou et infusion de feuilles de bacopa.", en: "Boost: Cashew nuts and bacopa leaf infusion." },
+    "coeur": { fr: "Force : Aubépine et ail. Éviter les graisses animales.", en: "Force: Hawthorn and garlic. Avoid animal fats." },
+    "epilepsie": { fr: "Soutien : Racines apaisantes et suivi traditionnel DMS.", en: "Support: Soothing roots and DMS traditional follow-up." },
+    "rhumatisme": { fr: "Massage : Huile de gingembre et feuilles de laurier chaud.", en: "Massage: Ginger oil and warm laurel leaves." },
+    "obesite": { fr: "Aide : Thé vert, citron et racines brûle-graisse.", en: "Help: Green tea, lemon, and fat-burning roots." },
+    "infection": { fr: "Soin : Infusion de racines diurétiques et beaucoup d'eau.", en: "Care: Diuretic roots infusion and plenty of water." }
+};
 
-        const form = document.getElementById('chat-form');
-        const box = document.getElementById('chat-box');
-        const input = document.getElementById('user-input');
+function changeLang(l) {
+    lang = l;
+    document.getElementById('ask-text').innerText = (l === 'fr') ? "Quelle est votre maladie ?" : "What is your illness?";
+    document.getElementById('sub-title').innerText = (l === 'fr') ? "Expertise en Pharmacopée Africaine" : "African Pharmacopoeia Expertise";
+    document.getElementById('wa-text').innerHTML = (l === 'fr') ? '<i class="fab fa-whatsapp"></i> CONTACTER LE DIRECTEUR' : '<i class="fab fa-whatsapp"></i> CONTACT THE DIRECTOR';
+    analyser();
+}
 
-        form.onsubmit = (e) => {
-            e.preventDefault();
-            let raw = input.value.trim();
-            if(!raw) return;
-            let clean = raw.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-            
-            box.innerHTML += `<div class="flex justify-end mb-4"><div class="bg-yellow-500 p-3 rounded-2xl rounded-tr-none text-sm text-black font-black">${raw}</div></div>`;
-            
-            setTimeout(() => {
-                let response = "L'Expert DMS analyse votre demande. Précisez votre problème (Ex: Tension, Diabète, Puissance).";
-                const match = dmsBrain.find(item => item.keys.some(k => clean.includes(k)));
-                if(match) response = match.resp;
-                
-                box.innerHTML += `
-                    <div class="flex justify-start mb-4">
-                        <div class="message-ai p-5 rounded-2xl rounded-tl-none">
-                            <p class="text-[10px] text-yellow-600 font-black mb-1 uppercase tracking-widest italic">RÉPONSE DMS OFFICIELLE :</p>
-                            <p class="text-sm leading-relaxed font-bold">${response}</p>
-                        </div>
-                    </div>`;
-                box.scrollTop = box.scrollHeight;
-            }, 400);
-            input.value = '';
-        };
-    </script>
+function analyser() {
+    let input = document.getElementById('searchInput').value.toLowerCase().trim();
+    let box = document.getElementById('result-box');
+    if (input.length < 2) { box.style.display = 'none'; return; }
+    let res = "";
+    for (let k in db) {
+        if (input.includes(k) || k.includes(input)) {
+            res = "<strong>" + (lang === 'fr' ? "RÉSULTAT DMS : " : "DMS RESULT: ") + "</strong><br>" + db[k][lang];
+            break;
+        }
+    }
+    if (res !== "") { box.innerHTML = res; box.style.display = 'block'; }
+    else { box.style.display = 'none'; }
+}
+</script>
 </body>
 </html>
