@@ -3,103 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DMS INTELLIGENCE - 30 SPÉCIALITÉS</title>
+    <title>DIASPORA MONDIAL SANTÉ - IA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --primary: #1b5e20; --gold: #ffd700; --accent: #d32f2f; }
-        body { font-family: 'Arial', sans-serif; margin: 0; background: #f0f2f1; color: #333; }
-        .lang-bar { background: #222; padding: 12px; text-align: center; border-bottom: 2px solid var(--gold); }
-        .btn-lang { background: var(--gold); border: none; padding: 10px 22px; font-weight: bold; border-radius: 8px; cursor: pointer; margin: 0 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.3); }
-        .header { background: var(--primary); color: white; padding: 30px; text-align: center; border-bottom: 5px solid var(--gold); }
-        .container { max-width: 750px; margin: 30px auto; padding: 25px; background: white; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
-        input { width: 100%; padding: 20px; border: 3px solid var(--primary); border-radius: 50px; font-size: 22px; outline: none; box-sizing: border-box; text-align: center; }
-        #result-box { margin-top: 30px; padding: 25px; background: #f9f9f9; border-left: 10px solid var(--gold); border-radius: 12px; display: none; font-size: 20px; line-height: 1.7; box-shadow: inset 0 2px 10px rgba(0,0,0,0.05); }
-        .wa-footer { text-align: center; margin: 40px 0; }
-        .wa-link { background: #25d366; color: white; padding: 18px 40px; text-decoration: none; border-radius: 60px; font-weight: bold; font-size: 20px; display: inline-block; transition: 0.3s; }
-        .wa-link:hover { transform: translateY(-5px); background: #128c7e; }
-        .badge { background: var(--accent); color: white; padding: 5px 15px; border-radius: 20px; font-size: 16px; }
+        body { background-color: #0d1b2a; color: white; font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 10px; text-align: center; overflow-x: hidden; }
+        .header { border-bottom: 3px solid #ffb703; padding-bottom: 10px; margin-bottom: 15px; }
+        .title { color: #ffb703; font-style: italic; font-weight: bold; font-size: 22px; margin: 0; text-transform: uppercase; }
+        .subtitle { color: white; font-size: 12px; letter-spacing: 1px; margin: 5px 0; font-weight: bold; }
+        
+        /* LA BARRE DÉFILANTE (NEW) */
+        .scrolling-text { background: #ffb703; color: #0d1b2a; padding: 5px 0; font-weight: bold; font-size: 14px; margin-bottom: 10px; }
+        
+        .director { background: white; color: black; font-weight: bold; padding: 10px; border-radius: 8px; margin: 10px auto; border: 2px solid #ffb703; max-width: 95%; font-size: 15px; }
+        .lang-switch { margin-bottom: 10px; }
+        .btn-l { background: #ffb703; border: none; padding: 6px 15px; border-radius: 5px; font-weight: bold; cursor: pointer; margin: 3px; color: #0d1b2a; }
+        .chat-box { background: #1b263b; border-radius: 20px; padding: 15px; text-align: left; min-height: 100px; border: 1px solid #415a77; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        .bot-response { background: white; color: black; padding: 15px; border-radius: 12px; font-size: 17px; border-left: 6px solid #ffb703; line-height: 1.4; }
+        .input-wrap { display: flex; align-items: center; margin-top: 20px; gap: 10px; }
+        input { flex: 1; padding: 15px; border-radius: 12px; border: none; font-size: 16px; outline: none; background: #e0e1dd; color: #1b263b; font-weight: bold; }
+        .send-icon { background: #ffb703; border: none; width: 55px; height: 55px; border-radius: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #0d1b2a; }
+        .whatsapp-footer { background: #2dc653; color: white; display: flex; align-items: center; justify-content: center; padding: 15px; border-radius: 15px; text-decoration: none; font-weight: bold; margin: 15px auto; font-size: 16px; gap: 8px; border: 2px solid #fff; max-width: 95%; }
     </style>
 </head>
 <body>
 
-<div class="lang-bar">
-    <button class="btn-lang" onclick="changeLang('fr')">FRANÇAIS 🇫🇷</button>
-    <button class="btn-lang" onclick="changeLang('en')">ENGLISH 🇬🇧</button>
-</div>
-
 <div class="header">
-    <h1>🦁 DMS INTELLIGENCE <span class="badge">PRO 30</span></h1>
-    <p id="sub-title">Expertise en Pharmacopée Africaine</p>
+    <p class="title">DIASPORA MONDIAL SANTÉ</p>
+    <p class="subtitle">MÉDECINE TRADITIONNELLE INTÉGRÉE IA</p>
+    
+    <div class="scrolling-text">
+        <marquee behavior="scroll" direction="left">Bienvenue chez DMS - 30 Spécialités traitées : Prostate, AVC, Sinusite, Toux, Maudiate, Diabète, Fertilité... Contactez-nous pour vos remèdes bio !</marquee>
+    </div>
+
+    <div class="lang-switch">
+        <button class="btn-l" onclick="setLang('fr')">FRANÇAIS 🇫🇷</button>
+        <button class="btn-l" onclick="setLang('en')">ENGLISH 🇬🇧</button>
+    </div>
+    <div class="director">INITIATEUR : MOUSTAPHA KOUROUMA</div>
 </div>
 
-<div class="container">
-    <h2 id="ask-text" style="text-align: center;">Quelle est votre maladie ?</h2>
-    <input type="text" id="searchInput" placeholder="..." onkeyup="analyser()">
-    <div id="result-box"></div>
+<div class="chat-box">
+    <div id="output" class="bot-response">
+        <b>RÉPONSE DMS OFFICIELLE :</b><br>
+        Précisez votre maladie (Ex: Prostate, AVC, Toux) et cliquez sur l'avion jaune.
+    </div>
 </div>
 
-<div class="wa-footer">
-    <a href="https://wa.me/220XXXXXXXX" id="wa-text" class="wa-link">
-        <i class="fab fa-whatsapp"></i> CONTACTER LE DIRECTEUR
-    </a>
+<div class="input-wrap">
+    <input type="text" id="userInput" placeholder="Écrivez ici...">
+    <button class="send-icon" onclick="engine()"><i class="fas fa-paper-plane"></i></button>
 </div>
+
+<a href="https://wa.me/2207814179" class="whatsapp-footer">
+    <i class="fab fa-whatsapp"></i> WHATSAPP DIRECTEUR
+</a>
 
 <script>
-let lang = 'fr';
-const db = {
-    "avc": { fr: "Traitement : Rééducation avec massage aux huiles stimulantes et infusion circulatoire.", en: "Treatment: Rehab with stimulating oil massage and circulatory infusion." },
-    "prostate": { fr: "Soin : Racines de papayer mâle et graines de courge. Réduit l'inflammation.", en: "Care: Male papaya roots and pumpkin seeds. Reduces inflammation." },
+let L = 'fr';
+const DATA = {
+    "prostate": { fr: "Solution : Racines de papayer mâle et graines de courge. Réduit l'inflammation.", en: "Solution: Male papaya roots and pumpkin seeds. Reduces inflammation." },
+    "avc": { fr: "Aide : Rééducation, massage aux huiles stimulantes et décoction circulatoire.", en: "Help: Rehab, stimulating oil massage and circulatory decoction." },
     "toux": { fr: "Remède : Sirop maison (Miel, Citron, Gingembre frais). 3 fois/jour.", en: "Remedy: Homemade syrup (Honey, Lemon, Fresh Ginger). 3 times/day." },
-    "sinusite": { fr: "Inhalation : Vapeur de feuilles d'eucalyptus et ail frais écrasé.", en: "Inhalation: Eucalyptus leaves steam and crushed fresh garlic." },
-    "maudiante": { fr: "Secret : Purification du sang avec écorces amères et racines DMS.", en: "Secret: Blood purification with bitter barks and DMS roots." },
-    "diabete": { fr: "Gestion : Infusion de feuilles de Neem et de graines de Moringa.", en: "Management: Neem leaves and Moringa seeds infusion." },
-    "tension": { fr: "Aide : Ail frais le matin et tisane de feuilles d'olivier.", en: "Help: Fresh garlic in the morning and olive leaf tea." },
-    "estomac": { fr: "Remède : Argile verte et jus d'aloe vera pur. Éviter l'acide.", en: "Remedy: Green clay and pure aloe vera juice. Avoid acid." },
-    "asthme": { fr: "Soin : Mélange miel, oignon rouge et ail. Éviter le froid.", en: "Care: Mixture of honey, red onion, and garlic. Avoid cold." },
-    "dent": { fr: "Soulagement : Mâcher un clou de girofle sur la zone douloureuse.", en: "Relief: Chew a clove on the painful area." },
-    "fertilite": { fr: "Boost : Mélange de racines toniques DMS (Homme et Femme).", en: "Boost: DMS tonic roots mix (Men & Women)." },
-    "faiblesse": { fr: "Énergie : Petit cola, gingembre et racines fortifiantes.", en: "Energy: Bitter kola, ginger, and strengthening roots." },
-    "hemorroide": { fr: "Soin : Bain de siège tiède et racines laxatives douces.", en: "Care: Warm sitz bath and gentle laxative roots." },
-    "kyste": { fr: "Traitement : Écorces drainantes et équilibre hormonal DMS.", en: "Treatment: Draining barks and DMS hormonal balance." },
-    "sciatique": { fr: "Massage : Huiles chaudes de plantes et repos sur surface plane.", en: "Massage: Warm plant oils and rest on a flat surface." },
-    "insomnie": { fr: "Calme : Infusion de citronnelle ou fleurs de camomille.", en: "Calm: Lemongrass or chamomile flowers infusion." },
-    "constipation": { fr: "Remède : Fibres végétales et infusion de Senna léger.", en: "Remedy: Vegetable fibers and light Senna infusion." },
-    "anemie": { fr: "Force : Jus de bissap rouge et mélasse riche en fer.", en: "Force: Red hibiscus juice and iron-rich molasses." },
-    "fibrome": { fr: "Soin : Décoction de racines spécifiques pour réduire les masses.", en: "Care: Specific root decoction to reduce masses." },
-    "hepatite": { fr: "Soutien : Plantes amères pour drainer le foie et repos.", en: "Support: Bitter plants to drain the liver and rest." },
-    "ulcere": { fr: "Soin : Jus de pomme de terre crue ou aloe vera le matin.", en: "Care: Raw potato juice or aloe vera in the morning." },
-    "typhoide": { fr: "Traitement : Écorces antibiotiques naturelles et beaucoup d'eau.", en: "Treatment: Natural antibiotic barks and plenty of water." },
-    "paludisme": { fr: "Remède : Artemisia ou feuilles de papayer en décoction.", en: "Remedy: Artemisia or papaya leaves in decoction." },
-    "peau": { fr: "Soin : Beurre de karité pur mélangé à l'huile de Neem.", en: "Care: Pure shea butter mixed with Neem oil." },
-    "memoire": { fr: "Boost : Noix de cajou et infusion de feuilles de bacopa.", en: "Boost: Cashew nuts and bacopa leaf infusion." },
-    "coeur": { fr: "Force : Aubépine et ail. Éviter les graisses animales.", en: "Force: Hawthorn and garlic. Avoid animal fats." },
-    "epilepsie": { fr: "Soutien : Racines apaisantes et suivi traditionnel DMS.", en: "Support: Soothing roots and DMS traditional follow-up." },
-    "rhumatisme": { fr: "Massage : Huile de gingembre et feuilles de laurier chaud.", en: "Massage: Ginger oil and warm laurel leaves." },
-    "obesite": { fr: "Aide : Thé vert, citron et racines brûle-graisse.", en: "Help: Green tea, lemon, and fat-burning roots." },
-    "infection": { fr: "Soin : Infusion de racines diurétiques et beaucoup d'eau.", en: "Care: Diuretic roots infusion and plenty of water." }
+    "maudiate": { fr: "Secret DMS : Purification du sang avec écorces amères et racines spécifiques.", en: "DMS Secret: Blood purification with bitter barks and specific roots." },
+    "maudita": { fr: "Secret DMS : Purification du sang avec écorces amères et racines spécifiques.", en: "DMS Secret: Blood purification with bitter barks and specific roots." },
+    "sinusite": { fr: "Conseil : Inhalation de vapeur (Eucalyptus et ail frais écrasé).", en: "Advice: Steam inhalation (Eucalyptus and crushed fresh garlic)." },
+    "diabete": { fr: "Gestion : Infusion de feuilles de Neem et graines de Moringa.", en: "Management: Neem leaves and Moringa seeds infusion." },
+    "tension": { fr: "Aide : Ail frais le matin et infusion de feuilles d'olivier.", en: "Help: Fresh garlic and olive leaf tea." },
+    "estomac": { fr: "Remède : Argile verte et jus d'aloe vera pur le matin.", en: "Remedy: Green clay and pure aloe vera juice in the morning." },
+    "faiblesse": { fr: "Énergie : Petit cola, gingembre sauvage et racines toniques.", en: "Energy: Bitter kola, wild ginger and tonic roots." },
+    "hemorroide": { fr: "Soin : Bain de siège tiède et décoction de racines laxatives.", en: "Care: Warm sitz bath and laxative roots decoction." },
+    "asthme": { fr: "Soutien : Mélange Miel, Oignon rouge et Ail. Éviter le froid.", en: "Support: Honey, Red Onion and Garlic mix. Avoid cold." },
+    "dent": { fr: "Soulagement : Huile de clou de girofle directement sur la zone.", en: "Relief: Clove oil directly on the area." }
 };
 
-function changeLang(l) {
-    lang = l;
-    document.getElementById('ask-text').innerText = (l === 'fr') ? "Quelle est votre maladie ?" : "What is your illness?";
-    document.getElementById('sub-title').innerText = (l === 'fr') ? "Expertise en Pharmacopée Africaine" : "African Pharmacopoeia Expertise";
-    document.getElementById('wa-text').innerHTML = (l === 'fr') ? '<i class="fab fa-whatsapp"></i> CONTACTER LE DIRECTEUR' : '<i class="fab fa-whatsapp"></i> CONTACT THE DIRECTOR';
-    analyser();
-}
+function setLang(lang) { L = lang; alert(lang==='fr'?'Français activé':'English activated'); }
 
-function analyser() {
-    let input = document.getElementById('searchInput').value.toLowerCase().trim();
-    let box = document.getElementById('result-box');
-    if (input.length < 2) { box.style.display = 'none'; return; }
-    let res = "";
-    for (let k in db) {
-        if (input.includes(k) || k.includes(input)) {
-            res = "<strong>" + (lang === 'fr' ? "RÉSULTAT DMS : " : "DMS RESULT: ") + "</strong><br>" + db[k][lang];
-            break;
+function engine() {
+    let val = document.getElementById('userInput').value.toLowerCase().trim();
+    let res = document.getElementById('output');
+    let ok = false;
+    for (let m in DATA) {
+        if (val.includes(m)) {
+            res.innerHTML = "<b>RÉPONSE DMS OFFICIELLE :</b><br>" + DATA[m][L];
+            ok = true; break;
         }
     }
-    if (res !== "") { box.innerHTML = res; box.style.display = 'block'; }
-    else { box.style.display = 'none'; }
+    if(!ok) res.innerHTML = "<b>RÉPONSE DMS OFFICIELLE :</b><br>Précisez votre problème (Ex: Prostate, Toux, AVC).";
 }
 </script>
 </body>
