@@ -7,126 +7,103 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --gold: #ffb703; --dark: #050a14; --blue: #0d1b2a; }
-        body { background: var(--dark); color: white; font-family: 'Segoe UI', sans-serif; margin: 0; padding-bottom: 170px; text-align: center; }
-        
-        /* HEADER PRESTIGE */
-        .header { background: var(--blue); padding: 15px; border-bottom: 4px solid var(--gold); box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
-        .title { color: var(--gold); font-size: 24px; font-weight: 900; margin: 0; text-transform: uppercase; letter-spacing: 1px; }
-        .subtitle { font-size: 11px; color: white; margin-top: 4px; font-weight: bold; }
-
-        /* BARRE INFO DYNAMIQUE */
+        body { background: var(--dark); color: white; font-family: sans-serif; margin: 0; padding-bottom: 180px; text-align: center; }
+        .header { background: var(--blue); padding: 15px; border-bottom: 4px solid var(--gold); }
+        .title { color: var(--gold); font-size: 22px; font-weight: 900; text-transform: uppercase; margin: 0; }
         .info-bar { background: #1b263b; padding: 10px; color: var(--gold); font-size: 14px; font-weight: bold; display: flex; justify-content: space-around; border-bottom: 2px solid var(--gold); }
-
-        /* CARTE IDENTITÉ DIRECTEUR */
-        .director-card { background: white; color: black; margin: 15px auto; padding: 12px; border-radius: 8px; border: 3px solid var(--gold); width: 88%; font-weight: 900; text-transform: uppercase; box-shadow: 0 0 15px rgba(255,183,3,0.4); }
-
-        /* TABLEAU DE BORD (DASHBOARD) AMÉLIORÉ */
-        .dashboard { margin: 12px; background: #0a1128; border: 2px solid #415a77; border-radius: 20px; padding: 20px; min-height: 250px; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; border-style: double; }
-        .ai-status { color: var(--gold); font-size: 12px; margin-bottom: 10px; font-family: monospace; }
-        
-        #res { background: white; color: black; padding: 20px; border-radius: 10px; border-left: 10px solid var(--gold); font-size: 18px; display: none; line-height: 1.6; text-align: left; width: 90%; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
-        .wel-text { color: var(--gold); font-style: italic; font-weight: bold; font-size: 16px; line-height: 1.4; }
-
-        /* NAVIGATION & INPUT */
-        .footer { position: fixed; bottom: 0; width: 100%; background: var(--blue); padding: 15px; border-top: 3px solid var(--gold); box-sizing: border-box; z-index: 1000; }
-        .in-grp { display: flex; gap: 8px; margin-bottom: 12px; }
-        input { flex: 1; padding: 16px; border-radius: 12px; border: 2px solid var(--gold); font-size: 16px; font-weight: bold; outline: none; background: white; color: black; }
-        .btn-go { background: var(--gold); border: none; width: 65px; border-radius: 12px; color: black; font-size: 26px; cursor: pointer; transition: 0.3s; }
-        
-        /* BOUTON WHATSAPP VOCAL */
-        .wa-btn { background: #25d366; color: white; padding: 14px; border-radius: 12px; text-decoration: none; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px; border: 2px solid white; font-size: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-
-        .lang-btn { background: var(--gold); color: black; border: 1px solid white; padding: 6px 12px; border-radius: 5px; font-weight: bold; margin: 5px; cursor: pointer; font-size: 12px; }
+        .director-box { background: white; color: black; margin: 15px auto; padding: 12px; border-radius: 8px; border: 3px solid var(--gold); width: 88%; font-weight: 900; text-transform: uppercase; }
+        .dashboard { margin: 12px; background: #000; border: 2px solid #415a77; border-radius: 20px; padding: 20px; min-height: 220px; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 0 20px black; }
+        #res { background: white; color: black; padding: 20px; border-radius: 12px; border-left: 10px solid var(--gold); font-size: 17px; display: none; text-align: left; width: 100%; line-height: 1.5; }
+        .footer { position: fixed; bottom: 0; width: 100%; background: var(--blue); padding: 15px; border-top: 3px solid var(--gold); box-sizing: border-box; }
+        .in-grp { display: flex; gap: 5px; margin-bottom: 10px; }
+        input { flex: 1; padding: 15px; border-radius: 10px; border: 2px solid var(--gold); font-size: 16px; font-weight: bold; outline: none; }
+        .btn-go { background: var(--gold); border: none; width: 55px; border-radius: 10px; color: black; font-size: 22px; cursor: pointer; }
+        .wa-btn { background: #25d366; color: white; padding: 12px; border-radius: 10px; text-decoration: none; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid white; }
     </style>
 </head>
-<body onload="startApp()">
+<body onload="startClock()">
 
 <div class="header">
     <p class="title">DIASPORA MONDIAL SANTÉ</p>
-    <p class="subtitle">MÉDECINE TRADITIONNELLE INTÉGRÉE IA</p>
-    <div>
-        <button class="lang-btn" onclick="setL('fr')">FRANÇAIS 🇫🇷</button>
-        <button class="lang-btn" onclick="setL('en')">ENGLISH 🇬🇧</button>
+    <div style="margin-top:8px;">
+        <button onclick="setL('fr')" style="background:var(--gold); border:none; padding:5px 10px; font-weight:bold; border-radius:4px;">FRANÇAIS</button>
+        <button onclick="setL('en')" style="background:var(--gold); border:none; padding:5px 10px; font-weight:bold; border-radius:4px; margin-left:10px;">ENGLISH</button>
     </div>
 </div>
 
 <div class="info-bar">
-    <span id="dt">--/--</span> <span id="tm">00:00:00</span>
+    <span id="dt">-- --</span> <span id="tm">00:00:00</span>
 </div>
 
-<div class="director-card">INITIATEUR : MOUSTAPHA KOUROUMA</div>
+<div class="director-box">INITIATEUR : MOUSTAPHA KOUROUMA</div>
 
 <div class="dashboard">
-    <div class="ai-status" id="status">● SYSTÈME DMS PRÊT</div>
     <div id="res"></div>
-    <div id="wel" class="wel-text">
-        <i class="fas fa-heartbeat fa-3x" style="margin-bottom:15px;"></i><br>
-        ANALYSEUR INTELLIGENT DMS<br>
-        Tapez votre problème de santé ci-dessous.
+    <div id="wel" style="color:var(--gold); font-weight:bold; font-style:italic;">
+        SYSTÈME DMS ACTIVÉ (V30)<br>Posez votre question sur nos 25 spécialités.
     </div>
 </div>
 
 <div class="footer">
     <div class="in-grp">
-        <input type="text" id="userInput" placeholder="Écrivez ici...">
-        <button class="btn-go" onclick="runIA()"><i class="fas fa-paper-plane"></i></button>
+        <input type="text" id="uIn" placeholder="Écrivez votre maladie...">
+        <button class="btn-go" onclick="run()"><i class="fas fa-paper-plane"></i></button>
     </div>
-    <a href="https://wa.me/2207814179" class="wa-btn">
-        <i class="fab fa-whatsapp fa-2x"></i> 
-        <span>ENVOYEZ UN VOCAL AU DIRECTEUR</span>
-    </a>
-    <p style="font-size:9px; color: var(--gold); margin-top:8px; font-weight:bold;">DIRECTEUR FONDATEUR : MOUSTAPHA KOUROUMA</p>
+    <a href="https://wa.me/2207814179" class="wa-btn"><i class="fab fa-whatsapp"></i> CONTACTER LE DIRECTEUR</a>
+    <p style="font-size:10px; color:var(--gold); margin-top:5px; font-weight:bold;">MÉDECINE TRADITIONNELLE INTÉGRÉE IA</p>
 </div>
 
 <script>
 let L = 'fr';
-function startApp(){ setInterval(()=>{ const d=new Date(); document.getElementById('tm').innerText=d.toLocaleTimeString(); document.getElementById('dt').innerText=d.toLocaleDateString('fr-FR',{day:'numeric',month:'short'}); },1000); }
+function startClock(){ setInterval(()=>{ const d=new Date(); document.getElementById('tm').innerText=d.toLocaleTimeString(); document.getElementById('dt').innerText=d.toLocaleDateString('fr-FR',{day:'numeric',month:'short'}); },1000); }
 
 const db = [
-    {k:["bonjour","salut","hello"], fr:"Bonjour! Je suis l'IA de DMS. Le Directeur Kourouma vous souhaite la bienvenue. Comment puis-je vous aider?", en:"Hello! Welcome to DMS. Director Kourouma is at your service. How can I help you?"},
-    {k:["hemorite","hemorroide","piles","anus"], fr:"SOLUTION DMS : Bain de siège avec décoction d'écorces cicatrisantes et racines laxatives spéciales.", en:"DMS CARE: Warm sitz bath with healing barks and special laxative roots."},
-    {k:["morue","perte","infection","demangeaison"], fr:"SOLUTION DMS : Décoction de racines antibiotiques puissantes et hygiène intime aux plantes.", en:"DMS CARE: Powerful antibiotic root decoction and herbal hygiene."},
-    {k:["ventre","estomac","gaz","ballon"], fr:"SOLUTION DMS : Infusion Thé Vert + Argile Verte ou Aloe Vera pur chaque matin à jeun.", en:"DMS CARE: Green Tea + Green Clay or Pure Aloe Vera every morning."},
-    {k:["prostate","urine"], fr: "SOLUTION DMS : Décoction concentrée de racines de papayer mâle et graines de courge séchées.", en: "DMS CARE: Concentrated male papaya roots and dried pumpkin seeds."},
-    {k:["avc","stroke","paralysie"], fr: "SOLUTION DMS : Massages aux huiles stimulantes DMS et tisane pour fluidifier la circulation.", en: "DMS CARE: Stimulating DMS oil massages and circulatory tea."},
-    {k:["diabete","sucre"], fr: "SOLUTION DMS : Infusion quotidienne de feuilles de Neem et poudre de Moringa bio.", en: "DMS CARE: Daily Neem leaf infusion and organic Moringa powder."},
-    {k:["tension","coeur"], fr: "SOLUTION DMS : Consommation d'ail frais et infusion de feuilles d'olivier sauvage.", en: "DMS CARE: Fresh garlic consumption and wild olive leaf infusion."},
-    {k:["puissance","sexe","faiblesse"], fr: "SOLUTION DMS : Mélange tonique (Petit Cola, Gingembre sauvage et racines DMS).", en: "DMS CARE: Tonic mix (Bitter Kola, Wild Ginger and DMS roots)."},
-    {k:["asthme","respirer"], fr: "SOLUTION DMS : Sirop traditionnel (Oignon rouge + Miel pur + Ail).", en: "DMS CARE: Traditional syrup (Red Onion + Pure Honey + Garlic)."},
-    {k:["fertilité","enfant"], fr: "SOLUTION DMS : Cure de racines régénératrices pour renforcer le système reproducteur.", en: "DMS CARE: Regenerative roots cure for the reproductive system."},
-    {k:["kyste","fibrome"], fr: "SOLUTION DMS : Décoction de racines drainantes pour éliminer les masses.", en: "DMS CARE: Draining roots decoction to eliminate masses."},
-    {k:["paludisme","fievre"], fr: "SOLUTION DMS : Décoction d'Artemisia et feuilles de papayer vert.", en: "DMS CARE: Artemisia and green papaya leaves decoction."}
+    {k:["diabete","sucre"], fr:"SOLUTION : Infusion de feuilles de Neem et poudre de Moringa bio.", en:"CARE: Neem leaves and organic Moringa powder."},
+    {k:["hemorite","hemorroide","piles"], fr:"SOLUTION : Bain de siège écorces cicatrisantes et racines laxatives.", en:"CARE: Sitz bath with healing barks and laxative roots."},
+    {k:["morue","perte","infection"], fr:"SOLUTION : Décoction de racines antibiotiques et hygiène purifiante.", en:"CARE: Antibiotic roots and purifying hygiene."},
+    {k:["prostate"], fr:"SOLUTION : Décoction de racines de papayer mâle et graines de courge.", en:"CARE: Male papaya roots and pumpkin seeds."},
+    {k:["avc","stroke","paralysie"], fr:"SOLUTION : Massages huiles DMS et tisane pour la circulation.", en:"CARE: DMS oil massages and circulatory tea."},
+    {k:["ventre","estomac","gaz"], fr:"SOLUTION : Infusion Thé Vert + Argile Verte ou Aloe Vera pur.", en:"CARE: Green Tea + Green Clay or Pure Aloe Vera."},
+    {k:["tension","coeur"], fr:"SOLUTION : Ail frais et infusion de feuilles d'olivier sauvage.", en:"CARE: Fresh garlic and wild olive leaf infusion."},
+    {k:["puissance","faiblesse","sexe"], fr:"SOLUTION : Petit Cola, Gingembre sauvage et racines tonifiantes DMS.", en:"CARE: Bitter Kola, Ginger and DMS tonic roots."},
+    {k:["asthme","bronchite"], fr:"SOLUTION : Sirop naturel Oignon rouge, Miel pur et Ail.", en:"CARE: Red Onion, Honey and Garlic syrup."},
+    {k:["fertilité","enfant"], fr:"SOLUTION : Cure de racines régénératrices hommes et femmes.", en:"CARE: Regenerative roots cure for men and women."},
+    {k:["kyste","fibrome"], fr:"SOLUTION : Décoction concentrée de racines drainantes DMS.", en:"CARE: Concentrated draining roots decoction."},
+    {k:["paludisme","fievre","palu"], fr:"SOLUTION : Décoction d'Artemisia et feuilles de papayer vert.", en:"CARE: Artemisia and green papaya leaves."},
+    {k:["foie","hepatite"], fr:"SOLUTION : Cure détox citron et racines amères de brousse.", en:"CARE: Lemon detox and bitter bush roots."},
+    {k:["ulcere"], fr:"SOLUTION : Jus de pomme de terre crue ou gel d'aloe vera le matin.", en:"CARE: Raw potato juice or aloe vera gel."},
+    {k:["insomnie","sommeil"], fr:"SOLUTION : Tisane de Citronnelle et Camomille le soir.", en:"CARE: Lemongrass and Chamomile tea."},
+    {k:["anemie","sang"], fr:"SOLUTION : Jus de Bissap rouge concentré et racines de fer.", en:"CARE: Red Hibiscus juice and iron roots."},
+    {k:["dos","nerf","sciatique"], fr:"SOLUTION : Massages huiles DMS et infusion anti-inflammatoire.", en:"CARE: DMS oil massages and anti-inflammatory tea."},
+    {k:["sinusite"], fr:"SOLUTION : Inhalation vapeur Eucalyptus et ail écrasé.", en:"CARE: Eucalyptus steam inhalation and crushed garlic."},
+    {k:["migraine","tete"], fr:"SOLUTION : Infusion de Basilic et compresses d'huiles.", en:"CARE: Basil infusion and oil compresses."},
+    {k:["constipation"], fr:"SOLUTION : Infusion feuilles de Séné ou papaye mûre.", en:"CARE: Senna leaves or ripe papaya."},
+    {k:["peau","bouton"], fr:"SOLUTION : Savon noir traditionnel et gel d'aloe vera.", en:"CARE: Traditional black soap and aloe vera gel."},
+    {k:["fatigue"], fr:"SOLUTION : Cure de pollen et décoction de racines énergisantes.", en:"CARE: Pollen cure and energizing roots."},
+    {k:["dents"], fr:"SOLUTION : Application de Clou de girofle sur la zone.", en:"CARE: Clove application on the painful area."},
+    {k:["rhatisme","articulation"], fr:"SOLUTION : Tisane de racines anti-inflammatoires et massages.", en:"CARE: Anti-inflammatory roots and massages."},
+    {k:["vision","yeux"], fr:"SOLUTION : Cure de vitamines naturelles et plantes protectrices.", en:"CARE: Natural vitamins and protective plants."}
 ];
 
-function setL(l){ L=l; document.getElementById('userInput').placeholder=(L=='fr'?'Posez votre question...':'Ask your question...'); }
+function setL(l){ L=l; document.getElementById('uIn').placeholder=(L=='fr'?'Écrivez ici...':'Write here...'); }
 
-function runIA() {
-    let v=document.getElementById('userInput').value.toLowerCase().trim();
-    let res=document.getElementById('res');
-    let st=document.getElementById('status');
-    if(v.length<2)return;
-    
-    st.innerText = "● ANALYSE EN COURS...";
-    st.style.color = "white";
-
-    setTimeout(() => {
-        let found = false;
-        for(let i of db){
-            for(let key of i.k){
-                if(v.includes(key)){
-                    res.innerHTML="<b style='color:#0d1b2a; border-bottom:2px solid #ffb703;'>DÉCISION DU DIRECTEUR :</b><br><br>"+i[L];
-                    found = true; break;
-                }
+function run() {
+    let v = document.getElementById('uIn').value.toLowerCase().trim();
+    let res = document.getElementById('res');
+    if(v.length < 2) return;
+    let found = false;
+    for(let i of db){
+        for(let key of i.k){
+            if(v.includes(key)){
+                res.innerHTML="<b style='color:#050a14;'>RÉPONSE DMS :</b><br><br>"+i[L];
+                found = true; break;
             }
         }
-        if(!found) res.innerHTML="<b style='color:red;'>ALERTE DMS :</b> Maladie non répertoriée. Cliquez sur le bouton WhatsApp ci-dessous pour parler au Directeur.";
-        
-        res.style.display="block";
-        document.getElementById('wel').style.display="none";
-        document.getElementById('userInput').value="";
-        st.innerText = "● ANALYSE TERMINÉE";
-        st.style.color = "#ffb703";
-    }, 800);
+    }
+    if(!found) res.innerHTML="<b>ALERTE DMS :</b> Maladie non reconnue. Contactez le Directeur sur WhatsApp.";
+    res.style.display="block";
+    document.getElementById('wel').style.display="none";
+    document.getElementById('uIn').value="";
 }
 </script>
 </body>
