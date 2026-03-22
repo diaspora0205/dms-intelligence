@@ -6,106 +6,128 @@
     <title>DMS IA - MOUSTAPHA KOUROUMA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { background: #0d1b2a; color: white; font-family: sans-serif; margin: 0; padding-bottom: 150px; text-align: center; }
-        .header { background: #050a14; padding: 20px; border-bottom: 4px solid #ffb703; }
-        .title { color: #ffb703; font-size: 22px; font-weight: 900; margin: 0; }
-        .info { background: #1b263b; padding: 8px; color: #ffb703; font-size: 13px; font-weight: bold; display: flex; justify-content: space-around; border-bottom: 1px solid #ffb703; }
-        .lang-box { margin: 10px 0; }
-        .btn-l { background: #ffb703; color: black; border: 1px solid white; padding: 7px 15px; border-radius: 5px; font-weight: bold; cursor: pointer; margin: 0 5px; }
-        .card { background: white; color: black; margin: 15px auto; padding: 15px; border-radius: 10px; border: 3px solid #ffb703; width: 85%; font-weight: 900; font-size: 15px; }
-        .screen { margin: 15px; background: #050a14; border: 2px solid #415a77; border-radius: 20px; padding: 25px; min-height: 200px; box-shadow: inset 0 0 30px black; }
-        #res { background: white; color: black; padding: 20px; border-radius: 12px; border-left: 10px solid #ffb703; font-size: 18px; display: none; line-height: 1.6; text-align: left; }
-        .footer { position: fixed; bottom: 0; width: 100%; background: #0d1b2a; padding: 15px; border-top: 2px solid #ffb703; box-sizing: border-box; }
-        .in-grp { display: flex; gap: 8px; margin-bottom: 10px; }
-        input { flex: 1; padding: 15px; border-radius: 10px; border: 2px solid #ffb703; font-size: 16px; font-weight: bold; outline: none; }
-        .btn-go { background: #ffb703; border: none; width: 60px; border-radius: 10px; color: black; font-size: 24px; }
-        .wa { background: #25d366; color: white; padding: 12px; border-radius: 10px; text-decoration: none; font-weight: bold; display: block; border: 1px solid white; }
+        :root { --gold: #ffb703; --dark: #050a14; --blue: #0d1b2a; }
+        body { background: var(--dark); color: white; font-family: 'Segoe UI', sans-serif; margin: 0; padding-bottom: 170px; text-align: center; }
+        
+        /* HEADER PRESTIGE */
+        .header { background: var(--blue); padding: 15px; border-bottom: 4px solid var(--gold); box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+        .title { color: var(--gold); font-size: 24px; font-weight: 900; margin: 0; text-transform: uppercase; letter-spacing: 1px; }
+        .subtitle { font-size: 11px; color: white; margin-top: 4px; font-weight: bold; }
+
+        /* BARRE INFO DYNAMIQUE */
+        .info-bar { background: #1b263b; padding: 10px; color: var(--gold); font-size: 14px; font-weight: bold; display: flex; justify-content: space-around; border-bottom: 2px solid var(--gold); }
+
+        /* CARTE IDENTITÉ DIRECTEUR */
+        .director-card { background: white; color: black; margin: 15px auto; padding: 12px; border-radius: 8px; border: 3px solid var(--gold); width: 88%; font-weight: 900; text-transform: uppercase; box-shadow: 0 0 15px rgba(255,183,3,0.4); }
+
+        /* TABLEAU DE BORD (DASHBOARD) AMÉLIORÉ */
+        .dashboard { margin: 12px; background: #0a1128; border: 2px solid #415a77; border-radius: 20px; padding: 20px; min-height: 250px; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; border-style: double; }
+        .ai-status { color: var(--gold); font-size: 12px; margin-bottom: 10px; font-family: monospace; }
+        
+        #res { background: white; color: black; padding: 20px; border-radius: 10px; border-left: 10px solid var(--gold); font-size: 18px; display: none; line-height: 1.6; text-align: left; width: 90%; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+        .wel-text { color: var(--gold); font-style: italic; font-weight: bold; font-size: 16px; line-height: 1.4; }
+
+        /* NAVIGATION & INPUT */
+        .footer { position: fixed; bottom: 0; width: 100%; background: var(--blue); padding: 15px; border-top: 3px solid var(--gold); box-sizing: border-box; z-index: 1000; }
+        .in-grp { display: flex; gap: 8px; margin-bottom: 12px; }
+        input { flex: 1; padding: 16px; border-radius: 12px; border: 2px solid var(--gold); font-size: 16px; font-weight: bold; outline: none; background: white; color: black; }
+        .btn-go { background: var(--gold); border: none; width: 65px; border-radius: 12px; color: black; font-size: 26px; cursor: pointer; transition: 0.3s; }
+        
+        /* BOUTON WHATSAPP VOCAL */
+        .wa-btn { background: #25d366; color: white; padding: 14px; border-radius: 12px; text-decoration: none; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px; border: 2px solid white; font-size: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+
+        .lang-btn { background: var(--gold); color: black; border: 1px solid white; padding: 6px 12px; border-radius: 5px; font-weight: bold; margin: 5px; cursor: pointer; font-size: 12px; }
     </style>
 </head>
-<body onload="upd()">
+<body onload="startApp()">
 
 <div class="header">
     <p class="title">DIASPORA MONDIAL SANTÉ</p>
-    <div class="lang-box">
-        <button class="btn-l" onclick="setL('fr')">FRANÇAIS</button>
-        <button class="btn-l" onclick="setL('en')">ENGLISH</button>
+    <p class="subtitle">MÉDECINE TRADITIONNELLE INTÉGRÉE IA</p>
+    <div>
+        <button class="lang-btn" onclick="setL('fr')">FRANÇAIS 🇫🇷</button>
+        <button class="lang-btn" onclick="setL('en')">ENGLISH 🇬🇧</button>
     </div>
 </div>
 
-<div class="info">
-    <span id="dt">--/--</span> <span id="tm">00:00</span>
+<div class="info-bar">
+    <span id="dt">--/--</span> <span id="tm">00:00:00</span>
 </div>
 
-<div class="card">INITIATEUR : MOUSTAPHA KOUROUMA</div>
+<div class="director-card">INITIATEUR : MOUSTAPHA KOUROUMA</div>
 
-<div class="screen">
+<div class="dashboard">
+    <div class="ai-status" id="status">● SYSTÈME DMS PRÊT</div>
     <div id="res"></div>
-    <div id="wel" style="color:#ffb703; font-style:italic;">
-        MÉDECINE TRADITIONNELLE INTÉGRÉE IA<br>Posez votre question (25 Maladies).
+    <div id="wel" class="wel-text">
+        <i class="fas fa-heartbeat fa-3x" style="margin-bottom:15px;"></i><br>
+        ANALYSEUR INTELLIGENT DMS<br>
+        Tapez votre problème de santé ci-dessous.
     </div>
 </div>
 
 <div class="footer">
     <div class="in-grp">
         <input type="text" id="userInput" placeholder="Écrivez ici...">
-        <button class="btn-go" onclick="run()"><i class="fas fa-paper-plane"></i></button>
+        <button class="btn-go" onclick="runIA()"><i class="fas fa-paper-plane"></i></button>
     </div>
-    <a href="https://wa.me/2207814179" class="wa">WHATSAPP DU DIRECTEUR</a>
-    <p style="font-size:10px; margin-top:5px;">DIRECTEUR PROFOND : MOUSTAPHA KOUROUMA</p>
+    <a href="https://wa.me/2207814179" class="wa-btn">
+        <i class="fab fa-whatsapp fa-2x"></i> 
+        <span>ENVOYEZ UN VOCAL AU DIRECTEUR</span>
+    </a>
+    <p style="font-size:9px; color: var(--gold); margin-top:8px; font-weight:bold;">DIRECTEUR FONDATEUR : MOUSTAPHA KOUROUMA</p>
 </div>
 
 <script>
 let L = 'fr';
-function upd(){ setInterval(()=>{ const d=new Date(); document.getElementById('tm').innerText=d.toLocaleTimeString(); document.getElementById('dt').innerText=d.toLocaleDateString('fr-FR',{day:'numeric',month:'short'}); },1000); }
+function startApp(){ setInterval(()=>{ const d=new Date(); document.getElementById('tm').innerText=d.toLocaleTimeString(); document.getElementById('dt').innerText=d.toLocaleDateString('fr-FR',{day:'numeric',month:'short'}); },1000); }
 
 const db = [
-    {k:["bonjour","hello"], fr:"Bonjour! Je suis l'IA DMS du Directeur Kourouma. Comment puis-je vous aider?", en:"Hello! I am the DMS IA. How can I help you?"},
-    {k:["hemorite","hemorroide","piles"], fr:"SOLUTION DMS: Bain de siège écorces cicatrisantes et racines laxatives.", en:"DMS CARE: Warm sitz bath and laxative roots."},
-    {k:["morue","perte"], fr:"SOLUTION DMS: Décoction racines antibiotiques et hygiène purifiante.", en:"DMS CARE: Antibiotic root decoction and hygiene."},
-    {k:["ventre","estomac"], fr:"SOLUTION DMS: Infusion Thé Vert + Argile Verte ou Aloe Vera pur.", en:"DMS CARE: Green Tea + Green Clay or Pure Aloe Vera."},
-    {k:["prostate"], fr: "SOLUTION DMS: Racines de papayer mâle et graines de courge.", en: "DMS CARE: Male papaya roots and pumpkin seeds."},
-    {k:["avc","stroke"], fr: "SOLUTION DMS: Massages huiles stimulantes et tisane circulatoire.", en: "DMS CARE: Stimulating oil massages and circulatory tea."},
-    {k:["diabete","sucre"], fr: "SOLUTION DMS: Infusion feuilles de Neem et poudre de Moringa.", en: "DMS CARE: Neem and Moringa infusion."},
-    {k:["tension"], fr: "SOLUTION DMS: Ail frais et infusion feuilles d'olivier sauvage.", en: "DMS CARE: Fresh garlic and olive leaf infusion."},
-    {k:["puissance","sexe","faiblesse"], fr: "SOLUTION DMS: Petit Cola, Gingembre et racines tonifiantes.", en: "DMS CARE: Bitter Kola, Ginger and tonic roots."},
-    {k:["asthme"], fr: "SOLUTION DMS: Sirop naturel Oignon rouge, Miel pur et Ail.", en: "DMS CARE: Natural Onion, Honey and Garlic syrup."},
-    {k:["toux"], fr: "SOLUTION DMS: Infusion Gingembre, Citron et Miel.", en: "DMS CARE: Ginger, Lemon and Honey infusion."},
-    {k:["fertilité"], fr: "SOLUTION DMS: Cure de racines toniques pour hommes et femmes.", en: "DMS CARE: Tonic roots cure for men and women."},
-    {k:["kyste","fibrome"], fr: "SOLUTION DMS: Décoction de racines drainantes.", en: "DMS CARE: Draining roots decoction."},
-    {k:["ulcere"], fr: "SOLUTION DMS: Jus de pomme de terre crue ou aloe vera le matin.", en: "DMS CARE: Raw potato juice or aloe vera."},
-    {k:["foie","liver"], fr: "SOLUTION DMS: Cure détox citron et racines amères.", en: "DMS CARE: Lemon detox and bitter roots."},
-    {k:["paludisme","fievre"], fr: "SOLUTION DMS: Décoction d'Artemisia et feuilles de papayer.", en: "DMS CARE: Artemisia and papaya leaves."},
-    {k:["insomnie","sommeil"], fr: "SOLUTION DMS: Tisane Citronnelle et Camomille.", en: "DMS CARE: Lemongrass and chamomile tea."},
-    {k:["anemie","sang"], fr: "SOLUTION DMS: Jus de Bissap rouge et racines de fer.", en: "DMS CARE: Red Hibiscus juice and iron roots."},
-    {k:["dos","sciatique"], fr: "SOLUTION DMS: Huiles de massage DMS et anti-inflammatoire.", en: "DMS CARE: Massage oils and anti-inflammatory tea."},
-    {k:["sinusite"], fr: "SOLUTION DMS: Inhalation Eucalyptus et ail écrasé.", en: "DMS CARE: Eucalyptus inhalation and garlic."},
-    {k:["migraine"], fr: "SOLUTION DMS: Huiles essentielles et infusion Basilic.", en: "DMS CARE: Essential oils and basil infusion."},
-    {k:["constipation"], fr: "SOLUTION DMS: Infusion feuilles de Séné ou papaye mûre.", en: "DMS CARE: Senna leaves or ripe papaya."},
-    {k:["peau","bouton"], fr: "SOLUTION DMS: Savon traditionnel et gel aloe vera.", en: "DMS CARE: Traditional soap and aloe vera."},
-    {k:["fatigue"], fr: "SOLUTION DMS: Cure de pollen et racines DMS.", en: "DMS CARE: Pollen and DMS roots cure."},
-    {k:["dents"], fr: "SOLUTION DMS: Clou de girofle sur la zone douloureuse.", en: "DMS CARE: Clove on the painful area."}
+    {k:["bonjour","salut","hello"], fr:"Bonjour! Je suis l'IA de DMS. Le Directeur Kourouma vous souhaite la bienvenue. Comment puis-je vous aider?", en:"Hello! Welcome to DMS. Director Kourouma is at your service. How can I help you?"},
+    {k:["hemorite","hemorroide","piles","anus"], fr:"SOLUTION DMS : Bain de siège avec décoction d'écorces cicatrisantes et racines laxatives spéciales.", en:"DMS CARE: Warm sitz bath with healing barks and special laxative roots."},
+    {k:["morue","perte","infection","demangeaison"], fr:"SOLUTION DMS : Décoction de racines antibiotiques puissantes et hygiène intime aux plantes.", en:"DMS CARE: Powerful antibiotic root decoction and herbal hygiene."},
+    {k:["ventre","estomac","gaz","ballon"], fr:"SOLUTION DMS : Infusion Thé Vert + Argile Verte ou Aloe Vera pur chaque matin à jeun.", en:"DMS CARE: Green Tea + Green Clay or Pure Aloe Vera every morning."},
+    {k:["prostate","urine"], fr: "SOLUTION DMS : Décoction concentrée de racines de papayer mâle et graines de courge séchées.", en: "DMS CARE: Concentrated male papaya roots and dried pumpkin seeds."},
+    {k:["avc","stroke","paralysie"], fr: "SOLUTION DMS : Massages aux huiles stimulantes DMS et tisane pour fluidifier la circulation.", en: "DMS CARE: Stimulating DMS oil massages and circulatory tea."},
+    {k:["diabete","sucre"], fr: "SOLUTION DMS : Infusion quotidienne de feuilles de Neem et poudre de Moringa bio.", en: "DMS CARE: Daily Neem leaf infusion and organic Moringa powder."},
+    {k:["tension","coeur"], fr: "SOLUTION DMS : Consommation d'ail frais et infusion de feuilles d'olivier sauvage.", en: "DMS CARE: Fresh garlic consumption and wild olive leaf infusion."},
+    {k:["puissance","sexe","faiblesse"], fr: "SOLUTION DMS : Mélange tonique (Petit Cola, Gingembre sauvage et racines DMS).", en: "DMS CARE: Tonic mix (Bitter Kola, Wild Ginger and DMS roots)."},
+    {k:["asthme","respirer"], fr: "SOLUTION DMS : Sirop traditionnel (Oignon rouge + Miel pur + Ail).", en: "DMS CARE: Traditional syrup (Red Onion + Pure Honey + Garlic)."},
+    {k:["fertilité","enfant"], fr: "SOLUTION DMS : Cure de racines régénératrices pour renforcer le système reproducteur.", en: "DMS CARE: Regenerative roots cure for the reproductive system."},
+    {k:["kyste","fibrome"], fr: "SOLUTION DMS : Décoction de racines drainantes pour éliminer les masses.", en: "DMS CARE: Draining roots decoction to eliminate masses."},
+    {k:["paludisme","fievre"], fr: "SOLUTION DMS : Décoction d'Artemisia et feuilles de papayer vert.", en: "DMS CARE: Artemisia and green papaya leaves decoction."}
 ];
 
-function setL(l){ L=l; document.getElementById('userInput').placeholder=(L=='fr'?'Écrivez ici...':'Write here...'); }
+function setL(l){ L=l; document.getElementById('userInput').placeholder=(L=='fr'?'Posez votre question...':'Ask your question...'); }
 
-function run() {
+function runIA() {
     let v=document.getElementById('userInput').value.toLowerCase().trim();
     let res=document.getElementById('res');
+    let st=document.getElementById('status');
     if(v.length<2)return;
-    let f=false;
-    for(let i of db){
-        for(let k of i.k){
-            if(v.includes(k)){
-                res.innerHTML="<b>DÉCISION DU DIRECTEUR :</b><br><br>"+i[L];
-                f=true;break;
+    
+    st.innerText = "● ANALYSE EN COURS...";
+    st.style.color = "white";
+
+    setTimeout(() => {
+        let found = false;
+        for(let i of db){
+            for(let key of i.k){
+                if(v.includes(key)){
+                    res.innerHTML="<b style='color:#0d1b2a; border-bottom:2px solid #ffb703;'>DÉCISION DU DIRECTEUR :</b><br><br>"+i[L];
+                    found = true; break;
+                }
             }
         }
-    }
-    if(!f)res.innerHTML="ALERTE DMS: Maladie non reconnue. Contactez le Directeur.";
-    res.style.display="block";
-    document.getElementById('wel').style.display="none";
-    document.getElementById('userInput').value="";
+        if(!found) res.innerHTML="<b style='color:red;'>ALERTE DMS :</b> Maladie non répertoriée. Cliquez sur le bouton WhatsApp ci-dessous pour parler au Directeur.";
+        
+        res.style.display="block";
+        document.getElementById('wel').style.display="none";
+        document.getElementById('userInput').value="";
+        st.innerText = "● ANALYSE TERMINÉE";
+        st.style.color = "#ffb703";
+    }, 800);
 }
 </script>
 </body>
-    </html>
+</html>
