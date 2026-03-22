@@ -6,127 +6,105 @@
     <title>DMS IA PRO - 30 MALADIES</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { background-color: #050a14; color: white; font-family: 'Arial', sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
-        .tv-bar { background: #ffb703; color: #000; padding: 10px 0; font-weight: bold; font-size: 14px; border-bottom: 2px solid white; position: sticky; top: 0; z-index: 100; }
+        body { background-color: #050a14; color: white; font-family: 'Arial', sans-serif; margin: 0; padding-bottom: 140px; }
+        .tv-bar { background: #ffb703; color: #000; padding: 10px 0; font-weight: bold; border-bottom: 2px solid white; position: sticky; top: 0; z-index: 100; font-size: 14px; }
         .header { background: #0d1b2a; padding: 15px; text-align: center; border-bottom: 4px solid #ffb703; }
-        .title { color: #ffb703; font-weight: bold; font-size: 22px; text-transform: uppercase; margin: 0; }
-        .subtitle { font-size: 12px; color: #fff; letter-spacing: 1px; margin-top: 5px; font-weight: bold; }
-        .lang-btns { margin: 10px 0; }
-        .btn-l { background: #ffb703; border: 1px solid white; padding: 6px 12px; border-radius: 5px; font-weight: bold; cursor: pointer; color: #000; margin: 0 5px; }
-        .director-box { background: white; color: #000; margin: 10px auto; padding: 10px; border-radius: 8px; font-weight: bold; border: 3px solid #ffb703; width: 92%; font-size: 15px; text-align: center; box-shadow: 0 0 10px #ffb703; }
-        .dashboard { flex-grow: 1; margin: 10px; background: #1b263b; border: 2px solid #415a77; border-radius: 20px; padding: 20px; display: flex; flex-direction: column; box-shadow: inset 0 0 20px rgba(0,0,0,0.5); }
-        #output { background: #ffffff; color: #000; padding: 15px; border-radius: 12px; border-left: 10px solid #ffb703; font-size: 17px; display: none; line-height: 1.4; }
-        .welcome { color: #ffb703; text-align: center; font-size: 17px; font-style: italic; margin: auto; }
-        .controls { padding: 15px; background: #0d1b2a; border-top: 3px solid #ffb703; }
+        .title { color: #ffb703; font-weight: bold; font-size: 20px; text-transform: uppercase; margin: 0; }
+        .director-box { background: white; color: #000; margin: 10px auto; padding: 10px; border-radius: 8px; font-weight: bold; border: 3px solid #ffb703; width: 90%; text-align: center; }
+        .dashboard { margin: 10px; background: #1b263b; border-radius: 20px; padding: 20px; border: 2px solid #415a77; min-height: 220px; }
+        #output { background: white; color: #000; padding: 15px; border-radius: 12px; border-left: 10px solid #ffb703; display: none; font-size: 17px; line-height: 1.5; }
+        .controls { padding: 15px; background: #0d1b2a; border-top: 3px solid #ffb703; position: fixed; bottom: 0; width: 100%; box-sizing: border-box; z-index: 101; }
         .input-wrap { display: flex; gap: 8px; margin-bottom: 10px; }
-        input { flex: 1; padding: 15px; border-radius: 12px; border: none; font-size: 16px; font-weight: bold; outline: none; }
-        .btn-send { background: #ffb703; border: none; width: 55px; height: 55px; border-radius: 12px; color: #000; font-size: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-        .wa-link { background: #25d366; color: white; padding: 12px; border-radius: 12px; text-decoration: none; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px; border: 2px solid white; }
+        input { flex: 1; padding: 15px; border-radius: 12px; border: none; font-weight: bold; font-size: 16px; }
+        .btn-send { background: #ffb703; border: none; width: 60px; height: 60px; border-radius: 15px; color: #000; font-size: 24px; cursor: pointer; }
+        .wa-btn { background: #25d366; color: white; padding: 12px; border-radius: 12px; text-decoration: none; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px; }
     </style>
 </head>
 <body onload="setL('fr')">
 
 <div class="tv-bar">
-    <marquee id="news" scrollamount="6"></marquee>
+    <marquee>🔴 DMS : 30 MALADIES TRAITÉES • HÉMORITE • MORUE • PROSTATE • AVC • VENTRE • DIABÈTE • TENSION • FERTILITÉ • FAIBLESSE • ASTHME • TOUX • KYSTES • FIBROMES... DIR. MOUSTAPHA KOUROUMA 🔴</marquee>
 </div>
 
 <div class="header">
     <p class="title">DIASPORA MONDIAL SANTÉ</p>
-    <p id="sub" class="subtitle"></p>
-    <div class="lang-btns">
-        <button class="btn-l" onclick="setL('fr')">FRANÇAIS 🇫🇷</button>
-        <button class="btn-l" onclick="setL('en')">ENGLISH 🇬🇧</button>
+    <div style="margin-top:10px;">
+        <button onclick="setL('fr')" style="background:#ffb703; border:none; padding:5px 12px; font-weight:bold; cursor:pointer;">FRANÇAIS</button>
+        <button onclick="setL('en')" style="background:#ffb703; border:none; padding:5px 12px; font-weight:bold; cursor:pointer;">ENGLISH</button>
     </div>
 </div>
 
-<div id="dir" class="director-box"></div>
+<div class="director-box">DIRECTEUR : MOUSTAPHA KOUROUMA</div>
 
 <div class="dashboard">
     <div id="output"></div>
-    <div id="welcome" class="welcome"></div>
+    <div id="welcome" style="color:#ffb703; text-align:center;">
+        <b>TABLEAU DE BORD DMS ACTIF</b><br>Recherchez parmi nos 30 spécialités...
+    </div>
 </div>
 
 <div class="controls">
     <div class="input-wrap">
-        <input type="text" id="userInput" placeholder="...">
+        <input type="text" id="userInput" placeholder="Quelle est la maladie ?">
         <button class="btn-send" onclick="runIA()"><i class="fas fa-paper-plane"></i></button>
     </div>
-    <a href="https://wa.me/2207814179" class="wa-link">
-        <i class="fab fa-whatsapp fa-lg"></i> <span id="wa-text"></span>
-    </a>
+    <a href="https://wa.me/2207814179" class="wa-btn"><i class="fab fa-whatsapp"></i> WHATSAPP DIRECTEUR</a>
 </div>
 
 <script>
 let L = 'fr';
-// LES 30 MALADIES VÉRIFIÉES
-const dbDMS = [
-    { k: ["ventre", "stomach", "gaz", "estomac"], fr: "✅ DMS : Thé Vert à l'Argile Verte ou jus d'Aloe Vera pur le matin à jeun.", en: "✅ DMS: Green tea with green clay or pure Aloe Vera juice on an empty stomach." },
-    { k: ["prostate"], fr: "✅ DMS : Décoction de racines de papayer mâle et graines de courge.", en: "✅ DMS: Decoction of male papaya roots and pumpkin seeds." },
-    { k: ["maudiate", "maudita"], fr: "✅ DMS : Purification profonde du sang avec écorces amères et racines sacrées.", en: "✅ DMS: Deep blood purification with bitter barks and sacred roots." },
-    { k: ["avc", "stroke"], fr: "✅ DMS : Massages aux huiles stimulantes et décoction circulatoire.", en: "✅ DMS: Stimulating oil massages and circulatory decoction." },
-    { k: ["diabete", "diabetes"], fr: "✅ DMS : Infusion de feuilles de Neem et Moringa. Régule le sucre.", en: "✅ DMS: Neem and Moringa leaf infusion. Regulates sugar levels." },
-    { k: ["tension", "blood pressure"], fr: "✅ DMS : Ail frais et infusion de feuilles d'olivier sauvage.", en: "✅ DMS: Fresh garlic and wild olive leaf infusion." },
-    { k: ["puissance", "weakness", "manhood"], fr: "✅ DMS : Petit Cola, Gingembre sauvage et racines tonifiantes DMS.", en: "✅ DMS: Bitter Kola, wild Ginger and DMS tonic roots." },
-    { k: ["hemorroide", "piles"], fr: "✅ DMS : Bain de siège tiède et décoction de racines laxatives.", en: "✅ DMS: Warm sitz bath and laxative roots decoction." },
-    { k: ["asthme", "asthma"], fr: "✅ DMS : Sirop naturel (miel, oignon rouge, ail). Dégage les bronches.", en: "✅ DMS: Natural syrup (honey, red onion, garlic). Clears airways." },
-    { k: ["sinusite", "sinus"], fr: "✅ DMS : Inhalation de vapeur d'Eucalyptus et ail écrasé.", en: "✅ DMS: Eucalyptus steam inhalation and crushed garlic." },
-    { k: ["toux", "cough"], fr: "✅ DMS : Infusion gingembre, citron et miel pur 3 fois par jour.", en: "✅ DMS: Ginger, lemon and pure honey infusion 3 times daily." },
-    { k: ["fibrome", "fibroid"], fr: "✅ DMS : Décoction de racines drainantes pour réduire les masses.", en: "✅ DMS: Draining roots decoction to reduce masses." },
-    { k: ["kyste", "cyst"], fr: "✅ DMS : Traitement aux écorces purifiantes et équilibreur hormonal.", en: "✅ DMS: Purifying bark treatment and hormonal balancer." },
-    { k: ["fertilité", "fertility"], fr: "✅ DMS : Cure de racines toniques pour hommes et femmes.", en: "✅ DMS: Tonic roots cure for both men and women." },
-    { k: ["ulcere", "ulcer"], fr: "✅ DMS : Jus de pomme de terre crue ou aloe vera le matin.", en: "✅ DMS: Raw potato juice or aloe vera in the morning." },
-    { k: ["infection"], fr: "✅ DMS : Antibiotiques naturels à base de racines et écorces.", en: "✅ DMS: Natural antibiotics based on roots and barks." },
-    { k: ["sciatique", "back pain"], fr: "✅ DMS : Huiles de massage DMS et infusion anti-inflammatoire.", en: "✅ DMS: DMS massage oils and anti-inflammatory infusion." },
+const db = [
+    { k: ["hemorite", "hemorroide", "piles"], fr: "✅ DMS : Bain de siège tiède et racines laxatives DMS.", en: "✅ DMS: Warm sitz bath and DMS laxative roots." },
+    { k: ["morue", "perte", "infection"], fr: "✅ DMS : Décoction de racines antibiotiques et hygiène purifiante.", en: "✅ DMS: Antibiotic root decoction and hygiene." },
+    { k: ["ventre", "stomach", "gaz"], fr: "✅ DMS : Thé Vert à l'Argile Verte ou Aloe Vera pur à jeun.", en: "✅ DMS: Green Tea with Green Clay or pure Aloe Vera." },
+    { k: ["prostate"], fr: "✅ DMS : Racines de papayer mâle et graines de courge.", en: "✅ DMS: Male papaya roots and pumpkin seeds." },
+    { k: ["avc", "stroke"], fr: "✅ DMS : Massages aux huiles stimulantes et tisane circulatoire.", en: "✅ DMS: Stimulating oil massages and circulatory tea." },
+    { k: ["diabete", "diabetes"], fr: "✅ DMS : Infusion de feuilles de Neem et Moringa.", en: "✅ DMS: Neem and Moringa leaf infusion." },
+    { k: ["tension", "pressure"], fr: "✅ DMS : Ail frais et infusion de feuilles d'olivier.", en: "✅ DMS: Fresh garlic and olive leaf infusion." },
+    { k: ["puissance", "faiblesse", "sexual"], fr: "✅ DMS : Petit Cola, Gingembre et racines tonifiantes DMS.", en: "✅ DMS: Bitter Kola, Ginger and DMS tonic roots." },
+    { k: ["asthme", "asthma"], fr: "✅ DMS : Sirop naturel Miel, Oignon rouge et Ail.", en: "✅ DMS: Natural Honey, Red Onion and Garlic syrup." },
+    { k: ["fertilité", "fertility"], fr: "✅ DMS : Cure de racines toniques pour hommes et femmes.", en: "✅ DMS: Tonic roots for men and women." },
+    { k: ["toux", "cough"], fr: "✅ DMS : Infusion gingembre, citron et miel pur.", en: "✅ DMS: Ginger, lemon and pure honey infusion." },
+    { k: ["fibrome", "fibroid"], fr: "✅ DMS : Décoction de racines drainantes pour réduire les masses.", en: "✅ DMS: Draining roots decoction." },
+    { k: ["kyste", "cyst"], fr: "✅ DMS : Écorces purifiantes et équilibreur hormonal.", en: "✅ DMS: Purifying barks and hormonal balancer." },
+    { k: ["ulcere", "ulcer"], fr: "✅ DMS : Jus de pomme de terre crue ou aloe vera le matin.", en: "✅ DMS: Raw potato juice or aloe vera." },
+    { k: ["sciatique", "back"], fr: "✅ DMS : Huiles de massage DMS et infusion anti-inflammatoire.", en: "✅ DMS: Massage oils and anti-inflammatory infusion." },
+    { k: ["sinusite", "sinus"], fr: "✅ DMS : Inhalation vapeur Eucalyptus et ail écrasé.", en: "✅ DMS: Eucalyptus steam and crushed garlic." },
     { k: ["paludisme", "malaria"], fr: "✅ DMS : Décoction d'Artemisia et feuilles de papayer.", en: "✅ DMS: Artemisia and papaya leaves decoction." },
-    { k: ["constipation"], fr: "✅ DMS : Infusion de feuilles de Séné ou papaye mûre.", en: "✅ DMS: Senna leaves infusion or ripe papaya." },
-    { k: ["foie", "liver"], fr: "✅ DMS : Cure détox au citron et racines amères.", en: "✅ DMS: Lemon detox cure and bitter roots." },
-    { k: ["insomnie", "sleep"], fr: "✅ DMS : Tisane de citronnelle et camomille avant le coucher.", en: "✅ DMS: Lemongrass and chamomile tea before bed." },
-    { k: ["anemie", "anemia"], fr: "✅ DMS : Jus de bissap rouge et racines riches en fer.", en: "✅ DMS: Red hibiscus juice and iron-rich roots." },
-    { k: ["migraine"], fr: "✅ DMS : Massage aux huiles essentielles et infusion de basilic.", en: "✅ DMS: Essential oil massage and basil infusion." },
-    { k: ["peau", "skin"], fr: "✅ DMS : Savon traditionnel et gel d'aloe vera pur.", en: "✅ DMS: Traditional soap and pure aloe vera gel." },
-    { k: ["dents", "teeth"], fr: "✅ DMS : Mâcher un clou de girofle sur la zone douloureuse.", en: "✅ DMS: Chew a clove on the painful area." },
-    { k: ["memoire", "memory"], fr: "✅ DMS : Consommation de noix et racines stimulantes DMS.", en: "✅ DMS: Nut consumption and DMS stimulating roots." },
-    { k: ["rhumatisme", "joints"], fr: "✅ DMS : Décoction anti-douleur et frictions au camphre.", en: "✅ DMS: Pain-relieving decoction and camphor rubs." },
-    { k: ["allergie", "allergy"], fr: "✅ DMS : Renforcement immunitaire au miel et racines.", en: "✅ DMS: Immune boosting with honey and roots." },
-    { k: ["poids", "weight"], fr: "✅ DMS : Racine brûle-graisse et eau citronnée matin.", en: "✅ DMS: Fat-burning root and lemon water in morning." },
-    { k: ["yeux", "eyes"], fr: "✅ DMS : Vitamines naturelles et soins à base de plantes.", en: "✅ DMS: Natural vitamins and herbal eye care." }
+    { k: ["constipation"], fr: "✅ DMS : Infusion de feuilles de Séné ou papaye mûre.", en: "✅ DMS: Senna leaves or ripe papaya." },
+    { k: ["foie", "liver"], fr: "✅ DMS : Cure détox au citron et racines amères.", en: "✅ DMS: Lemon detox and bitter roots." },
+    { k: ["insomnie", "sleep"], fr: "✅ DMS : Tisane de citronnelle et camomille.", en: "✅ DMS: Lemongrass and chamomile tea." },
+    { k: ["anemie", "blood"], fr: "✅ DMS : Jus de bissap rouge et racines de fer.", en: "✅ DMS: Red hibiscus and iron roots." },
+    { k: ["migraine", "head"], fr: "✅ DMS : Huiles essentielles et infusion de basilic.", en: "✅ DMS: Essential oils and basil infusion." },
+    { k: ["peau", "skin"], fr: "✅ DMS : Savon traditionnel et gel d'aloe vera.", en: "✅ DMS: Traditional soap and aloe vera." },
+    { k: ["dents", "teeth"], fr: "✅ DMS : Clou de girofle sur la zone douloureuse.", en: "✅ DMS: Clove on the painful area." },
+    { k: ["memoire", "memory"], fr: "✅ DMS : Noix et racines stimulantes DMS.", en: "✅ DMS: Nuts and DMS stimulating roots." },
+    { k: ["rhumatisme", "joints"], fr: "✅ DMS : Décoction anti-douleur et camphre.", en: "✅ DMS: Pain decoction and camphor." },
+    { k: ["allergie", "allergy"], fr: "✅ DMS : Renforcement miel et racines.", en: "✅ DMS: Honey and roots reinforcement." },
+    { k: ["poids", "weight"], fr: "✅ DMS : Racine brûle-graisse et citron.", en: "✅ DMS: Fat-burning root and lemon." },
+    { k: ["yeux", "vision"], fr: "✅ DMS : Vitamines et plantes oculaires.", en: "✅ DMS: Vitamins and eye plants." },
+    { k: ["fatigue"], fr: "✅ DMS : Cure de pollen et racines DMS.", en: "✅ DMS: Pollen and DMS roots cure." }
 ];
 
-const UI = {
-    fr: { sub: "MÉDECINE TRADITIONNELLE INTÉGRÉE IA", dir: "INITIATEUR DIRECTEUR : MOUSTAPHA KOUROUMA", welcome: "L'IA DMS ANALYSE VOS 30 MALADIES<br>Posez votre question ici.", wa: "WHATSAPP DIRECTEUR", news: "🔴 DMS : 30 MALADIES TRAITÉES • PROSTATE • AVC • VENTRE • DIABÈTE • MAUDIATE • TENSION • PUISSANCE... DIR. MOUSTAPHA KOUROUMA 🔴", hold: "Écrivez ici..." },
-    en: { sub: "INTEGRATED TRADITIONAL MEDICINE AI", dir: "INITIATOR DIRECTOR: MOUSTAPHA KOUROUMA", welcome: "DMS AI ANALYZES YOUR 30 DISEASES<br>Ask your question here.", wa: "WHATSAPP DIRECTOR", news: "🔴 DMS: 30 DISEASES TREATED • PROSTATE • STROKE • STOMACH • DIABETES • TENSION • MANHOOD... DIR. MOUSTAPHA KOUROUMA 🔴", hold: "Write here..." }
-};
-
-function setL(lang) {
-    L = lang;
-    document.getElementById('sub').innerText = UI[L].sub;
-    document.getElementById('dir').innerText = UI[L].dir;
-    document.getElementById('welcome').innerHTML = UI[L].welcome;
-    document.getElementById('wa-text').innerText = UI[L].wa;
-    document.getElementById('news').innerText = UI[L].news;
-    document.getElementById('userInput').placeholder = UI[L].hold;
-    document.getElementById('output').style.display = 'none';
-    document.getElementById('welcome').style.display = 'block';
-}
+function setL(l) { L = l; document.getElementById('userInput').placeholder = (L=='fr'?'Quelle est la maladie ?':'What is the disease?'); }
 
 function runIA() {
-    let input = document.getElementById('userInput').value.toLowerCase().trim();
+    let val = document.getElementById('userInput').value.toLowerCase().trim();
     let out = document.getElementById('output');
     let welcome = document.getElementById('welcome');
-    if (input.length < 2) return;
+    if (val.length < 2) return;
     let found = false;
-    for (let item of dbDMS) {
-        for (let key of item.k) {
-            if (input.includes(key)) {
-                out.innerHTML = "<b>" + (L==='fr'?'RÉPONSE DMS :':'DMS RESPONSE:') + "</b><br><br>" + item[L];
+    for(let item of db) {
+        for(let key of item.k) {
+            if(val.includes(key)) {
+                out.innerHTML = "<b>" + (L=='fr'?'RÉPONSE DMS :':'DMS RESPONSE:') + "</b><br><br>" + item[L];
                 found = true; break;
             }
         }
-        if (found) break;
     }
-    if (!found) { out.innerHTML = "<b>" + (L==='fr'?'NON RECONNU. Contactez le Directeur.':'NOT RECOGNIZED. Contact the Director.') + "</b>"; }
-    welcome.style.display = 'none';
-    out.style.display = 'block';
+    if(!found) out.innerHTML = "<b>DMS :</b> " + (L=='fr'?'Maladie non reconnue. Contactez le Directeur.':'Disease not recognized. Contact the Director.');
+    out.style.display = "block";
+    welcome.style.display = "none";
     document.getElementById('userInput').value = "";
 }
 </script>
