@@ -3,106 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DMS - MOUSTAPHA KOUROUMA</title>
+    <title>DMS IA PRO - 30 MALADIES</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { background-color: #0d1b2a; color: white; font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 10px; text-align: center; overflow-x: hidden; display: flex; flex-direction: column; min-height: 100vh; }
-        .header { border-bottom: 3px solid #ffb703; padding-bottom: 10px; position: relative; flex-shrink: 0; }
-        #clock { position: absolute; top: 5px; right: 10px; color: #ffb703; font-family: monospace; font-size: 12px; }
-        .title { color: #ffb703; font-style: italic; font-weight: bold; font-size: 20px; margin: 0; text-transform: uppercase; padding-top: 15px; }
-        .news-bar { background: #ffb703; color: #0d1b2a; padding: 7px 0; font-weight: bold; font-size: 14px; margin: 10px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.5); }
-        .director-box { background: white; color: black; font-weight: bold; padding: 10px; border-radius: 8px; margin: 5px auto; border: 2px solid #ffb703; max-width: 90%; font-size: 14px; }
-        .chat-area { flex-grow: 1; background: #1b263b; border-radius: 15px; padding: 15px; text-align: left; border: 1px solid #415a77; margin: 10px 0; overflow-y: auto; }
-        #output { background: white; color: black; padding: 15px; border-radius: 10px; font-size: 17px; border-left: 6px solid #ffb703; display: none; margin-bottom: 10px; animation: fadeIn 0.5s; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
-        .default-msg { font-style: italic; color: #ffb703; font-size: 15px; text-align: center; }
-        .input-group { display: flex; align-items: center; gap: 10px; margin-top: auto; padding-bottom: 10px; }
-        input { flex: 1; padding: 15px; border-radius: 12px; border: 2px solid #ffb703; font-size: 16px; font-weight: bold; outline: none; }
-        .btn-send { background: #ffb703; border: none; width: 60px; height: 60px; border-radius: 15px; cursor: pointer; color: #0d1b2a; font-size: 24px; display: flex; align-items: center; justify-content: center; }
-        .wa-btn { background: #2dc653; color: white; display: flex; align-items: center; justify-content: center; padding: 12px; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 15px; gap: 8px; border: 2px solid #fff; margin-bottom: 10px; }
+        body { background-color: #050a14; color: white; font-family: 'Arial', sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
+        .tv-bar { background: #ffb703; color: #000; padding: 10px 0; font-weight: bold; font-size: 14px; border-bottom: 2px solid white; position: sticky; top: 0; z-index: 100; }
+        .header { background: #0d1b2a; padding: 15px; text-align: center; border-bottom: 4px solid #ffb703; }
+        .title { color: #ffb703; font-weight: bold; font-size: 22px; text-transform: uppercase; margin: 0; }
+        .subtitle { font-size: 12px; color: #fff; letter-spacing: 1px; margin-top: 5px; font-weight: bold; }
+        .lang-btns { margin: 10px 0; }
+        .btn-l { background: #ffb703; border: 1px solid white; padding: 6px 12px; border-radius: 5px; font-weight: bold; cursor: pointer; color: #000; margin: 0 5px; }
+        .director-box { background: white; color: #000; margin: 10px auto; padding: 10px; border-radius: 8px; font-weight: bold; border: 3px solid #ffb703; width: 92%; font-size: 15px; text-align: center; box-shadow: 0 0 10px #ffb703; }
+        .dashboard { flex-grow: 1; margin: 10px; background: #1b263b; border: 2px solid #415a77; border-radius: 20px; padding: 20px; display: flex; flex-direction: column; box-shadow: inset 0 0 20px rgba(0,0,0,0.5); }
+        #output { background: #ffffff; color: #000; padding: 15px; border-radius: 12px; border-left: 10px solid #ffb703; font-size: 17px; display: none; line-height: 1.4; }
+        .welcome { color: #ffb703; text-align: center; font-size: 17px; font-style: italic; margin: auto; }
+        .controls { padding: 15px; background: #0d1b2a; border-top: 3px solid #ffb703; }
+        .input-wrap { display: flex; gap: 8px; margin-bottom: 10px; }
+        input { flex: 1; padding: 15px; border-radius: 12px; border: none; font-size: 16px; font-weight: bold; outline: none; }
+        .btn-send { background: #ffb703; border: none; width: 55px; height: 55px; border-radius: 12px; color: #000; font-size: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        .wa-link { background: #25d366; color: white; padding: 12px; border-radius: 12px; text-decoration: none; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px; border: 2px solid white; }
     </style>
 </head>
-<body onload="updateTime()">
+<body onload="setL('fr')">
+
+<div class="tv-bar">
+    <marquee id="news" scrollamount="6"></marquee>
+</div>
 
 <div class="header">
-    <div id="clock"></div>
     <p class="title">DIASPORA MONDIAL SANTÉ</p>
-    <div class="news-bar">
-        <marquee scrollamount="5">🔥 DMS IA PRO 30 : PROSTATE • AVC • VENTRE • DIABÈTE • TENSION • MAUDIATE • PUISSANCE • ASTHME • KYSTES • FIBROMES... DIRECTEUR MOUSTAPHA KOUROUMA 🔥</marquee>
+    <p id="sub" class="subtitle"></p>
+    <div class="lang-btns">
+        <button class="btn-l" onclick="setL('fr')">FRANÇAIS 🇫🇷</button>
+        <button class="btn-l" onclick="setL('en')">ENGLISH 🇬🇧</button>
     </div>
-    <div class="director-box">INITIATEUR : MOUSTAPHA KOUROUMA</div>
 </div>
 
-<div class="lang-switch">
-    <button style="background:#ffb703; border:none; padding:8px 15px; border-radius:5px; font-weight:bold; margin:5px;" onclick="setL('fr')">FRANÇAIS 🇫🇷</button>
-    <button style="background:#ffb703; border:none; padding:8px 15px; border-radius:5px; font-weight:bold; margin:5px;" onclick="setL('en')">ENGLISH 🇬🇧</button>
-</div>
+<div id="dir" class="director-box"></div>
 
-<div class="chat-area">
+<div class="dashboard">
     <div id="output"></div>
-    <div id="intro" class="default-msg">Bienvenue. Tapez votre problème (Ex: Ventre) et cliquez sur l'avion jaune.</div>
+    <div id="welcome" class="welcome"></div>
 </div>
 
-<div class="input-group">
-    <input type="text" id="userInput" placeholder="Écrivez ici...">
-    <button class="btn-send" onclick="runEngine()"><i class="fas fa-paper-plane"></i></button>
+<div class="controls">
+    <div class="input-wrap">
+        <input type="text" id="userInput" placeholder="...">
+        <button class="btn-send" onclick="runIA()"><i class="fas fa-paper-plane"></i></button>
+    </div>
+    <a href="https://wa.me/2207814179" class="wa-link">
+        <i class="fab fa-whatsapp fa-lg"></i> <span id="wa-text"></span>
+    </a>
 </div>
-
-<a href="https://wa.me/2207814179" class="wa-btn">
-    <i class="fab fa-whatsapp"></i> CONTACTER LE DIRECTEUR
-</a>
 
 <script>
-let lang = 'fr';
-const db = [
-    { k: ["ventre", "estomac", "gastrite"], fr: "✅ Soin Ventre : Boire du jus d'Aloe Vera pur ou de l'argile verte à jeun le matin. Évitez le piment.", en: "✅ Stomach Care: Drink pure Aloe Vera juice or green clay on an empty stomach. Avoid chili." },
-    { k: ["prostate"], fr: "✅ Prostate : Décoction de racines de papayer mâle et graines de courge. Réduit l'inflammation.", en: "Prostate: Decoction of male papaya roots and pumpkin seeds." },
-    { k: ["maudiate", "maudita"], fr: "✅ Secret DMS : Purification totale du sang avec nos racines amères et écorces sacrées.", en: "DMS Secret: Total blood purification with our bitter roots and sacred barks." },
-    { k: ["avc", "paralysie"], fr: "✅ Aide AVC : Massages thérapeutiques aux huiles bio et tisanes circulatoires DMS.", en: "Stroke Help: Therapeutic massages with bio oils and circulatory teas." },
-    { k: ["asthme"], fr: "✅ Asthme : Mélange oignon rouge et miel pur. Éviter la poussière et le froid.", en: "Asthma: Red onion and pure honey mix. Avoid dust and cold." },
-    { k: ["puissance", "faiblesse"], fr: "✅ Puissance : Petit cola, gingembre sauvage et racines tonifiantes DMS.", en: "Manhood: Bitter kola, wild ginger and DMS tonic roots." }
+let L = 'fr';
+// LES 30 MALADIES VÉRIFIÉES
+const dbDMS = [
+    { k: ["ventre", "stomach", "gaz", "estomac"], fr: "✅ DMS : Thé Vert à l'Argile Verte ou jus d'Aloe Vera pur le matin à jeun.", en: "✅ DMS: Green tea with green clay or pure Aloe Vera juice on an empty stomach." },
+    { k: ["prostate"], fr: "✅ DMS : Décoction de racines de papayer mâle et graines de courge.", en: "✅ DMS: Decoction of male papaya roots and pumpkin seeds." },
+    { k: ["maudiate", "maudita"], fr: "✅ DMS : Purification profonde du sang avec écorces amères et racines sacrées.", en: "✅ DMS: Deep blood purification with bitter barks and sacred roots." },
+    { k: ["avc", "stroke"], fr: "✅ DMS : Massages aux huiles stimulantes et décoction circulatoire.", en: "✅ DMS: Stimulating oil massages and circulatory decoction." },
+    { k: ["diabete", "diabetes"], fr: "✅ DMS : Infusion de feuilles de Neem et Moringa. Régule le sucre.", en: "✅ DMS: Neem and Moringa leaf infusion. Regulates sugar levels." },
+    { k: ["tension", "blood pressure"], fr: "✅ DMS : Ail frais et infusion de feuilles d'olivier sauvage.", en: "✅ DMS: Fresh garlic and wild olive leaf infusion." },
+    { k: ["puissance", "weakness", "manhood"], fr: "✅ DMS : Petit Cola, Gingembre sauvage et racines tonifiantes DMS.", en: "✅ DMS: Bitter Kola, wild Ginger and DMS tonic roots." },
+    { k: ["hemorroide", "piles"], fr: "✅ DMS : Bain de siège tiède et décoction de racines laxatives.", en: "✅ DMS: Warm sitz bath and laxative roots decoction." },
+    { k: ["asthme", "asthma"], fr: "✅ DMS : Sirop naturel (miel, oignon rouge, ail). Dégage les bronches.", en: "✅ DMS: Natural syrup (honey, red onion, garlic). Clears airways." },
+    { k: ["sinusite", "sinus"], fr: "✅ DMS : Inhalation de vapeur d'Eucalyptus et ail écrasé.", en: "✅ DMS: Eucalyptus steam inhalation and crushed garlic." },
+    { k: ["toux", "cough"], fr: "✅ DMS : Infusion gingembre, citron et miel pur 3 fois par jour.", en: "✅ DMS: Ginger, lemon and pure honey infusion 3 times daily." },
+    { k: ["fibrome", "fibroid"], fr: "✅ DMS : Décoction de racines drainantes pour réduire les masses.", en: "✅ DMS: Draining roots decoction to reduce masses." },
+    { k: ["kyste", "cyst"], fr: "✅ DMS : Traitement aux écorces purifiantes et équilibreur hormonal.", en: "✅ DMS: Purifying bark treatment and hormonal balancer." },
+    { k: ["fertilité", "fertility"], fr: "✅ DMS : Cure de racines toniques pour hommes et femmes.", en: "✅ DMS: Tonic roots cure for both men and women." },
+    { k: ["ulcere", "ulcer"], fr: "✅ DMS : Jus de pomme de terre crue ou aloe vera le matin.", en: "✅ DMS: Raw potato juice or aloe vera in the morning." },
+    { k: ["infection"], fr: "✅ DMS : Antibiotiques naturels à base de racines et écorces.", en: "✅ DMS: Natural antibiotics based on roots and barks." },
+    { k: ["sciatique", "back pain"], fr: "✅ DMS : Huiles de massage DMS et infusion anti-inflammatoire.", en: "✅ DMS: DMS massage oils and anti-inflammatory infusion." },
+    { k: ["paludisme", "malaria"], fr: "✅ DMS : Décoction d'Artemisia et feuilles de papayer.", en: "✅ DMS: Artemisia and papaya leaves decoction." },
+    { k: ["constipation"], fr: "✅ DMS : Infusion de feuilles de Séné ou papaye mûre.", en: "✅ DMS: Senna leaves infusion or ripe papaya." },
+    { k: ["foie", "liver"], fr: "✅ DMS : Cure détox au citron et racines amères.", en: "✅ DMS: Lemon detox cure and bitter roots." },
+    { k: ["insomnie", "sleep"], fr: "✅ DMS : Tisane de citronnelle et camomille avant le coucher.", en: "✅ DMS: Lemongrass and chamomile tea before bed." },
+    { k: ["anemie", "anemia"], fr: "✅ DMS : Jus de bissap rouge et racines riches en fer.", en: "✅ DMS: Red hibiscus juice and iron-rich roots." },
+    { k: ["migraine"], fr: "✅ DMS : Massage aux huiles essentielles et infusion de basilic.", en: "✅ DMS: Essential oil massage and basil infusion." },
+    { k: ["peau", "skin"], fr: "✅ DMS : Savon traditionnel et gel d'aloe vera pur.", en: "✅ DMS: Traditional soap and pure aloe vera gel." },
+    { k: ["dents", "teeth"], fr: "✅ DMS : Mâcher un clou de girofle sur la zone douloureuse.", en: "✅ DMS: Chew a clove on the painful area." },
+    { k: ["memoire", "memory"], fr: "✅ DMS : Consommation de noix et racines stimulantes DMS.", en: "✅ DMS: Nut consumption and DMS stimulating roots." },
+    { k: ["rhumatisme", "joints"], fr: "✅ DMS : Décoction anti-douleur et frictions au camphre.", en: "✅ DMS: Pain-relieving decoction and camphor rubs." },
+    { k: ["allergie", "allergy"], fr: "✅ DMS : Renforcement immunitaire au miel et racines.", en: "✅ DMS: Immune boosting with honey and roots." },
+    { k: ["poids", "weight"], fr: "✅ DMS : Racine brûle-graisse et eau citronnée matin.", en: "✅ DMS: Fat-burning root and lemon water in morning." },
+    { k: ["yeux", "eyes"], fr: "✅ DMS : Vitamines naturelles et soins à base de plantes.", en: "✅ DMS: Natural vitamins and herbal eye care." }
 ];
 
-function updateTime() {
-    let d = new Date();
-    document.getElementById('clock').innerHTML = d.toLocaleDateString() + "<br>" + d.toLocaleTimeString();
-    setTimeout(updateTime, 1000);
+const UI = {
+    fr: { sub: "MÉDECINE TRADITIONNELLE INTÉGRÉE IA", dir: "INITIATEUR DIRECTEUR : MOUSTAPHA KOUROUMA", welcome: "L'IA DMS ANALYSE VOS 30 MALADIES<br>Posez votre question ici.", wa: "WHATSAPP DIRECTEUR", news: "🔴 DMS : 30 MALADIES TRAITÉES • PROSTATE • AVC • VENTRE • DIABÈTE • MAUDIATE • TENSION • PUISSANCE... DIR. MOUSTAPHA KOUROUMA 🔴", hold: "Écrivez ici..." },
+    en: { sub: "INTEGRATED TRADITIONAL MEDICINE AI", dir: "INITIATOR DIRECTOR: MOUSTAPHA KOUROUMA", welcome: "DMS AI ANALYZES YOUR 30 DISEASES<br>Ask your question here.", wa: "WHATSAPP DIRECTOR", news: "🔴 DMS: 30 DISEASES TREATED • PROSTATE • STROKE • STOMACH • DIABETES • TENSION • MANHOOD... DIR. MOUSTAPHA KOUROUMA 🔴", hold: "Write here..." }
+};
+
+function setL(lang) {
+    L = lang;
+    document.getElementById('sub').innerText = UI[L].sub;
+    document.getElementById('dir').innerText = UI[L].dir;
+    document.getElementById('welcome').innerHTML = UI[L].welcome;
+    document.getElementById('wa-text').innerText = UI[L].wa;
+    document.getElementById('news').innerText = UI[L].news;
+    document.getElementById('userInput').placeholder = UI[L].hold;
+    document.getElementById('output').style.display = 'none';
+    document.getElementById('welcome').style.display = 'block';
 }
 
-function setL(l) { lang = l; alert(l === 'fr' ? "Français activé" : "English activated"); }
-
-function runEngine() {
-    let inputField = document.getElementById('userInput');
-    let input = inputField.value.toLowerCase().trim();
+function runIA() {
+    let input = document.getElementById('userInput').value.toLowerCase().trim();
     let out = document.getElementById('output');
-    let intro = document.getElementById('intro');
-    
+    let welcome = document.getElementById('welcome');
     if (input.length < 2) return;
-
-    // 1. On efface l'ancienne réponse pour que ça défile
-    out.style.display = 'none';
-    
     let found = false;
-    for (let i = 0; i < db.length; i++) {
-        for (let j = 0; j < db[i].k.length; j++) {
-            if (input.includes(db[i].k[j])) {
-                out.innerHTML = "<b>RÉPONSE DMS OFFICIELLE :</b><br>" + db[i][lang];
+    for (let item of dbDMS) {
+        for (let key of item.k) {
+            if (input.includes(key)) {
+                out.innerHTML = "<b>" + (L==='fr'?'RÉPONSE DMS :':'DMS RESPONSE:') + "</b><br><br>" + item[L];
                 found = true; break;
             }
         }
         if (found) break;
     }
-    
-    if (!found) {
-        out.innerHTML = "<b>RÉPONSE DMS :</b><br>Maladie non reconnue. Contactez le Directeur pour une consultation.";
-    }
-
-    // 2. On affiche la nouvelle réponse avec l'effet
-    setTimeout(() => {
-        out.style.display = 'block';
-        intro.style.display = 'none';
-        inputField.value = ""; // On vide la barre d'écriture pour la prochaine question
-    }, 200);
+    if (!found) { out.innerHTML = "<b>" + (L==='fr'?'NON RECONNU. Contactez le Directeur.':'NOT RECOGNIZED. Contact the Director.') + "</b>"; }
+    welcome.style.display = 'none';
+    out.style.display = 'block';
+    document.getElementById('userInput').value = "";
 }
 </script>
 </body>
