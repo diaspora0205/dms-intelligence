@@ -6,131 +6,104 @@
     <title>DMS IA - MOUSTAPHA KOUROUMA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --gold: #ffb703; --dark: #050a14; --blue: #0d1b2a; }
-        body { background: var(--dark); color: white; font-family: 'Arial', sans-serif; margin: 0; padding-bottom: 180px; text-align: center; }
+        :root { --gold: #ffb703; --dark: #050a12; --blue: #219ebc; }
+        body { background: var(--dark); color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding-bottom: 150px; }
         
-        /* HEADER OFFICIEL */
-        .header { background: var(--blue); padding: 20px; border-bottom: 5px solid var(--gold); box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
-        .title { color: var(--gold); font-size: 24px; font-weight: 900; text-transform: uppercase; margin: 0; letter-spacing: 1px; }
-        .subtitle { font-size: 14px; color: white; font-weight: bold; margin-top: 8px; text-transform: uppercase; letter-spacing: 1px; }
-
-        /* BARRE INFO DYNAMIQUE */
-        .info-bar { background: #1b263b; padding: 12px; color: var(--gold); font-size: 15px; font-weight: bold; display: flex; justify-content: space-around; border-bottom: 2px solid var(--gold); }
-
-        /* CARTE DU DIRECTEUR */
-        .director-card { background: white; color: black; margin: 15px auto; padding: 15px; border-radius: 12px; border: 3px solid var(--gold); width: 85%; font-weight: 900; font-size: 16px; text-transform: uppercase; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
-
-        /* TABLEAU DE BORD (L'IA) */
-        .dashboard { margin: 15px; background: #000; border: 2px double #415a77; border-radius: 25px; padding: 25px; min-height: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: inset 0 0 30px rgba(0,0,0,1); }
-        #res { background: white; color: black; padding: 25px; border-radius: 15px; border-left: 12px solid var(--gold); font-size: 19px; display: none; text-align: left; width: 90%; line-height: 1.6; }
-        .wel-text { color: var(--gold); font-style: italic; font-weight: bold; font-size: 18px; }
-
-        /* NAVIGATION & INPUT */
-        .footer { position: fixed; bottom: 0; width: 100%; background: var(--blue); padding: 15px; border-top: 4px solid var(--gold); box-sizing: border-box; z-index: 1000; }
-        .input-box { display: flex; gap: 8px; margin-bottom: 12px; }
-        input { flex: 1; padding: 18px; border-radius: 12px; border: 3px solid var(--gold); font-size: 17px; font-weight: bold; outline: none; background: white; color: black; }
-        .btn-send { background: var(--gold); border: none; width: 65px; height: 65px; border-radius: 12px; color: black; font-size: 28px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        /* Header & Traducteur */
+        .header { background: var(--blue); padding: 20px; text-align: center; border-bottom: 4px solid var(--gold); }
+        .title { color: var(--gold); font-size: 22px; font-weight: bold; margin: 0; text-transform: uppercase; }
         
-        /* WHATSAPP VOCAL */
-        .wa-btn { background: #25d366; color: white; padding: 14px; border-radius: 12px; text-decoration: none; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px; border: 2px solid white; font-size: 16px; }
+        /* Cartes de contenu */
+        .card { background: white; color: black; margin: 15px; padding: 20px; border-radius: 15px; border-left: 10px solid var(--gold); box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .dashboard { background: rgba(255,255,255,0.1); margin: 15px; padding: 15px; border-radius: 10px; text-align: center; border: 1px solid var(--gold); }
+        
+        /* Résultat IA */
+        #res { background: #f0f0f0; color: #d00; padding: 15px; border-radius: 10px; margin-top: 15px; display: none; font-weight: bold; border-left: 5px solid var(--blue); }
+        
+        /* Section Compteur (Puissance) */
+        .stats-box { background: white; color: black; margin: 20px 15px; padding: 20px; border-radius: 15px; text-align: center; }
+        .counter-img { height: 50px; margin: 10px 0; border: 2px solid var(--blue); border-radius: 5px; }
+
+        /* Footer Fixe (Boutons) */
+        .footer-fixed { position: fixed; bottom: 0; width: 100%; background: var(--dark); border-top: 2px solid var(--gold); z-index: 1000; }
+        .input-box { display: flex; gap: 8px; padding: 15px; }
+        input { flex: 1; padding: 15px; border-radius: 10px; border: 2px solid var(--gold); font-size: 16px; }
+        .btn-send { background: var(--gold); border: none; padding: 15px; border-radius: 10px; color: white; cursor: pointer; }
+        .wa-btn { background: #25d366; color: white; text-align: center; padding: 12px; text-decoration: none; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 14px; }
     </style>
 </head>
 <body onload="initDMS()">
 
-<div class="header">
-    <p class="title">DIASPORA MONDIAL SANTÉ</p>
-    <p class="subtitle">MÉDECINE TRADITIONNELLE INTÉGRÉE IA</p>
-    <div style="margin-top:12px;">
-        <button onclick="setLang('fr')" style="background:var(--gold); font-weight:bold; border-radius:5px; padding:6px 15px; border:1px solid white;">FRANÇAIS</button>
-        <button onclick="setLang('en')" style="background:var(--gold); font-weight:bold; border-radius:5px; padding:6px 15px; border:1px solid white; margin-left:10px;">ENGLISH</button>
+    <div class="header">
+        <p class="title">DIASPORA MONDIAL SANTÉ (DMS)</p>
+        <p style="margin: 5px 0; font-size: 12px;">DIRECTEUR : MOUSTAPHA KOUROUMA</p>
+        <div id="google_translate_element"></div>
     </div>
-</div>
 
-<div class="info-bar">
-    <span id="date">-- --</span> <span id="time">00:00:00</span>
-</div>
-
-<div class="director-card">INITIATEUR : MOUSTAPHA KOUROUMA</div>
-
-<div class="dashboard">
-    <div id="res"></div>
-    <div id="wel" class="wel-text">
-        <i class="fas fa-microchip fa-3x"></i><br><br>
-        ANALYSEUR DMS ACTIVÉ<br>Posez votre question sur nos spécialités.
+    <div class="card">
+        <h3 style="margin-top:0; color: var(--blue);">ANALYSEUR IA DMS</h3>
+        <p id="wel">Bonjour. Décrivez vos symptômes ou une plante pour analyse.</p>
+        <div id="res"></div>
     </div>
-</div>
 
-<div class="footer">
-    <div class="input-box">
-        <input type="text" id="userInput" placeholder="Quelle est votre maladie ?">
-        <button class="btn-send" onclick="ask()"><i class="fas fa-paper-plane"></i></button>
+    <div class="dashboard">
+        <p style="color: var(--gold); font-weight: bold; margin: 0; letter-spacing: 1px;">🌍 DMS WORLDWIDE : 9 LANGUAGES SYSTEM</p>
     </div>
-    <a href="https://wa.me/2207814179" class="wa-btn"><i class="fab fa-whatsapp fa-2x"></i> ENVOYER UN VOCAL AU DIRECTEUR</a>
-</div>
 
-<script>
-let curL = 'fr';
-function initDMS(){ setInterval(()=>{ const d=new Date(); document.getElementById('time').innerText=d.toLocaleTimeString(); document.getElementById('date').innerText=d.toLocaleDateString('fr-FR',{day:'numeric',month:'short'}); },1000); }
+    <div class="stats-box">
+        <p style="font-size: 13px; font-weight: bold; color: #555; text-transform: uppercase;">Traçabilité de l'Audience Mondiale</p>
+        <img src="https://profile-counter.glitch.me/diaspora-mondial-sante/count.svg" alt="Compteur" class="counter-img">
+        <p style="font-size: 11px; color: #888; margin: 0;">Consultations enregistrées en temps réel</p>
+    </div>
 
-// MOTEUR DE RECHERCHE ULTRA-RÉSISTANT
-const data = [
-    {k:["diabete","sucre","diabète","diabetes","diabette"], r:{fr:"SOLUTION DMS : Infusion de feuilles de Neem et poudre de Moringa bio pour stabiliser votre taux.", en:"DMS CARE: Neem leaves and organic Moringa powder to stabilize your sugar level."}},
-    {k:["hemorite","hemorroide","hemoroide","hémorroïde","piles","anorectal"], r:{fr:"SOLUTION DMS : Bain de siège avec écorces cicatrisantes et racines laxatives spéciales.", en:"DMS CARE: Sitz bath with healing barks and special laxative roots."}},
-    {k:["morue","perte","infection","demangeaison"], r:{fr:"SOLUTION DMS : Décoction de racines antibiotiques puissantes et hygiène purifiante aux plantes.", en:"DMS CARE: Powerful antibiotic root decoction and herbal purifying hygiene."}},
-    {k:["prostate","urine"], r:{fr:"SOLUTION DMS : Décoction concentrée de racines de papayer mâle et graines de courge.", en:"DMS CARE: Concentrated male papaya roots and pumpkin seeds."}},
-    {k:["avc","stroke","paralysie"], r:{fr:"SOLUTION DMS : Massages aux huiles stimulantes DMS et tisane pour fluidifier la circulation.", en:"DMS CARE: Stimulating DMS oil massages and circulatory tea."}},
-    {k:["ventre","estomac","gaz","ballon"], r:{fr:"SOLUTION DMS : Infusion Thé Vert + Argile Verte ou Aloe Vera pur chaque matin à jeun.", en:"DMS CARE: Green Tea + Green Clay or Pure Aloe Vera every morning."}},
-    {k:["bonjour","salut","hello"], r:{fr:"Bonjour ! Je suis l'IA de DMS. Comment puis-je vous aider aujourd'hui ?", en:"Hello ! I am the DMS AI. How can I help you today ?"}}
-];
+    <div class="footer-fixed">
+        <div class="input-box">
+            <input type="text" id="userInput" placeholder="Quelle est votre maladie ?">
+            <button class="btn-send" onclick="ask()"><i class="fas fa-paper-plane fa-lg"></i></button>
+        </div>
+        <a href="https://wa.me/2207814179" class="wa-btn">
+            <i class="fab fa-whatsapp fa-2x"></i> ENVOYER UN VOCAL AU DIRECTEUR
+        </a>
+    </div>
 
-function setLang(l){ curL=l; document.getElementById('userInput').placeholder=(curL=='fr'?'Posez votre question...':'Ask your question...'); }
+    <script>
+        const data = [
+            { k: ["palu", "fievre", "moustique"], r: "DMS : Risque de Paludisme. Prenez du paracétamol. Consultez si la fièvre persiste." },
+            { k: ["impuissance", "sexe", "faiblesse"], r: "DMS : Utilisez Gingembre ou Petit Cola. ATTENTION : Interdit aux hypertendus." },
+            { k: ["diabete", "sucre"], r: "DMS : Réduire le sucre immédiatement. Plantes : Neem ou Cannelle. Suivi médical obligatoire." },
+            { k: ["tete", "migraine"], r: "DMS : Repos et hydratation. Infusion de menthe. Si vision trouble, consultez urgemment." },
+            { k: ["estomac", "ventre", "gaz"], r: "DMS : Infusion de Gingembre. Évitez les repas lourds le soir." }
+        ];
 
-function ask() {
-    let input = document.getElementById('userInput').value.toLowerCase().trim();
-    let out = document.getElementById('res');
-    let wel = document.getElementById('wel');
-    if(input.length < 2) return;
-    
-    let found = false;
-    for(let item of data){
-        for(let key of item.k){
-            // Utilisation de .includes() pour attraper le mot même au milieu d'une phrase
-            if(input.includes(key)){
-                out.innerHTML = "<b style='color:#0d1b2a; border-bottom:2px solid #ffb703;'>DÉCISION DU DIRECTEUR :</b><br><br>" + item.r[curL];
-                found = true; break;
+        function initDMS() { console.log("Moteur DMS 100% Opérationnel"); }
+
+        function ask() {
+            let input = document.getElementById('userInput').value.toLowerCase();
+            let out = document.getElementById('res');
+            let wel = document.getElementById('wel');
+            if(input.length < 2) return;
+            let found = false;
+            for(let item of data){
+                for(let key of item.k){
+                    if(input.includes(key)){
+                        out.innerHTML = "RÉSULTAT ANALYSE DMS :<br><br>" + item.r;
+                        found = true; break;
+                    }
+                }
             }
+            if(!found) out.innerHTML = "ALERTE : Information non trouvée. Contactez le Directeur par vocal pour une analyse spécifique.";
+            out.style.display = "block";
+            wel.style.display = "none";
         }
-    }
-    
-    if(!found) out.innerHTML = "<b>ALERTE DMS :</b> Maladie non reconnue par le système automatique. Veuillez cliquer sur le bouton WhatsApp pour parler au Directeur.";
-    
-    out.style.display="block";
-    wel.style.display="none";
-    document.getElementById('userInput').value="";
-}
-</script><div id="google_translate_element" style="text-align:center; background:#f0fff4; padding:20px; border:2px solid #28a745; border-radius:15px; margin:10px;">
-    <strong style="color:#1a5928;">DMS WORLDWIDE : 9 STRATEGIC LANGUAGES</strong>
-</div>
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: 'fr', 
-    includedLanguages: 'en,ar,es,pt,de,zh-CN,ru,it,tr', 
-    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-  }, 'google_translate_element');
-}
-</script>
-<script type<div style="text-align: center; margin-top: 50px; padding: 20px; border-top: 1px solid #eee; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-    <span style="color: #666; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">Audience Mondiale DMS</span>
-    <div style="margin-top: 10px;">
-        <img src="https://profile-counter.glitch.me/diaspora-mondial-sante/count.svg" alt="Compteur de visites" style="height: 30px;">
-    </div>
-</div>="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</body><div id="google_translate_element" style="text-align:center; background:#f8f9fa; padding:15px; border-bottom:2px solid #28a745;"></div>
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'fr', includedLanguages: 'en,ar,es,pt,de'}, 'google_translate_element');
-}
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    </html>
+
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'fr',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
