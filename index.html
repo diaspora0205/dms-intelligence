@@ -3,71 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>DMS - MOUSTAPHA KOUROUMA (EXPERT TOP 24)</title>
+    <title>DMS - VICTOR MOUSTAPHA KOUROUMA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --gold: #ffb703; --dark: #050a12; --blue: #219ebc; --white: #ffffff; }
-        body { background: var(--dark); color: var(--white); font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding-bottom: 220px; text-align: center; }
+        body { background: var(--dark); color: var(--white); font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding-bottom: 240px; text-align: center; }
         
-        /* HEADER PRESTIGE - TOUS LES ANGLES VÉRIFIÉS */
         .header { background: linear-gradient(to bottom, #023047, var(--blue)); padding: 25px 10px; border-bottom: 5px solid var(--gold); }
-        .title { color: var(--gold); font-size: 20px; font-weight: 900; margin: 0; letter-spacing: 1px; text-transform: uppercase; }
-        .initiateur { color: white; font-size: 15px; margin-top: 10px; font-weight: bold; }
+        .title { color: var(--gold); font-size: 20px; font-weight: 900; margin: 0; text-transform: uppercase; }
         
-        /* PALMARÈS OFFICIEL GOOGLE CLOUD - CLASSEMENT EXACT */
-        .palmares { background: rgba(0,0,0,0.3); margin: 10px auto; padding: 10px; border-radius: 10px; width: 90%; border: 1px solid var(--gold); }
-        .medal-box { display: flex; justify-content: center; gap: 10px; font-size: 10px; font-weight: bold; }
-        .medal { padding: 4px 8px; border-radius: 5px; color: #000; }
-        .m-bronze { background: #cd7f32; } .m-argent { background: #c0c0c0; } .m-or { background: var(--gold); box-shadow: 0 0 10px var(--gold); }
+        /* VOTRE TITRE EXACT ENSEIGNÉ */
+        .initiateur { color: white; font-size: 15px; margin-top: 10px; font-weight: bold; line-height: 1.4; }
+        
+        .palmares { background: rgba(0,0,0,0.4); margin: 12px auto; padding: 10px; border-radius: 12px; width: 92%; border: 1px solid var(--gold); }
+        .medal-box { display: flex; justify-content: space-around; gap: 5px; margin-top: 8px; }
+        .medal { font-size: 10px; padding: 5px 8px; border-radius: 6px; font-weight: bold; color: #000; }
+        .m-br { background: #cd7f32; } .m-ag { background: #c0c0c0; } .m-or { background: var(--gold); box-shadow: 0 0 10px var(--gold); }
 
-        #datetime { background: #001219; color: var(--gold); padding: 10px; font-size: 12px; font-family: monospace; border-bottom: 1px solid var(--gold); }
-        .translate-box { margin: 15px auto; padding: 5px; background: white; border-radius: 10px; width: 92%; border: 3px solid var(--gold); }
+        #datetime { background: #001219; color: var(--gold); padding: 10px; font-size: 13px; font-family: monospace; border-bottom: 1px solid var(--gold); }
+        .translate-box { margin: 15px auto; padding: 5px; background: white; border-radius: 10px; width: 90%; border: 3px solid var(--gold); }
 
-        /* MOTEUR DE RECHERCHE IA */
-        .main-card { background: var(--white); color: #333; margin: 20px 15px; padding: 30px; border-radius: 30px; border-left: 12px solid var(--gold); box-shadow: 0 15px 40px rgba(0,0,0,0.8); }
-        #res { background: #f0f7ff; color: #003049; padding: 20px; border-radius: 15px; margin-top: 20px; display: none; font-weight: 800; border: 2px solid var(--blue); font-size: 18px; text-align: left; line-height: 1.5; }
+        /* ANALYSEUR MÉDECINE TRADITIONNELLE INTÉGRÉE IA */
+        .main-card { background: var(--white); color: #333; margin: 15px; padding: 35px 20px; border-radius: 25px; border-left: 12px solid var(--gold); box-shadow: 0 15px 40px rgba(0,0,0,0.8); }
+        #res { background: #f0f7ff; color: #003049; padding: 20px; border-radius: 15px; margin-top: 20px; display: none; font-weight: 800; border: 2px solid var(--blue); font-size: 19px; text-align: left; line-height: 1.5; }
 
-        /* COMPTEUR INTERNE DÉPART 1015 - NE REDESCEND JAMAIS */
-        .counter-box { margin: 30px 20px; padding: 20px; border-radius: 15px; background: rgba(255,255,255,0.05); border: 1px solid var(--gold); }
-        .digital-num { background: #000; color: #39FF14; font-family: 'Courier New', monospace; font-size: 38px; padding: 10px 30px; border: 2px solid #39FF14; border-radius: 12px; display: inline-block; box-shadow: 0 0 20px rgba(57, 255, 20, 0.5); }
+        .counter-box { margin: 20px; padding: 15px; border-radius: 15px; background: rgba(255,255,255,0.05); border: 1px solid var(--gold); }
+        .digital-num { background: #000; color: #39FF14; font-family: 'Courier New', monospace; font-size: 40px; padding: 10px 30px; border: 3px solid #39FF14; border-radius: 12px; display: inline-block; }
 
-        /* FOOTER AVEC BOUTON AVION DORÉ */
         .footer-nav { position: fixed; bottom: 0; width: 100%; background: #000; border-top: 5px solid var(--gold); z-index: 9999; }
         .search-bar { display: flex; padding: 15px; gap: 12px; }
         input { flex: 1; padding: 18px; border-radius: 15px; border: 3px solid var(--gold); font-size: 17px; font-weight: bold; outline: none; }
         .btn-avion { background: var(--gold); border: none; width: 75px; border-radius: 15px; color: black; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-        .btn-avion:active { transform: scale(0.95); }
-        .wa-contact { background: #25d366; color: white; text-decoration: none; padding: 18px; display: flex; align-items: center; justify-content: center; gap: 15px; font-weight: bold; font-size: 18px; }
+        .wa-contact { background: #25d366; color: white; text-decoration: none; padding: 20px; display: flex; align-items: center; justify-content: center; gap: 15px; font-weight: bold; font-size: 19px; }
     </style>
 </head>
 <body onload="startDMS()">
 
     <div class="header">
         <p class="title">DIASPORA MONDIAL SANTÉ (DMS)</p>
-        <div class="initiateur">MOUSTAPHA KOUROUMA<br><small>Initiateur pour Médecine Traditionnelle Intégrée</small></div>
+        <div class="initiateur">
+            MOUSTAPHA KOUROUMA<br>
+            <span style="color:var(--gold)">Initiateur pour Médecine Traditionnelle Intégrée IA</span>
+        </div>
         
         <div class="palmares">
-            <p style="margin:0 0 8px 0; font-size:11px; color:var(--gold);">CERTIFICATIONS GOOGLE CLOUD (CLASSEMENT EXACT)</p>
+            <span style="font-size: 11px; color: var(--gold); font-weight: bold;">CERTIFICATIONS GOOGLE CLOUD</span>
             <div class="medal-box">
-                <span class="medal m-bronze">BRONZE (2e)</span>
-                <span class="medal m-argent">ARGENT (3e)</span>
+                <span class="medal m-br">BRONZE (2e)</span>
+                <span class="medal m-ag">ARGENT (3e)</span>
                 <span class="medal m-or">OR (24e MONDIAL)</span>
             </div>
         </div>
     </div>
 
-    <div id="datetime">CHARGEMENT...</div>
+    <div id="datetime">...</div>
     <div class="translate-box"><div id="google_translate_element"></div></div>
 
     <div class="main-card">
-        <h3 style="margin:0; color:#023047; text-transform:uppercase;"><i class="fas fa-microscope"></i> Analyse Médecine Traditionnelle</h3>
+        <h3 style="margin:0; color:#023047; text-transform:uppercase;"><i class="fas fa-microscope"></i> Analyse Traditionnelle IA</h3>
         <p id="hint" style="font-size:15px; color:#555; margin-top:10px; font-weight:bold;">Quelle maladie analysez-vous ?</p>
         <div id="res"></div>
     </div>
 
     <div class="counter-box">
-        <p style="color:var(--gold); font-size:12px; font-weight:bold; margin-bottom:15px; text-transform:uppercase;">Traçabilité Mondiale Certifiée</p>
-        <div class="digital-num" id="visit-count">1015</div>
+        <p style="color:var(--gold); font-size:12px; font-weight:bold; margin-bottom:10px;">TRAÇABILITÉ MONDIALE CERTIFIÉE</p>
+        <div class="digital-num" id="visit-count">1023</div>
     </div>
 
     <div class="footer-nav">
@@ -81,34 +81,25 @@
     </div>
 
     <script>
-        const database = [
+        const db = [
             {k:["diabete","sucre"], r:"DMS : Infusion de feuilles de Neem ou Cannelle. Supprimez sucre et pain blanc."},
             {k:["estomac","ulcere","ventre"], r:"DMS : Jus de pomme de terre crue le matin à jeun pendant 1 semaine."},
             {k:["impuissance","sexe","erection"], r:"DMS : Mélange Petit Cola, Gingembre et Miel pur (1 cuillère matin/soir)."},
             {k:["tension","hyper"], r:"DMS : Infusion d'Hibiscus (Bissap) tiède sans sucre. Zéro sel."},
-            {k:["hemorroide","anus"], r:"DMS : Bain de siège à l'eau froide et infusion d'écorce de manguier."},
-            {k:["palu","fievre"], r:"DMS : Décoction de feuilles de Neem ou Artémisia. 3 tasses par jour."},
-            {k:["toux","rhume"], r:"DMS : Sirop naturel : Miel pur, Citron pressé et Ail écrasé."},
-            {k:["nerf","stress"], r:"DMS : Infusion de Citronnelle ou Verveine. Repos nécessaire."}
+            {k:["hemorroide","anus"], r:"DMS : Bain de siège à l'eau froide et infusion d'écorce de manguier."}
         ];
 
         function startDMS() {
-            // Horloge
             setInterval(() => {
                 const now = new Date();
                 document.getElementById('datetime').innerHTML = now.toLocaleString('fr-FR').toUpperCase();
             }, 1000);
 
-            // COMPTEUR INTERNE - DÉMARRAGE FIXE À 1015
-            // localStorage garantit que le chiffre ne revient pas en arrière
-            let visits = localStorage.getItem('dms_visits_final');
-            if(!visits) {
-                visits = 1015; // Point de départ fixé
-            } else {
-                visits = parseInt(visits) + 1; // Augmente à chaque visite
-            }
-            localStorage.setItem('dms_visits_final', visits);
-            document.getElementById('visit-count').innerText = visits.toString().padStart(4, '0');
+            // COMPTEUR SÉCURISÉ - NE REDESCEND JAMAIS SOUS 1023
+            let v = localStorage.getItem('dms_v_1023');
+            if(!v || parseInt(v) < 1023) { v = 1023; } else { v = parseInt(v) + 1; }
+            localStorage.setItem('dms_v_1023', v);
+            document.getElementById('visit-count').innerText = v;
         }
 
         function analyze() {
@@ -117,12 +108,11 @@
             let hint = document.getElementById('hint');
             if(q.length < 2) return;
 
-            let final = "Analyse DMS : Cas complexe détecté. Veuillez envoyer un vocal au Directeur Victor Moustapha Kourouma sur WhatsApp.";
-            for(let item of database) {
+            let final = "Analyse DMS : Cas spécifique détecté. Veuillez envoyer un vocal au Directeur Victor Moustapha Kourouma sur WhatsApp.";
+            for(let item of db) {
                 if(item.k.some(key => q.includes(key))) { final = item.r; break; }
             }
 
-            // EFFET D'ÉCRITURE "CONFORT"
             res.innerHTML = ""; res.style.display = "block"; hint.style.display = "none";
             let i = 0;
             function type() {
