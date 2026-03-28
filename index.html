@@ -3,63 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>DMS - EXPERT GOOGLE CLOUD</title>
+    <title>DMS - VICTOR MOUSTAPHA KOUROUMA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --gold: #ffb703; --dark: #000814; --blue: #003566; --green: #25d366; }
+        :root { --gold: #ffb703; --dark: #000814; --blue: #023e8a; --green: #25d366; }
         body { background: var(--dark); color: white; font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding-bottom: 180px; text-align: center; }
         
-        #clock { background: #000; color: var(--gold); padding: 10px; font-family: monospace; font-size: 15px; border-bottom: 1px solid #222; }
+        #clock { background: #000; color: var(--gold); padding: 12px; font-family: monospace; font-size: 14px; border-bottom: 2px solid var(--gold); letter-spacing: 1px; }
 
-        .header { background: linear-gradient(180deg, #023e8a, #000814); padding: 30px 15px; border-bottom: 5px solid var(--gold); }
-        .title { color: var(--gold); font-size: 24px; font-weight: bold; margin: 0; text-transform: uppercase; }
-        .initiateur { color: white; font-size: 20px; margin-top: 10px; font-weight: bold; }
-        .badge { background: var(--gold); color: black; padding: 5px 15px; border-radius: 20px; font-size: 11px; font-weight: bold; display: inline-block; margin-top: 10px; }
+        .header { background: linear-gradient(180deg, #0077b6, #000814); padding: 40px 20px; border-bottom: 5px solid var(--gold); }
+        .title { color: var(--gold); font-size: 26px; font-weight: bold; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
+        .founder { color: white; font-size: 22px; margin-top: 12px; font-weight: bold; }
+        .sub-text { color: var(--gold); font-size: 14px; display: block; margin-top: 5px; font-style: italic; }
+        .rank-badge { background: var(--gold); color: black; padding: 7px 20px; border-radius: 20px; font-size: 12px; font-weight: 900; display: inline-block; margin-top: 20px; border: 1px solid white; box-shadow: 0 0 15px rgba(255,183,3,0.5); }
 
-        #google_translate_element { background: white; border-radius: 10px; margin: 15px auto; width: 92%; min-height: 45px; border: 2px solid var(--gold); overflow: hidden; }
+        #google_translate_element { background: white; border-radius: 12px; margin: 20px auto; width: 92%; min-height: 50px; border: 3px solid var(--gold); }
 
-        .main-card { background: white; color: #000; margin: 20px; padding: 25px; border-radius: 25px; border-left: 12px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
-        #res { background: #f1f3f5; color: #003566; padding: 20px; border-radius: 15px; min-height: 110px; margin-top: 15px; font-weight: bold; font-size: 18px; line-height: 1.5; border: 1px solid #ccc; display: flex; align-items: center; justify-content: center; }
+        .main-card { background: white; color: #000; margin: 25px 15px; padding: 35px 20px; border-radius: 30px; border-left: 15px solid var(--gold); box-shadow: 0 15px 40px rgba(0,0,0,0.8); }
+        .card-label { color: var(--blue); font-weight: bold; font-size: 17px; margin-bottom: 15px; text-transform: uppercase; display: block; }
+        #res { background: #f8f9fa; color: #001d3d; padding: 25px; border-radius: 20px; min-height: 110px; font-weight: bold; font-size: 20px; line-height: 1.6; border: 1px solid #ddd; display: flex; align-items: center; justify-content: center; }
 
-        .counter-box { margin: 20px; padding: 20px; border: 2px solid var(--gold); border-radius: 20px; background: #000; }
-        .digital-num { color: #39ff14; font-size: 48px; font-family: monospace; font-weight: bold; text-shadow: 0 0 10px #39ff14; }
+        .counter-box { margin: 25px 20px; padding: 20px; border: 2px solid var(--gold); border-radius: 25px; background: #000; }
+        .digital-num { color: #39ff14; font-size: 55px; font-family: monospace; font-weight: bold; text-shadow: 0 0 20px #39ff14; }
 
-        .footer-nav { position: fixed; bottom: 0; width: 100%; background: #001d3d; padding: 20px 0; z-index: 10000; border-top: 3px solid var(--gold); }
-        .search-container { display: flex; padding: 0 15px; gap: 10px; align-items: center; }
-        input { flex: 1; padding: 16px; border-radius: 12px; border: 2px solid var(--gold); font-size: 16px; font-weight: bold; height: 55px; outline: none; }
-        .btn-send { background: var(--gold); border: none; width: 65px; height: 55px; border-radius: 12px; cursor: pointer; font-size: 26px; color: #000; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .footer-nav { position: fixed; bottom: 0; width: 100%; background: #000814; padding: 25px 0; z-index: 10000; border-top: 4px solid var(--gold); }
+        .search-area { display: flex; padding: 0 20px; gap: 12px; align-items: center; max-width: 600px; margin: 0 auto; }
+        input { flex: 1; padding: 18px; border-radius: 15px; border: 3px solid var(--gold); font-size: 18px; font-weight: bold; outline: none; }
+        .btn-send { background: var(--gold); border: none; width: 70px; height: 60px; border-radius: 15px; cursor: pointer; font-size: 28px; color: black; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         
-        .wa-btn { background: var(--green); color: white; display: flex; align-items: center; justify-content: center; padding: 15px; text-decoration: none; font-weight: bold; margin: 15px 15px 0; border-radius: 12px; gap: 10px; font-size: 18px; }
+        .wa-link { background: var(--green); color: white; display: flex; align-items: center; justify-content: center; padding: 18px; text-decoration: none; font-weight: bold; margin: 15px 20px 0; border-radius: 15px; gap: 12px; font-size: 19px; }
     </style>
 </head>
-<body onload="initDMS()">
+<body onload="startEngine()">
 
-    <div id="clock">Chargement...</div>
+    <div id="clock">Chargement Expert...</div>
 
     <div class="header">
         <p class="title">DIASPORA MONDIAL SANTÉ (DMS)</p>
-        <div class="initiateur">VICTOR MOUSTAPHA KOUROUMA</div>
-        <div class="badge">CERTIFIÉ GOOGLE CLOUD - TOP 24 MONDIAL</div>
+        <div class="founder">VICTOR MOUSTAPHA KOUROUMA</div>
+        <span class="sub-text">Fondateur IA - Médecine Traditionnelle Intégrée</span>
+        <div class="rank-badge">EXPERT GOOGLE CLOUD - 24e MONDIAL</div>
     </div>
 
     <div id="google_translate_element"></div>
 
     <div class="main-card">
-        <h3 style="margin:0; color:#003566; font-size: 22px;"><i class="fas fa-robot"></i> ANALYSE IA DMS</h3>
-        <div id="res">SYSTÈME PRÊT : ÉCRIVEZ UNE MALADIE CI-DESSOUS.</div>
+        <span class="card-label"><i class="fas fa-microchip"></i> ANALYSE IA CERTIFIÉE</span>
+        <div id="res">SYSTÈME EXCLUSIF PRÊT. ENTREZ UNE MALADIE.</div>
     </div>
 
     <div class="counter-box">
-        <p style="color:var(--gold); font-weight:bold; font-size:12px; margin-bottom:5px;">TRAÇABILITÉ CERTIFIÉE GOOGLE CLOUD</p>
+        <p style="color:var(--gold); font-weight:bold; font-size:12px; margin-bottom:5px;">TRAÇABILITÉ CERTIFIÉE GOOGLE</p>
         <div class="digital-num" id="visit-count">2500</div>
     </div>
 
     <div class="footer-nav">
-        <div class="search-container">
+        <div class="search-area">
             <input type="text" id="userInput" placeholder="Ex: Diabète, Sexe, Tension...">
             <button class="btn-send" onclick="analyze()"><i class="fas fa-paper-plane"></i></button>
         </div>
-        <a href="https://wa.me/2207814179" class="wa-btn">
+        <a href="https://wa.me/2207814179" class="wa-link">
             <i class="fab fa-whatsapp fa-lg"></i> WHATSAPP DIRECTEUR
         </a>
     </div>
@@ -69,28 +72,29 @@
             {k:["diabete","sucre"], r:"DMS : Infusion de Moringa et contrôle strict de l'indice glycémique."},
             {k:["impuissance","sexe","sexuelle","erection"], r:"DMS : Synergie Racine de Petit Cola (Ahitjé) et Gingembre frais."},
             {k:["estomac","ulcere","ventre"], r:"DMS : Cure d'Argile verte ou infusion de Gingembre tiède le matin."},
-            {k:["tension","hyper"], r:"DMS : Infusion d'Hibiscus (Bissap) à froid, sans sucre ajouté."},
+            {k:["tension","hyper"], r:"DMS : Infusion d'Hibiscus (Bissap) à froid, sans sucre."},
             {k:["hemorroide","anus"], r:"DMS : Bain de siège tiède et application de beurre de Karité pur."},
             {k:["palu","fievre"], r:"DMS : Infusion d'Artemisia Annua ou feuilles de Neem."},
             {k:["toux","gorge"], r:"DMS : Sirop naturel de Miel pur et Oignon rouge."},
             {k:["constipation","selle"], r:"DMS : Jus d'Aloès Vera ou infusion légère de feuilles de Séné."},
             {k:["insomnie","dormir"], r:"DMS : Infusion de Camomille ou Valériane avant le coucher."},
             {k:["stress","coeur"], r:"DMS : Infusion de Passiflore et repos total."},
-            {k:["prostate","urine"], r:"DMS : Graines de Courge et infusion d'Ortie."},
+            {k:["prostate","urine"], r:"DMS : Consommation de Graines de Courge et infusion d'Ortie."},
             {k:["anemie","sang"], r:"DMS : Consommation régulière de feuilles de Betterave."},
             {k:["cholesterol","graisse"], r:"DMS : Consommation d'Ail frais et d'Oignon quotidiennement."},
             {k:["asthme","respirer"], r:"DMS : Infusion de Plantain et Gingembre."},
             {k:["arthrose","genou"], r:"DMS : Massage à l'Huile de Gingembre et Curcuma."}
         ];
 
-        function initDMS() {
+        function startEngine() {
             setInterval(() => {
-                document.getElementById('clock').innerHTML = new Date().toLocaleString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' });
+                const now = new Date();
+                document.getElementById('clock').innerHTML = now.toLocaleString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' });
             }, 1000);
 
-            let v = localStorage.getItem('dms_v_final_100') || 2500;
+            let v = localStorage.getItem('dms_final_exclusive') || 2500;
             v = parseInt(v) + 1;
-            localStorage.setItem('dms_v_final_100', v);
+            localStorage.setItem('dms_final_exclusive', v);
             document.getElementById('visit-count').innerHTML = v;
         }
 
@@ -98,13 +102,9 @@
             let inputField = document.getElementById('userInput');
             let q = inputField.value.toLowerCase().trim();
             let res = document.getElementById('res');
-            
             if(q === "") return;
-
             let found = db.find(item => item.k.some(key => q.includes(key)));
-            let final = found ? found.r : "Analyse DMS : Protocole non trouvé. Veuillez contacter le Directeur via WhatsApp.";
-
-            res.innerHTML = final;
+            res.innerHTML = found ? found.r : "Analyse DMS : Protocole non répertorié. Contactez le Directeur.";
             inputField.value = "";
         }
 
