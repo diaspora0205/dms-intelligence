@@ -3,34 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DMS - VICTOR MOUSTAPHA KOUROUMA</title>
+    <title>DMS IA - VICTOR MOUSTAPHA KOUROUMA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --gold: #ffb703; --dark: #000814; --blue: #001d3d; }
-        body { background: var(--dark); color: white; font-family: sans-serif; margin: 0; text-align: center; padding-bottom: 140px; }
-        .header { background: linear-gradient(180deg, #003566, #000814); padding: 20px; border-bottom: 3px solid var(--gold); }
-        .title { color: var(--gold); font-size: 24px; font-weight: bold; margin: 0; }
-        .initiateur { color: white; font-size: 18px; margin-top: 10px; font-weight: bold; }
-        .initiateur span { color: var(--gold); font-size: 14px; display: block; margin-top: 5px; font-style: italic; }
-        .palmares { background: rgba(255,183,3,0.1); padding: 10px; margin: 10px; border-radius: 15px; border: 1px solid var(--gold); }
-        .medal-box { display: flex; justify-content: center; gap: 8px; margin-top: 10px; }
-        .medal { font-size: 10px; padding: 8px; border-radius: 8px; font-weight: bold; color: black; min-width: 75px; }
-        .m-br { background: #cd7f32; } .m-ag { background: #c0c0c0; } .m-or { background: #ffd700; border: 1px solid white; }
-        #datetime { background: #000; color: var(--gold); padding: 10px; font-family: monospace; font-size: 13px; }
+        :root { --gold: #ffb703; --dark: #000814; --blue: #023e8a; }
+        body { background: var(--dark); color: white; font-family: 'Arial', sans-serif; margin: 0; text-align: center; padding-bottom: 150px; }
+        .header { background: linear-gradient(180deg, #0077b6, #000814); padding: 25px 15px; border-bottom: 4px solid var(--gold); }
+        .title { color: var(--gold); font-size: 26px; font-weight: bold; margin: 0; text-transform: uppercase; }
+        .initiateur { color: white; font-size: 19px; margin-top: 10px; font-weight: bold; }
+        .initiateur span { color: var(--gold); font-size: 15px; display: block; font-style: italic; margin-top: 5px; }
         
-        /* CORRECTIF GOOGLE TRANSLATE - VISIBILITÉ MAXIMALE */
-        #google_translate_element { margin: 10px auto; min-height: 40px; background: white; border-radius: 8px; width: 90%; border: 2px solid var(--gold); color: black; }
-        .goog-te-gadget-simple { background-color: white !important; border: none !important; padding: 5px !important; border-radius: 8px !important; width: 100%; }
-
-        .main-card { background: white; color: #000814; margin: 20px; padding: 25px; border-radius: 20px; border-left: 10px solid var(--gold); }
-        #res { background: #f0f7ff; color: #003566; padding: 15px; border-radius: 10px; min-height: 70px; margin-top: 15px; font-weight: bold; font-size: 18px; line-height: 1.5; }
-        .counter-box { margin: 20px; padding: 15px; border: 2px solid var(--gold); border-radius: 15px; background: #000; }
-        .digital-num { color: #39ff14; font-size: 40px; font-family: monospace; font-weight: bold; text-shadow: 0 0 10px #39ff14; }
-        .footer-nav { position: fixed; bottom: 0; width: 100%; background: var(--blue); padding: 15px 0; z-index: 1000; border-top: 2px solid var(--gold); }
-        .search-bar { display: flex; padding: 0 15px; gap: 10px; }
-        input { flex: 1; padding: 15px; border-radius: 12px; border: 2px solid var(--gold); font-size: 16px; outline: none; }
-        .btn-send { background: var(--gold); border: none; padding: 15px 20px; border-radius: 12px; cursor: pointer; font-size: 20px; color: #000; }
-        .wa-contact { background: #25d366; color: white; display: flex; align-items: center; justify-content: center; padding: 12px; text-decoration: none; font-weight: bold; margin: 10px 15px 0; border-radius: 10px; gap: 10px; }
+        /* ZONE TRADUCTION - RÉGLAGE FORCE */
+        #google_translate_element { background: white; border-radius: 10px; margin: 15px auto; width: 90%; min-height: 50px; border: 3px solid var(--gold); padding: 5px; }
+        
+        .main-card { background: white; color: #000814; margin: 20px; padding: 30px 20px; border-radius: 25px; border-left: 15px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        #res { background: #e9ecef; color: #003566; padding: 20px; border-radius: 15px; min-height: 100px; margin-top: 20px; font-weight: bold; font-size: 20px; border: 1px solid #ced4da; display: flex; align-items: center; justify-content: center; }
+        
+        .counter-box { margin: 20px; padding: 20px; border: 2px solid var(--gold); border-radius: 20px; background: #000; }
+        .digital-num { color: #39ff14; font-size: 50px; font-family: monospace; font-weight: bold; text-shadow: 0 0 15px #39ff14; }
+        
+        .footer-nav { position: fixed; bottom: 0; width: 100%; background: var(--blue); padding: 20px 0; z-index: 9999; border-top: 3px solid var(--gold); }
+        .search-bar { display: flex; padding: 0 20px; gap: 15px; }
+        input { flex: 1; padding: 18px; border-radius: 15px; border: 3px solid var(--gold); font-size: 18px; font-weight: bold; }
+        .btn-send { background: var(--gold); border: none; padding: 15px 25px; border-radius: 15px; cursor: pointer; font-size: 25px; color: #000; }
+        .wa-contact { background: #25d366; color: white; display: flex; align-items: center; justify-content: center; padding: 15px; text-decoration: none; font-weight: bold; margin: 15px 20px 0; border-radius: 15px; font-size: 18px; }
     </style>
 </head>
 <body onload="startDMS()">
@@ -40,41 +36,31 @@
             MOUSTAPHA KOUROUMA<br>
             <span>Fondateur de la Médecine Traditionnelle Intégrée par l'Intelligence Artificielle</span>
         </div>
-        <div class="palmares">
-            <span style="font-size: 11px;">CERTIFICATIONS GOOGLE CLOUD</span>
-            <div class="medal-box">
-                <span class="medal m-br">BRONZE (2e)</span>
-                <span class="medal m-ag">ARGENT (3e)</span>
-                <span class="medal m-or">OR (24e MONDIAL)</span>
-            </div>
-        </div>
     </div>
 
-    <div id="datetime">Initialisation...</div>
     <div id="google_translate_element"></div>
 
     <div class="main-card">
-        <h3 style="margin:0; color:#003566;"><i class="fas fa-microchip"></i> ANALYSE IA DMS</h3>
-        <div id="res">Expertise en cours : Entrez votre pathologie.</div>
+        <h3 style="margin:0; color:#003566;"><i class="fas fa-robot"></i> ANALYSE IA DMS</h3>
+        <div id="res">SYSTÈME PRÊT : ÉCRIVEZ UNE MALADIE CI-DESSOUS.</div>
     </div>
 
     <div class="counter-box">
-        <p style="color:var(--gold); font-weight:bold; margin-bottom:5px;">TRAÇABILITÉ CERTIFIÉE</p>
+        <p style="color:var(--gold); font-weight:bold; margin-bottom:5px;">CERTIFICATION GOOGLE : TOP 24 MONDIAL</p>
         <div class="digital-num" id="visit-count">2500</div>
     </div>
 
     <div class="footer-nav">
         <div class="search-bar">
-            <input type="text" id="userInput" placeholder="Ex: Diabète, Impuissance, Tension...">
+            <input type="text" id="userInput" placeholder="Diabète, Impuissance, Tension...">
             <button class="btn-send" onclick="analyze()"><i class="fas fa-paper-plane"></i></button>
         </div>
         <a href="https://wa.me/2207814179" class="wa-contact">
-            <i class="fab fa-whatsapp"></i> VOCAL AU DIRECTEUR DMS
+            <i class="fab fa-whatsapp"></i> CONTACT DIRECT DIRECTEUR
         </a>
     </div>
 
     <script>
-        // --- BASE DE DONNÉES EXPERT (TOP 20) ---
         const db = [
             {k:["diabete","sucre"], r:"DMS : Infusion de Moringa et contrôle strict de l'indice glycémique."},
             {k:["impuissance","sexe","erection","sexuelle"], r:"DMS : Synergie Racine de Petit Cola (Ahitjé) et Gingembre frais."},
@@ -88,9 +74,9 @@
             {k:["stress","coeur"], r:"DMS : Infusion de Passiflore et repos total."},
             {k:["grippe","rhume"], r:"DMS : Infusion de Gingembre, Citron pressé et Miel."},
             {k:["prostate","urine"], r:"DMS : Consommation de Graines de Courge et infusion d'Ortie."},
-            {k:["migraine","tete"], r:"DMS : Application d'Huile de Menthe poivrée sur les tempes."},
+            {k:["migraine","tete"], r:"DMS : Huile de Menthe poivrée sur les tempes."},
             {k:["bouton","peau","acne"], r:"DMS : Masque local à l'Argile verte."},
-            {k:["anemie","sang"], r:"DMS : Consommation régulière de feuilles de Betterave."},
+            {k:["anemie","sang"], r:"DMS : Consommation de feuilles de Betterave."},
             {k:["cholesterol","graisse"], r:"DMS : Consommation d'Ail frais et d'Oignon quotidiennement."},
             {k:["ejaculation","precoce"], r:"DMS : Synergie Noix de Muscade et poudre de Maca."},
             {k:["asthme","respirer"], r:"DMS : Infusion de Plantain et Gingembre."},
@@ -99,50 +85,43 @@
         ];
 
         function startDMS() {
-            setInterval(() => {
-                document.getElementById('datetime').innerHTML = new Date().toLocaleString('fr-FR');
-            }, 1000);
-
-            let v = localStorage.getItem('dms_final_v10') || 2500;
+            let v = localStorage.getItem('dms_v_ultra') || 2500;
             v = parseInt(v) + 1;
-            localStorage.setItem('dms_final_v10', v);
+            localStorage.setItem('dms_v_ultra', v);
             document.getElementById('visit-count').innerHTML = v;
         }
 
         function analyze() {
-            let inputArea = document.getElementById('userInput');
-            let q = inputArea.value.toLowerCase();
+            let inputField = document.getElementById('userInput');
+            let q = inputField.value.toLowerCase().trim();
             let res = document.getElementById('res');
-            if(q.length < 2) return;
-            
-            let final = "Analyse DMS : Aucun protocole trouvé. Contactez le Directeur pour une solution IA.";
-            for(let item of db) {
-                if(item.k.some(key => q.includes(key))) {
-                    final = item.r;
-                    break;
-                }
-            }
-            
+            if(q === "") return;
+
+            let found = db.find(item => item.k.some(key => q.includes(key)));
+            let final = found ? found.r : "Analyse DMS : Protocole non trouvé. Contactez le Directeur.";
+
             res.innerHTML = "";
             let i = 0;
             function type() {
                 if (i < final.length) {
                     res.innerHTML += final.charAt(i);
                     i++;
-                    setTimeout(type, 35);
+                    setTimeout(type, 30);
                 }
             }
             type();
-            inputArea.value = ""; // EFFACEMENT AUTOMATIQUE DE LA BARRE
+            inputField.value = ""; // Effacement immédiat
         }
 
+        // FONCTION TRADUCTION OFFICIELLE
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'fr',
+                includedLanguages: '', // Laisse vide pour avoir TOUTES les langues (133)
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
             }, 'google_translate_element');
         }
     </script>
     <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
-    </html>
+        </html>
