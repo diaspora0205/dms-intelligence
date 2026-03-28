@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DMS - EXPERT GOOGLE CLOUD</title>
+    <title>DMS - VICTOR MOUSTAPHA KOUROUMA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --gold: #ffb703; --dark: #000814; --blue: #001d3d; }
@@ -12,16 +12,20 @@
         .title { color: var(--gold); font-size: 24px; font-weight: bold; margin: 0; }
         .initiateur { color: white; font-size: 18px; margin-top: 10px; font-weight: bold; }
         .initiateur span { color: var(--gold); font-size: 14px; display: block; margin-top: 5px; font-style: italic; }
-        .palmares { background: rgba(255,183,3,0.1); padding: 15px; margin: 15px; border-radius: 15px; border: 1px solid var(--gold); }
+        .palmares { background: rgba(255,183,3,0.1); padding: 10px; margin: 10px; border-radius: 15px; border: 1px solid var(--gold); }
         .medal-box { display: flex; justify-content: center; gap: 8px; margin-top: 10px; }
         .medal { font-size: 10px; padding: 8px; border-radius: 8px; font-weight: bold; color: black; min-width: 75px; }
         .m-br { background: #cd7f32; } .m-ag { background: #c0c0c0; } .m-or { background: #ffd700; border: 1px solid white; }
-        #datetime { background: #000; color: var(--gold); padding: 10px; font-family: monospace; }
-        #google_translate_element { margin: 10px; min-height: 40px; }
+        #datetime { background: #000; color: var(--gold); padding: 10px; font-family: monospace; font-size: 13px; }
+        
+        /* CORRECTIF GOOGLE TRANSLATE - VISIBILITÉ MAXIMALE */
+        #google_translate_element { margin: 10px auto; min-height: 40px; background: white; border-radius: 8px; width: 90%; border: 2px solid var(--gold); color: black; }
+        .goog-te-gadget-simple { background-color: white !important; border: none !important; padding: 5px !important; border-radius: 8px !important; width: 100%; }
+
         .main-card { background: white; color: #000814; margin: 20px; padding: 25px; border-radius: 20px; border-left: 10px solid var(--gold); }
-        #res { background: #f0f7ff; color: #003566; padding: 15px; border-radius: 10px; min-height: 60px; margin-top: 15px; font-weight: bold; font-size: 18px; }
+        #res { background: #f0f7ff; color: #003566; padding: 15px; border-radius: 10px; min-height: 70px; margin-top: 15px; font-weight: bold; font-size: 18px; line-height: 1.5; }
         .counter-box { margin: 20px; padding: 15px; border: 2px solid var(--gold); border-radius: 15px; background: #000; }
-        .digital-num { color: #39ff14; font-size: 40px; font-family: monospace; font-weight: bold; }
+        .digital-num { color: #39ff14; font-size: 40px; font-family: monospace; font-weight: bold; text-shadow: 0 0 10px #39ff14; }
         .footer-nav { position: fixed; bottom: 0; width: 100%; background: var(--blue); padding: 15px 0; z-index: 1000; border-top: 2px solid var(--gold); }
         .search-bar { display: flex; padding: 0 15px; gap: 10px; }
         input { flex: 1; padding: 15px; border-radius: 12px; border: 2px solid var(--gold); font-size: 16px; outline: none; }
@@ -51,7 +55,7 @@
 
     <div class="main-card">
         <h3 style="margin:0; color:#003566;"><i class="fas fa-microchip"></i> ANALYSE IA DMS</h3>
-        <div id="res">Entrez une maladie pour commencer.</div>
+        <div id="res">Expertise en cours : Entrez votre pathologie.</div>
     </div>
 
     <div class="counter-box">
@@ -61,7 +65,7 @@
 
     <div class="footer-nav">
         <div class="search-bar">
-            <input type="text" id="userInput" placeholder="Ex: Diabète, Palu, Tension...">
+            <input type="text" id="userInput" placeholder="Ex: Diabète, Impuissance, Tension...">
             <button class="btn-send" onclick="analyze()"><i class="fas fa-paper-plane"></i></button>
         </div>
         <a href="https://wa.me/2207814179" class="wa-contact">
@@ -70,37 +74,38 @@
     </div>
 
     <script>
+        // --- BASE DE DONNÉES EXPERT (TOP 20) ---
         const db = [
-            {k:["diabete","sucre"], r:"DMS : Infusion de Moringa et contrôle strict du sucre."},
-            {k:["estomac","ulcere","ventre"], r:"DMS : Cure d'Argile verte ou Gingembre tiède le matin."},
-            {k:["tension","hyper"], r:"DMS : Infusion d'Hibiscus (Bissap) à froid sans sucre."},
-            {k:["impuissance","sexe","erection"], r:"DMS : Petit Cola (Ahitjé) et Gingembre frais."},
-            {k:["hemorroide","anus"], r:"DMS : Bain de siège tiède et beurre de Karité pur."},
-            {k:["palu","fievre"], r:"DMS : Infusion d'Artemisia ou feuilles de Neem."},
-            {k:["toux","gorge"], r:"DMS : Sirop naturel Miel et Oignon rouge."},
-            {k:["constipation","selle"], r:"DMS : Jus d'Aloès Vera ou feuilles de Séné."},
-            {k:["insomnie","dormir"], r:"DMS : Infusion de Camomille avant le coucher."},
+            {k:["diabete","sucre"], r:"DMS : Infusion de Moringa et contrôle strict de l'indice glycémique."},
+            {k:["impuissance","sexe","erection","sexuelle"], r:"DMS : Synergie Racine de Petit Cola (Ahitjé) et Gingembre frais."},
+            {k:["estomac","ulcere","ventre"], r:"DMS : Cure d'Argile verte ou infusion de Gingembre tiède le matin."},
+            {k:["tension","hyper"], r:"DMS : Infusion d'Hibiscus (Bissap) à froid, sans sucre ajouté."},
+            {k:["hemorroide","anus"], r:"DMS : Bain de siège tiède et application de beurre de Karité pur."},
+            {k:["palu","fievre"], r:"DMS : Infusion d'Artemisia Annua ou feuilles de Neem."},
+            {k:["toux","gorge"], r:"DMS : Sirop naturel de Miel pur et Oignon rouge."},
+            {k:["constipation","selle"], r:"DMS : Jus d'Aloès Vera ou infusion légère de feuilles de Séné."},
+            {k:["insomnie","dormir"], r:"DMS : Infusion de Camomille ou Valériane avant le coucher."},
             {k:["stress","coeur"], r:"DMS : Infusion de Passiflore et repos total."},
-            {k:["grippe","rhume"], r:"DMS : Infusion Gingembre, Citron et Miel."},
-            {k:["prostate","urine"], r:"DMS : Graines de Courge et infusion d'Ortie."},
-            {k:["migraine","tete"], r:"DMS : Huile essentielle de Menthe sur les tempes."},
-            {k:["bouton","peau","acne"], r:"DMS : Application locale d'Argile verte."},
-            {k:["anemie","sang"], r:"DMS : Consommation de feuilles de Betterave."},
-            {k:["cholesterol","graisse"], r:"DMS : Consommation d'Ail frais et Oignon."},
+            {k:["grippe","rhume"], r:"DMS : Infusion de Gingembre, Citron pressé et Miel."},
+            {k:["prostate","urine"], r:"DMS : Consommation de Graines de Courge et infusion d'Ortie."},
+            {k:["migraine","tete"], r:"DMS : Application d'Huile de Menthe poivrée sur les tempes."},
+            {k:["bouton","peau","acne"], r:"DMS : Masque local à l'Argile verte."},
+            {k:["anemie","sang"], r:"DMS : Consommation régulière de feuilles de Betterave."},
+            {k:["cholesterol","graisse"], r:"DMS : Consommation d'Ail frais et d'Oignon quotidiennement."},
             {k:["ejaculation","precoce"], r:"DMS : Synergie Noix de Muscade et poudre de Maca."},
-            {k:["asthme","respiration"], r:"DMS : Infusion de Plantain et Gingembre."},
-            {k:["arthrose","genou"], r:"DMS : Massage Huile de Gingembre et Curcuma."},
-            {k:["foie","bile"], r:"DMS : Infusion de Chardon-Marie ou Pissenlit."}
+            {k:["asthme","respirer"], r:"DMS : Infusion de Plantain et Gingembre."},
+            {k:["arthrose","genou"], r:"DMS : Massage à l'Huile de Gingembre et Curcuma."},
+            {k:["foie","bile"], r:"DMS : Infusion de Chardon-Marie pour purifier le foie."}
         ];
 
         function startDMS() {
             setInterval(() => {
-                document.getElementById('datetime').innerHTML = new Date().toLocaleString();
+                document.getElementById('datetime').innerHTML = new Date().toLocaleString('fr-FR');
             }, 1000);
 
-            let v = localStorage.getItem('dms_expert_v3') || 2500;
+            let v = localStorage.getItem('dms_final_v10') || 2500;
             v = parseInt(v) + 1;
-            localStorage.setItem('dms_expert_v3', v);
+            localStorage.setItem('dms_final_v10', v);
             document.getElementById('visit-count').innerHTML = v;
         }
 
@@ -110,22 +115,32 @@
             let res = document.getElementById('res');
             if(q.length < 2) return;
             
-            let final = "DMS : Analyse en cours... Aucun protocole trouvé. Contactez le Directeur.";
+            let final = "Analyse DMS : Aucun protocole trouvé. Contactez le Directeur pour une solution IA.";
             for(let item of db) {
-                if(item.k.some(key => q.includes(key))) { final = item.r; break; }
+                if(item.k.some(key => q.includes(key))) {
+                    final = item.r;
+                    break;
+                }
             }
             
             res.innerHTML = "";
             let i = 0;
             function type() {
-                if (i < final.length) { res.innerHTML += final.charAt(i); i++; setTimeout(type, 40); }
+                if (i < final.length) {
+                    res.innerHTML += final.charAt(i);
+                    i++;
+                    setTimeout(type, 35);
+                }
             }
             type();
-            inputArea.value = ""; // ICI : On efface la barre après l'envoi
+            inputArea.value = ""; // EFFACEMENT AUTOMATIQUE DE LA BARRE
         }
 
         function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'fr'}, 'google_translate_element');
+            new google.translate.TranslateElement({
+                pageLanguage: 'fr',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
         }
     </script>
     <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
