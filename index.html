@@ -17,8 +17,9 @@
         .medal { font-size: 10px; padding: 10px 5px; border-radius: 8px; font-weight: bold; color: black; min-width: 80px; }
         .m-br { background: #cd7f32; } .m-ag { background: #c0c0c0; } .m-or { background: #ffd700; border: 2px solid white; box-shadow: 0 0 10px var(--gold); }
         #datetime { background: #000; color: var(--gold); padding: 12px; font-family: monospace; font-size: 14px; border-bottom: 1px solid #222; }
+        #google_translate_element { margin: 15px; position: relative; z-index: 10; height: 30px; }
         .main-card { background: #ffffff; color: #000814; margin: 20px; padding: 30px 20px; border-radius: 25px; border-left: 12px solid var(--gold); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
-        #res { background: #f8f9fa; color: #003566; padding: 20px; border-radius: 12px; min-height: 60px; margin-top: 20px; font-weight: bold; font-size: 19px; border: 1px solid #dee2e6; }
+        #res { background: #f8f9fa; color: #003566; padding: 20px; border-radius: 12px; min-height: 80px; margin-top: 20px; font-weight: bold; font-size: 19px; border: 1px solid #dee2e6; line-height: 1.4; }
         .counter-box { margin: 25px 20px; padding: 20px; border: 2px solid var(--gold); border-radius: 20px; background: linear-gradient(45deg, #000, #111); }
         .digital-num { color: #39ff14; font-size: 45px; font-family: 'Courier New', monospace; font-weight: bold; text-shadow: 0 0 15px #39ff14; }
         .footer-nav { position: fixed; bottom: 0; width: 100%; background: var(--blue-vip); padding: 15px 0; z-index: 1000; border-top: 2px solid var(--gold); }
@@ -46,11 +47,11 @@
     </div>
 
     <div id="datetime">Initialisation...</div>
-    <div id="google_translate_element" style="margin: 10px;"></div>
+    <div id="google_translate_element"></div>
 
     <div class="main-card">
-        <h3 style="margin:0; color:#003566; font-size: 22px;"><i class="fas fa-microchip"></i> ANALYSE IA DMS</h3>
-        <p style="font-size:14px; color: #666; margin-top: 5px;">Entrez une pathologie pour une solution naturelle</p>
+        <h3 style="margin:0; color:#003566; font-size: 22px;"><i class="fas fa-microchip"></i> ANALYSE IA DMS (Top 30)</h3>
+        <p style="font-size:14px; color: #666; margin-top: 5px;">Entrez une pathologie pour une solution naturelle expert</p>
         <div id="res">Système prêt pour l'analyse expert.</div>
     </div>
 
@@ -61,7 +62,7 @@
 
     <div class="footer-nav">
         <div class="search-bar">
-            <input type="text" id="userInput" placeholder="Ex: Diabète, Estomac...">
+            <input type="text" id="userInput" placeholder="Ex: Diabète, Estomac, Palu...">
             <button class="btn-send" onclick="analyze()"><i class="fas fa-paper-plane"></i></button>
         </div>
         <a href="https://wa.me/2207814179" class="wa-contact">
@@ -71,11 +72,46 @@
 
     <script>
         const db = [
+            // --- TOP 30 Protocoles Expert DMS ---
+            // Groupe 1: Métabolisme et Digestion (1-6)
             {k:["diabete","sucre"], r:"DMS : Infusion de Moringa et contrôle strict de l'indice glycémique."},
             {k:["estomac","ulcere","ventre"], r:"DMS : Cure d'Argile verte ou infusion de Gingembre tiède le matin."},
+            {k:["hemorroide","anus"], r:"DMS : Bain de siège tiède et application locale de beurre de Karité pur."},
+            {k:["constipation","selle"], r:"DMS : Jus d'Aloès Vera ou infusion de feuilles de Séné (dose légère)."},
+            {k:["diarrhee","intestin"], r:"DMS : Eau de Riz cuit ou infusion d'écorce de Grenadier."},
+            {k:["obesite","poids","maigrir"], r:"DMS : Cure de Jus de Citron au Gingembre et ail à jeun."},
+            
+            // Groupe 2: Cardio-vasculaire et Sang (7-12)
+            {k:["tension","hyper","coeur"], r:"DMS : Infusion d'Hibiscus (Bissap) à froid, sans sucre ajouté."},
+            {k:["anemie","sang","fer"], r:"DMS : Consommation de feuilles de Betterave ou sirop de Mélasse."},
+            {k:["cholesterol","graisse"], r:"DMS : Consommation quotidienne d'Ail frais et d'Oignon rouge."},
+            {k:["coeur","battement"], r:"DMS : Infusion d'Aubépine et contrôle du stress (repos)."},
+            {k:["drepano","faucille"], r:"DMS : Protocole de soutien : Infusion de Fagara et Zinc."},
+            {k:["hypotension","faible"], r:"DMS : Jus de Betterave ou infusion de Romarin."},
+
+            // Groupe 3: Virilité et Santé Masculine (13-18)
             {k:["impuissance","sexe","erection"], r:"DMS : Synergie Racine de Petit Cola (Ahitjé) et Gingembre frais."},
-            {k:["tension","hyper"], r:"DMS : Infusion d'Hibiscus (Bissap) à froid, sans sucre ajouté."},
-            {k:["hemorroide","anus"], r:"DMS : Bain de siège tiède et application locale de beurre de Karité pur."}
+            {k:["ejaculation","precoce"], r:"DMS : Synergie Noix de Muscade et poudre de Maca."},
+            {k:["prostate","urine"], r:"DMS : Cure de Graine de Courge (potiron) et infusion d'Ortie."},
+            {k:["sterilite","masculin","sperme"], r:"DMS : Synergie Tribulus Terrestris et Zinc."},
+            {k:["hernie","inguinale"], r:"DMS : Soutien : Port de ceinture herniaire et repos. *Opération souvent nécessaire*."},
+            {k:["infection","urinaire"], r:"DMS : Infusion de feuilles de Busserole ou jus de Canneberge."},
+
+            // Groupe 4: Infectieux et Respiratoire (19-24)
+            {k:["palu","paludisme","fievre"], r:"DMS : Infusion d'Artemisia Annua ou feuilles de Neem."},
+            {k:["toux","gorge"], r:"DMS : Sirop de Miel et Oignon ou infusion de Thym."},
+            {k:["rhume","nez"], r:"DMS : Inhalation d'Huile Essentielle d'Eucalyptus et Gingembre."},
+            {k:["asthme","respirer"], r:"DMS : Soutien : Infusion de Plantain et Gingembre. *Éviter les allergènes*."},
+            {k:["bronchite","poumon"], r:"DMS : Infusion de Bouillon-Blanc et Thym."},
+            {k:["grippe","courbature"], r:"DMS : Infusion de Gingembre, Curcuma et Miel."},
+
+            // Groupe 5: Peau, Nerfs et Divers (25-30)
+            {k:["eczema","peau","demangeon"], r:"DMS : Application de beurre de Karité ou Huile de Coco."},
+            {k:["acne","bouton"], r:"DMS : Application locale d'Argile Verte ou Huile d'Arbre à Thé."},
+            {k:["insomnie","dormir"], r:"DMS : Infusion de Valériane ou Camomille avant le coucher."},
+            {k:["stress","anxiete"], r:"DMS : Cure de Magnésium (Cacao amandier) et infusion de Passiflore."},
+            {k:["migraine","tete"], r:"DMS : Application d'Huile Essentielle de Menthe Poivrée sur les tempes."},
+            {k:["arthrose","articulation"], r:"DMS : Application locale d'Huile de Gingembre et Curcuma."}
         ];
 
         function startDMS() {
@@ -84,19 +120,19 @@
                 document.getElementById('datetime').innerHTML = now.toLocaleString('fr-FR');
             }, 1000);
 
-            let v = localStorage.getItem('dms_expert_count');
+            let v = localStorage.getItem('dms_expert_count_v2');
             if(!v || parseInt(v) < 2500) { v = 2500; }
             v = parseInt(v) + 1;
-            localStorage.setItem('dms_expert_count', v);
+            localStorage.setItem('dms_expert_count_v2', v);
             document.getElementById('visit-count').innerHTML = v;
         }
 
         function analyze() {
             let q = document.getElementById('userInput').value.toLowerCase();
             let res = document.getElementById('res');
-            if(q.length < 2) return;
+            if(q.length < 2) { res.innerHTML = "Veuillez entrer au moins 2 lettres."; return; }
             
-            let final = "Analyse DMS : Protocole non répertorié. Veuillez consulter le Directeur.";
+            let final = "Analyse DMS : Protocole expert non répertorié. Veuillez consulter le Directeur.";
             for(let item of db) {
                 if(item.k.some(key => q.includes(key))) {
                     final = item.r;
@@ -109,16 +145,16 @@
                 if (i < final.length) {
                     res.innerHTML += final.charAt(i);
                     i++;
-                    setTimeout(typeEffect, 35);
+                    setTimeout(typeEffect, 30); // Vitesse optimisée
                 }
             }
             typeEffect();
         }
 
         function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'fr'}, 'google_translate_element');
+            new google.translate.TranslateElement({pageLanguage: 'fr', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
         }
     </script>
     <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
-        </html>
+    </html>
