@@ -2,116 +2,115 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>DMS - VICTOR MOUSTAPHA KOUROUMA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMS - Expert Google Cloud Top 24</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --gold: #ffb703; --dark: #000814; --blue: #023e8a; --green: #25d366; }
-        body { background: var(--dark); color: white; font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding-bottom: 180px; text-align: center; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f4f4; margin: 0; padding: 0; text-align: center; }
+        .header { background: #004d40; color: white; padding: 20px; border-bottom: 5px solid #ffcc00; }
+        .badges { display: flex; justify-content: center; gap: 15px; margin-top: 10px; flex-wrap: wrap; }
+        .badge { background: white; color: #333; padding: 5px 15px; border-radius: 20px; font-weight: bold; border: 2px solid #ffcc00; font-size: 0.9em; }
         
-        #clock { background: #000; color: var(--gold); padding: 12px; font-family: monospace; font-size: 14px; border-bottom: 2px solid var(--gold); letter-spacing: 1px; }
-
-        .header { background: linear-gradient(180deg, #0077b6, #000814); padding: 40px 20px; border-bottom: 5px solid var(--gold); }
-        .title { color: var(--gold); font-size: 26px; font-weight: bold; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
-        .founder { color: white; font-size: 22px; margin-top: 12px; font-weight: bold; }
-        .sub-text { color: var(--gold); font-size: 14px; display: block; margin-top: 5px; font-style: italic; }
-        .rank-badge { background: var(--gold); color: black; padding: 7px 20px; border-radius: 20px; font-size: 12px; font-weight: 900; display: inline-block; margin-top: 20px; border: 1px solid white; box-shadow: 0 0 15px rgba(255,183,3,0.5); }
-
-        #google_translate_element { background: white; border-radius: 12px; margin: 20px auto; width: 92%; min-height: 50px; border: 3px solid var(--gold); }
-
-        .main-card { background: white; color: #000; margin: 25px 15px; padding: 35px 20px; border-radius: 30px; border-left: 15px solid var(--gold); box-shadow: 0 15px 40px rgba(0,0,0,0.8); }
-        .card-label { color: var(--blue); font-weight: bold; font-size: 17px; margin-bottom: 15px; text-transform: uppercase; display: block; }
-        #res { background: #f8f9fa; color: #001d3d; padding: 25px; border-radius: 20px; min-height: 110px; font-weight: bold; font-size: 20px; line-height: 1.6; border: 1px solid #ddd; display: flex; align-items: center; justify-content: center; }
-
-        .counter-box { margin: 25px 20px; padding: 20px; border: 2px solid var(--gold); border-radius: 25px; background: #000; }
-        .digital-num { color: #39ff14; font-size: 55px; font-family: monospace; font-weight: bold; text-shadow: 0 0 20px #39ff14; }
-
-        .footer-nav { position: fixed; bottom: 0; width: 100%; background: #000814; padding: 25px 0; z-index: 10000; border-top: 4px solid var(--gold); }
-        .search-area { display: flex; padding: 0 20px; gap: 12px; align-items: center; max-width: 600px; margin: 0 auto; }
-        input { flex: 1; padding: 18px; border-radius: 15px; border: 3px solid var(--gold); font-size: 18px; font-weight: bold; outline: none; }
-        .btn-send { background: var(--gold); border: none; width: 70px; height: 60px; border-radius: 15px; cursor: pointer; font-size: 28px; color: black; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        /* Moteur de Recherche */
+        .search-container { background: white; margin: 20px auto; padding: 30px; border-radius: 15px; width: 80%; max-width: 600px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .search-box { display: flex; background: #eee; border-radius: 30px; padding: 10px 20px; align-items: center; border: 2px solid #004d40; }
+        .search-box input { border: none; background: transparent; flex: 1; outline: none; font-size: 1.1em; padding: 5px; }
+        .btn-avion { background: #004d40; color: white; border: none; border-radius: 50%; width: 45px; height: 45px; cursor: pointer; transition: 0.3s; }
+        .btn-avion:hover { background: #ffcc00; color: #004d40; transform: scale(1.1); }
         
-        .wa-link { background: var(--green); color: white; display: flex; align-items: center; justify-content: center; padding: 18px; text-decoration: none; font-weight: bold; margin: 15px 20px 0; border-radius: 15px; gap: 12px; font-size: 19px; }
+        /* Résultats */
+        #resultat { margin-top: 20px; padding: 20px; border-radius: 10px; display: none; text-align: left; background: #e0f2f1; border-left: 5px solid #004d40; }
+        
+        /* Gadgets */
+        .gadgets { display: flex; justify-content: space-around; background: #333; color: white; padding: 10px; font-size: 0.8em; }
+        .whatsapp-btn { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; padding: 15px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; }
+        #google_translate_element { margin: 10px; }
     </style>
 </head>
-<body onload="startEngine()">
+<body>
 
-    <div id="clock">Chargement Expert...</div>
-
-    <div class="header">
-        <p class="title">DIASPORA MONDIAL SANTÉ (DMS)</p>
-        <div class="founder">VICTOR MOUSTAPHA KOUROUMA</div>
-        <span class="sub-text">Fondateur IA - Médecine Traditionnelle Intégrée</span>
-        <div class="rank-badge">EXPERT GOOGLE CLOUD - 24e MONDIAL</div>
+<div class="header">
+    <h1>DIASPORA MONDIAL SANTÉ (DMS)</h1>
+    <p>Directeur : <strong>Mustapha Kourouma</strong></p>
+    <div class="badges">
+        <span class="badge">🥉 Bronze: 2e Place</span>
+        <span class="badge">🥈 Argent: 3e Place</span>
+        <span class="badge">🥇 Or: 24e Mondial (Google Cloud Expert)</span>
     </div>
+</div>
 
-    <div id="google_translate_element"></div>
+<div id="google_translate_element"></div>
 
-    <div class="main-card">
-        <span class="card-label"><i class="fas fa-microchip"></i> ANALYSE IA CERTIFIÉE</span>
-        <div id="res">SYSTÈME EXCLUSIF PRÊT. ENTREZ UNE MALADIE.</div>
+<div class="gadgets">
+    <div id="clock">Chargement heure...</div>
+    <div>Visiteurs : <span id="visitor-count">2500</span></div>
+</div>
+
+<div class="search-container">
+    <h3>IA de Diagnostic Intégrée</h3>
+    <p>Entrez une pathologie (ex: Diabète, Tension, Paludisme...)</p>
+    <div class="search-box">
+        <input type="text" id="userInput" placeholder="Quelle solution cherchez-vous ?">
+        <button class="btn-avion" onclick="lancerAnalyse()"><i class="fas fa-paper-plane"></i></button>
     </div>
+    
+    <div id="resultat"></div>
+</div>
 
-    <div class="counter-box">
-        <p style="color:var(--gold); font-weight:bold; font-size:12px; margin-bottom:5px;">TRAÇABILITÉ CERTIFIÉE GOOGLE</p>
-        <div class="digital-num" id="visit-count">2500</div>
-    </div>
+<a href="https://wa.me/VOTRE_NUMERO" class="whatsapp-btn">
+    <i class="fab fa-whatsapp"></i> WhatsApp Directeur
+</a>
 
-    <div class="footer-nav">
-        <div class="search-area">
-            <input type="text" id="userInput" placeholder="Ex: Diabète, Sexe, Tension...">
-            <button class="btn-send" onclick="analyze()"><i class="fas fa-paper-plane"></i></button>
-        </div>
-        <a href="https://wa.me/2207814179" class="wa-link">
-            <i class="fab fa-whatsapp fa-lg"></i> WHATSAPP DIRECTEUR
-        </a>
-    </div>
+<script>
+    // 1. Horloge Temps Réel
+    function updateClock() {
+        const now = new Date();
+        document.getElementById('clock').innerText = now.toLocaleString('fr-FR');
+    }
+    setInterval(updateClock, 1000);
 
-    <script>
-        const db = [
-            {k:["diabete","sucre"], r:"DMS : Infusion de Moringa et contrôle strict de l'indice glycémique."},
-            {k:["impuissance","sexe","sexuelle","erection"], r:"DMS : Synergie Racine de Petit Cola (Ahitjé) et Gingembre frais."},
-            {k:["estomac","ulcere","ventre"], r:"DMS : Cure d'Argile verte ou infusion de Gingembre tiède le matin."},
-            {k:["tension","hyper"], r:"DMS : Infusion d'Hibiscus (Bissap) à froid, sans sucre."},
-            {k:["hemorroide","anus"], r:"DMS : Bain de siège tiède et application de beurre de Karité pur."},
-            {k:["palu","fievre"], r:"DMS : Infusion d'Artemisia Annua ou feuilles de Neem."},
-            {k:["toux","gorge"], r:"DMS : Sirop naturel de Miel pur et Oignon rouge."},
-            {k:["constipation","selle"], r:"DMS : Jus d'Aloès Vera ou infusion légère de feuilles de Séné."},
-            {k:["insomnie","dormir"], r:"DMS : Infusion de Camomille ou Valériane avant le coucher."},
-            {k:["stress","coeur"], r:"DMS : Infusion de Passiflore et repos total."},
-            {k:["prostate","urine"], r:"DMS : Consommation de Graines de Courge et infusion d'Ortie."},
-            {k:["anemie","sang"], r:"DMS : Consommation régulière de feuilles de Betterave."},
-            {k:["cholesterol","graisse"], r:"DMS : Consommation d'Ail frais et d'Oignon quotidiennement."},
-            {k:["asthme","respirer"], r:"DMS : Infusion de Plantain et Gingembre."},
-            {k:["arthrose","genou"], r:"DMS : Massage à l'Huile de Gingembre et Curcuma."}
-        ];
+    // 2. Compteur de Visiteurs (Simulé à partir de 2500)
+    let count = 2500;
+    setInterval(() => {
+        count += Math.floor(Math.random() * 3);
+        document.getElementById('visitor-count').innerText = count;
+    }, 10000);
 
-        function startEngine() {
-            setInterval(() => {
-                const now = new Date();
-                document.getElementById('clock').innerHTML = now.toLocaleString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' });
-            }, 1000);
+    // 3. Moteur de Recherche IA DMS
+    const solutions = {
+        "diabete": "Analyse IA : Régulation glycémique requise. Solution DMS : Infusion de feuilles de Moringa et racines de pays 1 (Sénégal/Mali). Consultez le protocole d'Expert Google Cloud.",
+        "tension": "Analyse IA : Hypertension détectée. Solution DMS : Ail noir fermenté et infusion d'Hibiscus (Bissap) sans sucre. Suivi cardiaque recommandé.",
+        "paludisme": "Analyse IA : Infection parasitaire. Solution DMS : Artémisia en tisane et décoction de feuilles de Neem. Repos total.",
+        "maux de tete": "Analyse IA : Fatigue ou déshydratation. Solution DMS : Hydratation avec eau citronnée et massage aux huiles essentielles de menthe."
+    };
 
-            let v = localStorage.getItem('dms_final_exclusive') || 2500;
-            v = parseInt(v) + 1;
-            localStorage.setItem('dms_final_exclusive', v);
-            document.getElementById('visit-count').innerHTML = v;
-        }
+    function lancerAnalyse() {
+        const input = document.getElementById('userInput').value.toLowerCase();
+        const resDiv = document.getElementById('resultat');
+        resDiv.style.display = "block";
+        resDiv.innerHTML = "<strong>Analyse IA en cours...</strong>";
 
-        function analyze() {
-            let inputField = document.getElementById('userInput');
-            let q = inputField.value.toLowerCase().trim();
-            let res = document.getElementById('res');
-            if(q === "") return;
-            let found = db.find(item => item.k.some(key => q.includes(key)));
-            res.innerHTML = found ? found.r : "Analyse DMS : Protocole non répertorié. Contactez le Directeur.";
-            inputField.value = "";
-        }
+        setTimeout(() => {
+            let found = false;
+            for (let maladie in solutions) {
+                if (input.includes(maladie)) {
+                    resDiv.innerHTML = `<strong>RÉSULTAT EXPERT DMS :</strong><br><br>${solutions[maladie]}<br><br><small>Certifié par l'Expert Top 24 Google Cloud : Mustapha Kourouma</small>`;
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                resDiv.innerHTML = "<strong>Analyse IA :</strong> Pathologie complexe. Veuillez contacter le Directeur via WhatsApp pour une solution personnalisée de médecine intégrée.";
+            }
+        }, 1500);
+    }
 
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'fr'}, 'google_translate_element');
-        }
-    </script>
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    // 4. Intégration Google Traducteur
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'fr'}, 'google_translate_element');
+    }
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
-</html>
+    </html>
