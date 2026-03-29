@@ -6,106 +6,106 @@
     <title>DMS - Expert Google Cloud Top 24</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f4f4; margin: 0; padding: 0; text-align: center; }
-        .header { background: #004d40; color: white; padding: 20px; border-bottom: 5px solid #ffcc00; }
-        .badges { display: flex; justify-content: center; gap: 15px; margin-top: 10px; flex-wrap: wrap; }
-        .badge { background: white; color: #333; padding: 5px 15px; border-radius: 20px; font-weight: bold; border: 2px solid #ffcc00; font-size: 0.9em; }
+        body { font-family: 'Arial', sans-serif; background: #f0f2f5; margin: 0; padding: 0; color: #333; }
+        .header { background: #004d40; color: white; padding: 25px 10px; text-align: center; border-bottom: 6px solid #ffcc00; }
         
-        /* Moteur de Recherche */
-        .search-container { background: white; margin: 20px auto; padding: 30px; border-radius: 15px; width: 80%; max-width: 600px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .search-box { display: flex; background: #eee; border-radius: 30px; padding: 10px 20px; align-items: center; border: 2px solid #004d40; }
-        .search-box input { border: none; background: transparent; flex: 1; outline: none; font-size: 1.1em; padding: 5px; }
-        .btn-avion { background: #004d40; color: white; border: none; border-radius: 50%; width: 45px; height: 45px; cursor: pointer; transition: 0.3s; }
-        .btn-avion:hover { background: #ffcc00; color: #004d40; transform: scale(1.1); }
-        
-        /* Résultats */
-        #resultat { margin-top: 20px; padding: 20px; border-radius: 10px; display: none; text-align: left; background: #e0f2f1; border-left: 5px solid #004d40; }
-        
+        /* Badges Style Expert */
+        .badges-container { margin: 15px 0; }
+        .badge-line { background: #ffcc00; color: #000; font-weight: bold; padding: 8px 20px; border-radius: 25px; display: inline-block; margin: 5px; border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .badge-gold { background: white; border: 3px solid #ffcc00; color: #004d40; width: 90%; max-width: 400px; }
+
+        /* Moteur de Diagnostic */
+        .main-card { background: white; width: 90%; max-width: 500px; margin: 20px auto; border-radius: 20px; padding: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .search-area { position: relative; margin-top: 20px; }
+        .input-field { width: 100%; padding: 15px 50px 15px 20px; border-radius: 30px; border: 2px solid #004d40; font-size: 16px; box-sizing: border-box; }
+        .send-icon { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: #ffcc00; color: #004d40; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; }
+
+        /* Zone de Réponse Nettoyée */
+        #resultat { margin-top: 20px; padding: 15px; border-radius: 12px; background: #e8f5e9; border-left: 6px solid #2e7d32; display: none; text-align: left; line-height: 1.5; }
+
         /* Gadgets */
-        .gadgets { display: flex; justify-content: space-around; background: #333; color: white; padding: 10px; font-size: 0.8em; }
-        .whatsapp-btn { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; padding: 15px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; }
-        #google_translate_element { margin: 10px; }
+        .info-bar { background: #222; color: white; padding: 10px; font-size: 13px; display: flex; justify-content: space-around; }
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; padding: 12px 20px; border-radius: 30px; text-decoration: none; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 100; display: flex; align-items: center; gap: 8px; }
     </style>
 </head>
 <body>
 
 <div class="header">
-    <h1>DIASPORA MONDIAL SANTÉ (DMS)</h1>
-    <p>Directeur : <strong>Mustapha Kourouma</strong></p>
-    <div class="badges">
-        <span class="badge">🥉 Bronze: 2e Place</span>
-        <span class="badge">🥈 Argent: 3e Place</span>
-        <span class="badge">🥇 Or: 24e Mondial (Google Cloud Expert)</span>
+    <h2 style="margin:0;">DIASPORA MONDIAL SANTÉ (DMS)</h2>
+    <p style="margin:5px 0;">Directeur : <strong>Mustapha Kourouma</strong></p>
+    <div class="badges-container">
+        <div class="badge-line">🥉 Bronze: 2e Place</div>
+        <div class="badge-line">🥈 Argent: 3e Place</div><br>
+        <div class="badge-line badge-gold">🥇 Or: 24e Mondial (Google Cloud Expert)</div>
     </div>
 </div>
 
-<div id="google_translate_element"></div>
-
-<div class="gadgets">
-    <div id="clock">Chargement heure...</div>
-    <div>Visiteurs : <span id="visitor-count">2500</span></div>
+<div class="info-bar">
+    <span id="date-time"></span>
+    <span>Visiteurs : <strong id="v-count">2514</strong></span>
 </div>
 
-<div class="search-container">
-    <h3>IA de Diagnostic Intégrée</h3>
-    <p>Entrez une pathologie (ex: Diabète, Tension, Paludisme...)</p>
-    <div class="search-box">
-        <input type="text" id="userInput" placeholder="Quelle solution cherchez-vous ?">
-        <button class="btn-avion" onclick="lancerAnalyse()"><i class="fas fa-paper-plane"></i></button>
-    </div>
+<div id="google_translate_element" style="margin:10px;"></div>
+
+<div class="main-card">
+    <h3 style="color:#004d40;">IA de Diagnostic Intégrée</h3>
+    <p style="font-size:14px; color:#666;">Entrez vos symptômes pour une solution claire et nette.</p>
     
+    <div class="search-area">
+        <input type="text" id="userInput" class="input-field" placeholder="Ex: Diabète, Tension, Palu...">
+        <button class="send-icon" onclick="analyser()"><i class="fas fa-paper-plane"></i></button>
+    </div>
+
     <div id="resultat"></div>
 </div>
 
-<a href="https://wa.me/VOTRE_NUMERO" class="whatsapp-btn">
+<a href="https://wa.me/220XXXXXXXX" class="whatsapp-float">
     <i class="fab fa-whatsapp"></i> WhatsApp Directeur
 </a>
 
 <script>
-    // 1. Horloge Temps Réel
-    function updateClock() {
-        const now = new Date();
-        document.getElementById('clock').innerText = now.toLocaleString('fr-FR');
+    // Horloge
+    function startClock() {
+        const d = new Date();
+        document.getElementById('date-time').innerHTML = d.toLocaleDateString() + " " + d.toLocaleTimeString();
     }
-    setInterval(updateClock, 1000);
+    setInterval(startClock, 1000);
 
-    // 2. Compteur de Visiteurs (Simulé à partir de 2500)
-    let count = 2500;
+    // Compteur Visiteurs
+    let visitors = 2514;
     setInterval(() => {
-        count += Math.floor(Math.random() * 3);
-        document.getElementById('visitor-count').innerText = count;
-    }, 10000);
+        visitors += Math.floor(Math.random() * 2);
+        document.getElementById('v-count').innerText = visitors;
+    }, 8000);
 
-    // 3. Moteur de Recherche IA DMS
-    const solutions = {
-        "diabete": "Analyse IA : Régulation glycémique requise. Solution DMS : Infusion de feuilles de Moringa et racines de pays 1 (Sénégal/Mali). Consultez le protocole d'Expert Google Cloud.",
-        "tension": "Analyse IA : Hypertension détectée. Solution DMS : Ail noir fermenté et infusion d'Hibiscus (Bissap) sans sucre. Suivi cardiaque recommandé.",
-        "paludisme": "Analyse IA : Infection parasitaire. Solution DMS : Artémisia en tisane et décoction de feuilles de Neem. Repos total.",
-        "maux de tete": "Analyse IA : Fatigue ou déshydratation. Solution DMS : Hydratation avec eau citronnée et massage aux huiles essentielles de menthe."
+    // Moteur de Solutions
+    const db = {
+        "diabete": "<b>SOLUTION DMS :</b> Utilisation de la plante <i>Moringa Oleifera</i> en infusion matin et soir + racines de pays 1. Réduit le taux de sucre naturellement. Suivi IA : Recommandé.",
+        "tension": "<b>SOLUTION DMS :</b> Décoction d'Hibiscus (Bissap) tiède et ail frais. Éviter le sel. L'IA de l'Expert Google conseille un repos de 20 min après la prise.",
+        "paludisme": "<b>SOLUTION DMS :</b> Tisane d'Artémisia ou feuilles de Neem bouillies. Traitement traditionnel efficace en complément d'une hydratation forte.",
+        "grippe": "<b>SOLUTION DMS :</b> Gingembre, citron et miel dans de l'eau chaude. Renforce le système immunitaire instantanément."
     };
 
-    function lancerAnalyse() {
-        const input = document.getElementById('userInput').value.toLowerCase();
-        const resDiv = document.getElementById('resultat');
-        resDiv.style.display = "block";
-        resDiv.innerHTML = "<strong>Analyse IA en cours...</strong>";
+    function analyser() {
+        const val = document.getElementById('userInput').value.toLowerCase();
+        const res = document.getElementById('resultat');
+        res.style.display = "block";
+        res.innerHTML = "<i>Analyse de l'Expert Google en cours...</i>";
 
         setTimeout(() => {
-            let found = false;
-            for (let maladie in solutions) {
-                if (input.includes(maladie)) {
-                    resDiv.innerHTML = `<strong>RÉSULTAT EXPERT DMS :</strong><br><br>${solutions[maladie]}<br><br><small>Certifié par l'Expert Top 24 Google Cloud : Mustapha Kourouma</small>`;
-                    found = true;
-                    break;
-                }
+            let match = "";
+            for (let key in db) {
+                if (val.includes(key)) { match = db[key]; break; }
             }
-            if (!found) {
-                resDiv.innerHTML = "<strong>Analyse IA :</strong> Pathologie complexe. Veuillez contacter le Directeur via WhatsApp pour une solution personnalisée de médecine intégrée.";
+            
+            if (match) {
+                res.innerHTML = match + "<br><br><small>✅ Validé par Mustapha Kourouma (Top 24 Mondial)</small>";
+            } else {
+                res.innerHTML = "<b>ANALYSE IA :</b> Pathologie non répertoriée ou complexe. <br>👉 Cliquez sur le bouton WhatsApp pour parler directement au Directeur Mustapha.";
             }
-        }, 1500);
+        }, 1200);
     }
 
-    // 4. Intégration Google Traducteur
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({pageLanguage: 'fr'}, 'google_translate_element');
     }
@@ -113,4 +113,4 @@
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
-    </html>
+</html>
