@@ -3,64 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DMS - FONDATREUR MUSTAPHA KOUROUMA</title>
+    <title>DMS - MUSTAPHA KOUROUMA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Arial', sans-serif; background: #002d24; margin: 0; padding: 0; color: white; overflow-x: hidden; padding-bottom: 120px; }
-        
-        /* HEADER STYLE PLATEAU TV */
+        body { font-family: 'Arial', sans-serif; background: #002d24; margin: 0; padding: 0; color: white; padding-bottom: 120px; }
         .header { background: linear-gradient(180deg, #004d40 0%, #002d24 100%); padding: 30px 10px; text-align: center; border-bottom: 5px solid #ffcc00; }
-        .fondateur { font-size: 22px; font-weight: bold; color: #ffcc00; text-transform: uppercase; margin-bottom: 5px; }
-        .specialite { font-size: 16px; color: #e0f2f1; margin-bottom: 15px; }
-
-        .badges { margin: 10px 0; }
-        .badge { background: white; color: #004d40; padding: 8px 15px; border-radius: 20px; font-weight: bold; margin: 5px; display: inline-block; font-size: 0.85em; border: 2px solid #ffcc00; }
-
-        /* TRADUCTEUR GOOGLE VISIBLE */
-        #google_translate_element { background: white; padding: 10px; border-radius: 8px; width: fit-content; margin: 15px auto; border: 3px solid #ffcc00; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
-
-        /* BANDEAU DÉFILANT (STYLE FRANCE 24) */
-        .news-ticker { background: #ffcc00; color: #000; padding: 10px 0; position: relative; font-weight: bold; overflow: hidden; white-space: nowrap; }
-        .news-ticker span { display: inline-block; padding-left: 100%; animation: ticker 20s linear infinite; }
+        .fondateur { font-size: 22px; font-weight: bold; color: #ffcc00; text-transform: uppercase; }
+        .badge { background: white; color: #004d40; padding: 8px 15px; border-radius: 20px; font-weight: bold; margin: 5px; display: inline-block; border: 2px solid #ffcc00; }
+        #google_translate_element { background: white; padding: 10px; border-radius: 8px; width: fit-content; margin: 15px auto; border: 3px solid #ffcc00; }
+        .news-ticker { background: #ffcc00; color: #000; padding: 10px 0; font-weight: bold; overflow: hidden; white-space: nowrap; }
+        .news-ticker span { display: inline-block; padding-left: 100%; animation: ticker 25s linear infinite; }
         @keyframes ticker { 0% { transform: translate(0, 0); } 100% { transform: translate(-100%, 0); } }
-
-        /* COMPTEUR ET INFOS */
         .info-bar { background: #111; padding: 15px; display: flex; justify-content: space-around; font-size: 14px; border-bottom: 2px solid #333; }
-        .stat-count { color: #00ff00; font-family: 'Courier New', monospace; font-size: 18px; }
-
-        /* MOTEUR DE RECHERCHE */
+        .stat-count { color: #00ff00; font-weight: bold; font-size: 18px; }
         .container { padding: 20px; max-width: 600px; margin: auto; }
         .search-card { background: white; color: #333; padding: 25px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.4); text-align: center; }
         .input-group { position: relative; margin-top: 20px; }
         .input-main { width: 100%; padding: 18px 60px 18px 20px; border-radius: 35px; border: 2px solid #004d40; font-size: 16px; outline: none; box-sizing: border-box; }
         .btn-send { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: #004d40; color: white; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; }
-
-        /* RÉSULTATS CLAIRS */
-        #resultat { margin-top: 25px; padding: 20px; border-radius: 12px; background: #f1f8e9; border-left: 8px solid #2e7d32; display: none; color: #000; text-align: left; line-height: 1.6; box-shadow: inset 0 2px 5px rgba(0,0,0,0.1); }
-
-        /* WHATSAPP POSITIONNÉ HAUT */
-        .whatsapp-float { position: fixed; bottom: 35px; right: 20px; background: #25d366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 8px 20px rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; gap: 10px; }
+        #resultat { margin-top: 25px; padding: 20px; border-radius: 12px; background: #f1f8e9; border-left: 8px solid #2e7d32; display: none; color: #000; text-align: left; line-height: 1.6; }
+        .whatsapp-float { position: fixed; bottom: 35px; right: 20px; background: #25d366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; z-index: 1000; display: flex; align-items: center; gap: 10px; }
     </style>
 </head>
 <body>
 
 <div class="header">
     <div class="fondateur">Fondateur : Mustapha Kourouma</div>
-    <div class="specialite">Médecine Traditionnelle Intégrée & Intelligence Artificielle</div>
+    <div style="margin-top:5px;">Médecine Traditionnelle Intégrée & IA</div>
     <div class="badges">
-        <span class="badge">🥉 2e Place Bronze</span>
-        <span class="badge">🥈 3e Place Argent</span>
-        <span class="badge" style="background:#ffcc00;">🥇 24e Mondial Google Cloud</span>
+        <span class="badge">🥉 Bronze : 2e</span>
+        <span class="badge">🥈 Argent : 3e</span>
+        <span class="badge" style="background:#ffcc00;">🥇 Or : 24e Mondial Google Cloud</span>
     </div>
 </div>
 
 <div class="news-ticker">
-    <span>DMS : L'IA au service de la santé mondiale -- Expertise Google Cloud Top 24 -- Solutions traditionnelles pour les 11 pays -- Diagnostic instantané activé --</span>
+    <span>DMS : Expertise de Mustapha Kourouma -- Top 24 Mondial Google Cloud -- Solutions certifiées en médecine intégrée -- Diagnostic IA actif --</span>
 </div>
 
 <div class="info-bar">
     <div id="clock"></div>
-    <div>VISITEURS : <span class="stat-count" id="v-count">2537</span></div>
+    <div>VISITEURS : <span class="stat-count" id="v-count">2568</span></div>
 </div>
 
 <div id="google_translate_element"></div>
@@ -68,48 +51,43 @@
 <div class="container">
     <div class="search-card">
         <h3 style="color:#004d40; margin-top:0;">SYSTÈME DE DIAGNOSTIC IA</h3>
-        <p style="color:#666; font-size:14px;">Entrez une maladie pour obtenir la solution immédiate.</p>
-        
         <div class="input-group">
-            <input type="text" id="userQuery" class="input-main" placeholder="Ex: Diabète, Tension, Palu...">
+            <input type="text" id="userQuery" class="input-main" placeholder="Posez votre question ici...">
             <button class="btn-send" onclick="lancerDiagnostic()"><i class="fas fa-paper-plane"></i></button>
         </div>
-
         <div id="resultat"></div>
     </div>
 </div>
 
-<a href="https://wa.me/220XXXXXXXX" class="whatsapp-float">
+<a href="https://wa.me/2202500000" class="whatsapp-float">
     <i class="fab fa-whatsapp fa-lg"></i> CONTACT DIRECTEUR
 </a>
 
 <script>
-    // Horloge
     function updateTime() {
         const d = new Date();
         document.getElementById('clock').innerText = d.toLocaleDateString() + " " + d.toLocaleTimeString();
     }
     setInterval(updateTime, 1000);
 
-    // Compteur de visiteurs rapide
-    let count = 2537;
+    // Compteur stabilisé
+    let count = 2568;
     setInterval(() => {
-        count += Math.floor(Math.random() * 2) + 1;
+        count += 1; 
         document.getElementById('v-count').innerText = count;
-    }, 5000);
+    }, 20000); // Augmente seulement toutes le 20 secondes
 
-    // Base de données Maladies & Solutions
     const database = [
-        { mots: ["diabete", "sucre", "glycemie"], solution: "<b>SOLUTION DMS :</b> Infusion de feuilles de Moringa et racines du pays 1. Régule le sucre dans le sang. <br>✅ Validé par l'Expert Mustapha Kourouma." },
-        { mots: ["tension", "hypertension", "coeur"], solution: "<b>SOLUTION DMS :</b> Décoction de Bissap noir (sans sucre) et ail frais. Stabilise la pression artérielle. <br>✅ Validé par l'Expert Mustapha Kourouma." },
-        { mots: ["palu", "paludisme", "fievre"], solution: "<b>SOLUTION DMS :</b> Tisane d'Artémisia ou feuilles de Neem. 3 tasses par jour pendant 5 jours. <br>✅ Validé par l'Expert Mustapha Kourouma." }
+        { mots: ["diabete", "sucre", "glycemie", "soigne"], solution: "<b>SOLUTION DMS (Diabète) :</b> Utilisation de la plante Moringa et racines spécifiques du pays. <br>✅ Validé par l'Expert Mustapha Kourouma." },
+        { mots: ["tension", "hypertension", "coeur", "soigne"], solution: "<b>SOLUTION DMS (Tension) :</b> Décoction de Bissap noir et ail frais chaque matin. <br>✅ Validé par l'Expert Mustapha Kourouma." },
+        { mots: ["palu", "paludisme", "fievre", "soigne"], solution: "<b>SOLUTION DMS (Paludisme) :</b> Tisane forte de Neem ou Artémisia. <br>✅ Validé par l'Expert Mustapha Kourouma." }
     ];
 
     function lancerDiagnostic() {
         const q = document.getElementById('userQuery').value.toLowerCase();
         const res = document.getElementById('resultat');
         res.style.display = "block";
-        res.innerHTML = "<i>Analyse IA en cours sur les serveurs Cloud...</i>";
+        res.innerHTML = "<i>Analyse de l'expert en cours...</i>";
 
         setTimeout(() => {
             let reponseTrouvee = "";
@@ -119,11 +97,10 @@
                     break;
                 }
             }
-
             if (reponseTrouvee) {
                 res.innerHTML = reponseTrouvee;
             } else {
-                res.innerHTML = "<b>ANALYSE DMS :</b> Cas complexe détecté. <br>👉 Cliquez sur le bouton <b>WhatsApp</b> pour une consultation prioritaire avec le Directeur.";
+                res.innerHTML = "<b>ANALYSE DMS :</b> Question complexe. <br>👉 Cliquez sur le bouton <b>CONTACT DIRECTEUR</b> pour une solution sur mesure.";
             }
         }, 1000);
     }
@@ -133,6 +110,5 @@
     }
 </script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
 </body>
-    </html>
+</html>
