@@ -38,12 +38,12 @@
 </div>
 
 <div class="news-ticker">
-    <span>DMS : Solutions de Santé par Mustapha Kourouma -- Top 24 Mondial Google Cloud -- Médecine Intégrée -- Diagnostic IA Fiable --</span>
+    <span>DMS : Solutions par Mustapha Kourouma -- Top 24 Mondial Google Cloud -- Diagnostic IA Fiable --</span>
 </div>
 
 <div class="info-bar">
     <div id="clock"></div>
-    <div>VISITEURS RÉELS : <span class="stat-count" id="v-count">0</span></div>
+    <div>VISITEURS : <span class="stat-count" id="v-count">2588</span></div>
 </div>
 
 <div id="google_translate_element"></div>
@@ -52,7 +52,7 @@
     <div class="search-card">
         <h3 style="color:#004d40; margin-top:0;">CENTRE DE DIAGNOSTIC IA</h3>
         <div class="input-group">
-            <input type="text" id="userQuery" class="input-main" placeholder="Tapez votre maladie ou vos symptômes...">
+            <input type="text" id="userQuery" class="input-main" placeholder="Tapez une maladie (ex: Diabète)...">
             <button class="btn-send" onclick="lancerDiagnostic()"><i class="fas fa-paper-plane"></i></button>
         </div>
         <div id="resultat"></div>
@@ -70,13 +70,8 @@
     }
     setInterval(updateTime, 1000);
 
-    // COMPTEUR RÉEL : Ne marque que si quelqu'un rentre
-    let currentVisits = localStorage.getItem('dms_visits');
-    if (!currentVisits) {
-        currentVisits = 2580; // Point de départ pour votre site
-    }
-    
-    // Si c'est une nouvelle session (nouvelle fenêtre/onglet)
+    // COMPTEUR RÉEL
+    let currentVisits = localStorage.getItem('dms_visits') || 2588;
     if (!sessionStorage.getItem('session_active')) {
         currentVisits = parseInt(currentVisits) + 1;
         localStorage.setItem('dms_visits', currentVisits);
@@ -84,34 +79,43 @@
     }
     document.getElementById('v-count').innerText = currentVisits;
 
-    // BASE DE DONNÉES EXPERT GOOGLE CLOUD
+    // BASE DE DONNÉES ÉLARGIE ET PRÉCISE
     const database = [
-        { mots: ["diabete", "sucre", "glycemie", "soigner", "soigne"], solution: "<b>SOLUTIONS DMS (Diabète) :</b><br>1. Infusion de feuilles de Moringa (matin et soir).<br>2. Consommation de racines du pays 1 pour stabiliser le pancréas.<br>3. Éviter les sucres raffinés.<br>✅ <b>Fiabilité :</b> Validé par l'Expert Mustapha Kourouma." },
-        { mots: ["tension", "hypertension", "coeur", "soigner", "soigne", "pression"], solution: "<b>SOLUTIONS DMS (Tension) :</b><br>1. Décoction de Bissap noir sans sucre (2 verres par jour).<br>2. Consommer une gousse d'ail frais à jeun.<br>3. Réduction du sel dans l'alimentation.<br>✅ <b>Fiabilité :</b> Validé par l'Expert Mustapha Kourouma." },
-        { mots: ["palu", "paludisme", "fievre", "moustique", "soigner", "soigne"], solution: "<b>SOLUTIONS DMS (Paludisme) :</b><br>1. Tisane concentrée de feuilles de Neem ou Artémisia.<br>2. Repos total et hydratation constante.<br>3. Cure de 5 jours minimum.<br>✅ <b>Fiabilité :</b> Validé par l'Expert Mustapha Kourouma." },
-        { mots: ["ventre", "digestion", "maux", "estomac"], solution: "<b>SOLUTIONS DMS (Digestion) :</b><br>1. Infusion de gingembre et citron après chaque repas.<br>2. Charbon végétal actif pour absorber les gaz.<br>✅ <b>Fiabilité :</b> Validé par l'Expert Mustapha Kourouma." }
+        { mots: ["diabete", "sucre", "glycemie"], solution: "<b>SOLUTIONS DMS (Diabète) :</b><br>1. Infusion de feuilles de Moringa.<br>2. Racines du pays 1 pour le pancréas.<br>3. Zéro sucres raffinés.<br>✅ Validé par Mustapha Kourouma." },
+        { mots: ["tension", "hypertension", "pression"], solution: "<b>SOLUTIONS DMS (Tension) :</b><br>1. Bissap noir sans sucre.<br>2. Ail frais chaque matin.<br>3. Réduction stricte du sel.<br>✅ Validé par Mustapha Kourouma." },
+        { mots: ["palu", "paludisme", "fievre"], solution: "<b>SOLUTIONS DMS (Paludisme) :</b><br>1. Tisane concentrée de feuilles de Neem.<br>2. Repos et forte hydratation.<br>✅ Validé par Mustapha Kourouma." }
     ];
 
     function lancerDiagnostic() {
-        const q = document.getElementById('userQuery').value.toLowerCase();
+        const inputField = document.getElementById('userQuery');
+        const q = inputField.value.toLowerCase().trim();
         const res = document.getElementById('resultat');
+
+        if (q === "") return;
+
         res.style.display = "block";
-        res.innerHTML = "<i>Analyse des algorithmes Google Cloud en cours...</i>";
+        res.innerHTML = "<i>Analyse de l'expert en cours...</i>";
+
+        // ACTION : Effacer le clavier immédiatement
+        inputField.value = "";
 
         setTimeout(() => {
             let reponseTrouvee = "";
+            
+            // On vérifie si UN des mots-clés est PRÉCISÉMENT dans la phrase
             for (let item of database) {
                 if (item.mots.some(m => q.includes(m))) {
                     reponseTrouvee = item.solution;
                     break;
                 }
             }
+
             if (reponseTrouvee) {
                 res.innerHTML = reponseTrouvee;
             } else {
-                res.innerHTML = "<b>ANALYSE DMS :</b> Cas complexe détecté par l'IA.<br>👉 Pour une solution fiable et personnalisée, cliquez sur <b>CONTACT DIRECTEUR</b>.";
+                res.innerHTML = "<b>ANALYSE DMS :</b> Maladie non identifiée par l'IA.<br>👉 Cliquez sur <b>CONTACT DIRECTEUR</b> pour une consultation prioritaire.";
             }
-        }, 1200);
+        }, 1000);
     }
 
     function googleTranslateElementInit() {
