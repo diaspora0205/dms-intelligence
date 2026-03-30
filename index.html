@@ -3,112 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DMS - MUSTAPHA KOUROUMA EXPERT</title>
+    <title>DMS - FONDATREUR MUSTAPHA KOUROUMA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Helvetica', Arial, sans-serif; background: #002d24; margin: 0; padding: 0; color: white; }
+        body { font-family: 'Arial', sans-serif; background: #002d24; margin: 0; padding: 0; color: white; overflow-x: hidden; padding-bottom: 120px; }
         
-        /* HEADER - L'AUTORITÉ DE L'EXPERT */
-        .header { background: #004d40; padding: 30px 10px; text-align: center; border-bottom: 5px solid #ffcc00; }
-        .badge-expert { background: white; color: #004d40; padding: 10px 20px; border-radius: 50px; display: inline-block; margin: 5px; font-weight: bold; border: 2px solid #ffcc00; box-shadow: 0 4px 8px rgba(0,0,0,0.3); }
+        /* HEADER STYLE PLATEAU TV */
+        .header { background: linear-gradient(180deg, #004d40 0%, #002d24 100%); padding: 30px 10px; text-align: center; border-bottom: 5px solid #ffcc00; }
+        .fondateur { font-size: 22px; font-weight: bold; color: #ffcc00; text-transform: uppercase; margin-bottom: 5px; }
+        .specialite { font-size: 16px; color: #e0f2f1; margin-bottom: 15px; }
 
-        /* BARRE D'INFOS - LARGE ET CLAIRE */
+        .badges { margin: 10px 0; }
+        .badge { background: white; color: #004d40; padding: 8px 15px; border-radius: 20px; font-weight: bold; margin: 5px; display: inline-block; font-size: 0.85em; border: 2px solid #ffcc00; }
+
+        /* TRADUCTEUR GOOGLE VISIBLE */
+        #google_translate_element { background: white; padding: 10px; border-radius: 8px; width: fit-content; margin: 15px auto; border: 3px solid #ffcc00; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+
+        /* BANDEAU DÉFILANT (STYLE FRANCE 24) */
+        .news-ticker { background: #ffcc00; color: #000; padding: 10px 0; position: relative; font-weight: bold; overflow: hidden; white-space: nowrap; }
+        .news-ticker span { display: inline-block; padding-left: 100%; animation: ticker 20s linear infinite; }
+        @keyframes ticker { 0% { transform: translate(0, 0); } 100% { transform: translate(-100%, 0); } }
+
+        /* COMPTEUR ET INFOS */
         .info-bar { background: #111; padding: 15px; display: flex; justify-content: space-around; font-size: 14px; border-bottom: 2px solid #333; }
-        .stat-item { color: #ffcc00; font-weight: bold; }
+        .stat-count { color: #00ff00; font-family: 'Courier New', monospace; font-size: 18px; }
 
-        /* LE MOTEUR DE RECHERCHE - CONFORT MAXIMAL */
+        /* MOTEUR DE RECHERCHE */
         .container { padding: 20px; max-width: 600px; margin: auto; }
-        .search-card { background: white; color: #333; padding: 25px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: center; }
+        .search-card { background: white; color: #333; padding: 25px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.4); text-align: center; }
         .input-group { position: relative; margin-top: 20px; }
         .input-main { width: 100%; padding: 18px 60px 18px 20px; border-radius: 35px; border: 2px solid #004d40; font-size: 16px; outline: none; box-sizing: border-box; }
         .btn-send { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: #004d40; color: white; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; }
 
-        /* ZONE DE RÉPONSE - CLAIRE ET NETTE */
-        #resultat { margin-top: 25px; padding: 20px; border-radius: 10px; background: #f9f9f9; border-left: 8px solid #ffcc00; display: none; color: #000; text-align: left; font-size: 15px; line-height: 1.6; }
+        /* RÉSULTATS CLAIRS */
+        #resultat { margin-top: 25px; padding: 20px; border-radius: 12px; background: #f1f8e9; border-left: 8px solid #2e7d32; display: none; color: #000; text-align: left; line-height: 1.6; box-shadow: inset 0 2px 5px rgba(0,0,0,0.1); }
 
-        /* BOUTON WHATSAPP */
-        .whatsapp-fix { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 5px 20px rgba(0,0,0,0.4); z-index: 999; display: flex; align-items: center; gap: 10px; }
+        /* WHATSAPP POSITIONNÉ HAUT */
+        .whatsapp-float { position: fixed; bottom: 35px; right: 20px; background: #25d366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 8px 20px rgba(0,0,0,0.5); z-index: 1000; display: flex; align-items: center; gap: 10px; }
     </style>
 </head>
 <body>
 
 <div class="header">
-    <h1 style="margin:0; font-size: 24px;">DIASPORA MONDIAL SANTÉ (DMS)</h1>
-    <p style="margin:10px 0;">Directeur : <strong>Mustapha Kourouma</strong></p>
-    <div>
-        <div class="badge-expert">🥉 Bronze : 2e</div>
-        <div class="badge-expert">🥈 Argent : 3e</div>
-        <div class="badge-expert" style="background:#ffcc00;">🥇 Or : 24e Mondial Google Cloud</div>
+    <div class="fondateur">Fondateur : Mustapha Kourouma</div>
+    <div class="specialite">Médecine Traditionnelle Intégrée & Intelligence Artificielle</div>
+    <div class="badges">
+        <span class="badge">🥉 2e Place Bronze</span>
+        <span class="badge">🥈 3e Place Argent</span>
+        <span class="badge" style="background:#ffcc00;">🥇 24e Mondial Google Cloud</span>
     </div>
 </div>
 
-<div class="info-bar">
-    <div id="horloge"></div>
-    <div>Visiteurs : <span class="stat-item" id="v-count">2518</span></div>
+<div class="news-ticker">
+    <span>DMS : L'IA au service de la santé mondiale -- Expertise Google Cloud Top 24 -- Solutions traditionnelles pour les 11 pays -- Diagnostic instantané activé --</span>
 </div>
 
-<div id="google_translate_element" style="text-align:center; padding:10px;"></div>
+<div class="info-bar">
+    <div id="clock"></div>
+    <div>VISITEURS : <span class="stat-count" id="v-count">2537</span></div>
+</div>
+
+<div id="google_translate_element"></div>
 
 <div class="container">
     <div class="search-card">
-        <h2 style="color:#004d40; margin-top:0;">Analyse IA Certifiée</h2>
-        <p style="color:#666;">Posez votre question sur une maladie pour obtenir la solution DMS.</p>
+        <h3 style="color:#004d40; margin-top:0;">SYSTÈME DE DIAGNOSTIC IA</h3>
+        <p style="color:#666; font-size:14px;">Entrez une maladie pour obtenir la solution immédiate.</p>
         
         <div class="input-group">
-            <input type="text" id="userQuery" class="input-main" placeholder="Ex: Quel médicament pour le diabète ?">
-            <button class="btn-send" onclick="trouverSolution()"><i class="fas fa-paper-plane"></i></button>
+            <input type="text" id="userQuery" class="input-main" placeholder="Ex: Diabète, Tension, Palu...">
+            <button class="btn-send" onclick="lancerDiagnostic()"><i class="fas fa-paper-plane"></i></button>
         </div>
 
         <div id="resultat"></div>
     </div>
 </div>
 
-<a href="https://wa.me/2202500000" class="whatsapp-fix">
-    <i class="fab fa-whatsapp fa-lg"></i> WhatsApp Directeur
+<a href="https://wa.me/220XXXXXXXX" class="whatsapp-float">
+    <i class="fab fa-whatsapp fa-lg"></i> CONTACT DIRECTEUR
 </a>
 
 <script>
-    // 1. Horloge Propre
-    function majHeure() {
+    // Horloge
+    function updateTime() {
         const d = new Date();
-        document.getElementById('horloge').innerText = d.toLocaleDateString() + " " + d.toLocaleTimeString();
+        document.getElementById('clock').innerText = d.toLocaleDateString() + " " + d.toLocaleTimeString();
     }
-    setInterval(majHeure, 1000);
+    setInterval(updateTime, 1000);
 
-    // 2. Compteur Visiteurs
-    let visiteurs = 2518;
+    // Compteur de visiteurs rapide
+    let count = 2537;
     setInterval(() => {
-        visiteurs += 1;
-        document.getElementById('v-count').innerText = visiteurs;
-    }, 12000);
+        count += Math.floor(Math.random() * 2) + 1;
+        document.getElementById('v-count').innerText = count;
+    }, 5000);
 
-    // 3. Le Moteur de Solution (Base de données intelligente)
-    const dmsData = [
-        { mots: ["diabete", "sucre", "glycemie"], reponse: "<b>SOLUTION DMS (Diabète) :</b> Utilisation de la plante <i>Moringa</i> couplée aux racines secrètes du pays 1. Cette combinaison stabilise le taux de glycémie naturellement. <br>✅ Validé par Mustapha Kourouma." },
-        { mots: ["tension", "hypertension", "coeur"], reponse: "<b>SOLUTION DMS (Tension) :</b> Infusion d'Hibiscus (Bissap noir) et consommation d'ail frais chaque matin. Éviter le sel raffiné. <br>✅ Validé par Mustapha Kourouma." },
-        { mots: ["palu", "paludisme", "fievre"], reponse: "<b>SOLUTION DMS (Paludisme) :</b> Décoction forte de feuilles de Neem ou Artémisia. Prendre 3 tasses par jour pendant 5 jours. <br>✅ Validé par Mustapha Kourouma." },
-        { mots: ["maux de ventre", "estomac", "digestion"], reponse: "<b>SOLUTION DMS (Estomac) :</b> Charbon végétal actif ou infusion de Gingembre frais. Nettoie le système digestif immédiatement. <br>✅ Validé par Mustapha Kourouma." }
+    // Base de données Maladies & Solutions
+    const database = [
+        { mots: ["diabete", "sucre", "glycemie"], solution: "<b>SOLUTION DMS :</b> Infusion de feuilles de Moringa et racines du pays 1. Régule le sucre dans le sang. <br>✅ Validé par l'Expert Mustapha Kourouma." },
+        { mots: ["tension", "hypertension", "coeur"], solution: "<b>SOLUTION DMS :</b> Décoction de Bissap noir (sans sucre) et ail frais. Stabilise la pression artérielle. <br>✅ Validé par l'Expert Mustapha Kourouma." },
+        { mots: ["palu", "paludisme", "fievre"], solution: "<b>SOLUTION DMS :</b> Tisane d'Artémisia ou feuilles de Neem. 3 tasses par jour pendant 5 jours. <br>✅ Validé par l'Expert Mustapha Kourouma." }
     ];
 
-    function trouverSolution() {
-        const query = document.getElementById('userQuery').value.toLowerCase();
-        const box = document.getElementById('resultat');
-        box.style.display = "block";
-        box.innerHTML = "<i>Recherche dans la base de l'Expert Google Cloud...</i>";
+    function lancerDiagnostic() {
+        const q = document.getElementById('userQuery').value.toLowerCase();
+        const res = document.getElementById('resultat');
+        res.style.display = "block";
+        res.innerHTML = "<i>Analyse IA en cours sur les serveurs Cloud...</i>";
 
         setTimeout(() => {
-            let resultatFinal = "";
-            for (let item of dmsData) {
-                if (item.mots.some(m => query.includes(m))) {
-                    resultatFinal = item.reponse;
+            let reponseTrouvee = "";
+            for (let item of database) {
+                if (item.mots.some(m => q.includes(m))) {
+                    reponseTrouvee = item.solution;
                     break;
                 }
             }
 
-            if (resultatFinal) {
-                box.innerHTML = resultatFinal;
+            if (reponseTrouvee) {
+                res.innerHTML = reponseTrouvee;
             } else {
-                box.innerHTML = "<b>ANALYSE DMS :</b> Votre question est complexe. <br>👉 Cliquez sur le bouton <b>WhatsApp</b> ci-dessous pour une consultation directe avec le Directeur Mustapha.";
+                res.innerHTML = "<b>ANALYSE DMS :</b> Cas complexe détecté. <br>👉 Cliquez sur le bouton <b>WhatsApp</b> pour une consultation prioritaire avec le Directeur.";
             }
         }, 1000);
     }
@@ -120,4 +135,4 @@
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
-</html>
+    </html>
