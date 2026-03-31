@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DMS - EXPERT GOOGLE CLOUD TOP 24</title>
+    <title>DMS - MUSTAPHA KOUROUMA</title>
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({pageLanguage: 'fr', includedLanguages: 'en,es,ar,zh-CN,pt,de,it,hi,ru,ja,ko,tr,vi,sw,ha,wo'}, 'google_translate_element');
@@ -12,42 +12,34 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f0f4f0; margin: 0; padding: 0; }
-        .header { background: linear-gradient(135deg, #1b5e20, #2e7d32); color: white; padding: 25px; text-align: center; border-bottom: 4px solid #ffd700; }
-        .fondateur { font-size: 26px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
-        .badges { margin-top: 15px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
-        .badge { background: #ffd700; color: #1b5e20; padding: 6px 12px; border-radius: 20px; font-size: 13px; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        body { font-family: 'Arial', sans-serif; background-color: #f4f7f6; margin: 0; padding: 0; text-align: center; }
+        .header { background: linear-gradient(135deg, #1b5e20, #2e7d32); color: white; padding: 25px; border-bottom: 4px solid #ffd700; }
+        .fondateur { font-size: 22px; font-weight: bold; }
+        .badges { margin-top: 15px; display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+        .badge { background: #ffd700; color: #1b5e20; padding: 5px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; }
         
-        /* FRANCE 24 / NEWS TICKER STYLE */
-        .news-ticker { background: #111; color: #fff; padding: 12px; overflow: hidden; white-space: nowrap; border-bottom: 2px solid #cc0000; }
-        .news-ticker span { display: inline-block; animation: scroll 25s linear infinite; font-weight: bold; color: #ffeb3b; }
-        @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+        /* FRANCE 24 NEWS TICKER */
+        .news-ticker { background: #111; color: #fff; padding: 10px; overflow: hidden; white-space: nowrap; border-bottom: 2px solid #cc0000; }
+        .news-ticker span { display: inline-block; animation: ticker 25s linear infinite; font-weight: bold; color: #ffeb3b; }
+        @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
 
-        .info-bar { background: #222; color: #00ff00; padding: 10px; font-family: 'Courier New', monospace; font-size: 14px; display: flex; justify-content: space-around; border-bottom: 1px solid #444; }
+        .info-bar { background: #222; color: #00ff00; padding: 10px; font-family: monospace; display: flex; justify-content: space-around; }
+        .city-scroll { background: #eee; padding: 8px; font-size: 11px; color: #555; font-style: italic; }
         
-        #google_translate_element { margin: 10px auto; text-align: center; }
-
-        .container { padding: 20px; max-width: 650px; margin: auto; }
-        .search-card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 1px solid #ddd; }
-        h3 { color: #1b5e20; margin-bottom: 20px; font-size: 22px; }
+        .container { padding: 20px; max-width: 600px; margin: auto; }
+        .search-card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
         
-        .input-group { display: flex; flex-direction: column; gap: 15px; }
-        input { width: 100%; padding: 18px; border: 2px solid #2e7d32; border-radius: 12px; font-size: 18px; outline: none; box-sizing: border-box; transition: 0.3s; }
-        input:focus { box-shadow: 0 0 10px rgba(46, 125, 50, 0.5); }
-        .btn-send { background: #2e7d32; color: white; border: none; padding: 18px; border-radius: 12px; font-weight: bold; cursor: pointer; font-size: 18px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-        .btn-send:hover { background: #1b5e20; }
-
-        #resultat { margin-top: 30px; padding: 20px; background: #f9fdf9; border-radius: 12px; display: none; text-align: left; border-left: 8px solid #2e7d32; font-size: 17px; line-height: 1.6; }
+        input { width: 100%; padding: 15px; border: 2px solid #2e7d32; border-radius: 12px; font-size: 16px; outline: none; box-sizing: border-box; }
+        .btn-send { background: #2e7d32; color: white; border: none; padding: 15px; border-radius: 12px; font-weight: bold; cursor: pointer; font-size: 18px; width: 100%; margin-top: 10px; }
         
-        .city-scroll { background: #eee; padding: 8px; font-size: 12px; color: #555; text-align: center; font-style: italic; }
-        .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); text-decoration: none; z-index: 1000; }
+        #resultat { margin-top: 25px; padding: 20px; background: #e8f5e9; border-radius: 12px; display: none; text-align: left; border-left: 8px solid #2e7d32; }
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; }
     </style>
 </head>
 <body>
 
 <div class="header">
-    <div class="fondateur">Directeur Mustapha Kourouma</div>
-    <div style="font-size:14px; opacity:0.9;">Fondateur de Diaspora Mondial Santé (DMS)</div>
+    <div class="fondateur">Fondateur de Diaspora Mondial Santé (DMS)</div>
     <div class="badges">
         <span class="badge">🥉 Luc Bronze: 2ème</span>
         <span class="badge">🥈 Luc Argent: 3ème</span>
@@ -56,7 +48,7 @@
 </div>
 
 <div class="news-ticker">
-    <span>L'IA DMS RECONNAÎT DÉSORMAIS 133 LANGUES — FRANCE 24 : LA SANTÉ TRADITIONNELLE AU CŒUR DE L'INNOVATION — GOOGLE CLOUD NEXT 2026 : MUSTAPHA KOUROUMA REPRÉSENTE L'AFRIQUE —</span>
+    <span>FRANCE 24 : LA SANTÉ TRADITIONNELLE ET L'IA — DMS RECONNAÎT DÉSORMAIS 133 LANGUES — EXPERTISE GOOGLE CLOUD TOP 24 —</span>
 </div>
 
 <div class="info-bar">
@@ -65,7 +57,7 @@
     <div>CLOUD STATUS: <span style="color:#00ff00;">ONLINE</span></div>
 </div>
 
-<div id="google_translate_element"></div>
+<div id="google_translate_element" style="margin: 10px;"></div>
 
 <div class="city-scroll">
     Villes actives : Paris, Conakry, Dakar, New York, Londres, Bamako, Abidjan, Tokyo...
@@ -73,16 +65,14 @@
 
 <div class="container">
     <div class="search-card">
-        <h3>DIASPORA MONDIAL SANTÉ (IA)</h3>
-        <div class="input-group">
-            <input type="text" id="userQuery" placeholder="Décrivez votre mal (Palu, Tension, Estomac...)">
-            <button class="btn-send" onclick="lancerDiagnostic()">ANALYSER MON CAS</button>
-        </div>
+        <h2 style="color:#1b5e20;">DIASPORA MONDIAL SANTÉ (IA)</h2>
+        <input type="text" id="userQuery" placeholder="Décrivez votre mal (Palu, Tension...)">
+        <button class="btn-send" onclick="lancerDiagnostic()">ANALYSER MON CAS</button>
         <div id="resultat"></div>
     </div>
 </div>
 
-<a href="https://wa.me/2202500000" class="whatsapp-float">💬</a>
+<a href="https://wa.me/7814179" class="whatsapp-float">💬</a>
 
 <script>
     function updateClock() {
@@ -91,11 +81,11 @@
     setInterval(updateClock, 1000);
 
     const database = [
-        { mots: ["diabete", "sucre", "glycemie"], reponse: "<b>OFFICIEL DMS (Diabète) :</b> Infusion de feuilles de Moringa et racines pays 1. Évitez les glucides raffinés. <br>⚠️ <i>Sécurité : Interdit aux femmes enceintes.</i>" },
-        { mots: ["tension", "hypertension", "pression"], reponse: "<b>OFFICIEL DMS (Tension) :</b> Jus de Bissap noir concentré et une gousse d'ail quotidienne. <br>⚠️ <i>Sécurité : Déconseillé en cas d'anémie.</i>" },
-        { mots: ["palu", "fievre", "paludisme", "corps chaud"], reponse: "<b>OFFICIEL DMS (Paludisme) :</b> Décoction de feuilles de Neem et Quinquina bouillie." },
-        { mots: ["estomac", "gastrite", "ventre", "aigreur"], reponse: "<b>OFFICIEL DMS (Estomac) :</b> Charbon végétal actif et infusion de gingembre doux." },
-        { mots: ["hemorroide", "koukourou"], reponse: "<b>OFFICIEL DMS (Hémorroïdes) :</b> Bain de siège aux écorces de baobab et beurre de karité pur." }
+        { mots: ["diabete", "sucre", "glycemie"], reponse: "<b>DMS IA (Diabète) :</b> Infusion de Moringa et racines pays 1. <br>⚠️ <i>Interdit aux femmes enceintes.</i>" },
+        { mots: ["tension", "hypertension", "pression"], reponse: "<b>DMS IA (Tension) :</b> Jus de Bissap noir pur et ail frais quotidien. <br>⚠️ <i>Déconseillé en cas d'anémie.</i>" },
+        { mots: ["palu", "fievre", "paludisme"], reponse: "<b>DMS IA (Paludisme) :</b> Décoction de feuilles de Neem et Quinquina." },
+        { mots: ["estomac", "gastrite", "ventre"], reponse: "<b>DMS IA (Estomac) :</b> Charbon végétal et gingembre doux." },
+        { mots: ["hemorroide", "koukourou"], reponse: "<b>DMS IA (Hémorroïdes) :</b> Bain de siège aux écorces de baobab." }
     ];
 
     function lancerDiagnostic() {
@@ -106,22 +96,22 @@
         if (q === "") return;
 
         res.style.display = "block";
-        res.innerHTML = "<b>DMS CLOUD ANALYTICS :</b> Cryptage et analyse en cours...";
+        res.innerHTML = "<i>Analyse sécurisée Cloud DMS en cours...</i>";
 
-        // ACTION CRUCIALE : NETTOYER LE CHAMP
+        // ACTION : Effacer le clavier
         input.value = "";
 
         setTimeout(() => {
             let found = database.find(item => item.mots.some(m => q.includes(m)));
             
             if (found) {
-                res.innerHTML = found.reponse + "<br><br><small style='color:#2e7d32;'>✔ Authentifié par l'Expert Google Cloud Top 24</small>";
+                res.innerHTML = found.reponse + "<br><br><small>✅ Validé par Expert Cloud Top 24</small>";
             } else {
-                res.innerHTML = "<b>ANALYSE DMS :</b> Cas non répertorié. <br>👉 <a href='https://wa.me/2202500000' style='color:#1b5e20; font-weight:bold;'>CONTACTER LE DIRECTEUR SUR WHATSAPP</a>";
+                res.innerHTML = "<b>ANALYSE DMS :</b> Cas complexe. <br>👉 <a href='https://wa.me/7814179' style='color:#1b5e20; font-weight:bold;'>CLIQUEZ ICI POUR CONTACTER LE DIRECTEUR</a>";
             }
         }, 1200);
     }
 </script>
 
 </body>
-</html>
+    </html>
