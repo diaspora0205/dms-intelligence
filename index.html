@@ -3,87 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DMS - MUSTAPHA KOUROUMA</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Diaspora Mondial Santé - DMS IA</title>
     <style>
-        body { font-family: 'Arial', sans-serif; background: #002d24; margin: 0; padding: 0; color: white; padding-bottom: 120px; }
-        .header { background: linear-gradient(180deg, #004d40 0%, #002d24 100%); padding: 30px 10px; text-align: center; border-bottom: 5px solid #ffcc00; }
-        .fondateur { font-size: 22px; font-weight: bold; color: #ffcc00; text-transform: uppercase; }
-        .badge { background: white; color: #004d40; padding: 8px 15px; border-radius: 20px; font-weight: bold; margin: 5px; display: inline-block; border: 2px solid #ffcc00; }
-        #google_translate_element { background: white; padding: 10px; border-radius: 8px; width: fit-content; margin: 15px auto; border: 3px solid #ffcc00; }
-        .news-ticker { background: #ffcc00; color: #000; padding: 10px 0; font-weight: bold; overflow: hidden; white-space: nowrap; }
-        .news-ticker span { display: inline-block; padding-left: 100%; animation: ticker 25s linear infinite; }
-        @keyframes ticker { 0% { transform: translate(0, 0); } 100% { transform: translate(-100%, 0); } }
-        .info-bar { background: #111; padding: 15px; display: flex; justify-content: space-around; font-size: 14px; border-bottom: 2px solid #333; }
-        .stat-count { color: #00ff00; font-weight: bold; font-size: 18px; }
-        .container { padding: 20px; max-width: 600px; margin: auto; }
-        .search-card { background: white; color: #333; padding: 25px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.4); text-align: center; }
-        .input-group { position: relative; margin-top: 20px; }
-        .input-main { width: 100%; padding: 18px 60px 18px 20px; border-radius: 35px; border: 2px solid #004d40; font-size: 16px; outline: none; box-sizing: border-box; }
-        .btn-send { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: #004d40; color: white; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; }
-        #resultat { margin-top: 25px; padding: 20px; border-radius: 12px; background: #f1f8e9; border-left: 8px solid #2e7d32; display: none; color: #000; text-align: left; line-height: 1.6; }
-        .whatsapp-float { position: fixed; bottom: 35px; right: 20px; background: #25d366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; z-index: 1000; display: flex; align-items: center; gap: 10px; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #e8f5e9; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        .container { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 100%; max-width: 500px; text-align: center; border-top: 5px solid #2e7d32; }
+        .logo { width: 80px; margin-bottom: 10px; }
+        h1 { color: #1b5e20; font-size: 22px; margin-bottom: 5px; }
+        p { color: #4caf50; font-weight: bold; margin-bottom: 20px; }
+        input { width: 100%; padding: 12px; margin: 10px 0; border: 2px solid #a5d6a7; border-radius: 8px; box-sizing: border-box; outline: none; font-size: 16px; }
+        button { background-color: #2e7d32; color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-size: 16px; width: 100%; font-weight: bold; transition: background 0.3s; }
+        button:hover { background-color: #1b5e20; }
+        #resultat { margin-top: 20px; padding: 15px; border-radius: 8px; background-color: #f1f8e9; border-left: 5px solid #2e7d32; display: none; text-align: left; color: #333; line-height: 1.5; }
+        .expert-badge { margin-top: 15px; font-size: 12px; color: #666; font-style: italic; }
+        .footer { margin-top: 20px; font-size: 10px; color: #999; }
     </style>
 </head>
 <body>
 
-<div class="header">
-    <div class="fondateur">Fondateur : Mustapha Kourouma</div>
-    <div style="margin-top:5px;">Médecine Traditionnelle Intégrée & IA</div>
-    <div class="badges">
-        <span class="badge">🥉 Bronze : 2e</span>
-        <span class="badge">🥈 Argent : 3e</span>
-        <span class="badge" style="background:#ffcc00;">🥇 Or : 24e Mondial Google Cloud</span>
-    </div>
-</div>
-
-<div class="news-ticker">
-    <span>DMS : Solutions par Mustapha Kourouma -- Top 24 Mondial Google Cloud -- Diagnostic IA Fiable --</span>
-</div>
-
-<div class="info-bar">
-    <div id="clock"></div>
-    <div>VISITEURS : <span class="stat-count" id="v-count">2588</span></div>
-</div>
-
-<div id="google_translate_element"></div>
-
 <div class="container">
-    <div class="search-card">
-        <h3 style="color:#004d40; margin-top:0;">CENTRE DE DIAGNOSTIC IA</h3>
-        <div class="input-group">
-            <input type="text" id="userQuery" class="input-main" placeholder="Tapez une maladie (ex: Diabète)...">
-            <button class="btn-send" onclick="lancerDiagnostic()"><i class="fas fa-paper-plane"></i></button>
-        </div>
-        <div id="resultat"></div>
-    </div>
+    <img src="https://via.placeholder.com/80/2e7d32/ffffff?text=DMS" alt="Logo DMS" class="logo">
+    <h1>DIASPORA MONDIAL SANTÉ</h1>
+    <p>Expertise IA & Médecine Traditionnelle</p>
+    
+    <input type="text" id="userQuery" placeholder="Entrez une maladie (ex: Palu, Tension...)" onkeypress="if(event.key === 'Enter') lancerDiagnostic()">
+    <button onclick="lancerDiagnostic()">LANCER LE DIAGNOSTIC</button>
+
+    <div id="resultat"></div>
+    
+    <div class="expert-badge">Système supervisé par Mustapha Kourouma<br>Expert Google Cloud (Top 24 Mondial)</div>
 </div>
 
-<a href="https://wa.me/2202500000" class="whatsapp-float">
-    <i class="fab fa-whatsapp fa-lg"></i> CONTACT DIRECTEUR
-</a>
+<div class="footer">© 2026 Diaspora Mondial Santé - Tous droits réservés</div>
 
 <script>
-    function updateTime() {
-        const d = new Date();
-        document.getElementById('clock').innerText = d.toLocaleDateString() + " " + d.toLocaleTimeString();
-    }
-    setInterval(updateTime, 1000);
-
-    // COMPTEUR RÉEL
-    let currentVisits = localStorage.getItem('dms_visits') || 2588;
-    if (!sessionStorage.getItem('session_active')) {
-        currentVisits = parseInt(currentVisits) + 1;
-        localStorage.setItem('dms_visits', currentVisits);
-        sessionStorage.setItem('session_active', 'true');
-    }
-    document.getElementById('v-count').innerText = currentVisits;
-
-    // BASE DE DONNÉES ÉLARGIE ET PRÉCISE
+    // --- MOTEUR MÉDICAL INTELLIGENT DMS ---
     const database = [
-        { mots: ["diabete", "sucre", "glycemie"], solution: "<b>SOLUTIONS DMS (Diabète) :</b><br>1. Infusion de feuilles de Moringa.<br>2. Racines du pays 1 pour le pancréas.<br>3. Zéro sucres raffinés.<br>✅ Validé par Mustapha Kourouma." },
-        { mots: ["tension", "hypertension", "pression"], solution: "<b>SOLUTIONS DMS (Tension) :</b><br>1. Bissap noir sans sucre.<br>2. Ail frais chaque matin.<br>3. Réduction stricte du sel.<br>✅ Validé par Mustapha Kourouma." },
-        { mots: ["palu", "paludisme", "fievre"], solution: "<b>SOLUTIONS DMS (Paludisme) :</b><br>1. Tisane concentrée de feuilles de Neem.<br>2. Repos et forte hydratation.<br>✅ Validé par Mustapha Kourouma." }
+        { 
+            mots: ["diabete", "sucre", "glycemie", "diabaite"], 
+            reponse: "<b>SOLUTION DMS (Diabète) :</b> Utilisation de feuilles de Moringa séchées en infusion et décoction de racines pays 1.<br>⚠️ <i>Attention : Interdit aux femmes enceintes.</i>" 
+        },
+        { 
+            mots: ["tension", "hypertension", "pression", "coeur"], 
+            reponse: "<b>SOLUTION DMS (Tension) :</b> Jus de Bissap noir concentré sans sucre et une gousse d'ail frais le matin.<br>⚠️ <i>Note : Déconseillé en cas d'anémie sévère.</i>" 
+        },
+        { 
+            mots: ["palu", "paludisme", "fievre", "chaud", "corps"], 
+            reponse: "<b>SOLUTION DMS (Palu) :</b> Décoction de feuilles de Neem bouillies (lavage et boisson) et Quinquina." 
+        },
+        { 
+            mots: ["estomac", "ventre", "gastrite", "aigreur", "gaz"], 
+            reponse: "<b>SOLUTION DMS (Maux d'estomac) :</b> Mélange de charbon végétal activé et infusion légère de gingembre doux." 
+        },
+        { 
+            mots: ["hemorroide", "koukourou", "fesses"], 
+            reponse: "<b>SOLUTION DMS (Hémorroïdes) :</b> Bain de siège avec écorces de baobab et application de beurre de karité pur." 
+        }
     ];
 
     function lancerDiagnostic() {
@@ -93,35 +67,33 @@
 
         if (q === "") return;
 
+        // 1. Préparation de l'affichage
         res.style.display = "block";
-        res.innerHTML = "<i>Analyse de l'expert en cours...</i>";
+        res.innerHTML = "<i>Analyse des algorithmes DMS en cours...</i>";
 
-        // ACTION : Effacer le clavier immédiatement
+        // 2. ACTION CRUCIALE : Effacer le champ immédiatement (Clavier libre)
         inputField.value = "";
 
+        // 3. Simulation de réflexion IA (1 seconde)
         setTimeout(() => {
             let reponseTrouvee = "";
-            
-            // On vérifie si UN des mots-clés est PRÉCISÉMENT dans la phrase
+
+            // Recherche intelligente par mots-clés
             for (let item of database) {
-                if (item.mots.some(m => q.includes(m))) {
-                    reponseTrouvee = item.solution;
+                if (item.mots.some(mot => q.includes(mot))) {
+                    reponseTrouvee = item.reponse;
                     break;
                 }
             }
 
             if (reponseTrouvee) {
-                res.innerHTML = reponseTrouvee;
+                res.innerHTML = reponseTrouvee + "<br><br><small style='color: #2e7d32;'>✔ Solution validée par le Directeur</small>";
             } else {
-                res.innerHTML = "<b>ANALYSE DMS :</b> Maladie non identifiée par l'IA.<br>👉 Cliquez sur <b>CONTACT DIRECTEUR</b> pour une consultation prioritaire.";
+                res.innerHTML = "<b>ANALYSE DMS :</b> Cas complexe détecté.<br>👉 Votre situation nécessite l'analyse directe de l'Expert.<br><a href='https://wa.me/2202500000' style='color:#1b5e20; font-weight:bold; text-decoration:none;'>CONTACTER LE DIRECTEUR SUR WHATSAPP</a>";
             }
         }, 1000);
     }
-
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'fr'}, 'google_translate_element');
-    }
 </script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>
