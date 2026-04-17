@@ -3,126 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DMS - MUSTAPHA KOUROUMA</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Centre de Diagnostic IA - Victor Mustapha Kourouma</title>
     <style>
-        body { font-family: 'Arial', sans-serif; background: #002d24; margin: 0; padding: 0; color: white; padding-bottom: 120px; }
-        .header { background: linear-gradient(180deg, #004d40 0%, #002d24 100%); padding: 30px 10px; text-align: center; border-bottom: 5px solid #ffcc00; }
-        .fondateur { font-size: 22px; font-weight: bold; color: #ffcc00; text-transform: uppercase; }
-        .badge { background: white; color: #004d40; padding: 8px 15px; border-radius: 20px; font-weight: bold; margin: 5px; display: inline-block; border: 2px solid #ffcc00; }
-        #google_translate_element { background: white; padding: 10px; border-radius: 8px; width: fit-content; margin: 15px auto; border: 3px solid #ffcc00; }
-        .news-ticker { background: #ffcc00; color: #000; padding: 10px 0; font-weight: bold; overflow: hidden; white-space: nowrap; }
-        .news-ticker span { display: inline-block; padding-left: 100%; animation: ticker 25s linear infinite; }
-        @keyframes ticker { 0% { transform: translate(0, 0); } 100% { transform: translate(-100%, 0); } }
-        .info-bar { background: #111; padding: 15px; display: flex; justify-content: space-around; font-size: 14px; border-bottom: 2px solid #333; }
-        .stat-count { color: #00ff00; font-weight: bold; font-size: 18px; }
-        .container { padding: 20px; max-width: 600px; margin: auto; }
-        .search-card { background: white; color: #333; padding: 25px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.4); text-align: center; }
-        .input-group { position: relative; margin-top: 20px; }
-        .input-main { width: 100%; padding: 18px 60px 18px 20px; border-radius: 35px; border: 2px solid #004d40; font-size: 16px; outline: none; box-sizing: border-box; }
-        .btn-send { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: #004d40; color: white; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; }
-        #resultat { margin-top: 25px; padding: 20px; border-radius: 12px; background: #f1f8e9; border-left: 8px solid #2e7d32; display: none; color: #000; text-align: left; line-height: 1.6; }
-        .whatsapp-float { position: fixed; bottom: 35px; right: 20px; background: #25d366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; z-index: 1000; display: flex; align-items: center; gap: 10px; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: #0f0f0f; color: white; text-align: center; }
+        .header { background: linear-gradient(45deg, #1a1a1a, #2c3e50); padding: 40px 20px; border-bottom: 3px solid #ffd700; }
+        .scrolling-text { background: #ffd700; color: black; padding: 10px 0; font-weight: bold; white-space: nowrap; overflow: hidden; position: relative; }
+        .scrolling-text span { display: inline-block; padding-left: 100%; animation: scroll 20s linear infinite; }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+        
+        .badge-container { display: flex; justify-content: center; gap: 15px; margin: 20px 0; flex-wrap: wrap; }
+        .badge { padding: 12px 25px; border-radius: 30px; font-weight: bold; text-transform: uppercase; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        .bronze { background: linear-gradient(#cd7f32, #8b4513); }
+        .silver { background: linear-gradient(#c0c0c0, #708090); }
+        .gold { background: linear-gradient(#ffd700, #b8860b); color: black; }
+        
+        .main-content { padding: 40px 20px; background: #1a1a1a; margin: 20px; border-radius: 15px; border: 1px solid #333; }
+        .btn-whatsapp { 
+            background-color: #25D366; color: white; padding: 25px 40px; 
+            border-radius: 50px; text-decoration: none; font-size: 1.4rem;
+            font-weight: bold; display: inline-flex; align-items: center; 
+            gap: 15px; box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
+            margin: 20px 0;
+        }
+        #google_translate_element { margin: 20px 0; padding: 10px; background: white; border-radius: 5px; display: inline-block; }
+        .visitor-counter { font-size: 1.2rem; color: #ffd700; margin-top: 20px; padding: 10px; border: 1px dashed #ffd700; display: inline-block; }
     </style>
 </head>
 <body>
 
-<div class="header">
-    <div class="fondateur">Fondateur : Mustapha Kourouma</div>
-    <div style="margin-top:5px;">Médecine Traditionnelle Intégrée & IA</div>
-    <div class="badges">
-        <span class="badge">🥉 Bronze : 2e</span>
-        <span class="badge">🥈 Argent : 3e</span>
-        <span class="badge" style="background:#ffcc00;">🥇 Or : 24e Mondial Google Cloud</span>
+    <div class="scrolling-text">
+        <span>BIENVENUE SUR LA PLATEFORME OFFICIELLE DE VICTOR MUSTAPHA KOUROUMA - EXPERT GOOGLE CLOUD - DIAGNOSTIC IA SANTÉ MONDIALE - CONTACTEZ-NOUS POUR UNE EXPERTISE</span>
     </div>
-</div>
 
-<div class="news-ticker">
-    <span>DMS : Expertise de Mustapha Kourouma -- Top 24 Mondial Google Cloud -- Solutions certifiées en médecine intégrée -- Diagnostic IA actif --</span>
-</div>
-
-<div class="info-bar">
-    <div id="clock"></div>
-    <div>VISITEURS RÉELS : <span class="stat-count" id="v-count">2575</span></div>
-</div>
-
-<div id="google_translate_element"></div>
-
-<div class="container">
-    <div class="search-card">
-        <h3 style="color:#004d40; margin-top:0;">CENTRE DE DIAGNOSTIC IA</h3>
-        <div class="input-group">
-            <input type="text" id="userQuery" class="input-main" placeholder="Tapez votre maladie précisément...">
-            <button class="btn-send" onclick="lancerDiagnostic()"><i class="fas fa-paper-plane"></i></button>
+    <div class="header">
+        <h1>VICTOR MUSTAPHA KOUROUMA</h1>
+        <p>Expert Certifié Google Cloud | Top 24 Mondial League 2</p>
+        
+        <div class="badge-container">
+            <div class="badge bronze">LUC BRONZE (2ème)</div>
+            <div class="badge silver">LUC ARGENT (3ème)</div>
+            <div class="badge gold">LUC OR (24ème MONDIAL)</div>
         </div>
-        <div id="resultat"></div>
     </div>
-</div>
 
-<a href="https://wa.me/2202500000" class="whatsapp-float">
-    <i class="fab fa-whatsapp fa-lg"></i> CONTACT DIRECTEUR
-</a>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'fr'}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-<script>
-    function updateTime() {
-        const d = new Date();
-        document.getElementById('clock').innerText = d.toLocaleDateString() + " " + d.toLocaleTimeString();
-    }
-    setInterval(updateTime, 1000);
+    <div class="main-content">
+        <h2>CENTRE DE DIAGNOSTIC IA</h2>
+        <p>Analyse de données médicales et solutions cloud haute performance.</p>
+        
+        <a href="https://wa.me/2207814179" target="_blank" class="btn-whatsapp">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 35px;">
+            CONTACT DIRECTEUR (GAMBIE)
+        </a>
 
-    // COMPTEUR FIABLE (Stockage local)
-    let currentVisits = localStorage.getItem('dms_visits') || 2575;
-    if (!sessionStorage.getItem('session_active')) {
-        currentVisits = parseInt(currentVisits) + 1;
-        localStorage.setItem('dms_visits', currentVisits);
-        sessionStorage.setItem('session_active', 'true');
-    }
-    document.getElementById('v-count').innerText = currentVisits;
+        <br>
+        <div class="visitor-counter">
+            TOTAL VISITEURS : 2 618 ET PLUS...
+        </div>
+    </div>
 
-    // BASE DE DONNÉES STRICTE
-    const database = [
-        { mots: ["diabete", "sucre", "glycemie"], solution: "<b>SOLUTIONS DMS (Diabète) :</b><br>1. Infusion de feuilles de Moringa.<br>2. Racines du pays 1 pour stabiliser le pancréas.<br>3. Zéro sucres raffinés.<br>✅ Validé par Mustapha Kourouma." },
-        { mots: ["tension", "hypertension", "pression"], solution: "<b>SOLUTIONS DMS (Tension) :</b><br>1. Bissap noir sans sucre (2 verres/jour).<br>2. Une gousse d'ail frais chaque matin.<br>3. Réduction stricte du sel.<br>✅ Validé par Mustapha Kourouma." },
-        { mots: ["palu", "paludisme", "fievre"], solution: "<b>SOLUTIONS DMS (Paludisme) :</b><br>1. Tisane de feuilles de Neem ou Artémisia.<br>2. Repos total et hydratation.<br>✅ Validé par Mustapha Kourouma." }
-    ];
+    <footer style="padding: 30px; background: #000; font-size: 0.9rem;">
+        <p>&copy; 2026 Diaspora Mondiale Santé - Tous droits réservés</p>
+        <p>Expertise Google Cloud : Victor Mustapha Kourouma</p>
+    </footer>
 
-    function lancerDiagnostic() {
-        const inputField = document.getElementById('userQuery');
-        const q = inputField.value.toLowerCase().trim();
-        const res = document.getElementById('resultat');
-
-        if (q === "") return;
-
-        res.style.display = "block";
-        res.innerHTML = "<i>Analyse en cours...</i>";
-
-        // ACTION 1 : Vider le clavier immédiatement
-        inputField.value = "";
-
-        setTimeout(() => {
-            let reponseTrouvee = "";
-            
-            // ACTION 2 : Vérification stricte des mots
-            for (let item of database) {
-                if (item.mots.some(m => q.includes(m))) {
-                    reponseTrouvee = item.solution;
-                    break;
-                }
-            }
-
-            if (reponseTrouvee) {
-                res.innerHTML = reponseTrouvee;
-            } else {
-                // Si la maladie n'est pas reconnue, on ne sort pas le diabète !
-                res.innerHTML = "<b>ANALYSE DMS :</b> Cas non répertorié pour diagnostic automatique.<br>👉 Cliquez sur <b>CONTACT DIRECTEUR</b> pour une expertise sur mesure.";
-            }
-        }, 1000);
-    }
-
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'fr'}, 'google_translate_element');
-    }
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
-    </html>
+</html>
