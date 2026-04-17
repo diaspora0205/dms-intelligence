@@ -4,45 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centre de Diagnostic IA - Victor Mustapha Kourouma</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --gold: #ffd700; --dark: #0a0a0a; --green: #25D366; }
+        :root { --gold: #ffd700; --dark: #0a0a0a; --blue: #007bff; }
         body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--dark); color: white; text-align: center; }
         .header { background: linear-gradient(135deg, #1a1a1a, #2c3e50); padding: 50px 20px; border-bottom: 4px solid var(--gold); }
         .scrolling-bar { background: var(--gold); color: black; padding: 12px; font-weight: bold; white-space: nowrap; overflow: hidden; }
         .scrolling-bar span { display: inline-block; animation: scroll 25s linear infinite; }
         @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
         
-        .badge-box { display: flex; justify-content: center; gap: 15px; margin: 25px 0; flex-wrap: wrap; }
-        .badge { padding: 12px 20px; border-radius: 50px; font-weight: bold; font-size: 0.9rem; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.2); }
+        .badge-box { display: flex; justify-content: center; gap: 10px; margin: 20px 0; flex-wrap: wrap; }
+        .badge { padding: 10px 15px; border-radius: 50px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; }
         .bronze { background: #cd7f32; } .silver { background: #c0c0c0; color: black; } .gold { background: var(--gold); color: black; }
         
-        .container { padding: 40px 20px; max-width: 900px; margin: auto; }
-        .diagnostic-card { background: #1a1a1a; border: 1px solid #333; padding: 30px; border-radius: 20px; margin: 20px 0; }
+        .container { padding: 30px 15px; max-width: 900px; margin: auto; }
+        .diagnostic-card { background: #1a1a1a; border: 2px solid #333; padding: 25px; border-radius: 20px; margin: 20px 0; }
         
-        input, select, textarea { width: 90%; padding: 15px; margin: 10px 0; border-radius: 10px; border: none; font-size: 1rem; }
+        input, select, textarea { width: 90%; padding: 15px; margin: 10px 0; border-radius: 10px; border: none; font-size: 1rem; background: #fff; color: #000; }
         
-        .btn-whatsapp { 
-            background: var(--green); color: white; padding: 20px 40px; border-radius: 50px; 
+        /* LE BOUTON AVEC L'ICÔNE AVION EN PAPIER */
+        .btn-launch { 
+            background: var(--blue); color: white; padding: 20px 40px; border-radius: 50px; 
             text-decoration: none; font-size: 1.3rem; font-weight: bold; display: inline-flex; 
-            align-items: center; gap: 15px; box-shadow: 0 0 25px rgba(37, 211, 102, 0.5);
+            align-items: center; gap: 15px; box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+            border: none; cursor: pointer; transition: 0.3s;
         }
+        .btn-launch:hover { background: #0056b3; transform: scale(1.05); }
+        
         #google_translate_element { margin: 20px; padding: 10px; background: white; border-radius: 10px; display: inline-block; }
-        .counter { font-size: 1.5rem; color: var(--gold); border: 2px solid var(--gold); padding: 15px; display: inline-block; border-radius: 15px; margin-top: 30px; }
+        .counter { font-size: 1.3rem; color: var(--gold); border: 1px solid var(--gold); padding: 10px; display: inline-block; border-radius: 10px; margin-top: 20px; }
     </style>
 </head>
 <body>
 
     <div class="scrolling-bar">
-        <span>URGENCE SANTÉ IA : ANALYSE DES SYMPTÔMES EN TEMPS RÉEL PAR VICTOR MUSTAPHA KOUROUMA - EXPERT GOOGLE CLOUD - DIAGNOSTIC MONDIAL DISPONIBLE 24H/7J</span>
+        <span>URGENCE SANTÉ IA : ANALYSE DES SYMPTÔMES EN TEMPS RÉEL PAR VICTOR MUSTAPHA KOUROUMA - EXPERT GOOGLE CLOUD - DIAGNOSTIC MONDIAL 24H/7J</span>
     </div>
 
     <div class="header">
         <h1>VICTOR MUSTAPHA KOUROUMA</h1>
-        <p>Top 24 Mondial League 2 | Expert Cloud & IA</p>
+        <p>Expert Cloud & IA | Top 24 Mondial League 2</p>
         <div class="badge-box">
-            <div class="badge bronze">Luc Bronze (2e)</div>
-            <div class="badge silver">Luc Argent (3e)</div>
-            <div class="badge gold">Luc Or (24e Mondial)</div>
+            <div class="badge bronze">Bronze (2e)</div>
+            <div class="badge silver">Argent (3e)</div>
+            <div class="badge gold">Or (24e)</div>
         </div>
     </div>
 
@@ -55,33 +60,31 @@
     <div class="container">
         <div class="diagnostic-card">
             <h2>FORMULAIRE DE DIAGNOSTIC IA</h2>
-            <p>Décrivez vos symptômes ci-dessous pour une analyse préliminaire :</p>
-            <input type="text" placeholder="Votre nom complet">
+            <p>Saisissez la maladie ou les symptômes pour lancer l'analyse :</p>
+            <input type="text" placeholder="Nom du patient">
             <select>
-                <option>Sélectionner le type de symptôme</option>
+                <option>Type de pathologie</option>
                 <option>Fièvre / Paludisme</option>
-                <option>Douleurs abdominales</option>
-                <option>Problèmes respiratoires</option>
-                <option>Autre diagnostic</option>
+                <option>Anomalie Cardiaque</option>
+                <option>Diagnostic Général</option>
             </select>
-            <textarea rows="4" placeholder="Détails de la maladie ou des symptômes..."></textarea>
+            <textarea rows="4" placeholder="Décrivez ici la maladie précisément..."></textarea>
             
             <br><br>
             
-            <a href="https://wa.me/2207814179" target="_blank" class="btn-whatsapp">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" style="width:30px;">
-                ENVOYER AU DIRECTEUR
+            <a href="https://wa.me/2207814179" target="_blank" class="btn-launch">
+                <span>ENVOYER LE DIAGNOSTIC</span>
+                <i class="fas fa-paper-plane"></i>
             </a>
         </div>
 
-        <div class="counter">
-            VISITEURS ACTUELS : 2 618
-        </div>
+        <div class="counter">VISITEURS : 2 618</div>
     </div>
 
-    <footer style="padding: 40px; background: #000; border-top: 1px solid #333;">
+    <footer style="padding: 30px; background: #000; font-size: 0.8rem; border-top: 1px solid #333;">
         <p>Diaspora Mondiale Santé &copy; 2026</p>
-        <p>Contact : +220 781 41 79 (Gambie)</p>
+        <p>Expert Google Cloud : Victor Mustapha Kourouma</p>
+        <p>WhatsApp Gambie : +220 781 41 79</p>
     </footer>
 
 </body>
