@@ -5,73 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centre de Diagnostic IA - Victor Mustapha Kourouma</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: #0f0f0f; color: white; text-align: center; }
-        .header { background: linear-gradient(45deg, #1a1a1a, #2c3e50); padding: 40px 20px; border-bottom: 3px solid #ffd700; }
-        .scrolling-text { background: #ffd700; color: black; padding: 10px 0; font-weight: bold; white-space: nowrap; overflow: hidden; position: relative; }
-        .scrolling-text span { display: inline-block; padding-left: 100%; animation: scroll 20s linear infinite; }
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+        :root { --gold: #ffd700; --dark: #0a0a0a; --green: #25D366; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--dark); color: white; text-align: center; }
+        .header { background: linear-gradient(135deg, #1a1a1a, #2c3e50); padding: 50px 20px; border-bottom: 4px solid var(--gold); }
+        .scrolling-bar { background: var(--gold); color: black; padding: 12px; font-weight: bold; white-space: nowrap; overflow: hidden; }
+        .scrolling-bar span { display: inline-block; animation: scroll 25s linear infinite; }
+        @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
         
-        .badge-container { display: flex; justify-content: center; gap: 15px; margin: 20px 0; flex-wrap: wrap; }
-        .badge { padding: 12px 25px; border-radius: 30px; font-weight: bold; text-transform: uppercase; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
-        .bronze { background: linear-gradient(#cd7f32, #8b4513); }
-        .silver { background: linear-gradient(#c0c0c0, #708090); }
-        .gold { background: linear-gradient(#ffd700, #b8860b); color: black; }
+        .badge-box { display: flex; justify-content: center; gap: 15px; margin: 25px 0; flex-wrap: wrap; }
+        .badge { padding: 12px 20px; border-radius: 50px; font-weight: bold; font-size: 0.9rem; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.2); }
+        .bronze { background: #cd7f32; } .silver { background: #c0c0c0; color: black; } .gold { background: var(--gold); color: black; }
         
-        .main-content { padding: 40px 20px; background: #1a1a1a; margin: 20px; border-radius: 15px; border: 1px solid #333; }
+        .container { padding: 40px 20px; max-width: 900px; margin: auto; }
+        .diagnostic-card { background: #1a1a1a; border: 1px solid #333; padding: 30px; border-radius: 20px; margin: 20px 0; }
+        
+        input, select, textarea { width: 90%; padding: 15px; margin: 10px 0; border-radius: 10px; border: none; font-size: 1rem; }
+        
         .btn-whatsapp { 
-            background-color: #25D366; color: white; padding: 25px 40px; 
-            border-radius: 50px; text-decoration: none; font-size: 1.4rem;
-            font-weight: bold; display: inline-flex; align-items: center; 
-            gap: 15px; box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
-            margin: 20px 0;
+            background: var(--green); color: white; padding: 20px 40px; border-radius: 50px; 
+            text-decoration: none; font-size: 1.3rem; font-weight: bold; display: inline-flex; 
+            align-items: center; gap: 15px; box-shadow: 0 0 25px rgba(37, 211, 102, 0.5);
         }
-        #google_translate_element { margin: 20px 0; padding: 10px; background: white; border-radius: 5px; display: inline-block; }
-        .visitor-counter { font-size: 1.2rem; color: #ffd700; margin-top: 20px; padding: 10px; border: 1px dashed #ffd700; display: inline-block; }
+        #google_translate_element { margin: 20px; padding: 10px; background: white; border-radius: 10px; display: inline-block; }
+        .counter { font-size: 1.5rem; color: var(--gold); border: 2px solid var(--gold); padding: 15px; display: inline-block; border-radius: 15px; margin-top: 30px; }
     </style>
 </head>
 <body>
 
-    <div class="scrolling-text">
-        <span>BIENVENUE SUR LA PLATEFORME OFFICIELLE DE VICTOR MUSTAPHA KOUROUMA - EXPERT GOOGLE CLOUD - DIAGNOSTIC IA SANTÉ MONDIALE - CONTACTEZ-NOUS POUR UNE EXPERTISE</span>
+    <div class="scrolling-bar">
+        <span>URGENCE SANTÉ IA : ANALYSE DES SYMPTÔMES EN TEMPS RÉEL PAR VICTOR MUSTAPHA KOUROUMA - EXPERT GOOGLE CLOUD - DIAGNOSTIC MONDIAL DISPONIBLE 24H/7J</span>
     </div>
 
     <div class="header">
         <h1>VICTOR MUSTAPHA KOUROUMA</h1>
-        <p>Expert Certifié Google Cloud | Top 24 Mondial League 2</p>
-        
-        <div class="badge-container">
-            <div class="badge bronze">LUC BRONZE (2ème)</div>
-            <div class="badge silver">LUC ARGENT (3ème)</div>
-            <div class="badge gold">LUC OR (24ème MONDIAL)</div>
+        <p>Top 24 Mondial League 2 | Expert Cloud & IA</p>
+        <div class="badge-box">
+            <div class="badge bronze">Luc Bronze (2e)</div>
+            <div class="badge silver">Luc Argent (3e)</div>
+            <div class="badge gold">Luc Or (24e Mondial)</div>
         </div>
     </div>
 
     <div id="google_translate_element"></div>
     <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'fr'}, 'google_translate_element');
-        }
+        function googleTranslateElementInit() { new google.translate.TranslateElement({pageLanguage: 'fr'}, 'google_translate_element'); }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <div class="main-content">
-        <h2>CENTRE DE DIAGNOSTIC IA</h2>
-        <p>Analyse de données médicales et solutions cloud haute performance.</p>
-        
-        <a href="https://wa.me/2207814179" target="_blank" class="btn-whatsapp">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 35px;">
-            CONTACT DIRECTEUR (GAMBIE)
-        </a>
+    <div class="container">
+        <div class="diagnostic-card">
+            <h2>FORMULAIRE DE DIAGNOSTIC IA</h2>
+            <p>Décrivez vos symptômes ci-dessous pour une analyse préliminaire :</p>
+            <input type="text" placeholder="Votre nom complet">
+            <select>
+                <option>Sélectionner le type de symptôme</option>
+                <option>Fièvre / Paludisme</option>
+                <option>Douleurs abdominales</option>
+                <option>Problèmes respiratoires</option>
+                <option>Autre diagnostic</option>
+            </select>
+            <textarea rows="4" placeholder="Détails de la maladie ou des symptômes..."></textarea>
+            
+            <br><br>
+            
+            <a href="https://wa.me/2207814179" target="_blank" class="btn-whatsapp">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" style="width:30px;">
+                ENVOYER AU DIRECTEUR
+            </a>
+        </div>
 
-        <br>
-        <div class="visitor-counter">
-            TOTAL VISITEURS : 2 618 ET PLUS...
+        <div class="counter">
+            VISITEURS ACTUELS : 2 618
         </div>
     </div>
 
-    <footer style="padding: 30px; background: #000; font-size: 0.9rem;">
-        <p>&copy; 2026 Diaspora Mondiale Santé - Tous droits réservés</p>
-        <p>Expertise Google Cloud : Victor Mustapha Kourouma</p>
+    <footer style="padding: 40px; background: #000; border-top: 1px solid #333;">
+        <p>Diaspora Mondiale Santé &copy; 2026</p>
+        <p>Contact : +220 781 41 79 (Gambie)</p>
     </footer>
 
 </body>
