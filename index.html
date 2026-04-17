@@ -3,100 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CENTRE DE DIAGNOSTIC IA - EXPERT GOOGLE CLOUD</title>
+    <title>IA PHARMACOPÉE AFRICAINE - MUSTAPHA KOUROUMA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --gold: #ffd700; --dark-bg: #050505; --wa-green: #25D366; --btn-blue: #007bff; }
-        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: var(--dark-bg); color: #ffffff; margin: 0; text-align: center; overflow-x: hidden; }
+        :root { --gold: #ffd700; --dark: #050505; --blue: #00d4ff; --green: #25D366; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--dark); color: white; margin: 0; text-align: center; }
         
-        /* BARRE DE DÉFILEMENT HAUTE PERFORMANCE */
-        .scrolling-header { background: var(--gold); color: #000; padding: 12px 0; font-weight: 900; text-transform: uppercase; white-space: nowrap; overflow: hidden; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); }
-        .scrolling-header div { display: inline-block; animation: scroll-left 20s linear infinite; }
-        @keyframes scroll-left { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+        /* BANDEAU DYNAMIQUE */
+        .news-bar { background: var(--gold); color: black; padding: 12px; font-weight: bold; white-space: nowrap; overflow: hidden; box-shadow: 0 5px 15px rgba(255,215,0,0.4); }
+        .news-bar div { display: inline-block; animation: scroll 25s linear infinite; }
+        @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
 
-        .hero-section { background: linear-gradient(145deg, #111, #222); padding: 60px 20px; border-bottom: 5px solid var(--gold); }
-        .expert-name { font-size: 2.5rem; margin: 0; letter-spacing: 2px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
-        
-        /* RANGS ET BADGES */
-        .badge-container { display: flex; justify-content: center; gap: 15px; margin: 30px 0; flex-wrap: wrap; }
-        .rank-badge { padding: 12px 25px; border-radius: 50px; font-weight: bold; border: 2px solid rgba(255,255,255,0.1); transition: 0.3s; }
-        .rank-badge:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
-        .b-bronze { background: linear-gradient(to right, #cd7f32, #8b4513); }
-        .b-silver { background: linear-gradient(to right, #c0c0c0, #708090); color: #000; }
-        .b-gold { background: linear-gradient(to right, #ffd700, #daa520); color: #000; }
+        header { padding: 60px 20px; border-bottom: 4px solid var(--gold); background: linear-gradient(to bottom, #111, #000); }
+        h1 { font-size: 2.5rem; margin: 0; color: var(--gold); text-shadow: 0 0 10px rgba(255,215,0,0.5); }
+        .titre-expert { font-size: 1.2rem; color: #00d4ff; margin-top: 10px; font-weight: bold; }
 
-        /* MOTEUR DE DIAGNOSTIC - FORMULAIRE */
-        .diagnostic-engine { max-width: 850px; margin: 40px auto; background: #111; padding: 40px; border-radius: 30px; border: 1px solid #333; box-shadow: 0 20px 50px rgba(0,0,0,0.8); }
-        .diagnostic-engine h2 { color: var(--gold); margin-bottom: 30px; text-transform: uppercase; }
-        input, select, textarea { width: 100%; padding: 18px; margin-bottom: 20px; border-radius: 12px; border: 1px solid #444; background: #fff; color: #000; font-size: 1.1rem; box-sizing: border-box; }
+        .container { max-width: 800px; margin: 20px auto; padding: 15px; }
         
-        /* LES BOUTONS D'ACTION */
-        .action-buttons { display: flex; flex-direction: column; gap: 20px; align-items: center; margin-top: 20px; }
-        .btn-launch { background: var(--btn-blue); color: white; padding: 22px 50px; border-radius: 60px; text-decoration: none; font-size: 1.4rem; font-weight: bold; display: inline-flex; align-items: center; gap: 15px; width: 100%; justify-content: center; box-shadow: 0 0 30px rgba(0, 123, 255, 0.4); }
-        .btn-wa-dir { background: var(--wa-green); color: white; padding: 22px 50px; border-radius: 60px; text-decoration: none; font-size: 1.4rem; font-weight: bold; display: inline-flex; align-items: center; gap: 15px; width: 100%; justify-content: center; box-shadow: 0 0 30px rgba(37, 211, 102, 0.4); }
+        /* LA CARTE IA CERVEAU */
+        .brain-card { background: rgba(255,255,255,0.05); backdrop-filter: blur(15px); padding: 40px; border-radius: 30px; border: 1px solid rgba(255,215,0,0.2); box-shadow: 0 20px 50px rgba(0,0,0,0.9); }
         
-        /* TRADUCTEUR ET COMPTEUR */
-        #google_translate_element { margin: 30px 0; background: #fff; padding: 10px; border-radius: 15px; display: inline-block; }
-        .visitor-panel { font-size: 1.4rem; color: var(--gold); border: 2px solid var(--gold); padding: 20px; border-radius: 20px; display: inline-block; margin: 40px 0; background: rgba(255, 215, 0, 0.05); }
+        label { display: block; text-align: left; margin-bottom: 8px; color: var(--gold); font-weight: bold; }
+        input, select, textarea { width: 100%; padding: 18px; margin-bottom: 20px; border-radius: 15px; border: none; font-size: 1.1rem; box-sizing: border-box; background: #fff; color: #000; }
         
-        footer { padding: 50px; background: #000; border-top: 2px solid #222; font-size: 1rem; color: #777; }
+        /* BOUTON AVION D'OR */
+        .btn-launch { background: linear-gradient(45deg, #007bff, #00d4ff); color: white; padding: 25px; border-radius: 60px; width: 100%; font-size: 1.4rem; font-weight: 900; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 15px; box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4); transition: 0.3s; }
+        .btn-launch:hover { transform: scale(1.03); box-shadow: 0 15px 40px rgba(0, 212, 255, 0.6); }
+
+        /* ZONE DE RÉPONSE IA */
+        #ia-brain-response { margin-top: 30px; padding: 25px; border-radius: 20px; background: rgba(0, 212, 255, 0.1); border: 2px solid var(--blue); display: none; text-align: left; line-height: 1.6; animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .btn-wa { background: var(--green); color: white; padding: 18px; border-radius: 50px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; font-weight: bold; margin-top: 20px; font-size: 1.1rem; }
+        #google_translate_element { margin-bottom: 20px; background: white; border-radius: 10px; padding: 5px; display: inline-block; }
     </style>
 </head>
 <body>
 
-    <div class="scrolling-header">
-        <div>+++ ALERTE DIAGNOSTIC IA : VICTOR MUSTAPHA KOUROUMA - TOP 24 MONDIAL LEAGUE 2 - EXPERT GOOGLE CLOUD CERTIFIÉ - ANALYSE MÉDICALE EN TEMPS RÉEL +++</div>
+    <div class="news-bar">
+        <div>+++ VICTOR MUSTAPHA KOUROUMA : FONDATEUR MÉDECINE TRADITIONNELLE INTÉGRÉE - EXPERT GOOGLE CLOUD TOP 24 MONDIAL - IA PHARMACOPÉE AFRICAINE ACTIVÉE +++</div>
     </div>
 
-    <div class="hero-section">
-        <h1 class="expert-name">VICTOR MUSTAPHA KOUROUMA</h1>
-        <p style="font-size: 1.3rem; color: #aaa;">Directeur du Centre de Diagnostic IA</p>
-        
-        <div class="badge-container">
-            <div class="rank-badge b-bronze">LUC BRONZE (2e)</div>
-            <div class="rank-badge b-silver">LUC ARGENT (3e)</div>
-            <div class="rank-badge b-gold">LUC OR (24e MONDIAL)</div>
+    <header>
+        <h1>MUSTAPHA KOUROUMA</h1>
+        <div class="titre-expert">Fondateur Médecine Traditionnelle Intégrée & Expert Cloud</div>
+        <div style="margin-top:15px;">
+            <span style="color:var(--gold);">RANK: OR (24e MONDIAL)</span> | <span style="color:#c0c0c0;">ARGENT (3e)</span>
         </div>
-    </div>
+    </header>
 
-    <div id="google_translate_element"></div>
-    <script type="text/javascript">
-        function googleTranslateElementInit() { new google.translate.TranslateElement({pageLanguage: 'fr'}, 'google_translate_element'); }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <div class="container">
+        <div id="google_translate_element"></div>
 
-    <div class="diagnostic-engine">
-        <h2>Saisir la Maladie / Symptômes</h2>
-        <input type="text" placeholder="Nom du Patient">
-        <select>
-            <option>Type de Pathologie</option>
-            <option>Paludisme / Fièvre Tropicale</option>
-            <option>Infection Cardiovasculaire</option>
-            <option>Analyse Neurologique par IA</option>
-            <option>Consultation Générale</option>
-        </select>
-        <textarea rows="5" placeholder="Détaillez ici la maladie et les symptômes..."></textarea>
-
-        <div class="action-buttons">
-            <a href="https://wa.me/2207814179" target="_blank" class="btn-launch">
-                LANCER LE DIAGNOSTIC <i class="fas fa-paper-plane"></i>
-            </a>
+        <div class="brain-card">
+            <h2 style="color:var(--gold); margin-bottom:30px;"><i class="fas fa-microchip"></i> IA DIAGNOSTIC PHARMACOPÉE</h2>
             
-            <a href="https://wa.me/2207814179" target="_blank" class="btn-wa-dir">
-                CONTACT DIRECTEUR <i class="fab fa-whatsapp"></i>
+            <label>NOM DU PATIENT :</label>
+            <input type="text" id="patient_name" placeholder="Entrez le nom...">
+
+            <label>PATHOLOGIE À ANALYSER :</label>
+            <select id="maladie_type">
+                <option value="">-- Sélectionnez une maladie --</option>
+                <option value="sexuelle">Puissance Sexuelle / Faiblesse</option>
+                <option value="diabete">Diabète / Sucre</option>
+                <option value="estomac">Maux de Ventre / Estomac / Ulcère</option>
+                <option value="tension">Tension Artérielle</option>
+                <option value="autre">Autre Pathologie Spécifique</option>
+            </select>
+
+            <label>DÉTAILS DES SYMPTÔMES :</label>
+            <textarea id="symptomes_data" rows="4" placeholder="Décrivez comment vous vous sentez..."></textarea>
+
+            <button class="btn-launch" onclick="lancerIA()">
+                LANCER L'ANALYSE IA <i class="fas fa-paper-plane"></i>
+            </button>
+
+            <div id="ia-brain-response"></div>
+
+            <a href="https://wa.me/2207814179" class="btn-wa">
+                PARLER AU DIRECTEUR (WHATSAPP) <i class="fab fa-whatsapp"></i>
             </a>
         </div>
     </div>
 
-    <div class="visitor-panel">
-        <i class="fas fa-users"></i> COMPTEUR VISITEURS : 2 618 ET PLUS...
-    </div>
+    <script>
+        function lancerIA() {
+            const nom = document.getElementById('patient_name').value;
+            const path = document.getElementById('maladie_type').value;
+            const details = document.getElementById('symptomes_data').value;
+            const responseBox = document.getElementById('ia-brain-response');
+            
+            let avisExpert = "";
 
-    <footer>
-        <p>Diaspora Mondiale Santé &copy; 2026</p>
-        <p>Expertise Cloud de Haut Niveau - Infrastructure Gambie</p>
-        <p>WhatsApp : +220 781 41 79</p>
+            // BASE DE DONNÉES DE L'EXPERT PHARMACOPÉE
+            switch(path) {
+                case "sexuelle":
+                    avisExpert = "<strong>Analyse IA :</strong> Faiblesse détectée. <strong>Solution Traditionnelle :</strong> Cure de racines énergisantes intégrées. Contactez le Directeur pour le protocole 'Puissance Intégrée'.";
+                    break;
+                case "diabete":
+                    avisExpert = "<strong>Analyse IA :</strong> Taux de sucre instable. <strong>Conseil :</strong> Infusion de feuilles amères spécifiques. Le Directeur Mustapha va ajuster votre dose traditionnelle.";
+                    break;
+                case "estomac":
+                    avisExpert = "<strong>Analyse IA :</strong> Inflammation ou Ulcère. <strong>Solution :</strong> Argile blanche et écorces cicatrisantes. Évitez les acides. Rapport envoyé au Directeur.";
+                    break;
+                case "tension":
+                    avisExpert = "<strong>Analyse IA :</strong> Pression artérielle haute. <strong>Conseil :</strong> Repos et ail macéré. Le Directeur doit valider votre traitement traditionnel.";
+                    break;
+                default:
+                    avisExpert = "<strong>Analyse IA :</strong> Cas spécifique détecté. <strong>Action :</strong> Recherche dans la base de données Cloud... Solution non automatique. Contact direct avec le Directeur Mustapha Kourouma requis.";
+            }
+
+            responseBox.innerHTML = `<h3 style="color:var(--gold);">Rapport d'Expertise pour ${nom} :</h3>${avisExpert}<br><br><em style="font-size:0.9rem;">Transfert du dossier vers WhatsApp Directeur...</em>`;
+            responseBox.style.display = "block";
+
+            // ENVOI AUTOMATIQUE WHATSAPP
+            setTimeout(() => {
+                const finalMsg = `ALERTE IA DIAGNOSTIC%0A*Patient:* ${nom}%0A*Maladie:* ${path}%0A*Symptômes:* ${details}%0A*Avis IA:* ${avisExpert.replace(/<[^>]*>/g, '')}`;
+                window.open(`https://wa.me/2207814179?text=${finalMsg}`, '_blank');
+            }, 4000);
+        }
+
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'fr'}, 'google_translate_element');
+        }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <footer style="padding:40px; color:#444;">
+        &copy; 2026 Diaspora Mondiale Santé | Système Cloud Elite par Victor Mustapha Kourouma
     </footer>
 
 </body>
-</html>
+                                                                                                  </html>
