@@ -3,51 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centre de Diagnostic IA - Victor Mustapha Kourouma</title>
+    <title>CENTRE DE DIAGNOSTIC IA - EXPERT GOOGLE CLOUD</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --gold: #ffd700; --dark: #0a0a0a; --blue: #007bff; }
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--dark); color: white; text-align: center; }
-        .header { background: linear-gradient(135deg, #1a1a1a, #2c3e50); padding: 50px 20px; border-bottom: 4px solid var(--gold); }
-        .scrolling-bar { background: var(--gold); color: black; padding: 12px; font-weight: bold; white-space: nowrap; overflow: hidden; }
-        .scrolling-bar span { display: inline-block; animation: scroll 25s linear infinite; }
-        @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+        :root { --gold: #ffd700; --dark-bg: #050505; --wa-green: #25D366; --btn-blue: #007bff; }
+        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: var(--dark-bg); color: #ffffff; margin: 0; text-align: center; overflow-x: hidden; }
         
-        .badge-box { display: flex; justify-content: center; gap: 10px; margin: 20px 0; flex-wrap: wrap; }
-        .badge { padding: 10px 15px; border-radius: 50px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; }
-        .bronze { background: #cd7f32; } .silver { background: #c0c0c0; color: black; } .gold { background: var(--gold); color: black; }
+        /* BARRE DE DÉFILEMENT HAUTE PERFORMANCE */
+        .scrolling-header { background: var(--gold); color: #000; padding: 12px 0; font-weight: 900; text-transform: uppercase; white-space: nowrap; overflow: hidden; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); }
+        .scrolling-header div { display: inline-block; animation: scroll-left 20s linear infinite; }
+        @keyframes scroll-left { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+
+        .hero-section { background: linear-gradient(145deg, #111, #222); padding: 60px 20px; border-bottom: 5px solid var(--gold); }
+        .expert-name { font-size: 2.5rem; margin: 0; letter-spacing: 2px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
         
-        .container { padding: 30px 15px; max-width: 900px; margin: auto; }
-        .diagnostic-card { background: #1a1a1a; border: 2px solid #333; padding: 25px; border-radius: 20px; margin: 20px 0; }
+        /* RANGS ET BADGES */
+        .badge-container { display: flex; justify-content: center; gap: 15px; margin: 30px 0; flex-wrap: wrap; }
+        .rank-badge { padding: 12px 25px; border-radius: 50px; font-weight: bold; border: 2px solid rgba(255,255,255,0.1); transition: 0.3s; }
+        .rank-badge:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
+        .b-bronze { background: linear-gradient(to right, #cd7f32, #8b4513); }
+        .b-silver { background: linear-gradient(to right, #c0c0c0, #708090); color: #000; }
+        .b-gold { background: linear-gradient(to right, #ffd700, #daa520); color: #000; }
+
+        /* MOTEUR DE DIAGNOSTIC - FORMULAIRE */
+        .diagnostic-engine { max-width: 850px; margin: 40px auto; background: #111; padding: 40px; border-radius: 30px; border: 1px solid #333; box-shadow: 0 20px 50px rgba(0,0,0,0.8); }
+        .diagnostic-engine h2 { color: var(--gold); margin-bottom: 30px; text-transform: uppercase; }
+        input, select, textarea { width: 100%; padding: 18px; margin-bottom: 20px; border-radius: 12px; border: 1px solid #444; background: #fff; color: #000; font-size: 1.1rem; box-sizing: border-box; }
         
-        input, select, textarea { width: 90%; padding: 15px; margin: 10px 0; border-radius: 10px; border: none; font-size: 1rem; background: #fff; color: #000; }
+        /* LES BOUTONS D'ACTION */
+        .action-buttons { display: flex; flex-direction: column; gap: 20px; align-items: center; margin-top: 20px; }
+        .btn-launch { background: var(--btn-blue); color: white; padding: 22px 50px; border-radius: 60px; text-decoration: none; font-size: 1.4rem; font-weight: bold; display: inline-flex; align-items: center; gap: 15px; width: 100%; justify-content: center; box-shadow: 0 0 30px rgba(0, 123, 255, 0.4); }
+        .btn-wa-dir { background: var(--wa-green); color: white; padding: 22px 50px; border-radius: 60px; text-decoration: none; font-size: 1.4rem; font-weight: bold; display: inline-flex; align-items: center; gap: 15px; width: 100%; justify-content: center; box-shadow: 0 0 30px rgba(37, 211, 102, 0.4); }
         
-        /* LE BOUTON AVEC L'ICÔNE AVION EN PAPIER */
-        .btn-launch { 
-            background: var(--blue); color: white; padding: 20px 40px; border-radius: 50px; 
-            text-decoration: none; font-size: 1.3rem; font-weight: bold; display: inline-flex; 
-            align-items: center; gap: 15px; box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
-            border: none; cursor: pointer; transition: 0.3s;
-        }
-        .btn-launch:hover { background: #0056b3; transform: scale(1.05); }
+        /* TRADUCTEUR ET COMPTEUR */
+        #google_translate_element { margin: 30px 0; background: #fff; padding: 10px; border-radius: 15px; display: inline-block; }
+        .visitor-panel { font-size: 1.4rem; color: var(--gold); border: 2px solid var(--gold); padding: 20px; border-radius: 20px; display: inline-block; margin: 40px 0; background: rgba(255, 215, 0, 0.05); }
         
-        #google_translate_element { margin: 20px; padding: 10px; background: white; border-radius: 10px; display: inline-block; }
-        .counter { font-size: 1.3rem; color: var(--gold); border: 1px solid var(--gold); padding: 10px; display: inline-block; border-radius: 10px; margin-top: 20px; }
+        footer { padding: 50px; background: #000; border-top: 2px solid #222; font-size: 1rem; color: #777; }
     </style>
 </head>
 <body>
 
-    <div class="scrolling-bar">
-        <span>URGENCE SANTÉ IA : ANALYSE DES SYMPTÔMES EN TEMPS RÉEL PAR VICTOR MUSTAPHA KOUROUMA - EXPERT GOOGLE CLOUD - DIAGNOSTIC MONDIAL 24H/7J</span>
+    <div class="scrolling-header">
+        <div>+++ ALERTE DIAGNOSTIC IA : VICTOR MUSTAPHA KOUROUMA - TOP 24 MONDIAL LEAGUE 2 - EXPERT GOOGLE CLOUD CERTIFIÉ - ANALYSE MÉDICALE EN TEMPS RÉEL +++</div>
     </div>
 
-    <div class="header">
-        <h1>VICTOR MUSTAPHA KOUROUMA</h1>
-        <p>Expert Cloud & IA | Top 24 Mondial League 2</p>
-        <div class="badge-box">
-            <div class="badge bronze">Bronze (2e)</div>
-            <div class="badge silver">Argent (3e)</div>
-            <div class="badge gold">Or (24e)</div>
+    <div class="hero-section">
+        <h1 class="expert-name">VICTOR MUSTAPHA KOUROUMA</h1>
+        <p style="font-size: 1.3rem; color: #aaa;">Directeur du Centre de Diagnostic IA</p>
+        
+        <div class="badge-container">
+            <div class="rank-badge b-bronze">LUC BRONZE (2e)</div>
+            <div class="rank-badge b-silver">LUC ARGENT (3e)</div>
+            <div class="rank-badge b-gold">LUC OR (24e MONDIAL)</div>
         </div>
     </div>
 
@@ -57,34 +65,37 @@
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <div class="container">
-        <div class="diagnostic-card">
-            <h2>FORMULAIRE DE DIAGNOSTIC IA</h2>
-            <p>Saisissez la maladie ou les symptômes pour lancer l'analyse :</p>
-            <input type="text" placeholder="Nom du patient">
-            <select>
-                <option>Type de pathologie</option>
-                <option>Fièvre / Paludisme</option>
-                <option>Anomalie Cardiaque</option>
-                <option>Diagnostic Général</option>
-            </select>
-            <textarea rows="4" placeholder="Décrivez ici la maladie précisément..."></textarea>
-            
-            <br><br>
-            
+    <div class="diagnostic-engine">
+        <h2>Saisir la Maladie / Symptômes</h2>
+        <input type="text" placeholder="Nom du Patient">
+        <select>
+            <option>Type de Pathologie</option>
+            <option>Paludisme / Fièvre Tropicale</option>
+            <option>Infection Cardiovasculaire</option>
+            <option>Analyse Neurologique par IA</option>
+            <option>Consultation Générale</option>
+        </select>
+        <textarea rows="5" placeholder="Détaillez ici la maladie et les symptômes..."></textarea>
+
+        <div class="action-buttons">
             <a href="https://wa.me/2207814179" target="_blank" class="btn-launch">
-                <span>ENVOYER LE DIAGNOSTIC</span>
-                <i class="fas fa-paper-plane"></i>
+                LANCER LE DIAGNOSTIC <i class="fas fa-paper-plane"></i>
+            </a>
+            
+            <a href="https://wa.me/2207814179" target="_blank" class="btn-wa-dir">
+                CONTACT DIRECTEUR <i class="fab fa-whatsapp"></i>
             </a>
         </div>
-
-        <div class="counter">VISITEURS : 2 618</div>
     </div>
 
-    <footer style="padding: 30px; background: #000; font-size: 0.8rem; border-top: 1px solid #333;">
+    <div class="visitor-panel">
+        <i class="fas fa-users"></i> COMPTEUR VISITEURS : 2 618 ET PLUS...
+    </div>
+
+    <footer>
         <p>Diaspora Mondiale Santé &copy; 2026</p>
-        <p>Expert Google Cloud : Victor Mustapha Kourouma</p>
-        <p>WhatsApp Gambie : +220 781 41 79</p>
+        <p>Expertise Cloud de Haut Niveau - Infrastructure Gambie</p>
+        <p>WhatsApp : +220 781 41 79</p>
     </footer>
 
 </body>
