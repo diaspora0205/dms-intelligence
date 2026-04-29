@@ -277,5 +277,53 @@
     </div>          </div>
     <p style="margin-top: 40px; font-size: 12px; color: #666;">Rang Mondial : 24ème - Diaspora Mondial Santé</p>
   </div>
-</body>
+<script>
+function lancerIA() {
+    const maladie = document.getElementById('maladie_type').value;
+    const responseBox = document.getElementById('ia-brain-response');
+    let message = "";
+
+    // Logique de diagnostic connectée au Moringa, Baume et Protocole 6
+    switch(maladie) {
+        case 'sexuelle':
+            message = `
+                <div style="color: #d4af37; border: 1px solid #d4af37; padding: 15px; border-radius: 10px; background: rgba(212, 175, 55, 0.1);">
+                    🧪 <strong>ANALYSE DIRECTORIALE :</strong><br>
+                    Pour restaurer la vitalité, le Directeur recommande le <strong>PROTOCOLE 6</strong>. 
+                    Le <i>Garcinia kola</i> et le <i>Syzygium aromaticum</i> agissent sur l'endurance. 
+                    Le <strong>Moringa</strong> est conseillé en renfort pour purifier le système.
+                </div>`;
+            break;
+        case 'diabete':
+            message = `
+                <div style="color: #4CAF50; border: 1px solid #4CAF50; padding: 15px; border-radius: 10px; background: rgba(76, 175, 80, 0.1);">
+                    🍃 <strong>ANALYSE DIRECTORIALE :</strong><br>
+                    Le <strong>Moringa Oleifera</strong> est votre pilier pour stabiliser la glycémie. 
+                    Il fortifie le pancréas. Utilisez le Citron du Protocole 6 pour réguler le pH sanguin.
+                </div>`;
+            break;
+        case 'estomac':
+            message = `
+                <div style="color: #d4af37; border: 1px solid #d4af37; padding: 15px; border-radius: 10px; background: rgba(212, 175, 55, 0.1);">
+                    🍯 <strong>ANALYSE DIRECTORIALE :</strong><br>
+                    Utilisez le <strong>Miel de forêt</strong> et le <strong>Moringa</strong> pour cicatriser la muqueuse. 
+                    Le <strong>Baume DMS</strong> peut être appliqué en externe si nécessaire.
+                </div>`;
+            break;
+        case 'tension':
+            message = `
+                <div style="color: #f0f0f0; border: 1px solid #d4af37; padding: 15px; border-radius: 10px; background: rgba(255, 255, 255, 0.05);">
+                    🩺 <strong>ANALYSE DIRECTORIALE :</strong><br>
+                    L'<strong>Ail</strong> du Protocole 6 est indispensable pour la fluidité vasculaire. 
+                    Le Moringa aide à stabiliser la pression grâce à ses nutriments essentiels.
+                </div>`;
+            break;
+        default:
+            message = "<p style='color: #d4af37;'>Veuillez sélectionner une pathologie pour l'analyse du Directeur.</p>";
+    }
+
+    responseBox.innerHTML = message;
+    responseBox.style.display = "block";
+}
+</script></body>
     </html>
