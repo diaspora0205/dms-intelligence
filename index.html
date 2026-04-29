@@ -24,6 +24,20 @@
 <meta name="keywords" content="Pharmacopée Africaine, Traitement Naturel Hémorroïdes, Moringa Bio, Victor Mustapha Kourouma, Diaspora Mondial Santé, Expert Google Cloud, Santé Afrique">
 <script>
 window.onload = function() {
+    // 1. Force le titre officiel
+    document.querySelector('h1').innerHTML = "DIASPORA MONDIAL SANTÉ DMS";
+    
+    // 2. Nettoyage : Masque les textes blancs qui traînent sous le titre
+    // Cela rend le site beaucoup plus propre et professionnel
+    let elements = document.querySelectorAll('p, span, div');
+    elements.forEach(el => {
+        if(el.textContent.includes("IA PHARMACOPÉE") || el.textContent.includes("Bienvenue")) {
+            el.style.display = 'none';
+        }
+    });
+};
+</script><script>
+window.onload = function() {
     // Cette ligne force l'affichage de votre nom officiel partout
     document.querySelector('h1').innerHTML = "DIASPORA MONDIAL SANTÉ DMS";
     document.title = "DIASPORA MONDIAL SANTÉ DMS | Officiel";
