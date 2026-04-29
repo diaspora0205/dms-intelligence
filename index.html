@@ -23,6 +23,29 @@
 <title>Diaspora Mondial Santé | IA Pharmacopée</title>    <title>IA PHARMACOPÉE AFRICAINE</title>
 <meta name="keywords" content="Pharmacopée Africaine, Traitement Naturel Hémorroïdes, Moringa Bio, Victor Mustapha Kourouma, Diaspora Mondial Santé, Expert Google Cloud, Santé Afrique">
 <style>
+  /* 1. ON CACHE UNIQUEMENT LE TEXTE BLANC DE CONFIGURATION */
+  /* On cible les premiers paragraphes du haut pour les rendre invisibles */
+  body > p:nth-of-type(1), 
+  header p {
+    display: none !important;
+  }
+
+  /* 2. ON FORCE LE RETOUR DE TOUS VOS PRODUITS */
+  /* Cette commande dit au site de montrer TOUT le contenu important */
+  .container, .product-card, div, p, section {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: white !important; /* Pour que le texte des produits reste lisible */
+  }
+
+  /* 3. ON GARDE VOTRE TITRE DORÉ */
+  h1 { 
+    display: block !important;
+    color: #ffd700 !important; 
+    text-align: center;
+  }
+</style><style>
   /* 1. On cache UNIQUEMENT le texte de configuration du haut */
   header p, .config-text { 
     display: none !important; 
