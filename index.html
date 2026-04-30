@@ -1,30 +1,4 @@
-
-    </div>
-
-    <script>
-        function lancerIA() {
-            const nom = document.getElementById('patient_name').value;
-            const path = document.getElementById('maladie_type').value;
-            const details = document.getElementById('symptomes_data').value;
-            const responseBox = document.getElementById('ia-brain-response');
-            
-            let avisExpert = "";
-
-            // BASE DE DONNÉES DE L'EXPERT PHARMACOPÉE
-            switch(path) {
-                case "sexuelle":
-                    avisExpert = "<strong>Analyse IA :</strong> Faiblesse détectée. <strong>Solution Traditionnelle :</strong> Cure de racines énergisantes intégrées. Contactez le Directeur pour le protocole 'Puissance Intégrée'.";
-                    break;
-                case "diabete":
-                    avisExpert = "<strong>Analyse IA :</strong> Taux de sucre instable. <strong>Conseil :</strong> Infusion de feuilles amères spécifiques. Le Directeur Mustapha va ajuster votre dose traditionnelle.";
-                    break;
-                case "estomac":
-                    avisExpert = "<strong>Analyse IA :</strong> Inflammation ou Ulcère. <strong>Solution :</strong> Argile blanche et écorces cicatrisantes. Évitez les acides. Rapport envoyé au Directeur.";
-                    break;
-                case "tension":
-                    avisExpert = "<strong>Analyse IA :</strong> Pression artérielle haute. <strong>Conseil :</strong> Repos et ail macéré. Le Directeur doit valider votre traitement traditionnel.";
-                    break;
-                default:
+fault:
                     avisExpert = "<strong>Analyse IA :</strong> Cas spécifique détecté. <strong>Action :</strong> Recherche dans la base de données Cloud... Solution non automatique. Contact direct avec le Directeur Mustapha Kourouma requis.";
             }
 
