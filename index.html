@@ -1,20 +1,4 @@
-fault:
-                    avisExpert = "<strong>Analyse IA :</strong> Cas spécifique détecté. <strong>Action :</strong> Recherche dans la base de données Cloud... Solution non automatique. Contact direct avec le Directeur Mustapha Kourouma requis.";
-            }
 
-            responseBox.innerHTML = `<h3 style="color:var(--gold);">Rapport d'Expertise pour ${nom} :</h3>${avisExpert}<br><br><em style="font-size:0.9rem;">Transfert du dossier vers WhatsApp Directeur...</em>`;
-            responseBox.style.display = "block";
-
-            // ENVOI AUTOMATIQUE WHATSAPP
-            setTimeout(() => {
-                const finalMsg = `ALERTE IA DIAGNOSTIC%0A*Patient:* ${nom}%0A*Maladie:* ${path}%0A*Symptômes:* ${details}%0A*Avis IA:* ${avisExpert.replace(/<[^>]*>/g, '')}`;
-                window.open(`https://wa.me/2207814179?text=${finalMsg}`, '_blank');
-            }, 4000);
-        }
-
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'fr'}, 'google_translate_element');
-        }
     </script>
     <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
