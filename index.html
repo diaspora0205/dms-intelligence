@@ -247,3 +247,39 @@ function lancerIA() {
 }
 </script></body>
     </html>
+<!-- CERVEAU DE L'IA - AJOUTÉ PAR LE DIRECTEUR -->
+<script>
+function lancerAnalyse() {
+    // 1. Récupération des infos
+    const nom = document.querySelector('input').value || "Patient";
+    const maladie = document.querySelector('select').value;
+    
+    // 2. Création de la fenêtre de résultat (le petit écran)
+    const message = "ANALYSE DMS INTELLIGENCE\n\n" +
+                    "Patient : " + nom + "\n" +
+                    "Pathologie : " + maladie + "\n\n" +
+                    "Diagnostic : Protocole en cours de validation par l'Expert Cloud. Veuillez cliquer sur le bouton WhatsApp pour recevoir votre traitement personnalisé.";
+
+    // 3. Affichage immédiat
+    alert(message);
+}
+
+// Activation automatique du bouton bleu
+document.querySelectorAll('button').forEach(btn => {
+    if(btn.innerText.includes('LANCER')) {
+        btn.setAttribute('onclick', 'lancerAnalyse()');
+    }
+});
+
+// Ajout des nouvelles maladies sans effacer les anciennes
+const selectMaladie = document.querySelector('select');
+if(selectMaladie) {
+    const nouvelles = ["Prostate", "Hémorroïdes", "Vision", "Articulations"];
+    nouvelles.forEach(m => {
+        let opt = document.createElement('option');
+        opt.value = m;
+        opt.innerHTML = m;
+        selectMaladie.appendChild(opt);
+    });
+}
+</script>
