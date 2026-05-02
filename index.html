@@ -266,23 +266,7 @@ function lancerAnalyse() {
     const rapport = "🌿 BIENVENUE CHEZ DMS INTELLIGENCE\n" +
                     "---------------------------\n" +
                     "PATIENT : " + nom + "\n" +
-                    "ANALYSE : " + maladie + "\n\n" +
-                    "NOTRE CONSEIL : " + conseil + "\n\n" +
-                    "✅ Cliquez sur WhatsApp pour échanger avec le Directeur Victor.";
-
-    alert(rapport);
-}
-
-// 2. CONFIGURATION TECHNIQUE (SCORE 99% PERF)
-document.querySelectorAll('button').forEach(btn => {
-    if(btn.innerText.includes('LANCER')) {
-277 document.querySelectorAll('button').forEach(btn => {
-278     if(btn.innerText.includes('LANCER')) {
-279         btn.onclick = lancerAnalyse;
-280     }
-281 });        btn.setAttribute('onclick', 'lancerAnalyse()');
-    }
-});
+        
 
 // 3. CORRECTION SEO (POUR LE SCORE 100/100)
 if (!document.querySelector('meta[name="description"]')) {
