@@ -276,7 +276,11 @@ function lancerAnalyse() {
 // 2. CONFIGURATION TECHNIQUE (SCORE 99% PERF)
 document.querySelectorAll('button').forEach(btn => {
     if(btn.innerText.includes('LANCER')) {
-        btn.setAttribute('onclick', 'lancerAnalyse()');
+277 document.querySelectorAll('button').forEach(btn => {
+278     if(btn.innerText.includes('LANCER')) {
+279         btn.onclick = lancerAnalyse;
+280     }
+281 });        btn.setAttribute('onclick', 'lancerAnalyse()');
     }
 });
 
