@@ -267,7 +267,12 @@ function lancerAnalyse() {
                     "---------------------------\n" +
                     "PATIENT : " + nom + "\n" +
         
-
+// ACTIVATION DU BOUTON
+document.querySelectorAll('button').forEach(btn => {
+    if(btn.innerText.includes('LANCER')) {
+        btn.onclick = lancerAnalyse;
+    }
+});
 // 3. CORRECTION SEO (POUR LE SCORE 100/100)
 if (!document.querySelector('meta[name="description"]')) {
     var meta = document.createElement('meta');
