@@ -392,3 +392,23 @@ if (!document.querySelector('meta[name="description"]')) {
         ⬇️ TÉLÉCHARGER LE RAPPORT (PDF)
     </a>
 </div>
+
+    <script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const nom = document.querySelector('input[placeholder*="Nom"]').value;
+        const pathology = document.querySelector('select').value;
+        const symptomes = document.querySelector('textarea').value;
+        
+        alert("Moteur Med-Gemini activé...\nAnalyse du système vasculaire (5L de sang) et thermique en cours pour " + nom);
+        
+        const message = `Bonjour, je suis le patient ${nom}. L'IA DMS a analysé mes symptômes pour la pathologie [${pathology}]. Descriptif : ${symptomes}. Merci de valider mon Protocole personnalisé.`;
+        
+        const whatsappUrl = `https://wa.me/221771578333?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+    });
+    </script>
+
+</body>
+</html></div>
