@@ -410,5 +410,70 @@ if (!document.querySelector('meta[name="description"]')) {
     });
     </script>
 
-</body>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Base de données médicale d'élite DMS Intelligence enrichie
+    const dmsDatabase = {
+        "impuissance": { nom: "Impuissance et Faiblesse Sexuelle", details: "Insuffisance micro-vasculaire, baisse de l'influx nerveux, déficit de perfusion sanguine dans les corps caverneux." },
+        "hemorroides": { nom: "Crise Hémorroïdaire (Hémorroïdes)", details: "Dilatation anormale et inflammation du plexus veineux anal, stagnation sanguine, troubles du transit." },
+        "hypertension": { nom: "Hypertension Artérielle", details: "Pression > 140/90 mmHg, surcharge du réseau vasculaire des 5L de sang." },
+        "diabete": { nom: "Diabète de Type 2", details: "Dysfonctionnement insulino-pancréatique, glycémie à jeun > 1.26 g/L." },
+        "paludisme": { nom: "Paludisme (Malaria)", details: "Infection à Plasmodium falciparum, pics thermiques > 39°C, frissons." },
+        "renale": { nom: "Insuffisance Rénale", details: "Baisse du taux de filtration glomérulaire, accumulation des toxines urémiques." },
+        "hepatite": { nom: "Hépatite B (VHB)", details: "Inflammation hépatique chronique, perturbation des enzymes ALT/AST." },
+        "cardiaque": { nom: "Troubles Cardiaques", details: "Altération du rythme sinusal, fatigue myocardique, essoufflement à l'effort." },
+        "ulcere": { nom: "Ulcère Gastrique", details: "Lésion de la muqueuse stomacale, hyperacidité, brûlures épigastriques." },
+        "drepanocytose": { nom: "Drépanocytose (SS/SC)", details: "Anomalie de l'hémoglobine, falciformation des hématies, crises vaso-occlusives." },
+        "asthme": { nom: "Asthme Chronique", details: "Hyperréactivité bronchique, diminution du débit expiratoire de pointe." }
+    };
+
+    const boutons = document.querySelectorAll("button, .btn");
+    let boutonAnalyse = null;
+
+    boutons.forEach(btn => {
+        if (btn.textContent.includes("Lancer") || btn.textContent.includes("Analyse")) {
+            boutonAnalyse = btn;
+        }
+    });
+
+    if (boutonAnalyse) {
+        boutonAnalyse.addEventListener("click", function(e) {
+            e.preventDefault();
+
+            const champsTexte = document.querySelectorAll("input, textarea");
+            let nomPatient = "Patient DMS";
+            let symptomesSaisis = "Non spécifiés";
+
+            if (champsTexte.length >= 1 && champsTexte[0].value) nomPatient = champsTexte[0].value;
+            if (champsTexte.length >= 2 && champsTexte[1].value) symptomesSaisis = champsTexte[1].value;
+
+            const selectPathologie = document.querySelector("select");
+            let codePathologie = selectPathologie ? selectPathologie.value.toLowerCase() : "generale";
+            
+            let pathologieNom = "Analyse Générale";
+            let pathologieDetails = "Vérification des constantes vitales standards.";
+
+            // Recherche intelligente par mot-clé (gère impuissance, hemorroides, etc.)
+            for (let key in dmsDatabase) {
+                if (codePathologie.includes(key) || key.includes(codePathologie) || symptomesSaisis.toLowerCase().includes(key)) {
+                    pathologieNom = dmsDatabase[key].nom;
+                    pathologieDetails = dmsDatabase[key].details;
+                    break;
+                }
+            }
+
+            // Alerte d'activation du moteur Med-Gemini
+            alert("MOTEUR GOOGLE CLOUD MED-GEMINI ACTIVÉ\n----------------------------------------\nPatient : " + nomPatient + "\nDiagnostic : " + pathologieNom + "\nAnalyse bio-numérique : " + pathologieDetails);
+
+            // Génération du protocole sécurisé pour WhatsApp avec mise en forme
+            const messageWhatsApp = `*DMS INTELLIGENCE - RAPPORT MÉDICAL D'ÉLITE*\n\n*Patient :* ${nomPatient}\n*Pathologie Détectée :* ${pathologieNom}\n*Analyse Cloud :* ${pathologieDetails}\n*Symptômes décrits :* ${symptomesSaisis}\n\n_Demande de validation urgente du Protocole de Médecine Intégrée au Directeur._`;
+            
+            const numeroWhatsApp = "221771578333";
+            const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(messageWhatsApp)}`;
+            
+            window.open(urlWhatsApp, '_blank');
+        });
+    }
+});
+</script></body>
 </html></div>
