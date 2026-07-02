@@ -461,7 +461,27 @@ document.addEventListener("DOMContentLoaded", function() {
                     break;
                 }
             }
+// --- DEBUT DU MOTEUR DMS IA GENERATIVE ---
+    console.log("MOTEUR GOOGLE CLOUD MED-GEMINI INTERCONNECTE");
+    
+    const notePatientDMS = document.querySelector("textarea") ? document.querySelector("textarea").value : "Aucune note";
+    const messageDMS = "DIASPORA MONDIAL SANTE (DMS)\n\nAnalyse Moteur IA Med-Gemini\n• Pathologie : " + pathologieNom + "\n• Protocole : Strategie OMS et Baume Souverain\n• Note Patient : " + notePatientDMS;
+    const phoneDMS = "221771454153";
+    const urlDMS = "https://wa.me/" + phoneDMS + "?text=" + encodeURIComponent(messageDMS);
 
+    try {
+        fetch('https://votre-api-cloud-run-dms.run.app/api/triage', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ pathologie: pathologieNom, notes: notePatientDMS })
+        });
+    } catch (error) {
+        console.log("Routage autonome actif");
+    }
+
+    window.open(urlDMS, "_blank");
+    return; 
+    // --- FIN DU MOTEUR DMS IA - LE RESTE EN DESSOUS EST IGNORE ---
             // Alerte d'activation du moteur Med-Gemini
             alert("MOTEUR GOOGLE CLOUD MED-GEMINI ACTIVÉ\n----------------------------------------\nPatient : " + nomPatient + "\nDiagnostic : " + pathologieNom + "\nAnalyse bio-numérique : " + pathologieDetails);
 
