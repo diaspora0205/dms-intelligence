@@ -456,5 +456,4 @@ document.addEventListener("DOMContentLoaded", function() {
             // Recherche intelligente par mot-clé (gère impuissance, hemorroides, etc.)
             for (let key in dmsDatabase) {
                 if (codePathologie.includes(key) || key.includes(codePathologie) || symptomesSaisis.toLowerCase().includes(key)) {
-                    pathologieNom = dmsDatabase[key].nom;
-                    pathologieDetails = dmsDatabase
+    
