@@ -457,12 +457,4 @@ document.addEventListener("DOMContentLoaded", function() {
             for (let key in dmsDatabase) {
                 if (codePathologie.includes(key) || key.includes(codePathologie) || symptomesSaisis.toLowerCase().includes(key)) {
                     pathologieNom = dmsDatabase[key].nom;
-                    pathologieDetails = dmsDatabase[key].details;
-                    break;
-                }
-            }
-// --- DEBUT DU MOTEUR DMS IA GENERATIVE ---
-    console.log("MOTEUR GOOGLE CLOUD MED-GEMINI INTERCONNECTE");
-    
-    const notePatientDMS = document.querySelector("textarea") ? document.querySelector("textarea").value : "Aucune note";
-    const messageDMS = "DIASPORA MONDIAL SANTE (DMS)\n\nAnalyse Moteur IA Med-Gemini\n• Pathologie : " + pathologieNom + "\n• P
+                    pathologieDetails = dmsDatabase
