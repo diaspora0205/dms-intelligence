@@ -465,35 +465,4 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log("MOTEUR GOOGLE CLOUD MED-GEMINI INTERCONNECTE");
     
     const notePatientDMS = document.querySelector("textarea") ? document.querySelector("textarea").value : "Aucune note";
-    const messageDMS = "DIASPORA MONDIAL SANTE (DMS)\n\nAnalyse Moteur IA Med-Gemini\n• Pathologie : " + pathologieNom + "\n• Protocole : Strategie OMS et Baume Souverain\n• Note Patient : " + notePatientDMS;
-    const phoneDMS = "221771454153";
-    const urlDMS = "https://wa.me/" + phoneDMS + "?text=" + encodeURIComponent(messageDMS);
-
-    try {
-        fetch('https://votre-api-cloud-run-dms.run.app/api/triage', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ pathologie: pathologieNom, notes: notePatientDMS })
-        });
-    } catch (error) {
-        console.log("Routage autonome actif");
-    }
-
-    window.open(urlDMS, "_blank");
-    return; 
-    // --- FIN DU MOTEUR DMS IA - LE RESTE EN DESSOUS EST IGNORE ---
-            // Alerte d'activation du moteur Med-Gemini
-            alert("MOTEUR GOOGLE CLOUD MED-GEMINI ACTIVÉ\n----------------------------------------\nPatient : " + nomPatient + "\nDiagnostic : " + pathologieNom + "\nAnalyse bio-numérique : " + pathologieDetails);
-
-            // Génération du protocole sécurisé pour WhatsApp avec mise en forme
-            const messageWhatsApp = `*DMS INTELLIGENCE - RAPPORT MÉDICAL D'ÉLITE*\n\n*Patient :* ${nomPatient}\n*Pathologie Détectée :* ${pathologieNom}\n*Analyse Cloud :* ${pathologieDetails}\n*Symptômes décrits :* ${symptomesSaisis}\n\n_Demande de validation urgente du Protocole de Médecine Intégrée au Directeur._`;
-            
-            const numeroWhatsApp = "221771578333";
-            const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(messageWhatsApp)}`;
-            
-            window.open(urlWhatsApp, '_blank');
-        });
-    }
-});
-</script></body>
-</html></div>
+    const messageDMS = "DIASPORA MONDIAL SANTE (DMS)\n\nAnalyse Moteur IA Med-Gemini\n• Pathologie : " + pathologieNom + "\n• P
