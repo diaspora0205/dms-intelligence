@@ -437,6 +437,52 @@ document.addEventListener("DOMContentLoaded", function() {
 if (boutonAnalyse) {
     boutonAnalyse.addEventListener("click", function(e) {
         e.preventDefault();
+const boutons = document.querySelectorAll("button");
+let boutonAnalyse = null;
 
+boutons.forEach(btn => {
+    if (btn.textContent.includes("Lancer") || btn.textContent.includes("Analyse")) {
+        boutonAnalyse = btn;
+    }
+});
+
+if (boutonAnalyse) {
+    boutonAnalyse.addEventListener("click", function(e) {
+        e.preventDefault();
+
+        const champsTexte = document.querySelectorAll("textarea");
+        let nomPatient = "Patient DMS";
+        let symptomesSaisis = "Non spécifiés";
+
+        if (champsTexte.length >= 1 && champsTexte[0]) { nomPatient = champsTexte[0].value; }
+        if (champsTexte.length >= 2 && champsTexte[1]) { symptomesSaisis = champsTexte[1].value; }
+
+        const selectPathologie = document.querySelector("select");
+        let codePathologie = selectPathologie ? selectPathologie.value : "";
+
+        let pathologieNom = "Analyse Générale";
+        let pathologieDetails = "Vérification des constantes...";
+
+        for (let key in dmsDatabase) {
+            if (codePathologie.includes(key)) {
+                pathologieNom = dmsDatabase[key].nom;
+                pathologieDetails = dmsDatabase[key].details;
+                break;
+            }
+        }
+
+        console.log("MOTEUR GOOGLE CLOUD MED-GEMINI ACTIVE");
+        
+        var messageDMS = "DIASPORA MONDIAL SANTE (DMS)\n\nAnalyse Moteur IA Med-Gemini\n- Pathologie : " + pathologieNom + "\n- Description : " + pathologieDetails;
+        
+        var urlDMS = "https://wa.me/221771454153?text=" + encodeURIComponent(messageDMS);
+        
+        window.open(urlDMS, "_blank");
+    });
+}
+});
+</script>
+</body>
+</html>
         
     
