@@ -478,17 +478,8 @@ document.addEventListener("DOMContentLoaded", function() {
         "asthme": { nom: "Asthme Chronique", details: "Hyperréactivité bronchique, diminution du débit expiratoire de pointe." }
     };
 
-    const boutons = document.querySelectorAll("button, .btn");
-    let boutonAnalyse = null;
-
-    boutons.forEach(btn => {
-        if (btn.textContent.includes("Lancer") || btn.textContent.includes("Analyse")) {
-      boutonAnalyse = btn;
-
-if (boutonAnalyse) {
-    boutonAnalyse.addEventListener("click", function(e) {
-        e.preventDefault();
-const boutons = document.querySelectorAll("button");
+    
+      
 let boutonAnalyse = null;
 
 boutons.forEach(btn => {
