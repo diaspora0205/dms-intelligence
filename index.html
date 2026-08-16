@@ -274,22 +274,7 @@ function googleTranslateElementInit() {
     <option value="paludisme">Paludisme / Fièvre chronique</option>
     <option value="rhumatisme">Rhumatisme / Douleurs articulaires</option>
     <option value="hemorroides">Hémorroïdes / Digestion</option>
-<script>
-function lancerAnalyseIA() {
-    var nom = document.querySelector('input[type="text"]').value || "Patient";
-    var selectElem = document.querySelector('select');
-    var pathologie = selectElem ? selectElem.options[selectElem.selectedIndex].text : "Non spécifié";
-    var symptomes = document.querySelector('textarea') ? document.querySelector('textarea').value : "Aucun symptôme renseigné";
 
-    var texte = "DIASPORA MONDIAL SANTE - DOSSIER IA\n" +
-                "Patient : " + nom + "\n" +
-                "Pathologie : " + pathologie + "\n" +
-                "Détails : " + symptomes;
-
-    var lien = "https://wa.me/2207814179?text=" + encodeURIComponent(texte);
-    window.location.href = lien;
-}
-    </script>    
     </select>        
 
         <p style="color: #ffd700; margin-bottom: 5px; font-weight: bold;">DÉTAILS DES SYMPTÔMES :</p>
