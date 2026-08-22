@@ -64,7 +64,26 @@ pre, code, .json-box {
     </div>
 </div>
 
-
+<!-- 2. BLOC DÉMONSTRATION JSON FHIR -->
+<div style="background: #111111; padding: 15px; border-radius: 8px; margin-top: 15px;">
+    <h4 class="titre-or" style="text-align: center; margin-top: 0;">Payload FHIR Condition (JSON)</h4>
+    <pre class="json-box" style="color: #00ff88; font-family: monospace; font-size: 12px;">{
+  "resourceType": "Condition",
+  "id": "cond-dms-2026-8842",
+  "code": {
+    "coding": [{
+      "system": "http://id.who.int/icd/release/11/mms",
+      "code": "GA80",
+      "display": "Hypertrophie de la prostate"
+    }],
+    "text": "Pathologie Prostate & Phytothérapie (Prunus Africana)"
+  },
+  "extension": [{
+    "url": "http://dms.health/ai-confidence",
+    "valueDecimal": 0.984
+  }]
+}</pre>
+</div>
   }]
 }
   </pre>
