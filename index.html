@@ -656,7 +656,27 @@ function envoyerWhatsApp() {
     window.location.href = "https://wa.me/2207814179?text=" + encodeURIComponent(texte);
 }
 </script>
+<!-- Bouton de synthèse vocale -->
+<button onclick="lireContenu()" style="padding: 12px 20px; background-color: #007bff; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; margin-top: 15px;">
+  🔊 Écouter l'explication
+</button>
 
+<script>
+function lireContenu() {
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+    
+    const textePage = document.body.innerText;
+    const message = new SpeechSynthesisUtterance(textePage);
+    message.lang = 'fr-FR';
+    message.rate = 0.9;
+    
+    window.speechSynthesis.speak(message);
+  } else {
+    alert("La synthèse vocale n'est pas supportée par votre navigateur.");
+  }
+}
+</script>
 
 
         
