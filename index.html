@@ -656,40 +656,7 @@ function envoyerWhatsApp() {
     window.location.href = "https://wa.me/2207814179?text=" + encodeURIComponent(texte);
 }
 </script>
-<div style="display: flex; gap: 10px; justify-content: center; margin: 20px 0;">
-  <button onclick="parler('fr')" style="padding: 10px 15px; background: #1a73e8; color: white; border: none; border-radius: 6px; font-weight: bold;">
-    🔊 Écouter (FR)
-  </button>
-  <button onclick="parler('en')" style="padding: 10px 15px; background: #34a853; color: white; border: none; border-radius: 6px; font-weight: bold;">
-    🔊 Listen (EN)
-  </button>
-</div>
 
-<script>
-function parler(langue) {
-  if ('speechSynthesis' in window) {
-    window.speechSynthesis.cancel();
-    
-    var txt = "";
-    var codeLang = "";
-    
-    if (langue === 'fr') {
-      txt = "Bonjour et bienvenue. Je suis Victor Mustapha Kourouma, fondateur de Diaspora Mondiale Santé et expert Google Cloud. Notre mission est de rendre la santé accessible à tous grâce à la voix et l'intelligence artificielle.";
-      codeLang = "fr-FR";
-    } else {
-      txt = "Hello and welcome. I am Victor Mustapha Kourouma, founder of Diaspora Mondiale Santé and Google Cloud expert. Our mission is to make health accessible to everyone using voice and artificial intelligence.";
-      codeLang = "en-US";
-    }
-    
-    var m = new SpeechSynthesisUtterance(txt);
-    m.lang = codeLang;
-    m.rate = 0.9;
-    window.speechSynthesis.speak(m);
-  } else {
-    alert("Vocal non supporté sur ce navigateur");
-  }
-}
-</script>
 
 
         
