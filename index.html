@@ -38,7 +38,51 @@ pre, code, .json-box {
         .titre-or { color: #ffd700; text-shadow: 0 0 15px rgba(255,215,0,0.6); font-weight: bold; }
         .cadre-expert { border: 2px solid #ffd700; padding: 15px; margin: 15px; border-radius: 20px; background: linear-gradient(145deg, #111, #000); }
         .medaille { font-size: 14px; margin: 5px 0; color: #eee; }
-<script type="application/ld+json">
+Vous êtes au bon endroit pour insérer le code CSS, avec une précision importante à vérifier sur la ligne 41 avant de coller.
+
+Vérification de la ligne 41
+
+* L'emplacement est parfait : Insérer le style entre la ligne 40 (la fin de .medaille) et la ligne 41 est la bonne méthode.
+* Attention au symbole d'ouverture : Le curseur bleu touche le début de la ligne 41. Veillez à ne pas effacer le symbole < devant script type="application/ld+json">.
+
+Procédure à suivre :
+
+1. Placez votre curseur à la fin de la ligne 40 et appuyez sur Entrée pour créer une ligne propre.
+2. Collez le code CSS ci-dessous.
+3. Vérifiez que la ligne située juste après le code collé commence bien par .
+
+Code CSS à coller :
+
+```css
+.btn-badge-google {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #000000;
+  color: #00E5FF;
+  border: 2px solid #FFD700;
+  padding: 14px 26px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+  margin: 15px 0;
+}
+
+.btn-badge-google:hover {
+  background: #FFD700;
+  color: #000000;
+  border-color: #00E5FF;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+```
+
+Une fois ce bloc inséré, vous pourrez descendre plus bas (vers la ligne 63) pour ajouter le lien HTML du bouton.<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
