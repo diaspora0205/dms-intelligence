@@ -38,7 +38,42 @@ pre, code, .json-box {
         .titre-or { color: #ffd700; text-shadow: 0 0 15px rgba(255,215,0,0.6); font-weight: bold; }
         .cadre-expert { border: 2px solid #ffd700; padding: 15px; margin: 15px; border-radius: 20px; background: linear-gradient(145deg, #111, #000); }
         .medaille { font-size: 14px; margin: 5px 0; color: #eee; }
+<!-- Styles CSS -->
+    <style>
+        body { background-color: #000; }
+        .titre-or { color: #ffd700; }
+        .cadre-expert { border: 2px solid #ffd700; }
+        .medaille { font-size: 14px; }
+        pre, code, .json-box {
+            white-space: pre-wrap !important;
+            word-break: break-word !important;
+            overflow-x: auto !important;
+        }
+        .rank-text, .rang-mondial {
+            color: #D4AF37 !important;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+    </style>
 
+    <!-- Données Structurées Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Diaspora Mondiale Santé",
+        "url": "https://ora0205.github.io",
+        "founder": {
+            "@type": "Person",
+            "name": "Victor Mustapha Kourouma",
+            "jobTitle": "Google Cloud Expert",
+            "sameAs": [
+                "https://g.dev/Kuruma"
+            ]
+        }
+    }
+    </script>
+</head>
 </head>
 <body>
 <div style="padding: 15px; margin: 15px auto; max-width: 800px; background-color: #111; border: 1px solid #ffd700; border-radius: 8px;">
