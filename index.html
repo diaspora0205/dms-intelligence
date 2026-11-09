@@ -956,7 +956,37 @@ function envoyerWhatsApp() {
     <button onclick="parler('en')" aria-label="Listen to content in English">🔊 Listen (EN)</button>
 </div>
 
+<script>
+function parler(langue) {
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
 
+    var txt = "";
+    var codeLang = "";
+
+    if (langue === 'fr') {
+      codeLang = "fr-FR";
+      txt = "Plateforme Diaspora Mondiale Santé. Analyse et standardisation des écotypes de la pharmacopée africaine. " +
+            "Intégration des profils biochimiques du Baobab Adansonia digitata, du Tamarindier Tamarindus indica, " +
+            "du Madd Saba senegalensis et des écotypes du Papayer Carica papaya. " +
+            "Données médicales encodées selon les normes d'interopérabilité HL7 FHIR R4 et CIM-11, " +
+            "sécurisées sous l'infrastructure Google Cloud IAM.";
+    } else {
+      codeLang = "en-US";
+      txt = "Diaspora Mondiale Santé platform. Standardization of African pharmacopoeia ecotypes. " +
+            "Bio-chemical profiling of Baobab, Tamarind, Madd, and Carica papaya. " +
+            "Medical data encoded under HL7 FHIR R4 and ICD-11 standards, secured on Google Cloud IAM.";
+    }
+
+    var m = new SpeechSynthesisUtterance(txt);
+    m.lang = codeLang;
+    m.rate = 0.95;
+    window.speechSynthesis.speak(m);
+  } else {
+    alert("Vocal non supporté sur ce navigateur.");
+  }
+}
+    </script>
 
 
         
